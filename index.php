@@ -112,8 +112,8 @@ switch ($pageId) {
     case 'waqtscope':
         $page="WaqtScope";
         $xURL = "http://app.nafsadh.com/waqtscope";
-        break;
         $redirect = TRUE;
+        break;
 
     default : $pageId = $pageId;
 }
