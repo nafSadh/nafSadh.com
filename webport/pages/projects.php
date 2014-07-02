@@ -218,7 +218,7 @@ $PROJLIST = array(
 			colr 	=> "blue"
 			),
 	array(	name 	=> "WaqtScope",
-			icon	=> "img/waqts.png",
+			icon	=> "img/waqtscope.png",
 			url		=> "http://app.nafsadh.com/waqtscope/",
 			org		=> "nafSadh",
 			tag		=> "Muslim prayer times calculator",
@@ -229,7 +229,7 @@ $PROJLIST = array(
 			getit	=> "",
 			since	=> "2011",
 			until	=> "2011",	
-			colr 	=> "lime"
+			colr 	=> "green"
 			),
 	array(	name 	=> "NLParse",
 			icon	=> "img/comn48.png",
@@ -258,7 +258,7 @@ $PROJLIST = array(
 			getit	=> "",
 			since	=> "2007",
 			until	=> "2008",	
-			colr 	=> "green"
+			colr 	=> "darkGreen"
 			),
 	array(	name 	=> "Bytex",
 			icon	=> "img/comn48.png",
