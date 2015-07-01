@@ -1,33 +1,30 @@
 <?php
-include_once dirname(__FILE__).'/Content.class.php';
-include_once dirname(__FILE__).'/../include/functions.php';
+include_once dirname(__FILE__) . '/Content.class.php';
+include_once dirname(__FILE__) . '/CommonContents.php';
+include_once dirname(__FILE__) . '/../include/functions.php';
 
 class KHR extends Content {
 
-	public static function populate(Page $page){
+  public static function populate(Page $page) {
 
-		$HTMLdir = dirname(__FILE__)."/../html";
+    $page = CommonContents::populate($page);
+    $HTMLdir = dirname(__FILE__) . "/../html";
 
-		$page->title = "nafSadh - Khan ‘Sadh’ Mostafa";
-		$page->description = "Resume of Khan Sadh Mostafa";
+    $page->title = "nafSadh - Khan ‘Sadh’ Mostafa";
+    $page->description = "Resume of Khan Sadh Mostafa";
 
-		$page->headContent =  prepareHtml("$HTMLdir/navigbar.html", array('rpath'=>$page->rpath));
-		$page->footerContent = prepareHtml("$HTMLdir/footernote.html", array('rpath'=>$page->rpath));
+    $page->heading1 = "Resume";
+    $page->heading2 = "Khan ‘Sadh’ Mostafa";
+    $page->h1color = "darkBlue";
+    $page->h2color = "blue";
 
-		$page->photo = $page->rpath."img/photo.jpg";
-		$page->altPhoto = $page->rpath."img/photo.jpg";
+    //$page->rightCrown = prepareHtml("$HTMLdir/trilink.html", array('rpath'=>$page->rpath));
+    //$page->htText = prepareHtml("$HTMLdir/navigpane.html", null);
 
-		$page->heading1 = "Resume";
-		$page->heading2 = "Khan ‘Sadh’ Mostafa";
-		$page->h1color = "darkBlue";
-		$page->h2color = "blue";
+    $page->pageContent = prepareHtml("$HTMLdir/khresume.html", array('rpath' => $page->rpath));
 
-		//$page->rightCrown = prepareHtml("$HTMLdir/trilink.html", array('rpath'=>$page->rpath));
-		//$page->htText = prepareHtml("$HTMLdir/navigpane.html", null);
-
-		$page->pageContent = prepareHtml("$HTMLdir/khresume.html", array('rpath'=>$page->rpath));
-
-		return $page;
-	}
+    return $page;
+  }
 }
+
 ?>
