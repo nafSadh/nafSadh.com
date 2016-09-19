@@ -1,0 +1,184 @@
+BODY  { 
+   color: #037;
+   border: 0; padding: 0; margin: 0;
+}
+.clearfloat{
+    clear: both;
+}
+
+/*
+* BODY
+*/
+@media print { 
+tr {page-break-inside: avoid;}
+#container{
+    font-size: 12pt;
+    margin: 0pt 0pt;
+    border-left: 1pt solid #c5ec5e;
+    border-right: 1pt solid #c5ec5e;
+}
+
+.rowtype3{
+/*    font-weight: bold;*/
+}
+.rowtype0{
+    background: #ded  !important;
+    color: #069;
+}
+.rowtype3,
+.rowtype1{
+    background: #efe !important;
+/*    background: azure;*/
+}
+.rowtype0 td{}
+#WaqtTable thead tr,
+#WaqtTable thead,
+.headRow{
+    background: #369;
+    color: goldenrod;    
+    font-weight: bold;
+}
+.WaqtTable th{ 
+    border-top: 2pt solid #369;
+    border-bottom: 1pt solid #369;
+    background: #369;
+    width: 11%;
+    font-family: 'Trebuchet MS',Candara,Calibri, 'Segoe UI', sans-serif;
+    font-weight: normal;
+}
+.WaqtTable th.DateH{width: 12%;}
+.WaqtTable td{ 
+    text-align: center; vertical-align: middle; border-bottom: 1px solid #ded; 
+    line-height: 16pt;
+}
+#WaqtTable tfoot tr td{
+    height: 18pt;
+    border-top: 2pt solid #ded;    
+}
+#CoverPage{
+    border-top: 3pt solid #07C;
+    text-align: left; 
+}
+.ns7WS h1{
+    color: #07c;
+    margin: 0;
+    padding: 16pt 8pt 4pt;
+    font-size: 32pt;
+    font-family: 'Trebuchet MS',Candara,Calibri, 'Segoe UI';
+}
+.ns7WS h2{
+    color: #17afee;
+    padding: 2pt 8pt 8pt;
+    margin: 0;
+    font-size: 10pt;   
+    font-weight: normal;
+    font-family: 'Trebuchet MS',Candara,Calibri, 'Segoe UI', sans-serif;
+    font-style: italic;
+}
+#currentState{
+    background: #eFd;    
+    padding: 0 8pt;
+}
+#currentState #Desc{   
+    font-size: 9pt;
+    line-height: 14pt;
+    color: #369;
+    font-family:Georgia,'Times New Roman',times,serif;
+}
+#currentState #DescPlace {font-size: 11pt; }
+#currentState #DescMethod{font-size: 9pt; font-style: italic;}
+#currentState #Details{
+    color: #17afee;
+    font-size: 8pt;
+    line-height: 10pt;
+    padding-bottom: 2pt;
+}
+
+
+.noPrint,
+#headerTop,#Notices,#Legal,
+#locdataSetPanel,#dateRangePanel,#settingsPanel{
+    display: none;
+}
+    
+#footerInfo {
+    font-size: 10pt;
+    padding: 3pt;
+}
+#footerInfo td{
+    border-left: #08E 1pt solid; padding: 0 4pt;
+    color: #b9eaff;
+}
+#footerBottom{
+    position: fixed;bottom: 0; width: 100%;
+    margin-bottom: 0pt;
+}
+#botmFixBox{
+    border-right: 1pt solid #c5ec5e; 
+    border-left: 1pt solid #c5ec5e; 
+    
+}
+#botmFixTable{
+    background: #07C;
+    color: #ffe;
+    font-family: "Trebuchet MS", sans-serif;
+    text-align: left;
+    border-bottom:  1pt solid #07C;
+    border-top:     1pt solid #07C;
+}    
+
+
+
+
+
+/** to NafSadh */
+
+#nafSadh{}
+#ns7Text a, #ns7Text a:visited{ color: #07C; text-decoration: none;}
+#ns7box{float: right; padding: 0 16pt 0 0; }
+#ns7Text{ float: right; padding: 0 8pt; color: #07C; height: 28pt; font-size: 10.5pt; font-family: 'Trebuchet MS',Candara,Calibri, 'Segoe UI', sans-serif;}
+#ns7Text span{padding: 0 2pt; font-weight: normal; font-size: 22pt; font-family: 'Poor Richard','nafRichard','Trebuchet MS',sans-serif;}
+#ns7boxR,#ns7boxL{ float: right; width: 28pt; }
+}
+
+#Legal{
+    color: #139;
+    margin: 32pt 0  96pt;
+    font-family: sans-serif;
+    font-size: 8pt;
+    text-align: left; 
+    
+}
+#Legal div{
+    float: left;
+}
+#Legal a,
+#Legal a:visited{
+    color: #07C;
+    text-decoration: none;
+}
+#Legal a:hover{
+    color: goldenrod;    
+}
+#legalT{
+    background: #ded;
+}
+#legalT td{    
+    padding: 4pt;   
+    margin: 0 4pt;
+}
+#legal1{
+    width: 192pt;
+    vertical-align: text-bottom;
+    text-align: right;
+}
+#legal2{
+    background: #efe;
+    border-right: 4pt solid #ded;
+}
+.legal-L{
+    text-align: right;background: #ded;
+}
+.legal-R{
+    border-right: 4pt solid #ded;
+}

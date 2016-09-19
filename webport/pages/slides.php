@@ -13,12 +13,6 @@ class Slides extends Content {
     $page->title = "nafSadh | slides";
     $page->description = "Slides presented by Khan Sadh Mostafa";
 
-    $page->headContent = prepareHtml("$HTMLdir/navigbar.html", array('rpath' => $page->rpath));
-    $page->footerContent = prepareHtml("$HTMLdir/footernote.html", array('rpath' => $page->rpath));
-
-    $page->photo = $page->rpath . "img/photo.jpg";
-    $page->altPhoto = $page->rpath . "img/photo.jpg";
-
     $page->heading1 = "slides";
     $page->heading2 = "nafSadh";
     $page->h1color = "darkBlue";

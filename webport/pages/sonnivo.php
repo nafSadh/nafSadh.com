@@ -13,9 +13,6 @@ class Sonnivo extends Content {
     $page->title = "Sonnivo";
     $page->description = "a touch type Bengali keyboard layout";
 
-    $page->headContent = prepareHtml("$HTMLdir/navigbar.html", array('rpath' => $page->rpath));
-    $page->footerContent = prepareHtml("$HTMLdir/footernote.html", array('rpath' => $page->rpath));
-
     $page->photo = $page->rpath . "img/sonnivo.png";
     $page->photoFrame = "polaroid";
     $page->altPhoto = $page->rpath . "img/sonnivo.png";

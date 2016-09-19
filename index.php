@@ -59,7 +59,7 @@ switch ($pageId) {
         break;
 
     case "sulolsongroho":
-        $xURL = "http://wp.nafsadh.com/";
+        $xURL = "http://sulol.nafsadh.com/";
         $urlPathParts[0] = "sulol";
         foreach ($urlPathParts as $urlPathSubPart) {
             $xURL.=$urlPathSubPart . "/";
@@ -82,10 +82,9 @@ switch ($pageId) {
     case 'cv':
     case 'Resume':
     case 'resume':
-    case 'resume':
     case 'AcadResume':
     case 'acadresume':
-        $xURL = "http://ns.nafsadh.com/KhanMostafa.Resume.pdf";
+        $xURL = "http://nafsadh.github.io/resume";
         $redirect = TRUE;
         break;
     case 'ResumeOld':
@@ -105,7 +104,7 @@ switch ($pageId) {
     case 'artworks':
     case 'gallery':
     case 'arts':
-        $xURL = "http://wp.nafsadh.com/portfolio";
+        $xURL = "http://arts.nafsadh.com";
         $redirect = TRUE;
         break;
 

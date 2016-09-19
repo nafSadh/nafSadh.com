@@ -20,290 +20,290 @@
 [21-Sep-2013 19:23:35 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/nafsadh/public_html/carticle/index.php on line 51
 [21-Sep-2013 19:23:37 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/nafsadh/public_html/carticle/index.php on line 51
 [21-Sep-2013 19:23:38 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/nafsadh/public_html/carticle/index.php on line 51
-[21-Sep-2013 19:29:18 America/New_York] PHP Warning:  file(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:29:18 America/New_York] PHP Warning:  file(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 51
-[21-Sep-2013 19:31:12 America/New_York] PHP Warning:  file(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:31:12 America/New_York] PHP Warning:  file(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 51
-[21-Sep-2013 19:32:11 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:32:11 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 51
-[21-Sep-2013 19:33:38 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:33:38 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 53
-[21-Sep-2013 19:34:49 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:34:49 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:34:52 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:34:52 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/make/model/year-make-model/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/twitter.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/twitter.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/wp.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/wp.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/ins.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/ins.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/sadhubochon.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/sadhubochon.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/slideshare.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/slideshare.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/custo.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:05 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/custo.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/flickr.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/flickr.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/DeviantART.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/DeviantART.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/picasa.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/picasa.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/github.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/github.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/wikip.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/wikip.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/careers2.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:06 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/careers2.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/LinkedIn.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/LinkedIn.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/delicious.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/delicious.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/youtube.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/youtube.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/imdbs.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/imdbs.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/pinterest.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/pinterest.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/foursquare.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/foursquare.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/Sfaar64.png/-img-Sfaar64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/Sfaar64.png/-img-Sfaar64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/klout.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/klout.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ins64.png/-img-ins64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ins64.png/-img-ins64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/sdh64.png/-img-sdh64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/sdh64.png/-img-sdh64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm_ame.png/-img-tm_ame.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:07 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm_ame.png/-img-tm_ame.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm/pen.png-img-tm/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm/pen.png-img-tm/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm/col.png-img-tm/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm/col.png-img-tm/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Bookmarks-40.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Bookmarks-40.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/twitfolw-b.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/twitfolw-b.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm_sho.png/-img-tm_sho.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm_sho.png/-img-tm_sho.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Photo-albm.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Photo-albm.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/tree-48.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/tree-48.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Slide.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Slide.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/wp.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/wp.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/blog.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/blog.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/nib.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/nib.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Picture.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Picture.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/nafsadh seal 128.png/-img-nafsadh seal 128.png/): failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/nafsadh seal 128.png/-img-nafsadh seal 128.png/): failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Camera.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Camera.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/nafSadh-monogram-bottom.png/-img-nafSadh-monogram-bottom.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:08 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/nafSadh-monogram-bottom.png/-img-nafSadh-monogram-bottom.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:37:09 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/home.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:37:09 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/home.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 54
 [21-Sep-2013 19:51:20 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:20 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:20 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/twitter.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/twitter.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/wp.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/wp.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/ins.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/ins.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/custo.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/custo.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/slideshare.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/slideshare.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/sadhubochon.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/sadhubochon.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/github.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/github.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/wikip.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/wikip.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/picasa.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:31 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/picasa.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:31 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/careers2.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/careers2.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/DeviantART.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/DeviantART.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/flickr.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/flickr.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/delicious.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/delicious.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/youtube.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/youtube.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/pinterest.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/pinterest.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/LinkedIn.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/LinkedIn.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/foursquare.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/foursquare.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/klout.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/klout.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/sdh64.png/-img-sdh64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/sdh64.png/-img-sdh64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ins64.png/-img-ins64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ins64.png/-img-ins64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/Sfaar64.png/-img-Sfaar64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:32 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/Sfaar64.png/-img-Sfaar64.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:32 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/imdbs.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/ows/imdbs.png-img-ows/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm_ame.png/-img-tm_ame.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm_ame.png/-img-tm_ame.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm/pen.png-img-tm/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm/pen.png-img-tm/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Bookmarks-40.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Bookmarks-40.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm_sho.png/-img-tm_sho.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm_sho.png/-img-tm_sho.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Photo-albm.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Photo-albm.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm/col.png-img-tm/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/tm/col.png-img-tm/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/tree-48.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/tree-48.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/home.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:33 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/home.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:33 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/nib.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/nib.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/wp.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/wp.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/twitfolw-b.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/twitfolw-b.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/blog.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/blog.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Slide.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Slide.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Picture.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Picture.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Camera.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/hli/Camera.png-img-hli/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/nafSadh-monogram-bottom.png/-img-nafSadh-monogram-bottom.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/nafSadh-monogram-bottom.png/-img-nafSadh-monogram-bottom.png/): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Fatal error:  Class 'AlchemyAPI' not found in /home/nafsadh/public_html/carticle/index.php on line 54
-[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/nafsadh seal 128.png/-img-nafsadh seal 128.png/): failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
+[21-Sep-2013 19:51:34 America/New_York] PHP Warning:  file_get_contents(http://www.kbb.com/img/nafsadh seal 128.png/-img-nafsadh seal 128.png/): failed to open stream: HTTP request failed! HTTP/1.0 400 Bad Request
  in /home/nafsadh/public_html/carticle/index.php on line 59
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(/alchemy/module/AlchemyAPI.php): failed to open stream: No such file or directory in /home/nafsadh/public_html/carticle/index.php on line 48
 [21-Sep-2013 19:51:34 America/New_York] PHP Warning:  include(): Failed opening '/alchemy/module/AlchemyAPI.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nafsadh/public_html/carticle/index.php on line 48
@@ -670,19 +670,19 @@ Stack trace:
 [22-Sep-2013 05:08:21 America/New_York] PHP Fatal error:  Call to undefined function get_file_content() in /home/nafsadh/public_html/carticle/index.php on line 344
 [22-Sep-2013 05:34:25 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or quoted-string and whitespace (T_ENCAPSED_AND_WHITESPACE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in /home/nafsadh/public_html/carticle/index.php on line 146
 [22-Sep-2013 05:34:25 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or quoted-string and whitespace (T_ENCAPSED_AND_WHITESPACE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in /home/nafsadh/public_html/carticle/index.php on line 146
-[22-Sep-2013 05:35:24 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
+[22-Sep-2013 05:35:24 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
  in /home/nafsadh/public_html/carticle/index.php on line 357
 [22-Sep-2013 05:35:24 America/New_York] PHP Warning:  DOMDocument::loadXML(): Empty string supplied as input in /home/nafsadh/public_html/carticle/index.php on line 359
-[22-Sep-2013 05:35:41 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
+[22-Sep-2013 05:35:41 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
  in /home/nafsadh/public_html/carticle/index.php on line 357
 [22-Sep-2013 05:35:41 America/New_York] PHP Warning:  DOMDocument::loadXML(): Empty string supplied as input in /home/nafsadh/public_html/carticle/index.php on line 359
-[22-Sep-2013 05:36:26 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
+[22-Sep-2013 05:36:26 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
  in /home/nafsadh/public_html/carticle/index.php on line 357
 [22-Sep-2013 05:36:26 America/New_York] PHP Warning:  DOMDocument::loadXML(): Empty string supplied as input in /home/nafsadh/public_html/carticle/index.php on line 359
-[22-Sep-2013 05:40:41 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
+[22-Sep-2013 05:40:41 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
  in /home/nafsadh/public_html/carticle/index.php on line 358
 [22-Sep-2013 05:40:41 America/New_York] PHP Warning:  DOMDocument::loadXML(): Empty string supplied as input in /home/nafsadh/public_html/carticle/index.php on line 360
-[22-Sep-2013 05:43:52 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
+[22-Sep-2013 05:43:52 America/New_York] PHP Warning:  file_get_contents(http://autoAPI.hearst.com/Information/Vehicle/YMME/Makes/?api_key=gjg827snarje89zyngywqbhf): failed to open stream: HTTP request failed! HTTP/1.1 596 596
  in /home/nafsadh/public_html/carticle/index.php on line 358
 [22-Sep-2013 05:43:52 America/New_York] PHP Warning:  DOMDocument::loadXML(): Empty string supplied as input in /home/nafsadh/public_html/carticle/index.php on line 360
 [22-Sep-2013 05:53:22 America/New_York] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE), expecting ',' or ';' in /home/nafsadh/public_html/carticle/index.php on line 350

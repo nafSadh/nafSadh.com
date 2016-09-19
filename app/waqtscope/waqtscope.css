@@ -1,0 +1,433 @@
+BODY  { 
+    background: #f8f8f8; 
+    color: #06B;
+    border: 0; padding: 0; margin: 0;
+    font-size: 12pt;
+}
+.clearfloat{
+    clear: both;
+}
+a{text-decoration: none;}
+/*
+* CONTROL
+*/
+.btn{
+   margin: 4px;
+   border: 1px solid goldenrod;
+   background-color: #ffd;
+   border-radius: 4px;
+   box-shadow: inset 0 1px 3px #fff, inset 0 0 15px #ffa, 0 0 3px #cc6;
+   -o-box-shadow: inset 0 1px 3px #fff, inset 0 0 15px #ffa, 0 0 3px #cc6;
+   -webkit-box-shadow: inset 0 1px 3px #fff, inset 0 0 15px #ffa, 0 0 3px #cc6;
+   -moz-box-shadow: inset 0 1px 3px #fff, inset 0 0 15px #ffa, 0 0 3px #cc6;
+   color: #3985a8;
+   text-shadow: 0 1px #fff;
+   padding: 2px 8px;
+   cursor: pointer;
+}
+
+.toolBox,
+.showTB{
+    font-family: sans-serif;
+    background: #ffe;
+    border: 1px solid gold;
+}
+#settingsShow,
+#settings{
+    border-radius: 0 8px 8px 0;
+}   
+#locdataSetShow,
+#locdataSet,
+#dateRangeShow,
+#dateRange{
+    border-radius: 8px 0 0 8px;
+}    
+ 
+.rightTB,.leftTB{
+    border: 4px solid #b9eaff;
+    background: #b9eaff;
+}
+.leftTB{
+    border-left: none;
+    border-radius: 0 12px 12px 0;
+    
+    float:left;
+    position:fixed;
+    left:0px;
+}
+.rightTB{
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    
+    float:right;
+    position:fixed;
+    right: 0px;
+}
+#settingsPanel{    
+    top:96px;
+}
+#locdataSetPanel{    
+    top:96px;
+}
+#dateRangePanel{    
+    top:160px;
+    
+}
+.toolBox{
+    padding: 4px 8px;
+    font-size: 10.5pt;
+}
+.showTB{
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#settingsShow   {padding: 4px 32px 4px  8px;}
+#locdataSetShow, 
+#dateRangeShow {padding: 4px  8px 4px 32px; text-align: right;}
+
+.headTB{
+    height: 48px;    
+}
+.titleTB{
+    font-size: 16px;
+    color: #ffe;
+    font-weight: bolder;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+    padding: 4px 12px 4px 8px;
+    background: #369;
+    height: 20px;
+}
+#settingsTitle{       
+    float: left;
+    margin-left: -9px;
+}
+#locdataSetTitle,
+#dateRangeTitle{ 
+    float: right;
+    margin-right: -9px;
+}
+#STTBox{
+    float: left;
+    border: 14px solid #369;
+    border-right: 14px solid #ffe;
+}
+#LDSBox,
+#DRSBox{
+    float: right;
+    border: 14px solid #369;
+    border-left: 14px solid #ffe;
+}
+
+.hideTB{
+    height: 15px;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 2px 8px;
+    border: gold 1px solid;
+    text-align: center;
+    cursor: pointer;
+}
+#settingsHide{
+    float: right;
+    border-radius: 0 3px 0 0;    
+}
+#locdataSetHide,
+#dateRangeHide{
+    float: left;
+    border-radius: 3px 0 0 0;
+}
+
+.hideTB:hover{
+    background: #FFF7D0;
+    font-weight:bold;
+    color: goldenrod;
+}
+.hideTB span{
+    color:gold; 
+}
+.ParamaForm td span{
+    padding:0 8px; 
+}
+.ParamaForm td{
+    font-family: 'Trebuchet MS',sans-serif;
+    line-height: 17pt;
+}
+.ParamLabel{
+    text-align: right;
+}
+.ParamaForm td select{
+    font-size: 10pt;
+}
+.ParamaForm .rt0 {background: #ffd;}
+.ParamaForm .rt1 {background: #f0f0e0;}
+.ParamaForm  select, 
+.ParamaForm  input{
+    background: #ffffef;   
+    border: 1px solid #ded; 
+    color: #07C;
+}
+.ParamaForm{margin-bottom: 8px;}
+#method{
+    margin-bottom: 8px; 
+    padding: 4px 8px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+#CalcMethod{
+    font-weight: bold;
+    color: #07C;
+}
+#methodName{
+    font-size: 10pt;
+}
+.subBox{
+    padding: 2px 8px 8px 8px;
+    border: 1px solid #fea;
+}
+.subBoxD{
+    padding-bottom: 3px; 
+}
+.uInput{
+    background: #FFFFF7;   
+    border: 1px solid #ddd; 
+    color: #07C;
+}
+#locZoneALL {
+    margin-top: 4px;
+    background: #F0F0E0;
+    font-size: 11px;
+    font-family:serif;
+}
+/*
+* Notices
+*/
+#Notices{
+    position: fixed;
+    width: 100%;
+    vertical-align:  middle;
+    top: 10px;
+    z-index: 11;
+}
+.NoticeBoard{
+    text-align: center;
+    background: #ffa;
+    color: #c00;
+    border: gold 3px solid;
+    margin: 8px 0;
+    padding: 64px;
+    width: 80%;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 0 8px -1px #0077CC;
+}
+.NoticeBoard div{
+    padding: 8px;}
+/*
+* BODY
+*/
+
+#container{
+    margin-top: 0px;
+    width:80%;
+    background:white;
+    border-left: 4px solid #c5ec5e;
+    border-right: 4px solid #c5ec5e;
+    box-shadow: 0 0 8px -1px #0077CC;
+}
+
+.rowtype3{
+    font-weight: bold;
+}
+.rowtype0{
+    background: #ded;
+/*    background: #def;*/
+}
+.rowtype1{
+    background: #efe;
+/*    background: azure;*/
+}
+.WaqtTable th{ 
+    background: #369;
+    color: gold;
+    width: 11%;
+    font-family: 'Trebuchet MS',Candara,Calibri, 'Segoe UI', sans-serif;
+    text-shadow: 0 0 0 #369;
+    font-weight: normal;
+}
+.WaqtTable th.DateH{width: 12%;}
+.WaqtTable td{ 
+    text-align: center; vertical-align: middle;
+}
+#WaqtTable tfoot tr td{
+    height: 0;
+    border-top: 2pt solid #dee;    
+}
+#Legal{
+    color: #139;
+    margin: 32px 0  96px;
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: left; 
+    
+}
+#Legal div{
+    float: left;
+}
+#Legal a,
+#Legal a:visited{
+    color: #07C;
+    text-decoration: none;
+}
+#Legal a:hover{
+    color: goldenrod;    
+}
+#legalT{
+    background: #ded;
+}
+#legalT td{    
+    padding: 4px;   
+    margin: 0 4px;
+}
+#legal1{
+    width: 192px;
+    vertical-align: text-bottom;
+    text-align: right;
+}
+#legal2{
+    background: #efe;
+    border-right: 4px solid #ded;
+}
+.legal-L{
+    text-align: right;background: #ded;
+}
+.legal-R{
+    border-right: 4px solid #ded;
+}
+
+
+#CoverPage{
+    border-top: 3px solid #07C;
+    text-align: left; 
+}
+.ns7WS h1{
+    color: #07c;
+    background: #fff;
+    margin: 0;
+    padding: 16px 8px 4px;
+    font-size: 48px;
+    font-family: 'Trebuchet MS',Candara,Calibri, 'Segoe UI';
+/*    text-shadow: 0px 1px 1px #b9eaFF, 1px 1px 1px #111;*/
+}
+.ns7WS h2{
+    color: #17afee;
+    padding: 2px 8px 8px;
+    margin: 0;
+    font-size: 12pt;   
+    font-weight: normal;
+    font-family: 'Trebuchet MS',Candara,Calibri, 'Segoe UI', sans-serif;
+    font-style: italic;
+}
+#currentState{
+    background: #eFd;    
+    padding: 8px;
+}
+#currentState #Desc{   
+    font-size: 11.5pt;
+    color: #369;
+    font-family:Georgia,'Times New Roman',times,serif;
+}
+#DescMethod{
+    font-size: 11pt;
+}
+#currentState #Details{
+    color: goldenrod;
+    font-size: 10pt;
+}
+/** twicks for fixed table header*/
+.rightTB, .leftTB{
+    z-index: 8;    
+}
+#containerTop{
+    position: relative;
+    z-index: 3;
+    background: white;
+}
+#container{
+    z-index: 1;
+}
+.headRow, .headRow td{
+    position: relative;
+    z-index: 4;   
+}
+#toDay{
+    background:#ffe;
+}
+
+#headFixTable{
+    border-bottom: solid 1px gold;    
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 6px -4px #222;
+}
+.topbar{
+    font-weight: normal;
+    font-family: "Trebuchet MS", sans-serif;
+}
+#headerTop{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.topbar th{
+/*    background: #07C;*/
+}
+#footerInfo{
+    font-size: 10pt;
+    padding: 3px;
+}
+#footerInfo td{
+    border-left: #08E 1px solid; padding: 0 4px;
+    color: #b9eaff;
+}
+#footerBottom{
+    position: fixed;bottom: 0; width: 100%;
+}
+#botmFixBox{
+    width:80% ;
+    border-left: 4px solid #c5ec5e;
+    border-right: 4px solid #c5ec5e;
+    box-shadow: 0 0 8px -1px #0077CC;
+}
+#botmFixTable{
+    background: #07C;
+    color: #ffe;
+    font-family: "Trebuchet MS", sans-serif;
+    text-align: left;
+}
+
+/*#cpTDayHolder, #cpTDay, #cpTDayI{display: none;}*/
+/*.headRow{position: fixed;}*/
+/** to NafSadh */
+#ns7Text a, #ns7Text a:visited{ color: azure; text-decoration: none;}
+#ns7Text a:hover {color: #17afee; }
+#ns7box{float: right; padding: 0 16px 0 0;}
+#ns7Text{float: right; padding: 0 8px; background: #07C; color: white; height: 28px; font-size: 10.5pt; font-family: 'Trebuchet MS',Candara,Calibri, 'Segoe UI', sans-serif;}
+#ns7Text span{padding: 0 2px; font-weight: normal; font-size: 22px; font-family: 'Poor Richard','nafRichard','Trebuchet MS',sans-serif;}
+#ns7boxR,#ns7boxL{ float: right; border: 14px solid #07C;  border-bottom: 14px solid white; }
+#ns7boxL{border-left: 14px solid white;}
+#ns7boxR{border-right: 14px solid white;}
+#ns7boxLink{float: right; padding: 0 16px 0 0; top:3px; }
+#ns7boxLink div{
+    padding: 4px 8px;
+/*    background: azure;
+    border-left: 1px solid #b9eaff;
+    border-right: 1px solid #b9eaff;*/
+    background: #ffe;
+    border-left: 1px solid #c5ec5e;
+    border-right: 1px solid #c5ec5e;
+}
+#ns7boxLink div a{   color: #07C; font-family: sans-serif; font-size: 10pt;}
+#ns7boxLink div a:hover{   color: goldenrod; }
+/*/3rd party */
+.tipsy { padding: 5px; font-size: 12px; font-family: "lucida grande",tahoma,verdana,arial,sans-serif;  opacity: .90; filter: alpha(opacity=100); background-repeat: no-repeat; }
+.tipsy-inner { padding: 4px 5px; background-color: #eff1ff; color: #004767; max-width: 200px; text-align: center; border: #003767 1px solid;}
