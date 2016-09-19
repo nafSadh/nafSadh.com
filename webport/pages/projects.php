@@ -77,6 +77,20 @@ HTTEXT;
 }
 
 $PROJLIST = array(
+  array('name' => "DecisionLender",
+    'icon' => "img/dl.png",
+    'url' => "http://tcicredit.com",
+    'org' => "Teledata Communications, Inc.",
+    'tag' => "Loan Origination Solution",
+    'desc' => "LOS built with Java backend and Angular.JS frontend. I am part of the team that is building and maintaining it.",
+    'github' => "",
+    'beta' => "",
+    'visit' => "http://tcicredit.com",
+    'getit' => "",
+    'since' => "2015",
+    'until' => "",
+    'colr' => "green"
+  ),  
   array('name' => "TuneTour.me",
     'icon' => "img/tt.png",
     'url' => "http://TuneTour.me",
