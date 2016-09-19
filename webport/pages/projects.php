@@ -129,7 +129,7 @@ $PROJLIST = array(
       extracting senses in them backed by support of an existing ontology <br/>with Q. Ratul, S.H. Sourav under supervision of R. Shams",
     'github' => "",
     'sf' => "",
-    'view ' => "http://slidesha.re/RS2fx1",
+    'view' => "http://slidesha.re/RS2fx1",
     'getit' => "",
     'since' => "2009",
     'until' => "2010",
