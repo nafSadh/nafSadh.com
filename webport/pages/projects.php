@@ -78,7 +78,7 @@ HTTEXT;
 
 $PROJLIST = array(
   array('name' => "DecisionLender",
-    'icon' => "img/dl.png",
+    'icon' => "img/dl4.png",
     'url' => "http://tcicredit.com",
     'org' => "Teledata Communications, Inc.",
     'tag' => "Loan Origination Solution",
