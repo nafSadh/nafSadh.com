@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efa04d28-28c1-4d75-a56d-23730fae3c56" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webport/pages/projects.php" afterPath="$PROJECT_DIR$/webport/pages/projects.php" />
-    </list>
+    <list default="true" id="efa04d28-28c1-4d75-a56d-23730fae3c56" name="Default" comment="" />
     <ignored path="nafSadh.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -157,6 +155,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-12" />
@@ -303,12 +304,12 @@
       <option name="presentableId" value="Default" />
       <updated>1435736279308</updated>
       <workItem from="1474248387276" duration="46000" />
-      <workItem from="1474248466325" duration="1741000" />
+      <workItem from="1474248466325" duration="2483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1787000" />
+    <option name="totallyTimeSpent" value="2529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="2760" height="1778" extended-state="6" />
