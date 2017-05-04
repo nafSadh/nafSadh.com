@@ -1,140 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efa04d28-28c1-4d75-a56d-23730fae3c56" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/400.shtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/401.shtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/403.shtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/404.shtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/500.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/500.shtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/docs.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/iconFont.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/iconFont.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/metro-bootstrap-responsive.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/metro-bootstrap-responsive.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/metro-bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/metro-bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/metro-sadh.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/default.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/error_log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/iconFont.dev.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/iconFont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/iconFont.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/iconFont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/iconFont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/iconFont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/metroSysIcons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/metroSysIcons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/metroSysIcons.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/bn-SNV.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ca.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/comn48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/cse.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/dl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/dsp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ins.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/intelome.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/kakatuya.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/kc5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/kuet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/lekhalikhi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/likhonpad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/lipighor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/nafsadh.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/nafsadh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ns7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/phone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/photo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/rs2-fx.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/sadhubochon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/sbu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/scire.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/sfaar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/slideshare.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/soc.very.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/sonnivo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/srbd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/suny-rf.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/tci.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/trafficjam.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/tt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/waqts.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/waqtscope.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/docs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/github.info.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/hitua.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery/jquery.dataTables.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery/jquery.easing.1.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery/jquery.mousewheel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery/jquery.widget.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/load-metro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/metro.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-apollo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-basic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-clj.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-css.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-dart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-erlang.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-go.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-hs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-lisp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-llvm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-lua.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-matlab.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-ml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-mumps.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-n.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-pascal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-proto.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-r.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-rd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-scala.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-sql.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-tcl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-tex.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-vb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-vhdl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-wiki.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-xq.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/lang-yaml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/prettify.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/prettify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/prettify/run_prettify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/start-screen.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/Page.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/PreparePage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/PresentPage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/bio.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/footernote .bak.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/footernote.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/introduction.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/khresume.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/navigbar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/navigpane.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/slides.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/sonnivo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/html/trilink.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/include/functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/pages/CommonContents.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/pages/Content.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/pages/about.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/pages/bio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/pages/home.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/pages/khresume.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/pages/projects.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/pages/slides.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/pages/sonnivo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/plugins/gravatar.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/template/body.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/template/footer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/template/header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webport/test.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.html" />
-    </list>
+    <list default="true" id="efa04d28-28c1-4d75-a56d-23730fae3c56" name="Default" comment="" />
     <ignored path="nafSadh.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -348,12 +215,12 @@
       <updated>1435736279308</updated>
       <workItem from="1474248387276" duration="46000" />
       <workItem from="1474248466325" duration="1136000" />
-      <workItem from="1493912407595" duration="95000" />
+      <workItem from="1493912407595" duration="255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1277000" />
+    <option name="totallyTimeSpent" value="1437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
