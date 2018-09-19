@@ -2,112 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efa04d28-28c1-4d75-a56d-23730fae3c56" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/400.shtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/401.shtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/403.shtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/404.shtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/500.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/500.shtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/docs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/iconFont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/iconFont.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/metro-bootstrap-responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/metro-bootstrap-responsive.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/metro-bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/metro-bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/metro-sadh.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/error_log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/iconFont.dev.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/iconFont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/iconFont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/iconFont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/iconFont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/iconFont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/metroSysIcons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/metroSysIcons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/metroSysIcons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/docs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/github.info.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/hitua.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery/jquery.dataTables.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery/jquery.easing.1.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery/jquery.mousewheel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery/jquery.widget.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/load-metro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/metro.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-apollo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-basic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-clj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-css.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-dart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-erlang.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-go.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-hs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-lisp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-llvm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-lua.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-matlab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-ml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-mumps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-n.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-pascal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-proto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-r.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-rd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-scala.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-sql.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-tcl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-tex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-vb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-vhdl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-wiki.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-xq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/lang-yaml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/prettify/run_prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/start-screen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/Page.class.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/PreparePage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/PresentPage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/bio.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/footernote .bak.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/footernote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/introduction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/khresume.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/navigbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/navigpane.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/slides.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/sonnivo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/html/trilink.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/include/functions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/pages/CommonContents.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/pages/Content.class.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/pages/about.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/pages/bio.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/pages/home.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/pages/khresume.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/pages/projects.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/pages/slides.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/pages/sonnivo.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/plugins/gravatar.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/template/body.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/template/footer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/template/header.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webport/test.php" beforeDir="false" />
     </list>
     <ignored path="nafSadh.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,30 +17,80 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1095603924">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Gemfile" value="1" />
+          <entry key="gitignore" value="1" />
+          <entry key="lock" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Gemfile" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="nafSadh.com" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
+            <state relative-caret-position="51">
               <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="robots.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/robots.txt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="34">
+              <caret line="2" column="42" lean-forward="true" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/robots.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -172,6 +123,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/500.shtml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -182,11 +135,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
-    <option name="width" value="1940" />
-    <option name="height" value="1100" />
+    <option name="width" value="1941" />
+    <option name="height" value="1101" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -195,7 +148,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,19 +158,21 @@
             </path>
             <path>
               <item name="nafSadh.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="nafSadh.com" type="462c0819:PsiDirectoryNode" />
+              <item name="_site" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="LayoutCode.rearrangeEntriesPHP" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537334871421" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="options.lastSelected" value="preferences.sourceCode.PHP" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -238,9 +193,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -248,6 +200,7 @@
       <tasks />
       <arguments />
       <envs />
+      <method v="2" />
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -263,68 +216,81 @@
       <workItem from="1474248387276" duration="46000" />
       <workItem from="1474248466325" duration="1136000" />
       <workItem from="1536720696486" duration="506000" />
+      <workItem from="1536899524475" duration="1675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1688000" />
+    <option name="totallyTimeSpent" value="3363000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="-12" width="1940" height="1100" extended-state="0" />
+    <frame x="-7" y="-7" width="1839" height="1191" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="Palette&#9;" order="2" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info anchor="right" id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12393617" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32848233" />
-      <window_info anchor="right" id="SciView" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.087127596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Changes" order="7" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Palette&#9;" order="5" />
+      <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32848233" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Changes" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Designer" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Remote Host" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="SciView" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="1" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.12291667" />
-      <window_info id="Structure" order="2" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Changes" order="0" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32946146" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Application Servers" order="4" />
-      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.087127596" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Palette&#9;" order="5" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32848233" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Changes" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Designer" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Remote Host" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="SciView" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,242 +308,36 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webport/plugins/gravatar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="55" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/projects.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1595">
-          <caret line="55" selection-start-line="55" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/slides.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="29" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/sonnivo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/bio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/khresume.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/CommonContents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/Content.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/plugins/gravatar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="55" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/projects.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1595">
-          <caret line="55" selection-start-line="55" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/slides.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="29" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/sonnivo.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/bio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/khresume.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/CommonContents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/Content.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/html/navigbar.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/template/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/html/introduction.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="54" column="67" selection-start-line="54" selection-start-column="67" selection-end-line="54" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/Page.class.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/PreparePage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/plugins/gravatar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="55" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/Content.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/bio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/CommonContents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/khresume.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/slides.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="29" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/sonnivo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webport/pages/projects.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1392">
-          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/webport/html/navigbar.html" />
+    <entry file="file://$PROJECT_DIR$/webport/template/header.php" />
+    <entry file="file://$PROJECT_DIR$/webport/html/introduction.html" />
+    <entry file="file://$PROJECT_DIR$/webport/Page.class.php" />
+    <entry file="file://$PROJECT_DIR$/webport/PreparePage.php" />
+    <entry file="file://$PROJECT_DIR$/webport/plugins/gravatar.php" />
+    <entry file="file://$PROJECT_DIR$/webport/pages/home.php" />
+    <entry file="file://$PROJECT_DIR$/webport/pages/Content.class.php" />
+    <entry file="file://$PROJECT_DIR$/webport/pages/bio.php" />
+    <entry file="file://$PROJECT_DIR$/webport/pages/about.php" />
+    <entry file="file://$PROJECT_DIR$/webport/pages/CommonContents.php" />
+    <entry file="file://$PROJECT_DIR$/webport/pages/khresume.php" />
+    <entry file="file://$PROJECT_DIR$/webport/pages/slides.php" />
+    <entry file="file://$PROJECT_DIR$/webport/pages/sonnivo.php" />
+    <entry file="file://$PROJECT_DIR$/webport/pages/projects.php" />
     <entry file="file://$PROJECT_DIR$/nafSadh.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/default.html" />
+    <entry file="file://$PROJECT_DIR$/js/github.info.js" />
+    <entry file="file://$PROJECT_DIR$/js/hitua.js" />
+    <entry file="file://$PROJECT_DIR$/js/load-metro.js" />
+    <entry file="file://$PROJECT_DIR$/js/metro.min.js" />
+    <entry file="file://$PROJECT_DIR$/js/start-screen.js" />
+    <entry file="file://$PROJECT_DIR$/js/docs.js" />
+    <entry file="file://$PROJECT_DIR$/desktop.ini" />
+    <entry file="file://$PROJECT_DIR$/.htaccess" />
+    <entry file="file://$PROJECT_DIR$/500.php" />
+    <entry file="file://$PROJECT_DIR$/500.shtml" />
+    <entry file="file://$PROJECT_DIR$/404.shtml" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -586,63 +346,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/default.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/robots.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1479" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="42" lean-forward="true" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
+        <state relative-caret-position="51">
           <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/github.info.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/hitua.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/load-metro.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/metro.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/start-screen.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/docs.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desktop.ini">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/500.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/500.shtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/404.shtml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robots.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
