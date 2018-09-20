@@ -1,1 +1,1 @@
-bundle exec jekyll serve
+http-server -p 8008
