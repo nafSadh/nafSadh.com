@@ -15,3 +15,8 @@
 # gallery of examples 
 - https://bulma.io/expo/
 - https://onepagelove.com/gallery
+
+
+
+# bookmarks 
+- https://www.reddit.com/r/vuejs/comments/5uvkkj/how_would_i_write_this_in_vue/
