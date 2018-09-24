@@ -10,3 +10,7 @@
   padding-top: 8em;
   padding-bottom: 8em;
 }
+
+.popover .popover-content{
+  max-width: 256px;
+}
