@@ -3,6 +3,7 @@ Link
 # using 
 - https://www.npmjs.com/package/bulma-popover
 - https://www.svgbackgrounds.com/#endless-constellation
+- https://www.heropatterns.com/
 
 # Some personal websites with good design/content
 
@@ -16,7 +17,7 @@ Link
 - https://osvaldas.info/ *
 - http://www.vtcreative.fr/en/
 - https://nicolesaidy.com/ *
-
+- https://www.katherinekato.com/#about
 
 # gallery of examples 
 - https://bulma.io/expo/
@@ -25,10 +26,15 @@ Link
 
 # tools 
 - https://www.heropatterns.com/
-- https://www.svgbackgrounds.com/#large-triangles
-
+- https://www.svgbackgrounds.com/
+- http://thepatternlibrary.com/
+- https://philiprogers.com/svgpatterns/
+- http://buseca.github.io/patternbolt/
 
 # bookmarks 
 - https://www.reddit.com/r/vuejs/comments/5uvkkj/how_would_i_write_this_in_vue/
 - https://codepen.io/saransh/pen/BKJun parallax stars on sky
 - https://www.sitepoint.com/6-incredible-svg-pattern-generators/
+- https://loading.io/pattern/
+- https://css-doodle.com/
+- https://svgporn.com/
