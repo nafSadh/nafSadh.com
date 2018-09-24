@@ -6,6 +6,7 @@
   white-space: nowrap;
 }
 
-.smaller{
-  font-size: .8em;
+.lax-padded{
+  padding-top: 8em;
+  padding-bottom: 8em;
 }
