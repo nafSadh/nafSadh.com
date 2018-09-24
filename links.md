@@ -2,6 +2,7 @@ Link
 
 # using 
 - https://www.npmjs.com/package/bulma-popover
+- https://www.svgbackgrounds.com/#endless-constellation
 
 # Some personal websites with good design/content
 
@@ -30,3 +31,4 @@ Link
 # bookmarks 
 - https://www.reddit.com/r/vuejs/comments/5uvkkj/how_would_i_write_this_in_vue/
 - https://codepen.io/saransh/pen/BKJun parallax stars on sky
+- https://www.sitepoint.com/6-incredible-svg-pattern-generators/
