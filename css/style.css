@@ -14,3 +14,7 @@
 .popover .popover-content{
   max-width: 256px;
 }
+
+hr.half-extended {
+  margin-left: -50%; margin-right: 65%;
+}
