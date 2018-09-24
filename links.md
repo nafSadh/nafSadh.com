@@ -1,3 +1,5 @@
+Link
+
 # Some personal websites with good design/content
 
 - http://donnemartin.com/
@@ -17,6 +19,11 @@
 - https://onepagelove.com/gallery
 
 
+# tools 
+- https://www.heropatterns.com/
+- https://www.svgbackgrounds.com/#large-triangles
+
 
 # bookmarks 
 - https://www.reddit.com/r/vuejs/comments/5uvkkj/how_would_i_write_this_in_vue/
+- https://codepen.io/saransh/pen/BKJun parallax stars on sky
