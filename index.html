@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-top">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>nafSadh-khan</title>
@@ -9,16 +10,16 @@
   <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">-->
   <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
 
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bg.css">
+  <link rel="stylesheet" href="css/bulma-carousel.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bg.css">
-
 </head>
-<body class="has-navbar-fixed-top bg-silver-white stitch">
-<div id="app">
+<body class="bg-silver-white">
+<main id="app">
   <section class="hero is-fullheight bg-pattern" id="cover">
     <div class="hero-body">
       <div class="container">
@@ -50,7 +51,7 @@
     </div>
   </section>
   <section class="section bg-endless-constellation stitch" id="about">
-    <div class="container lax-padded">
+    <div class="container lux-pad-8">
       <div class="columns is-centered">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters bg-white-sky glass">
           <div class="content is-medium has-text-justified">
@@ -133,11 +134,11 @@
     </div>
   </section>
   <section class="section stitch " id="words">
-    <div class="container lax-padded">
+    <div class="container lux-pad-4">
       <div class="columns is-centered">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
           <h1 class="title">writings</h1>
-          <hr class="half-extended bg-17afee"/>
+          <hr class="half-extended bg-silver-light"/>
           <!-- ins -->
           <div class="card bg-white-sky">
             <div class="card-content">
@@ -194,61 +195,19 @@
       </div>
     </div>
   </section>
-  <section id="arts"></section>
-  <section id="snaps"></section>
-  <section id="projects"></section>
-  <section id="timeline"></section>
-  <section id="photos-1" class="section">
-    <div class="container">
-      <div class='carousel carousel-animated carousel-animate-slide' data-size="5">
-        <div class='carousel-container'>
-          <div class='carousel-item is-active'>
-            <figure class="image"><img src="https://wikiki.github.io/images/merry-christmas.jpg"></figure>
-          </div>
-          <div class='carousel-item'>
-            <figure class="image is-2by1"><img src="https://bulma.io/images/placeholders/640x320.png"></figure>
-          </div>
-          <div class='carousel-item'>
-            <figure class="image is-2by1"><img src="https://bulma.io/images/placeholders/640x320.png"></figure>
-          </div>
-          <div class='carousel-item'>
-            <figure class="image is-2by1"><img src="https://bulma.io/images/placeholders/640x320.png"></figure>
-          </div>
-          <div class='carousel-item'>
-            <figure class="image is-2by1"><img src="https://bulma.io/images/placeholders/640x320.png"></figure>
-          </div>
-          <div class='carousel-item'>
-            <figure class="image is-2by1"><img src="https://bulma.io/images/placeholders/640x320.png"></figure>
-          </div>
-          <div class='carousel-item'>
-            <figure class="image is-2by1"><img src="https://bulma.io/images/placeholders/640x320.png"></figure>
-          </div>
-        </div>
-        <div class="carousel-navigation is-overlay">
-          <div class="carousel-nav-left">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-          </div>
-          <div class="carousel-nav-right">
-            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
+</main>
+<nav class="navbar is-fixed-top" style="box-shadow: 0 0 5px #ccc" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand ">
+      <a class="navbar-item is-size-4">
+        <img src="img/nafsadh.png" style="padding-right: 4px">
+        <span>nafSadh</span>
+      </a>
     </div>
-  </section>
-
-  <nav class="navbar is-fixed-top" style="box-shadow: 0 0 5px #ccc" role="navigation" aria-label="main navigation">
-    <div class="container">
-      <div class="navbar-brand ">
-        <a class="navbar-item is-size-4">
-          <img src="img/nafsadh.png" style="padding-right: 4px">
-          <span>nafSadh</span>
-        </a>
-      </div>
-      <div class="navbar-start">
-      </div>
+    <div class="navbar-start">
     </div>
-  </nav>
-</div>
+  </div>
+</nav>
 
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
