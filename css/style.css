@@ -22,3 +22,23 @@ hr.half-extended {
 .stitch {
   border-top: white 1px dashed;
 }
+
+
+/* If `animateFill: true` (default) */
+.tippy-tooltip.skybee-theme .tippy-backdrop {
+  background-color: #fff;
+  color: #333;
+  padding: 1em;
+  text-align: left;
+}
+
+/* If `animateFill: false` */
+.tippy-tooltip.skybee-theme {
+  background-color: #fff;
+  padding: 1em;
+  color: #333;
+  text-align: left;
+}
+.tippy-tooltip.skybee-theme .tippy-roundarrow {
+  fill: #fff;
+}

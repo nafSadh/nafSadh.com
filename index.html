@@ -13,7 +13,6 @@
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="css/bulma-popver.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bg.css">
 
@@ -59,69 +58,45 @@
             <hr class="half-extended bg-silver-light"/>
             <p>
               Born and raised in
-              <span class="popover is-popover-top">
-                <a class="popover-trigger" href="https://en.wikipedia.org/wiki/Bangladesh">Bangladesh</a>
-                <span class="popover-content">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg" width="128px">
+                <a href="https://en.wikipedia.org/wiki/Bangladesh"
+                   data-tippy="
+                  <img src='https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg' width='128px'>
                   <br/>
                   <b>Bangladesh</b>, to the east of India on the Bay of Bengal, is a South Asian country marked by lush
-                  greenery and many waterways.
-                </span>
-              </span>,
+                  greenery and many waterways.">Bangladesh</a>,
               trained in computer science at
-              <span class="popover is-popover-top">
-                <a class="popover-trigger" href="http://www.kuet.ac.bd/department/CSE/">KUET</a>
-                <span class="popover-content has-text-left">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Logo_KUET.svg/283px-Logo_KUET.svg.png"
-                       width="48px"><br/>
+              <a href="http://www.kuet.ac.bd/department/CSE/" data-tippy="
+                  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Logo_KUET.svg/283px-Logo_KUET.svg.png' width='48px'><br/>
                   <b>Khulna University of Engineering &amp; Technology</b><br/>
                   B.Sc. (Engineering)<br/>
                   Computer Science and Engineering<br/>
-                  <i class="fas fa-map-marker-alt"></i> Khulna, Bangladesh
-                </span>
-              </span>
+                  <i class='fas fa-map-marker-alt'></i> Khulna, Bangladesh">KUET</a>
               and
-              <span class="popover is-popover-top">
-                <a class="popover-trigger" href="https://www.cs.stonybrook.edu/students/Graduate-Studies/MSProgram">Stony Brook</a>
-                <span class="popover-content has-text-left">
+              <a href="https://www.cs.stonybrook.edu/students/Graduate-Studies/MSProgram" data-tippy="
                   <img
-                      src="https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Stonybrook_logo.svg/360px-Stonybrook_logo.svg.png"
-                      width="180px"><br/>
+                      src='https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Stonybrook_logo.svg/360px-Stonybrook_logo.svg.png'
+                      width='180px'><br/>
                   <b>Stony Brook University</b><br/>
                   MS in Computer Science<br/>
-                  <i class="fas fa-map-marker-alt"></i> Stony Brook, New York, USA
-                </span>
-              </span>, I work as a software engineer; now at
-              <span class="popover is-popover-top">
-                <a class="popover-trigger" href="https://TCIcredit.com">TCI</a>
-                <span class="popover-content has-text-left">
+                  <i class='fas fa-map-marker-alt'></i> Stony Brook, New York, USA">Stony Brook</a>,
+              I work as a software engineer; now at
+              <a class="popover-trigger" href="https://TCIcredit.com" data-tippy="
                   <img src='http://nafsadh.com/img/tci.png' width='96px'/><br/>
                   <strong>Teledata Communications, Inc.</strong><br/>
                   Decision Lender - Loan Origination Solutions<br/>
-                 <i class="fas fa-map-marker-alt"></i> Islandia, NY, USA
-                </span>
-              </span>
+                 <i class='fas fa-map-marker-alt'></i> Islandia, NY, USA">TCI</a>
               and previously at
-              <span class="popover is-popover-top">
-                <a class="popover-trigger" href="https://research.samsung.com/srbd">Samsung</a>
-                <span class="popover-content has-text-left">
+              <a class="popover-trigger" href="https://research.samsung.com/srbd" data-tippy="
                   <img src='https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg' width='96px'/><br/>
                   <strong>Samsung R&D Institute Bangladesh</strong><br/>
                   A research hub of Samsung Electronics<br/>
-                 <i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh
-                </span>
-              </span>.
+                 <i class='fas fa-map-marker-alt'></i> Dhaka, Bangladesh">Samsung</a>.
               I live with my lovely wife
               <a href="http://sampreeti.com">Sampreeti</a>
               in
-              <span class="popover is-popover-top">
-                <a class="popover-trigger" href="https://en.wikipedia.org/wiki/New_York_metropolitan_area">New York</a>
-                <span class="popover-content">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/I_Love_New_York.svg" width="72px">
-                  <br/>
-                  I live in Mineola, within the New York metro area.
-                </span>
-              </span>.
+              <a class="popover-trigger" href="https://en.wikipedia.org/wiki/New_York_metropolitan_area" data-tippy="
+                  <img src='https://upload.wikimedia.org/wikipedia/commons/d/d5/I_Love_New_York.svg' width='72px'>
+                  <br/>I live in Mineola, within the New York metro area.">New York</a>.
             </p>
             <p>
               I have been involved with several <a href="http://projects.nafSadh.com">projects</a>.
@@ -278,6 +253,8 @@
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 <script src="js/bulma-carousel.min.js"></script>
+<script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+
 
 <script>
   new Vue({
@@ -286,6 +263,13 @@
 </script>
 <script>
   bulmaCarousel.attach();
+  tippy.setDefaults({
+    arrow: true,
+    arrowType: 'round',
+    duration: 0,
+    theme:'skybee',
+    placement: 'left-start'
+  })
 </script>
 </body>
 </html>
