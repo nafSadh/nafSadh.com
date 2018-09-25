@@ -9,8 +9,20 @@
 		<stop offset="90%"  stop-color="#CCCCCC"/>
 		<stop offset="100%" stop-color="#DDDDDD"/>
 	</linearGradient>
-	<g >
-		<rect x="120" width="240" y="40"  height="320" fill="url(#grad)"/>
+  <defs>
+      <filter id="drop-shadow" x="-100%" y="-100%" width="300%" height="300%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+        <feOffset dx="0" dy="0" result="offsetblur"/>
+        <feFlood flood-color="#000000"/>
+        <feComposite in2="offsetblur" operator="in"/>
+        <feMerge>
+          <feMergeNode/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+	<g filter="url(#drop-shadow)">
+		<rect x="120" width="240" y="40"  height="320" fill="#f1f7fe" />
 		<rect x="140" width="210" y="320" height="20" fill="#17afee"/>
 		<path d="M282.449,316.811h-51.211V129.319c0-28.827-5.024-49.358-15.085-61.597C206.105,55.49,189.413,49.37,166.09,49.37
 			c-22.952,0-42.108,8.73-57.468,26.179c-15.362,17.448-23.049,42.489-23.049,75.108v166.154H34.362V0l48.365,12.105v42.963h1.138
