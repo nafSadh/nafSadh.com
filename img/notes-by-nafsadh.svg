@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg x="0px" y="0px"
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="400" height="400" viewBox="0 0 400 400"
 	xml:space="preserve">
 	<linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
@@ -9,7 +9,7 @@
 		<stop offset="90%"  stop-color="#CCCCCC"/>
 		<stop offset="100%" stop-color="#DDDDDD"/>
 	</linearGradient>
-	<g>
+	<g >
 		<rect x="120" width="240" y="40"  height="320" fill="url(#grad)"/>
 		<rect x="140" width="210" y="320" height="20" fill="#17afee"/>
 		<path d="M282.449,316.811h-51.211V129.319c0-28.827-5.024-49.358-15.085-61.597C206.105,55.49,189.413,49.37,166.09,49.37
