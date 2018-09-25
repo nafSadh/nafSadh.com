@@ -1,0 +1,48 @@
+.avatar-border {
+  border:3px solid #17afee;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.lux-pad-8 {
+  padding-top: 8em;
+  padding-bottom: 8em;
+}
+.lux-pad-4 {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.popover .popover-content{
+  max-width: 256px;
+}
+
+hr.half-extended {
+  margin-left: -50%; margin-right: 65%;
+}
+
+.stitch {
+  border-top: white 1px dashed;
+}
+
+
+/* If `animateFill: true` (default) */
+.tippy-tooltip.skybee-theme .tippy-backdrop {
+  background-color: #fff;
+  color: #333;
+  padding: 1em;
+  text-align: left;
+}
+
+/* If `animateFill: false` */
+.tippy-tooltip.skybee-theme {
+  background-color: #fff;
+  padding: 1em;
+  color: #333;
+  text-align: left;
+}
+.tippy-tooltip.skybee-theme .tippy-roundarrow {
+  fill: #fff;
+}
