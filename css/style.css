@@ -6,9 +6,13 @@
   white-space: nowrap;
 }
 
-.lax-padded{
+.lux-pad-8 {
   padding-top: 8em;
   padding-bottom: 8em;
+}
+.lux-pad-4 {
+  padding-top: 4em;
+  padding-bottom: 4em;
 }
 
 .popover .popover-content{

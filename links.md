@@ -43,3 +43,4 @@
 - https://loading.io/pattern/
 - https://css-doodle.com/
 - https://svgporn.com/
+- https://popper.js.org/popper-documentation.html
