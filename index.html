@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
+  <!-- tiny slide -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/tiny-slider.css">
+  <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/min/tiny-slider.helper.ie8.js"></script><![endif]-->
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bg.css">
@@ -329,6 +332,33 @@
       </div>
     </div>
   </section>
+  <section class="section">
+    <div class="autoWidth-lazyload" id="autoWidth-lazyload">
+      <div class="item">
+        <img class="tns-lazy-img" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://source.unsplash.com/collection/993239/600x320" width="600" height="320" alt="">
+      </div>
+      <div class="item">
+        <img class="tns-lazy-img" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://source.unsplash.com/collection/1673600/500x300" width="500" height="300" alt="">
+      </div>
+      <div class="item">
+        <img class="tns-lazy-img" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://source.unsplash.com/collection/1513994/200x310" width="200" height="310" alt="">
+      </div>
+      <div class="item">
+        <img class="tns-lazy-img" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://source.unsplash.com/collection/502925/400x330" width="400" height="330" alt="">
+      </div>
+      <div class="item">
+        <img class="tns-lazy-img" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://source.unsplash.com/collection/1891993/640x300" width="640" height="300" alt="">
+      </div>
+      <div class="item">
+        <img class="tns-lazy-img" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://source.unsplash.com/collection/1103088/360x240" width="360" height="240" alt="">
+      </div>
+      <div class="item">
+        <img class="tns-lazy-img" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://source.unsplash.com/collection/548245/460x280" width="460" height="280" alt="">
+      </div>
+    </div>
+    </div>
+    <!-- or ul.my-slider > li -->
+  </section>
 </main>
 <nav class="navbar is-fixed-top" style="box-shadow: 0 0 5px #ccc" role="navigation" aria-label="main navigation">
   <div class="container">
@@ -347,12 +377,29 @@
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 <script src="js/bulma-carousel.min.js"></script>
 <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/min/tiny-slider.js"></script>
 
 
 <script>
   new Vue({
-    el: 'skybeam'
-  })
+    el: '#skybeam'
+  });
+
+  var slider = tns({
+    container:'#autoWidth-lazyload',
+    loop: true,
+    autoWidth: true,
+    items: 3.3,
+    slideBy: 1,
+    gutter: 10,
+    mouseDrag: true,
+    lazyload: true,
+    autoplay: true,
+    speed: 30,
+    arrowKeys: true,
+    nav:  false,
+    controls: false,
+  });
 </script>
 <script>
   bulmaCarousel.attach();
