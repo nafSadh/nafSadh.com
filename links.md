@@ -49,6 +49,7 @@
 - ✔ http://ganlanyuan.github.io/tiny-slider/tests/index.html -- MIT, auto height, width, Autowidth-lazyload 
 - https://github.com/nolimits4web/swiper -- feature heavy 
 - https://tympanus.net/codrops/2011/09/20/responsive-image-gallery/ -- standalone gallery with thumbs example. the thumbs can be used for my purpose. 
+- https://github.com/FabricElements/skeleton-carousel -- noteworthy 
 
 
 ### bookmarks 
