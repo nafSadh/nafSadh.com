@@ -50,6 +50,7 @@
 - https://github.com/nolimits4web/swiper -- feature heavy 
 - https://tympanus.net/codrops/2011/09/20/responsive-image-gallery/ -- standalone gallery with thumbs example. the thumbs can be used for my purpose. 
 - https://github.com/FabricElements/skeleton-carousel -- noteworthy 
+- https://github.com/zoltantothcom/vanilla-js-carousel -- single image 
 
 
 ### bookmarks 
