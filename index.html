@@ -337,10 +337,29 @@
       <div class="columns is-centered">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
           <div class="card bg-white-sky">
-            <div class="card-image">
-              <figure class="image is-16by9">
-                <img src="img/art/bornomala.jpg">
-              </figure>
+            <div class='carousel carousel-animated carousel-animate-slide' data-autoplay='true' data-delay='5000'>
+              <div class='carousel-container'>
+                <div class='carousel-item has-background is-active'>
+                  <img class="is-background is-16by9" src="img/art/minar.jpg" />
+                </div>
+                <div class='carousel-item has-background is-active'>
+                  <img class="is-background is-16by9" src="img/art/nafSadh-art.jpg" />
+                </div>
+                <div class='carousel-item has-background is-active'>
+                  <img class="is-background is-16by9" src="img/art/bornomala.jpg" />
+                </div>
+                <div class='carousel-item has-background is-active'>
+                  <img class="is-background is-16by9" src="img/art/sweet-home.jpg" />
+                </div>
+              </div>
+              <div class="carousel-navigation is-overlay">
+                <div class="carousel-nav-left">
+                  <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+                <div class="carousel-nav-right">
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+              </div>
             </div>
             <div class="card-content has-text-centered">
               <p class="subtitle is-4">view my artworks at</p>
@@ -411,7 +430,7 @@
     autoplayButtonOutput: false
   });*/
 
-  // bulmaCarousel.attach();
+  bulmaCarousel.attach();
 
   tippy.setDefaults({
     arrow: true,
