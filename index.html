@@ -61,7 +61,7 @@
     </div>
   </section>
   <!-- ABOUT -->
-  <section class="section bg-endless-constellation stitch" id="about">
+  <section class="section bg-endless-constellation stitched" id="about">
     <div class="container lux-pad-8">
       <div class="columns is-centered">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters bg-white-sky glass">
@@ -145,7 +145,7 @@
     </div>
   </section>
   <!-- WORDS -->
-  <section class="section stitch bg-diamond-sunset" id="words">
+  <section class="section stitched bg-diamond-sunset" id="words">
     <div class="container lux-pad-4">
       <div class="columns is-centered">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
@@ -332,18 +332,20 @@
       </div>
     </div>
   </section>
-  <section class="section">
-    <div class="autoWidth-lazyload" id="autoWidth-lazyload">
+  <section class="hero stitched tiny-pad-top">
+    <div class="autoWidth-lazyload" id="autoWidth-lazyload" style="height:192px; min-height: 192px; max-height: 192px;">
       <div class="item"> <img class="tns-img" src="img/dt/DSC_1205.JPG" width="280px"> </div>
       <div class="item"> <img class="tns-img" src="img/dt/DSC_1190.JPG" width="280px"> </div>
-      <div class="item"> <img class="tns-img" src="img/dt/00001IMG_00001_BURST20170527093759_COVER.jpg" width="248px"> </div>
-      <div class="item"> <img class="tns-img" src="img/dt/IMG_20170730_203318.jpg" width="248px"> </div>
+      <div class="item"> <img class="tns-img" src="img/dt/00001IMG_00001_BURST20170527093759_COVER.jpg" width="249px"> </div>
+      <div class="item"> <img class="tns-img" src="img/dt/IMG_20170730_203318.jpg" width="249px"> </div>
       <div class="item"> <img class="tns-img" src="img/dt/DSC_1110.JPG" width="280px"> </div>
       <div class="item"> <img class="tns-img" src="img/dt/DSC_1079.JPG" width="280px"> </div>
       <div class="item"> <img class="tns-img" src="img/dt/DSC_1165.JPG" width="280px"> </div>
       <div class="item"> <img class="tns-img" src="img/dt/DSC_1242.JPG" width="280px"> </div>
     </div>
-    <!-- or ul.my-slider > li -->
+  </section>
+  <section class="section stitched">
+
   </section>
 </main>
 <nav class="navbar is-fixed-top" style="box-shadow: 0 0 5px #ccc" role="navigation" aria-label="main navigation">
@@ -375,18 +377,21 @@
     container:'#autoWidth-lazyload',
     loop: true,
     autoWidth: true,
-    items: 3.3,
+    items: 5,
     slideBy: 1.1,
     gutter: 0,
     mouseDrag: true,
     autoplay: true,
-    speed: 30,
+    speed: 1000,
+    autoplayTimeout: 3500,
     arrowKeys: true,
     nav:  false,
     controls: false,
+    autoplayButtonOutput: false
   });
 
-  bulmaCarousel.attach();
+  // bulmaCarousel.attach();
+
   tippy.setDefaults({
     arrow: true,
     arrowType: 'round',

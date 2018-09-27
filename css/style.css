@@ -23,10 +23,13 @@ hr.half-extended {
   margin-left: -50%; margin-right: 65%;
 }
 
-.stitch {
+.stitched {
   border-top: white 1px dashed;
 }
 
+.tiny-pad-top {
+  padding-top: 1em;
+}
 
 /* If `animateFill: true` (default) */
 .tippy-tooltip.skybee-theme .tippy-backdrop {
