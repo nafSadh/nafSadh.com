@@ -22,6 +22,7 @@
 - http://www.vtcreative.fr/en/
 - https://nicolesaidy.com/ *
 - https://www.katherinekato.com/#about
+- https://anthonykrivonos.com/
 
 ### gallery of examples 
 - https://bulma.io/expo/
@@ -45,7 +46,9 @@
 - http://slippry.com/examples/thumbnails/ -jQuery 
 - https://glidejs.com/docs/options/ -- no dependency 
 - https://flickity.metafizzy.co/ -- GPL
-- * http://ganlanyuan.github.io/tiny-slider/tests/index.html -- MIT, auto height, width etc. 
+- ✔ http://ganlanyuan.github.io/tiny-slider/tests/index.html -- MIT, auto height, width, Autowidth-lazyload 
+- https://github.com/nolimits4web/swiper -- feature heavy 
+- https://tympanus.net/codrops/2011/09/20/responsive-image-gallery/ -- standalone gallery with thumbs example. the thumbs can be used for my purpose. 
 
 
 ### bookmarks 
@@ -56,3 +59,4 @@
 - https://css-doodle.com/
 - https://svgporn.com/
 - https://popper.js.org/popper-documentation.html
+- https://github.com/you-dont-need/You-Dont-Need-JavaScript
