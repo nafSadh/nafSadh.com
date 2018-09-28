@@ -33,6 +33,8 @@
   margin-bottom: 0 !important;
 }
 
+.fuse-top { margin-top: 0 !important; padding-top: 0 !important; }
+.fuse-bottom { margin-bottom: 0 !important; padding-bottom: 0 !important; }
 .popover .popover-content{
   max-width: 256px;
 }
