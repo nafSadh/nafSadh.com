@@ -11,11 +11,20 @@
   <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
 
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bg.css">
   <link rel="stylesheet" href="css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="css/bulma-ribbon.min.css">
+  <link rel="stylesheet" href="css/bulma-divider.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!-- tiny slide -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/tiny-slider.css">
+  <!--[if (lt IE 9)]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/min/tiny-slider.helper.ie8.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bg.css">
 
 </head>
 <body class="bg-silver-white has-navbar-fixed-top">
@@ -37,16 +46,16 @@
               <strong>Khan MNM Sadh</strong>
             </h3>
             <br/><br/>
-            <p class="rich-text is-size-5-desktop is-size-6-touch">I study theory and applications of computing sciences
+            <p class="rich-text is-size-5">I study theory and applications of computing sciences
               and work as
-              a <span class="is-size-3-desktop is-size-5-touch nowrap">software engineer</span>.
+              a <span class="is-size-3-desktop is-size-4-touch nowrap">software engineer</span>.
               I also
-              <span class="is-size-4-desktop is-size-6-touch nowrap"><i
-                  class="fas fa-pen-nib fa-xs">&thinsp;</i>write</span>,
-              make <span class="is-size-4-desktop is-size-6-touch nowrap"><i class="fas fa-palette fa-xs">&thinsp;</i>graphic arts</span>,
-              take <span class="is-size-4-desktop is-size-6-touch nowrap"><i
-                  class="fas fa-camera-retro fa-xs">&thinsp;</i>photos</span> and
-              <span class="is-size-3-desktop is-size-5-touch nowrap"><i class="fas fa-laptop-code fa-xs">&thinsp;</i>build things</span>.
+              <span class="is-size-4 nowrap"><i
+                  class="fas fa-pen-nib fa-xs"></i>&thinsp;write</span>,
+              make <span class="is-size-4 nowrap"><i class="fas fa-palette fa-xs"></i>&thinsp;graphic arts</span>,
+              take <span class="is-size-4 nowrap"><i
+                  class="fas fa-camera-retro fa-xs"></i>&thinsp;photos</span> and
+              <span class="is-size-3-desktop is-size-4-touch nowrap"><i class="fas fa-laptop-code fa-xs"></i>&thinsp;build things</span>.
             </p>
             <br/><br/><br/><br/>
           </div>
@@ -55,12 +64,12 @@
     </div>
   </section>
   <!-- ABOUT -->
-  <section class="section bg-endless-constellation stitch" id="about">
+  <section class="section bg-endless-constellation stitched" id="about">
     <div class="container lux-pad-8">
       <div class="columns is-centered">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters bg-white-sky glass">
           <div class="content is-medium has-text-justified">
-            <h1>about</h1>
+            <h1 class="title is-size-2 has-text-weight-light">about</h1>
             <hr class="half-extended bg-silver-light"/>
             <p>
               Born and raised in
@@ -139,14 +148,15 @@
     </div>
   </section>
   <!-- WORDS -->
-  <section class="section stitch " id="words">
+  <section class="section stitched bg-diamond-sunset" id="words">
     <div class="container lux-pad-4">
       <div class="columns is-centered">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
-          <h1 class="title">writings</h1>
-          <hr class="half-extended bg-silver-light"/>
+          <h1 class="title is-size-2 has-text-weight-light">writings</h1>
+          <hr class="half-extended bg-silver glassy"/>
           <!-- ins -->
-          <div class="card bg-white-sky">
+          <div class="card bg-white-sky has-ribbon">
+            <div class="ribbon is-light is-hidden-mobile">blog</div>
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
@@ -157,7 +167,7 @@
                 <div class="media-content">
                   <p class="title is-4">inside the insight</p>
                   <p class="subtitle is-6">
-                    <a href="https://ins.nafSadh.com">https://ins.nafSadh.com</a>
+                    <a href="https://ins.nafSadh.com">ins.nafSadh.com</a>
                   </p>
                 </div>
               </div>
@@ -172,19 +182,49 @@
               </div>
             </div>
           </div>
-          <!-- sadhubochon -->
+          <!-- sulol -->
           <div class="card bg-white-sky">
+            <div class="card-content  has-ribbon">
+              <div class="ribbon is-light is-hidden-mobile">Bengali</div>
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48 ">
+                    <img class="is-rounded" src="img/nafSadh-kite.png">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">সুলল সংগ্রহ
+                    <small class="has-text-weight-light">/Sulol Songroho/</small>
+                  </p>
+                  <p class="subtitle is-6">
+                    <a href="https://sulol.nafSadh.com">sulol.nafSadh.com</a>
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <p>
+                  My Bengali literary works.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- sadhubochon -->
+          <div class="card bg-white-sky has-ribbon">
+            <div class="ribbon is-light is-hidden-mobile">Bengali</div>
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
                   <figure class="image is-48x48">
-                    <img src="img/sadhubochon.png" >
+                    <img src="img/sadhubochon.png">
                   </figure>
                 </div>
                 <div class="media-content">
-                  <p class="title is-4">Sadhubôchôn | সাধুবচন</p>
+                  <p class="title is-4">
+                    সাধুবচন
+                    <small class="has-text-weight-light">/Sadhubôchôn/</small>
+                  </p>
                   <p class="subtitle is-6">
-                    <a href="https://sadhubochon.wordpress.com">https://sadhubochon.wordpress.com</a>
+                    <a href="https://sadhubochon.wordpress.com">sadhubochon.wordpress.com</a>
                   </p>
                 </div>
               </div>
@@ -196,11 +236,239 @@
               </div>
             </div>
           </div>
+          <!-- NOTES -->
+          <div class="card bg-white-sky has-ribbon">
+            <div class="ribbon is-light is-hidden-mobile">notes</div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="img/notes-by-nafsadh.svg">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Notes by nafSadh</p>
+                  <p class="subtitle is-6">
+                    <a href="https://notes.nafSadh.com">notes.nafSadh.com</a>
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <p>
+                  Notes scribed in markdown as living documents; hosted on GitHub.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- LekhaLikhi.com -->
+          <div class="card bg-white-sky has-ribbon">
+            <div class="ribbon is-light is-hidden-mobile">
+              <small>publication</small>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="img/lekhalikhi.png">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">
+                    লেখালিখি
+                    <small class="has-text-weight-light">/lekhalikhi/</small>
+                  </p>
+                  <p class="subtitle is-6">
+                    <a href="http://lekhalikhi.com/nafsadh/">lekhalikhi.com/nafsadh/</a>
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <p>
+                  Lekhalikhi is a Bengali literary community. I am part of its editorial board and publisher.
+                  I am also an author on it.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- writing elsewhere -->
+          <div class="card bg-white-sky ">
+            <header class="card-header">
+              <p class="card-header-title">
+                Elsewhere
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-24x24">
+                    <img src="img/medium.png">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <span class="has-text-weight-semibold">Medium</span> <a href="http://medium.com/@nafsadh"
+                                                                          target="_blank">stories</a>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-24x24">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Wikipedia-logo-v2-no-text.svg">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <span class="has-text-weight-semibold">Wikipedia</span> <a
+                    href="https://en.wikipedia.org/wiki/Special:Contributions/Nafsadh" target="_blank">contributions</a>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-24x24">
+                    <img src="img/quora.svg" style="padding:4px">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <span class="has-text-weight-semibold">Quora</span> <a
+                    href="https://www.quora.com/profile/Khan-Sadh-Mostafa" target="_blank">answers</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- writings.fin -->
         </div>
       </div>
     </div>
   </section>
+  <!-- --------------- -->
+  <!-- ART & Paintings -->
+  <!-- ^^^^^^^^^^^^^^^ -->
+  <section class="section stitched">
+    <div class="container lux-pad-4">
+      <div class="columns is-centered">
+        <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
+          <h1 class="title is-size-2 has-text-weight-light ">art + painting</h1>
+          <hr class="half-extended bg-silver glassy"/>
+          <div class="card bg-white-sky">
+            <div class='carousel carousel-animated carousel-animate-slide' data-autoplay='true' data-delay='5000'>
+              <div class='carousel-container'>
+                <div class='carousel-item has-background is-active'>
+                  <img class="is-background is-16by9" src="img/art/minar.jpg"/>
+                </div>
+                <div class='carousel-item has-background is-active'>
+                  <img class="is-background is-16by9" src="img/art/nafSadh-art.jpg"/>
+                </div>
+                <div class='carousel-item has-background is-active'>
+                  <img class="is-background is-16by9" src="img/art/bornomala.jpg"/>
+                </div>
+                <div class='carousel-item has-background is-active'>
+                  <img class="is-background is-16by9" src="img/art/sweet-home.jpg"/>
+                </div>
+              </div>
+              <div class="carousel-navigation is-overlay">
+                <div class="carousel-nav-left">
+                  <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+                <div class="carousel-nav-right">
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+            <div class="card-content has-text-centered">
+              <p class="subtitle is-4">visit</p>
+              <p class="title is-2 has-text-weight-light">
+                <a class="is-size-2" href="http://nafSadh.art">nafSadh.art</a>
+              </p>
+            </div>
+            <div class="card-content has-text-centered">
+              <div class="is-divider" data-content="also on"></div>
+              <div class="columns is-mobile is-multiline is-centered">
+                <div class="column is-narrow has-text-centered">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/DeviantArt_Logo.svg" width="128px"
+                       style="padding: 8px 0">
+                  <p><a href="https://www.deviantart.com/nafsadh">DeviantArt</a></p>
+                </div>
+                <div class="column is-narrow has-text-centered side-pad-2">
+                  <img src="img/behance-logo.png" width="48px">
+                  <p><a href="https://www.behance.net/nafSadh">Bēhance</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-white-sky">
+            <div class="card-content">
+              <div class="level">
+                <div class="level-left">
+                  <figure class="level-item image is-32x32">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg">
+                  </figure>
+                  <p class="level-item">
+                  <div>Creative Commons and Public Domain releases on&nbsp;<a
+                      href="https://commons.wikimedia.org/w/index.php?title=Special:ListFiles/Nafsadh" target="_blank">Wikimedia
+                    Commons</a></div>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ---------- -->
+  <!-- PHOTOGRAPH -->
+  <!-- ^^^^^^^^^^ -->
+  <section class="stitched bg-silver-light lux-pad-4">
+    <div class="section fuse-bottom">
+      <div class="container">
+        <div class="columns is-centered slight-pad-1">
+          <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
+            <h1 class="title is-size-2 has-text-weight-light ">photographs</h1>
+            <hr class="half-extended bg-silver glassy"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero fuse-top fuse-bottom">
+      <div class="autoWidth-lazyload" id="autoWidth-lazyload"
+           style="height:192px; min-height: 192px; max-height: 192px;">
+        <div class="item"><img class="tns-img" src="img/dt/DSC_1205.JPG" width="280px"></div>
+        <div class="item"><img class="tns-img" src="img/dt/DSC_1190.JPG" width="280px"></div>
+        <div class="item"><img class="tns-img" src="img/dt/00001IMG_00001_BURST20170527093759_COVER.jpg" width="249px">
+        </div>
+        <div class="item"><img class="tns-img" src="img/dt/IMG_20170730_203318.jpg" width="249px"></div>
+        <div class="item"><img class="tns-img" src="img/dt/DSC_1110.JPG" width="280px"></div>
+        <div class="item"><img class="tns-img" src="img/dt/DSC_1079.JPG" width="280px"></div>
+        <div class="item"><img class="tns-img" src="img/dt/DSC_1165.JPG" width="280px"></div>
+        <div class="item"><img class="tns-img" src="img/dt/DSC_1242.JPG" width="280px"></div>
+      </div>
+    </div>
+    <div class="section fuse-top">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
+            <div class="columns is-mobile is-multiline slight-pad-1">
+              <div class="column is-narrow" style="padding-right: 20px">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/240px-Instagram_logo_2016.svg.png"
+                    width="48px">
+                <p>on <a href="https://instagram.com/nafsadh/">Instagram</a></p>
+              </div>
+              <div class="column is-narrow">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Flickr_wordmark.svg" width="112px"
+                     style="padding: 10px 20px 10px 0">
+                <p>on <a href="https://www.flickr.com/photos/sadh/">Flickr</a></p>
+              </div>
+              <div class="column is-narrow">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/500px_logo_2016.svg" width="116px"
+                     style="padding: 16px 20px 8px 0">
+                <p>on <a href="https://500px.com/nafsadh">500px</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 <nav class="navbar is-fixed-top" style="box-shadow: 0 0 5px #ccc" role="navigation" aria-label="main navigation">
   <div class="container">
@@ -219,20 +487,38 @@
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 <script src="js/bulma-carousel.min.js"></script>
 <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/min/tiny-slider.js"></script>
 
 
 <script>
   new Vue({
-    el: 'skybeam'
-  })
-</script>
-<script>
+    el: '#skybeam'
+  });
+
+  tns({
+    container: '#autoWidth-lazyload',
+    loop: true,
+    autoWidth: true,
+    items: 7,
+    slideBy: 1,
+    mouseDrag: true,
+    autoplay: true,
+    speed: 400,
+    autoplayTimeout: 3500,
+    arrowKeys: true,
+    nav: false,
+    controls: false,
+    swipeAngle: false,
+    autoplayButtonOutput: false
+  });
+
   bulmaCarousel.attach();
+
   tippy.setDefaults({
     arrow: true,
     arrowType: 'round',
     duration: 0,
-    theme:'skybee',
+    theme: 'skybee',
     placement: 'left-start'
   })
 </script>
