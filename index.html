@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -474,129 +474,33 @@
   <section class="section stitched">
     <div class="container">
       <div class="columns is-centered">
-        <div class="column is-half glass">
-          <h1 class="title is-size-2 has-text-weight-light has-text-right">
-            work
-          </h1>
-          <hr class="bg-silver glassy"/>
-
-          <div class="card bg-white-sky has-ribbon">
-            <div class="ribbon is-light is-hidden-mobile">
-              <small>publication</small>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="img/lekhalikhi.png">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">
-                    লেখালিখি
-                    <small class="has-text-weight-light">/lekhalikhi/</small>
-                  </p>
-                  <p class="subtitle is-6">
-                    <a href="http://lekhalikhi.com/nafsadh/">lekhalikhi.com/nafsadh/</a>
-                  </p>
-                </div>
-              </div>
-              <div class="content">
-                <p>
-                  Lekhalikhi is a Bengali literary community. I am part of its editorial board and publisher.
-                  I am also an author on it.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card bg-white-sky has-ribbon">
-            <div class="ribbon is-light is-hidden-mobile">
-              <small>publication</small>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="img/lekhalikhi.png">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4">
-                    লেখালিখি
-                    <small class="has-text-weight-light">/lekhalikhi/</small>
-                  </p>
-                  <p class="subtitle is-6">
-                    <a href="http://lekhalikhi.com/nafsadh/">lekhalikhi.com/nafsadh/</a>
-                  </p>
-                </div>
-              </div>
-              <div class="content">
-                <p>
-                  Lekhalikhi is a Bengali literary community. I am part of its editorial board and publisher.
-                  I am also an author on it.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-half glass">
+        <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
           <h1 class="title is-size-2 has-text-weight-light">projects</h1>
-          <hr class="bg-silver glassy"/>
-          <div class="card bg-white-sky has-ribbon">
-            <div class="ribbon is-light is-hidden-mobile">
-              <small>publication</small>
+          <hr class="half-extended bg-silver glassy"/>
+          <div v-for="proj in projects" class="card bg-white-sky has-ribbon">
+            <div class="ribbon is-light">
+              {{proj.period}}
             </div>
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
                   <figure class="image is-48x48">
-                    <img src="img/lekhalikhi.png">
+                    <img :src="proj.icon">
                   </figure>
                 </div>
                 <div class="media-content">
-                  <p class="title is-4">
-                    লেখালিখি
-                    <small class="has-text-weight-light">/lekhalikhi/</small>
-                  </p>
-                  <p class="subtitle is-6">
-                    <a href="http://lekhalikhi.com/nafsadh/">lekhalikhi.com/nafsadh/</a>
-                  </p>
+                  <h3 class="title is-4">
+                    {{ proj.title }}
+                  </h3>
+                  <h4 v-if="proj.subtitle" class="subtitle is-6" v-html="proj.subtitle"></h4>
+                  <div  v-html="proj.description"></div>
                 </div>
-              </div>
-              <div class="content">
-                <p>
-                  Lekhalikhi is a Bengali literary community. I am part of its editorial board and publisher.
-                  I am also an author on it.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card bg-white-sky has-ribbon">
-            <div class="ribbon is-light is-hidden-mobile">
-              <small>publication</small>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="img/lekhalikhi.png">
-                  </figure>
+                <div class="media-right">
+                  <br/>
+                   <a :href="proj.url">
+                     <i class="fas fa-external-link-alt"></i>
+                   </a>
                 </div>
-                <div class="media-content">
-                  <p class="title is-4">
-                    লেখালিখি
-                    <small class="has-text-weight-light">/lekhalikhi/</small>
-                  </p>
-                  <p class="subtitle is-6">
-                    <a href="http://lekhalikhi.com/nafsadh/">lekhalikhi.com/nafsadh/</a>
-                  </p>
-                </div>
-              </div>
-              <div class="content">
-                <p>
-                  Lekhalikhi is a Bengali literary community. I am part of its editorial board and publisher.
-                  I am also an author on it.
-                </p>
               </div>
             </div>
           </div>
@@ -620,14 +524,63 @@
 
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/vue-truncate-collapsed"></script>
+
 <script src="js/bulma-carousel.min.js"></script>
 <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/min/tiny-slider.js"></script>
 
 
 <script>
+  var projects = [
+    {
+      "period": "Mar 2017 - ",
+      "span": "mid",
+      "type": "pet",
+      "org": "Liby.cat",
+      "title": "Liby.cat",
+      "subtitle": "<i>catalog</i> your library",
+      "url":"http://dev.liby.cat/",
+      "description": "Liby the cat, lives in your library, keeps a catalog",
+      "icon":"img/liby.cat.svg",
+      "tech": ["Node JS", "Angular JS", "LoopBack", "MongoDB"]
+    },
+    {
+      "period": "Oct 2015 - ",
+      "span": "long",
+      "type": "job",
+      "org": "TCI",
+      "title": "Decision Lender 4",
+      "subtitle": "Loan Origination Software Solution",
+      "url":"https://tcicredit.com/editions/",
+      "description":
+        "Decision Lender 4 is the flagship SaaS product offered by [TCI](https://tcicredit.com).  This is a Loan Origination Software (LOS) solution for US lenders, banks and credit unions.  It is end to end configurable, capable of meeting different client needs and can cater to vehicle lending (cars, boats, RVs), retail, personal finance and accounts opening.  For the lifecycle of loan origin process it can pull and analyze credit reports, make automated decisions and interact with different third party systems. <br/><br/> Areas I focus on include collaterals, vehicle valuation services, ACH payment process, reporting framework etc."
+      ,
+      "tech": ["Java", "MS SQL", "Angular JS"]
+    },
+    {
+      "title": "Decision Lender 3.5",
+      "description":
+        "Decision Lender 3.5 is a now legacy LOS solution that TCI used to offer and now maintains for legacy clients <br/> I was responsible for adding and enhancing feature required to on-board clients.",
+      "url":"https://www.decisionlender.com/DecisionLender35/includes/support/DL35Dealer.pdf",
+      "tech": ["Java", "MS SQL"],
+      "span": "long",
+      "type": "job",
+      "org": "TCI",
+      "period": "Feb-Oct 2015"
+    }
+  ];
+
+</script>
+<script>
   new Vue({
-    el: '#skybeam'
+    el: '#skybeam',
+    data: {
+      projects: projects
+    },
+    components: {
+    }
   });
 
   tns({
