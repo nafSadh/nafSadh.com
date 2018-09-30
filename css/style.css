@@ -15,6 +15,10 @@
   padding-bottom: 4em;
 }
 
+.slight-pad-0 {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
 .slight-pad-1 {
   padding-top: 1em;
   padding-bottom: 1em;

@@ -477,10 +477,7 @@
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
           <h1 class="title is-size-2 has-text-weight-light">projects</h1>
           <hr class="half-extended bg-silver glassy"/>
-          <div v-for="proj in projects" class="card bg-white-sky has-ribbon">
-            <div class="ribbon is-light">
-              {{proj.period}}
-            </div>
+          <div v-for="proj in projects" class="card bg-white-sky">
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
@@ -489,17 +486,30 @@
                   </figure>
                 </div>
                 <div class="media-content">
-                  <h3 class="title is-4">
+                  <h3 class="title is-4 fuse-bottom">
                     {{ proj.title }}
                   </h3>
-                  <h4 v-if="proj.subtitle" class="subtitle is-6" v-html="proj.subtitle"></h4>
+                  <h4 v-if="proj.subtitle" class="subtitle is-6 fuse-bottom fuse-top" v-html="proj.subtitle"></h4>
+                  <div class="is-6 slight-pad-0" style="color:#345;">
+                    <span>
+                      <i class="far fa-calendar-alt"></i> {{proj.period}}
+                    </span>
+                    <span>
+
+                    </span>
+                  </div>
                   <div  v-html="proj.description"></div>
                 </div>
                 <div class="media-right">
-                  <br/>
-                   <a :href="proj.url">
-                     <i class="fas fa-external-link-alt"></i>
+                  <i v-if="proj.nolink" class="fab fa-black-tie"></i>
+                  <a v-if="proj.url" :href="proj.url" target="_blank">
+                    <i class="fas fa-link"></i>
+                    <br/>
                    </a>
+                  <a v-if="proj.gh" :href="proj.gh" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <br/>
+                  </a>
                 </div>
               </div>
             </div>
@@ -542,6 +552,7 @@
       "title": "Liby.cat",
       "subtitle": "<i>catalog</i> your library",
       "url":"http://dev.liby.cat/",
+      "gh": "https://github.com/liby-cat/liby-cat",
       "description": "Liby the cat, lives in your library, keeps a catalog",
       "icon":"img/liby.cat.svg",
       "tech": ["Node JS", "Angular JS", "LoopBack", "MongoDB"]
@@ -554,8 +565,8 @@
       "title": "Decision Lender 4",
       "subtitle": "Loan Origination Software Solution",
       "url":"https://tcicredit.com/editions/",
-      "description":
-        "Decision Lender 4 is the flagship SaaS product offered by [TCI](https://tcicredit.com).  This is a Loan Origination Software (LOS) solution for US lenders, banks and credit unions.  It is end to end configurable, capable of meeting different client needs and can cater to vehicle lending (cars, boats, RVs), retail, personal finance and accounts opening.  For the lifecycle of loan origin process it can pull and analyze credit reports, make automated decisions and interact with different third party systems. <br/><br/> Areas I focus on include collaterals, vehicle valuation services, ACH payment process, reporting framework etc."
+      "description": "End to end configurable SaaS catering to lenders for originating (receiving apps, automated decisioning and funding) vehicle, retail and personal finance products. Areas I focus on include collaterals, vehicle valuation services, ACH payment process, reporting framework etc.",
+      "long_description": "Decision Lender 4 is the flagship SaaS product offered by [TCI](https://tcicredit.com).  This is a Loan Origination Software (LOS) solution for US lenders, banks and credit unions.  It is end to end configurable, capable of meeting different client needs and can cater to vehicle lending (cars, boats, RVs), retail, personal finance and accounts opening.  For the lifecycle of loan origin process it can pull and analyze credit reports, make automated decisions and interact with different third party systems. <br/><br/> Areas I focus on include collaterals, vehicle valuation services, ACH payment process, reporting framework etc."
       ,
       "tech": ["Java", "MS SQL", "Angular JS"]
     },
@@ -569,6 +580,17 @@
       "type": "job",
       "org": "TCI",
       "period": "Feb-Oct 2015"
+    },
+    {
+      "title": "SoC verification platform",
+      "description": "Platform for verifying camera and image processing SoC design. " +
+          "Designed a host-target interaction protocol, chalked architecture for the platform (Linux on ARM) and developed a dynamic GUI for verification control from host computer.",
+      "tech": ["Java", "MS SQL"],
+      "nolink": true,
+      "span": "long",
+      "type": "job",
+      "org": "Samsung ",
+      "period": "Jan 2012-Aug 2013"
     }
   ];
 
