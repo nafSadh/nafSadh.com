@@ -24,10 +24,8 @@
   padding-bottom: 1em;
 }
 
-.side-pad-2{
-  padding-left: 2em;
-  padding-right: 2em;
-}
+.side-pad-1{ padding-left: 1em; padding-right: 1em; }
+.side-pad-2{ padding-left: 2em; padding-right: 2em; }
 
 .no-margin-top{
   margin-top: 0;
@@ -51,6 +49,13 @@ hr.half-extended {
   border-top: white 1px dashed;
 }
 
+figure.is-centered{
+  text-align: center;
+}
+figure.is-centered img{
+  vertical-align: middle;
+  display: inline-block;
+}
 .tiny-pad-top {
   padding-top: 1em;
 }
@@ -73,3 +78,6 @@ hr.half-extended {
 .tippy-tooltip.skybee-theme .tippy-roundarrow {
   fill: #fff;
 }
+
+/** colors **/
+.fg-silver { color: #789;}
