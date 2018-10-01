@@ -151,7 +151,7 @@
   <section class="section stitched bg-diamond-sunset" id="words">
     <div class="container lux-pad-4">
       <div class="columns is-centered">
-        <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
+        <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters is-paddingless glass">
           <h1 class="title is-size-2 has-text-weight-light">writings</h1>
           <hr class="half-extended bg-silver glassy"/>
           <!-- ins -->
@@ -344,7 +344,7 @@
   <section class="section stitched">
     <div class="container lux-pad-4">
       <div class="columns is-centered">
-        <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
+        <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters is-paddingless glass">
           <h1 class="title is-size-2 has-text-weight-light ">art + painting</h1>
           <hr class="half-extended bg-silver glassy"/>
           <div class="card bg-white-sky">
@@ -420,7 +420,7 @@
     <div class="section fuse-bottom">
       <div class="container">
         <div class="columns is-centered slight-pad-1">
-          <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
+          <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters is-paddingless glass">
             <h1 class="title is-size-2 has-text-weight-light ">photographs</h1>
             <hr class="half-extended bg-silver glassy"/>
           </div>
@@ -444,7 +444,7 @@
     <div class="section fuse-top">
       <div class="container">
         <div class="columns is-centered">
-          <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
+          <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters is-paddingless glass">
             <div class="columns is-mobile is-multiline slight-pad-1">
               <div class="column is-narrow" style="padding-right: 20px">
                 <img
@@ -474,12 +474,12 @@
   <section class="section stitched">
     <div class="container">
       <div class="columns is-centered">
-        <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters glass">
+        <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters is-paddingless glass">
           <h1 class="title is-size-2 has-text-weight-light">projects</h1>
           <hr class="half-extended bg-silver glassy"/>
           <div v-for="proj in projects" class="card bg-white-sky">
             <div class="card-content">
-              <div class="media">
+              <div class="media fuse-bottom">
                 <div class="media-left">
                   <figure class="image is-48x48 is-centered" >
                     <img :src="proj.icon">
@@ -491,13 +491,12 @@
                   </h3>
                   <h4 v-if="proj.subtitle" class="subtitle is-6 fuse-bottom fuse-top" v-html="proj.subtitle"></h4>
                   <div class="is-6 slight-pad-0" style="color:#345;">
-                    <span><i class="far fa-calendar-alt fg-silver"></i> {{proj.period}}</span>
-                    <span v-if="proj.org_work" class="is-small side-pad-1"><i class="fas fa-briefcase fg-silver"></i> {{proj.org_work}}</span>
-                    <span v-if="proj.org_open" class="is-small side-pad-1"><i class="fas fa-door-open fg-silver"></i> {{proj.org_open}}</span>
+                    <span class="is-block-mobile right-pad-1"><i class="far fa-calendar-alt fg-silver"></i> {{proj.period}}</span>
+                    <span v-if="proj.org_work" class="is-small"><i class="fas fa-briefcase fg-silver"></i> {{proj.org_work}}</span>
+                    <span v-if="proj.org_open" class="is-small"><i class="fas fa-door-open fg-silver"></i> {{proj.org_open}}</span>
                   </div>
-                  <div  v-html="proj.description" class="has-text-justified"></div>
                 </div>
-                <div class="media-right">
+                <div class="media-right is-hidden-mobile">
                   <i v-if="proj.nolink" class="fab fa-black-tie"></i>
                   <a v-if="proj.url" :href="proj.url" target="_blank">
                     <i class="fas fa-link"></i>
@@ -507,6 +506,14 @@
                     <i class="fab fa-github"></i>
                     <br/>
                   </a>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column-narrow is-hidden-mobile">
+                  <figure class="image is-48x48 right-gap-1" ></figure>
+                </div>
+                <div class="column">
+                  <div v-html="proj.description" class="has-text-justified"></div>
                 </div>
               </div>
             </div>

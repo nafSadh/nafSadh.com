@@ -24,6 +24,8 @@
   padding-bottom: 1em;
 }
 
+.right-gap-1 { margin-left: 1em; }
+.right-pad-1{ padding-right: 1em; }
 .side-pad-1{ padding-left: 1em; padding-right: 1em; }
 .side-pad-2{ padding-left: 2em; padding-right: 2em; }
 
