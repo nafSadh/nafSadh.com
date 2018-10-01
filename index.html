@@ -496,7 +496,7 @@
                   <figure class="image is-48x48 is-centered" v-if="proj.span!='tiny'">
                     <img :src="proj.icon">
                   </figure>
-                  <figure class="image is-24x24" v-if="proj.span=='tiny'" style="margin: 4px 4px 0 20px;">
+                  <figure class="image is-32x32" v-if="proj.span=='tiny'" style="margin: 8px;">
                     <img :src="proj.icon">
                   </figure>
                 </div>
@@ -505,10 +505,10 @@
                     {{ proj.title }}
                   </h3>
                   <h4 v-if="proj.subtitle" class="subtitle is-6 fuse-bottom fuse-top" v-html="proj.subtitle"></h4>
-                  <div class="is-6 slight-pad-0" style="color:#345;" v-if="proj.span!='tiny'">
-                    <span class="is-inline-block-mobile right-pad-1"><i class="far fa-calendar-alt fg-silver"></i> {{proj.period}}</span>
-                    <span v-if="proj.org_work" class="is-inline-block-mobile is-small"><i class="fas fa-briefcase fg-silver"></i> {{proj.org_work}}</span>
-                    <span v-if="proj.org_open" class="is-inline-block-mobile is-small"><i class="fas fa-door-open fg-silver"></i> {{proj.org_open}}</span>
+                  <div class="is-6 slight-pad-top-0">
+                    <small class="tag is-light"><i class="far fa-calendar-alt fg-silver"></i>&nbsp;{{proj.period}}</small>
+                    <small v-if="proj.org_work" class="tag is-light"><i class="fas fa-briefcase fg-silver"></i>&nbsp;{{proj.org_work}}</small>
+                    <small v-if="proj.org_open" class="tag is-light"><i class="fas fa-door-open fg-silver"></i>&nbsp;{{proj.org_open}}</small>
                   </div>
                 </div>
                 <div class="media-right">
@@ -527,7 +527,7 @@
                   <figure class="image is-48x48 right-gap-1" ></figure>
                 </div>
                 <div class="column">
-                  <div v-html="proj.description" class="has-text-justified"></div>
+                  <div v-html="proj.description" class="has-text-justified fg-ink"></div>
                 </div>
               </div>
             </div>
@@ -571,6 +571,16 @@
       "url":"https://lang-lang.github.io/lang-lang/",
       "gh": "https://github.com/lang-lang/lang-lang",
       "icon":"img/lang-lang.svg",
+    },
+    {
+      "period": "2018",
+      "span": "tiny",
+      "type": "pet",
+      "title": "hello-lang",
+      "subtitle": "Hello World! in different languages",
+      "url":"https://github.com/hello-lang",
+      "gh": "https://github.com/hello-lang",
+      "icon":"img/hello-lang-2.svg",
     },
     {
       "period": "2018",
