@@ -505,7 +505,7 @@
                     {{ proj.title }}
                   </h3>
                   <h4 v-if="proj.subtitle" class="subtitle is-6 fuse-bottom fuse-top" v-html="proj.subtitle"></h4>
-                  <div class="is-6 slight-pad-top-0">
+                  <div class="is-6 slight-pad-top-0" v-if="proj.span!='tiny'">
                     <small class="tag is-light"><i class="far fa-calendar-alt fg-silver"></i>&nbsp;{{proj.period}}</small>
                     <small v-if="proj.org_work" class="tag is-light"><i class="fas fa-briefcase fg-silver"></i>&nbsp;{{proj.org_work}}</small>
                     <small v-if="proj.org_open" class="tag is-light"><i class="fas fa-door-open fg-silver"></i>&nbsp;{{proj.org_open}}</small>
