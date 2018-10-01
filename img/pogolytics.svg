@@ -5,13 +5,14 @@
     <defs>
 
     <radialGradient id="radialGrad">
-      <stop offset="20%" stop-color="#0c7"/>
-      <stop offset="97%" stop-color="#07c"/>
+      <stop offset="10%" stop-color="#17afee"/>
+      <stop offset="65%" stop-color="#f1f7ff"/>
+      <stop offset="90%" stop-color="#eee"/>
     </radialGradient>
     </defs>
-    <circle cx="128" cy="128" r="120" fill="#17afee"/>
-    <circle cx="128" cy="128" r="108" fill="url(#radialGrad)"/>
-    <rect x="8" y="112" width="240" height="32" rx="32" ry="16" fill="#17afee"/>
-    <circle cx="128" cy="128" r="40" fill="white"/>
-    <circle cx="128" cy="128" r="32" fill="#eee"/>
+    <circle cx="128" cy="128" r="120" fill="#369"/>
+    <circle cx="128" cy="128" r="100" fill="url(#radialGrad)"/>
+    <circle cx="128" cy="128" r="44" fill="#369"/>
+    <rect x="16" y="112" width="224" height="32" rx="32" ry="16" fill="#bcd"/>
+    <circle cx="128" cy="128" r="32" fill="#f8f8f8"/>
 </svg>
