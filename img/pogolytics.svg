@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
+    <defs>
+
+    <radialGradient id="radialGrad">
+      <stop offset="20%" stop-color="#0c7"/>
+      <stop offset="97%" stop-color="#07c"/>
+    </radialGradient>
+    </defs>
+    <circle cx="128" cy="128" r="120" fill="#17afee"/>
+    <circle cx="128" cy="128" r="108" fill="url(#radialGrad)"/>
+    <rect x="8" y="112" width="240" height="32" rx="32" ry="16" fill="#17afee"/>
+    <circle cx="128" cy="128" r="40" fill="white"/>
+    <circle cx="128" cy="128" r="32" fill="#eee"/>
+</svg>
