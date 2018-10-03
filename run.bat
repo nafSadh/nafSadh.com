@@ -1,1 +1,1 @@
-http-server -p 8008
+http-server -p 1010
