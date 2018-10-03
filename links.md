@@ -6,6 +6,9 @@
 - https://atomiks.github.io/tippyjs/
 
 
+### can be used
+- https://www.npmjs.com/package/vue-read-more
+
 ### not using
 - https://www.npmjs.com/package/bulma-popover
 
@@ -36,6 +39,7 @@
 - https://philiprogers.com/svgpatterns/
 - http://buseca.github.io/patternbolt/
 - http://dragdropsite.github.io/waterpipe.js/ -- generate animated bg
+- https://clusterize.js.org/
 
 ### slider/carousel 
 - http://kenwheeler.github.io/slick/ -- need something non jQuery
@@ -64,3 +68,4 @@
 - https://popper.js.org/popper-documentation.html
 - https://github.com/you-dont-need/You-Dont-Need-JavaScript
 - http://rectangleworld.com/blog/archives/413 ** this is wonderful, html canvas art with math
+- https://ptsjs.org/ -- canvas points anim
