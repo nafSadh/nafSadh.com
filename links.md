@@ -33,6 +33,7 @@
 
 
 ### tools 
+- nuxtjs.org
 - https://www.heropatterns.com/
 - https://www.svgbackgrounds.com/
 - http://thepatternlibrary.com/
