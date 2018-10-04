@@ -1,0 +1,21 @@
+{
+  "name": "nafsadh-skybeam",
+  "version": "1.0.0",
+  "description": "NafSadh&#39;s personal webpage",
+  "author": "nafSadh-khan",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0",
+    "nuxt-buefy": "^0.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
