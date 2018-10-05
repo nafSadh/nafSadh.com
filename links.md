@@ -3,7 +3,7 @@
 ### using 
 - https://www.svgbackgrounds.com/#endless-constellation
 - https://www.heropatterns.com/
-- https://atomiks.github.io/tippyjs/
+- https://atomiks.github.io/tippyjs/ via https://github.com/egoist/v-tippy
 
 
 ### can be used
