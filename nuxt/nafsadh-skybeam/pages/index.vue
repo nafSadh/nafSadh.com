@@ -2,16 +2,18 @@
   <main>
     <ns7/>
     <about/>
+    <projects/>
   </main>
 </template>
 
 <script>
-import ns7 from '~/pages/ns/index.vue';
-import about from '~/pages/ns/about.vue';
+import ns7 from './ns/index.vue';
+import about from './ns/about.vue';
+import Projects from './ns/projects';
 
 export default {
   name: 'HomePage',
-  components: { ns7, about },
+  components: { Projects, ns7, about },
   data() {
     return {};
   }
