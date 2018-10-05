@@ -10,7 +10,7 @@
         <div class="navbar-brand ">
           <a class="navbar-item is-size-4">
             <img
-              src="img/nafsadh.png"
+              src="~/static/img/nafsadh.png"
               style="padding-right: 4px">
             <span>nafSadh</span>
           </a>
