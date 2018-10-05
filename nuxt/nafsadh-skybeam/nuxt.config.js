@@ -13,7 +13,10 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { src: '@/assets/js/bulma-carousel.min.js' }
+      ]
   },
 
   /*
@@ -27,7 +30,9 @@ module.exports = {
   css: [
     // CSS file in the project
     '@/assets/css/styles.css',
-    '@/assets/css/bg.css'
+    '@/assets/css/bg.css',
+    'bulma-carousel/dist/css/bulma-carousel.min.css',
+    { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
   ],
 
   /*
@@ -41,7 +46,6 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    ,
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy'
   ],
