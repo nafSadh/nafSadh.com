@@ -18,8 +18,11 @@ module.exports = {
       { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
         integrity:'sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU',
         crossorigin:'anonymous' },
-      { src: '@/assets/js/bulma-carousel.min.js' }
-      ]
+      ],
+    script:[
+      // { src: '@/assets/js/bulma-carousel.min.js' }
+      // { src: 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/min/tiny-slider.js' }
+    ]
   },
 
   /*
@@ -41,6 +44,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {src:'~/plugins/tiny-slider.js', ssr:false},
     '~/plugins/vue-tippy.js'
   ],
 
