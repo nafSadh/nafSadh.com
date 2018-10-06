@@ -15,6 +15,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href:'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.3.5/tiny-slider.css'},
       { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
         integrity:'sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU',
         crossorigin:'anonymous' },
@@ -44,7 +45,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src:'~/plugins/tiny-slider.js', ssr:false},
+    {src:'~/plugins/v-tiny-slider.js', ssr:false},
     '~/plugins/vue-tippy.js'
   ],
 
@@ -63,7 +64,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    vendor: ['vue-tiny-slider'],
+    vendor: ['tiny-slider'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
