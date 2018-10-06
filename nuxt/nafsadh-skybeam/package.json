@@ -8,17 +8,15 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "bulma-carousel": "^3.0.0",
     "cross-env": "^5.2.0",
-    "font-awesome": "^4.7.0",
     "nuxt": "^2.1.0",
     "nuxt-buefy": "^0.2.1",
-    "v-tippy": "^2.0.0"
+    "v-tippy": "^2.0.0",
+    "vue-tiny-slider": "^0.1.28"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
