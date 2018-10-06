@@ -15,6 +15,9 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
+        integrity:'sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU',
+        crossorigin:'anonymous' },
       { src: '@/assets/js/bulma-carousel.min.js' }
       ]
   },
@@ -32,7 +35,6 @@ module.exports = {
     '@/assets/css/styles.css',
     '@/assets/css/bg.css',
     'bulma-carousel/dist/css/bulma-carousel.min.css',
-    { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
   ],
 
   /*
@@ -57,14 +59,15 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    vendor: ['vue-tiny-slider'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          // enforce: 'pre',
+          // test: /\.(js|vue)$/,
+          // loader: 'eslint-loader',
+          // exclude: /(node_modules)/
         });
       }
     }

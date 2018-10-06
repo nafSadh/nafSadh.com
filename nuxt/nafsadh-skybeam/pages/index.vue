@@ -15,7 +15,7 @@ import Projects from './ns/projects';
 
 export default {
   name: 'HomePage',
-  components: { Ns7, About, Projects, Arts },
+  components: { Ns7, About, Arts, Projects },
   data() {
     return {};
   }
