@@ -1,5 +1,16 @@
-import tns from 'tiny-slider';
+// import tns from 'tiny-slider';
+import Vue from 'vue';
+import VueTinySlider from 'vue-tiny-slider';
 
+const TinySlider = {
+  install(Vue, options) {
+    Vue.component('tiny-slider', VueTinySlider)
+  }
+};
+Vue.use(TinySlider);
+export default TinySlider;
+
+/*
 tns({
   container: '#autoWidth-lazyload',
   loop: true,
@@ -19,3 +30,4 @@ tns({
   autoplayResetOnVisibility: false
 });
 
+*/

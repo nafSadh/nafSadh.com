@@ -61,8 +61,11 @@
   </section>
 </template>
 <script>
+  if (process.browser) {
+    require('tiny-slider')
+  }
   export default {
     mounted: function() {
-    }
+    },
   };
 </script>
