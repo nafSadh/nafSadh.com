@@ -19,22 +19,22 @@
                 <div class="carousel-item has-background is-active">
                   <img 
                     class="is-background is-16by9" 
-                    src="img/art/minar.jpg">
+                    src="~/static/img/art/minar.jpg">
                 </div>
                 <div class="carousel-item has-background is-active">
                   <img 
                     class="is-background is-16by9" 
-                    src="img/art/nafSadh-art.jpg">
+                    src="~/static/img/art/nafSadh-art.jpg">
                 </div>
                 <div class="carousel-item has-background is-active">
                   <img 
                     class="is-background is-16by9" 
-                    src="img/art/bornomala.jpg">
+                    src="~/static/img/art/bornomala.jpg">
                 </div>
                 <div class="carousel-item has-background is-active">
                   <img 
                     class="is-background is-16by9" 
-                    src="img/art/sweet-home.jpg">
+                    src="~/static/img/art/sweet-home.jpg">
                 </div>
               </div>
               <div class="carousel-navigation is-overlay">

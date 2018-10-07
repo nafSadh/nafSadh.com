@@ -16,30 +16,35 @@
                    :items="7"
                    :loop="true"
                    :auto-width="true"
-                   :slide-by="page"
+                   :slide-by="1"
                    :mouse-drag="true"
                    :autoplay="true"
                    :speed="400"
                    :autoplay-timeout="2000"
+                   :arrow-keys="true"
+                   :nav="false"
+                   :controls="false"
+                   :autoplay-button-output="false"
+                   :autoplay-reset-on-visibility="false"
                    class="autoWidth"
       >
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(3).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(1).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(2).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(8).jpg" width="360"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(9).jpg" width="360"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(12).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(4).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(15).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(20).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(7).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(5).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(13).jpg" width="178"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(14).jpg" width="180"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(16).jpg" width="320"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(21).jpg" width="180"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(22).jpg" width="360"></div>
-        <div class="item"><img class="xtns-img" src="img/photos/img%20(23).jpg" width="180"></div>
+        <div class="item"><img class="tns-img" src="img/photos/princeton-lib-wall.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/color-lamps.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/red_house.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/leaf-macro.jpg" width="360"></div>
+        <div class="item"><img class="tns-img" src="img/photos/dandelion.jpg" width="360"></div>
+        <div class="item"><img class="tns-img" src="img/photos/tulip-central.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/sky-reflect.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/empire-state-building-fog.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/shrimp-dish.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/hudson-sunset.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/an-american-highway.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/brooklyn-pub-lib.jpg" width="178"></div>
+        <div class="item"><img class="tns-img" src="img/photos/manhattan-sunset.jpg" width="180"></div>
+        <div class="item"><img class="tns-img" src="img/photos/coffee-cup.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="img/photos/grand-central-chandelier.jpg" width="180"></div>
+        <div class="item"><img class="tns-img" src="img/photos/snow-grid.jpg" width="360"></div>
+        <div class="item"><img class="tns-img" src="img/photos/sliver-of-a-river.jpg" width="180"></div>
       </tiny-slider>
     </div>
     <div class="section fuse-top">
@@ -56,7 +61,7 @@
               <div class="column is-narrow">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Flickr_wordmark.svg" width="72px"
                      style="padding: 12px 0 2px 0">
-                <p><a href="https://www.flickr.com/photos/sadh/">Flickr</a></p>
+                <p><a href="https://www.flickr.com/photos/sadh/photo.vue">Flickr</a></p>
               </div>
               <div class="column is-narrow">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/500px_logo_2016.svg" width="68px"
