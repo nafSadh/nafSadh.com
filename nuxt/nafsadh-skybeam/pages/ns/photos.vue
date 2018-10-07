@@ -11,26 +11,36 @@
       </div>
     </div>
     <div class="hero fuse-top fuse-bottom">
-      <div class="autoWidth-lazyload" id="autoWidth-lazyload"
-           style="height:240px; min-height: 240px; max-height: 240px;">
-        <div class="item"><img class="tns-img" src="img/photos/img%20(3).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(1).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(2).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(8).jpg" width="360"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(9).jpg" width="360"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(12).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(4).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(15).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(20).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(7).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(5).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(13).jpg" width="178"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(14).jpg" width="180"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(16).jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(21).jpg" width="180"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(22).jpg" width="360"></div>
-        <div class="item"><img class="tns-img" src="img/photos/img%20(23).jpg" width="180"></div>
-      </div>
+      <tiny-slider style="height:240px; min-height: 240px; max-height: 240px;"
+                   :auto-init="true"
+                   :items="7"
+                   :loop="true"
+                   :auto-width="true"
+                   :slide-by="page"
+                   :mouse-drag="true"
+                   :autoplay="true"
+                   :speed="400"
+                   :autoplay-timeout="2000"
+                   class="autoWidth"
+      >
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(3).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(1).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(2).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(8).jpg" width="360"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(9).jpg" width="360"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(12).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(4).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(15).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(20).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(7).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(5).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(13).jpg" width="178"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(14).jpg" width="180"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(16).jpg" width="320"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(21).jpg" width="180"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(22).jpg" width="360"></div>
+        <div class="item"><img class="xtns-img" src="img/photos/img%20(23).jpg" width="180"></div>
+      </tiny-slider>
     </div>
     <div class="section fuse-top">
       <div class="container">
@@ -61,9 +71,6 @@
   </section>
 </template>
 <script>
-  if (process.browser) {
-    require('tiny-slider')
-  }
   export default {
     mounted: function() {
     },
