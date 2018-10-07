@@ -12,6 +12,7 @@ install:
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
+  app: skybeam
   run:
     - cd src/nuxt
     - npx nuxt start
