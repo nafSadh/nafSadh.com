@@ -1,0 +1,17 @@
+before_install:
+  - cd src/nuxt
+
+language: node_js
+node_js:
+  - "8"
+
+install:
+  - npm install
+  - npm run generate
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  run:
+    - cd src/nuxt
+    - npx nuxt start
