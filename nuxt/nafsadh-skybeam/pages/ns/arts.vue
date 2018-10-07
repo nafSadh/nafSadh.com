@@ -11,7 +11,7 @@
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters is-paddingless glass fuse-top">
           <div class="card bg-white-sky">
             <div
-              id="bulmaCarousel"
+              id="artCarousel"
               class="carousel carousel-animated carousel-animate-slide" 
               data-autoplay="true" 
               data-delay="5000">
@@ -105,7 +105,7 @@
 import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js';
 export default {
   mounted: function() {
-    new bulmaCarousel(document.getElementById('bulmaCarousel'));
+    new bulmaCarousel(document.getElementById('artCarousel'));
   }
 };
 </script>

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bulma-carousel": "^3.0.0",
+    "bulma-ribbon": "^0.1.1",
     "cross-env": "^5.2.0",
     "nuxt": "^2.1.0",
     "nuxt-buefy": "^0.2.1",

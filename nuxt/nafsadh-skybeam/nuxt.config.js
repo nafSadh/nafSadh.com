@@ -39,6 +39,7 @@ module.exports = {
     '@/assets/css/styles.css',
     '@/assets/css/bg.css',
     'bulma-carousel/dist/css/bulma-carousel.min.css',
+    'bulma-ribbon/dist/css/bulma-ribbon.min.css',
   ],
 
   /*
