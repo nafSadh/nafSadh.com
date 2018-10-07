@@ -12,7 +12,7 @@
 import Ns7 from './ns/index';
 import About from './ns/about';
 import Arts from './ns/arts';
-import Photos from './ns/photos';
+import Photos from './ns/photo';
 import Projects from './ns/projects';
 
 export default {

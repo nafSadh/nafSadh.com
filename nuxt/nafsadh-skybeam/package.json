@@ -16,8 +16,7 @@
     "nuxt": "^2.1.0",
     "nuxt-buefy": "^0.2.1",
     "tiny-slider": "^2.8.7",
-    "v-tippy": "^2.0.0",
-    "vue-tiny-slider": "^0.1.28"
+    "v-tippy": "^2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
