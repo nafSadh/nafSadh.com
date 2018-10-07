@@ -15,3 +15,5 @@ deploy:
   run:
     - cd src/nuxt
     - npx nuxt start
+  on:
+    branch: skybeam
