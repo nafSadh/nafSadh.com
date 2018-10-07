@@ -22,12 +22,10 @@
             and work as
             a <span class="is-size-3-desktop is-size-4-touch nowrap">software engineer</span>.
             I also
-              <span class="is-size-4 nowrap"><i
-              class="fas fa-pen-nib fa-xs"/>&thinsp;write</span>,
+              <span class="is-size-4 nowrap"><i class="fas fa-pen-nib fa-xs"/>&thinsp;write</span>,
               make <span class="is-size-4 nowrap"><i class="fas fa-palette fa-xs"/>&thinsp;graphic arts</span>,
-              take <span class="is-size-4 nowrap"><i
-              class="fas fa-camera-retro fa-xs"/>&thinsp;photos</span> and
-              <span class="is-size-3-desktop is-size-4-touch nowrap"><i class="fas fa-laptop-code fa-xs"/>&thinsp;build things</span>.
+              take <span class="is-size-4 nowrap"><i class="fas fa-camera-retro fa-xs"/>&thinsp;photos</span> and
+              <span class="is-size-4 nowrap"><i class="fas fa-laptop-code fa-xs"/>&thinsp;build things</span>.
             </p>
             <br><br><br><br>
           </div>

@@ -28,23 +28,23 @@
                    :autoplay-reset-on-visibility="false"
                    class="autoWidth"
       >
-        <div class="item"><img class="tns-img" src="img/photos/princeton-lib-wall.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/color-lamps.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/red_house.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/leaf-macro.jpg" width="360"></div>
-        <div class="item"><img class="tns-img" src="img/photos/dandelion.jpg" width="360"></div>
-        <div class="item"><img class="tns-img" src="img/photos/tulip-central.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/sky-reflect.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/empire-state-building-fog.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/shrimp-dish.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/hudson-sunset.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/an-american-highway.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/brooklyn-pub-lib.jpg" width="178"></div>
-        <div class="item"><img class="tns-img" src="img/photos/manhattan-sunset.jpg" width="180"></div>
-        <div class="item"><img class="tns-img" src="img/photos/coffee-cup.jpg" width="320"></div>
-        <div class="item"><img class="tns-img" src="img/photos/grand-central-chandelier.jpg" width="180"></div>
-        <div class="item"><img class="tns-img" src="img/photos/snow-grid.jpg" width="360"></div>
-        <div class="item"><img class="tns-img" src="img/photos/sliver-of-a-river.jpg" width="180"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/princeton-lib-wall.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/color-lamps.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/red_house.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/leaf-macro.jpg" width="360"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/dandelion.jpg" width="360"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/tulip-central.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/sky-reflect.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/empire-state-building-fog.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/shrimp-dish.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/hudson-sunset.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/an-american-highway.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/brooklyn-pub-lib.jpg" width="178"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/manhattan-sunset.jpg" width="180"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/coffee-cup.jpg" width="320"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/grand-central-chandelier.jpg" width="180"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/snow-grid.jpg" width="360"></div>
+        <div class="item"><img class="tns-img" src="~/static/img/photos/sliver-of-a-river.jpg" width="180"></div>
       </tiny-slider>
     </div>
     <div class="section fuse-top">
