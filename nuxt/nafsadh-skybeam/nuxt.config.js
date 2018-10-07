@@ -15,7 +15,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href:'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.3.5/tiny-slider.css'},
+      { rel: 'stylesheet', href:'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/tiny-slider.css'},
       { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
         integrity:'sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU',
         crossorigin:'anonymous' },
