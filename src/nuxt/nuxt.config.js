@@ -2,6 +2,9 @@ const pkg = require('./package');
 
 module.exports = {
   mode: 'universal',
+  generate:{
+    dir:'../../docs'
+  },
   /*
   ** Headers of the page
   */
