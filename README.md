@@ -3,6 +3,22 @@ nafSadh's homepage
 
 ## deployment
 
+### Simple deployment
+
+#### dev deploy nuxt on heroku
+deployed on heroku at: https://skybeam.herokuapp.com/
+
+set build pack to php.
+
+**trigger build with git push**
+```
+> git subtree push --prefix src/simple heroku master
+```
+
+
+
+### NUXT deployment
+
 #### dev deploy nuxt on heroku
 deployed on heroku at: https://skybeam.herokuapp.com/
 
