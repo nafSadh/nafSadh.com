@@ -24,6 +24,7 @@
                    :arrow-keys="true"
                    :nav="false"
                    :controls="false"
+                   :swipe-angle:="false"
                    :autoplay-button-output="false"
                    :autoplay-reset-on-visibility="false"
                    class="autoWidth"
