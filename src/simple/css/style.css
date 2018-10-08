@@ -1,0 +1,89 @@
+.avatar-border {
+  border:3px solid #17afee;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.lux-pad-8 {
+  padding-top: 8em;
+  padding-bottom: 8em;
+}
+.lux-pad-4 {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.slight-pad-top-0 {
+  padding-top: .5em;
+}
+.slight-pad-0 {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+.slight-pad-1 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.right-gap-1 { margin-left: 1em; }
+.right-pad-1{ padding-right: 1em; }
+.side-pad-1{ padding-left: 1em; padding-right: 1em; }
+.side-pad-2{ padding-left: 2em; padding-right: 2em; }
+
+.no-margin-top{
+  margin-top: 0;
+}
+
+.no-margin-bottom{
+  margin-bottom: 0 !important;
+}
+
+.fuse-top { margin-top: 0 !important; padding-top: 0 !important; }
+.fuse-bottom { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+.popover .popover-content{
+  max-width: 256px;
+}
+
+hr.half-extended {
+  margin-left: -50%; margin-right: 65%;
+}
+
+.stitched {
+  border-top: white 1px dashed;
+}
+
+figure.is-centered{
+  text-align: center;
+}
+figure.is-centered img{
+  vertical-align: middle;
+  display: inline-block;
+}
+.tiny-pad-top {
+  padding-top: 1em;
+}
+
+/* If `animateFill: true` (default) */
+.tippy-tooltip.skybee-theme .tippy-backdrop {
+  background-color: #fff;
+  color: #333;
+  padding: 1em;
+  text-align: left;
+}
+
+/* If `animateFill: false` */
+.tippy-tooltip.skybee-theme {
+  background-color: #fff;
+  padding: 1em;
+  color: #333;
+  text-align: left;
+}
+.tippy-tooltip.skybee-theme .tippy-roundarrow {
+  fill: #fff;
+}
+
+/** colors **/
+.fg-silver { color: #789;}
+.fg-ink{ color: #123;}

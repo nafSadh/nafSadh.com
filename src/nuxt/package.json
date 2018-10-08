@@ -1,0 +1,36 @@
+{
+  "name": "nafsadh-skybeam",
+  "version": "1.0.0",
+  "description": "Khan MNM Sadh's homepage",
+  "author": "nafSadh-khan",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "heroku-postbuild": "npm run build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "bulma-carousel": "^3.0.0",
+    "bulma-ribbon": "^0.1.1",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.1.0",
+    "nuxt-buefy": "^0.2.1",
+    "tiny-slider": "^2.8.7",
+    "v-tippy": "^2.0.0",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.0.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.11.0",
+    "prettier": "1.14.3",
+    "sass-loader": "^7.1.0"
+  }
+}
