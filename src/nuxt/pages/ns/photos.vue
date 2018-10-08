@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="hero fuse-top fuse-bottom">
-      <tiny-slider style="height:240px; min-height: 240px; max-height: 240px;"
+      <div style="height:240px; min-height: 240px; max-height: 240px;"
                    :auto-init="true"
                    :items="7"
                    :loop="true"
@@ -27,7 +27,7 @@
                    :swipe-angle="false"
                    :autoplay-button-output="false"
                    :autoplay-reset-on-visibility="false"
-                   class="autoWidth"
+                   class="photo-reel autoWidth"
       >
         <div class="item"><img class="tns-img" src="~/static/img/photos/princeton-lib-wall.jpg" width="320"></div>
         <div class="item"><img class="tns-img" src="~/static/img/photos/color-lamps.jpg" width="320"></div>
@@ -46,7 +46,7 @@
         <div class="item"><img class="tns-img" src="~/static/img/photos/grand-central-chandelier.jpg" width="180"></div>
         <div class="item"><img class="tns-img" src="~/static/img/photos/snow-grid.jpg" width="360"></div>
         <div class="item"><img class="tns-img" src="~/static/img/photos/sliver-of-a-river.jpg" width="180"></div>
-      </tiny-slider>
+      </div>
     </div>
     <div class="section fuse-top">
       <div class="container">

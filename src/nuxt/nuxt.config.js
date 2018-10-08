@@ -45,7 +45,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src:'~/plugins/v-tiny-slider.js', ssr:false},
+    {src:'~/plugins/v-tiny-slider.js', ssr: false },
     '~/plugins/vue-tippy.js'
   ],
 
@@ -64,6 +64,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    vendor: ['tiny-slider'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {

@@ -1,7 +1,7 @@
 // import tns from 'tiny-slider';
 import Vue from 'vue';
 import { tns } from 'tiny-slider/src/tiny-slider';
-
+/*
 var VueTinySlider = {
   eventsList: [
     'indexChanged',
@@ -293,4 +293,25 @@ const TinySlider = {
   }
 };
 Vue.use(TinySlider);
-export default TinySlider;
+export default TinySlider;*/
+
+Vue.ghost(
+  tns({
+    container: '.photo-reel',
+    loop: true,
+    autoWidth: true,
+    items: 17,
+    slideBy: 1.25,
+    mouseDrag: true,
+    autoplayHoverPause: true,
+    autoplay: true,
+    speed: 400,
+    autoplayTimeout: 2000,
+    arrowKeys: true,
+    nav: false,
+    controls: false,
+    swipeAngle: false,
+    autoplayButtonOutput: false,
+    autoplayResetOnVisibility: false
+  })
+);
