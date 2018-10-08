@@ -2,9 +2,6 @@ const pkg = require('./package');
 
 module.exports = {
   mode: 'universal',
-  generate:{
-    dir:'../../docs'
-  },
   /*
   ** Headers of the page
   */
@@ -67,7 +64,6 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    vendor: ['tiny-slider'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
