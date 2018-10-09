@@ -33,3 +33,9 @@ deployed on heroku at: https://skybeam.herokuapp.com/
 ```
 > git subtree push --prefix src/nuxt heroku master
 ```
+
+
+
+### troubleshooting
+for heroku force push:
+https://stackoverflow.com/questions/13756055/git-subtree-subtree-up-to-date-but-cant-push
