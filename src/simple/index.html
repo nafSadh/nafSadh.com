@@ -30,7 +30,7 @@
 <body class="bg-silver-white has-navbar-fixed-top">
 <main id="skybeam">
   <!-- COVER -->
-  <section class="hero is-fullheight bg-pattern">
+  <section class="hero is-fullheight bg-pattern" id="nafSadh">
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
@@ -148,7 +148,7 @@
     </div>
   </section>
   <!-- WORDS -->
-  <section class="section stitched bg-diamond-sunset" id="words">
+  <section class="section stitched bg-diamond-sunset" id="writings">
     <div class="container lux-pad-4">
       <div class="columns is-centered fuse-bottom">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters is-not-paddingless glass fuse-bottom">
@@ -345,7 +345,7 @@
   <!-- --------------- -->
   <!-- ART & Paintings -->
   <!-- ^^^^^^^^^^^^^^^ -->
-  <section class="section stitched">
+  <section class="section stitched" id="art">
     <div class="container lux-pad-4">
       <div class="columns is-centered fuse-bottom">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters is-not-paddingless glass fuse-bottom">
@@ -423,7 +423,7 @@
   <!-- ---------- -->
   <!-- PHOTOGRAPH -->
   <!-- ^^^^^^^^^^ -->
-  <section class="stitched bg-silver-light lux-pad-4">
+  <section class="stitched bg-silver-light lux-pad-4" id="photos">
     <div class="section fuse-bottom">
       <div class="container">
         <div class="columns is-centered slight-pad-1">
@@ -486,7 +486,7 @@
   <!-- --------------- -->
   <!-- WORK + PROJECTS -->
   <!-- ^^^^^^^^^^^^^^^ -->
-  <section class="section stitched">
+  <section class="section stitched" id="projects">
     <div class="container">
       <div class="columns is-centered fuse-bottom">
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters is-not-paddingless glass fuse-bottom">
@@ -558,8 +558,25 @@
         <img src="../../img/nafsadh.png" style="padding-right: 4px">
         <span>nafSadh</span>
       </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="homepage-main-navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-    <div class="navbar-start">
+    <div class="navbar-menu" id="homepage-main-navbar">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#nafSadh"><i class="fas fa-home"></i></a>
+        <a class="navbar-item" href="#about">about</a>
+        <a class="navbar-item" href="#writings">writings</a>
+        <a class="navbar-item" href="#art">art</a>
+        <a class="navbar-item" href="#photos">photos</a>
+        <a class="navbar-item" href="#projects">projects</a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/nafSadh"><i class="fab fa-github fa-lg"></i></a>
+        <a class="navbar-item" href="https://twitter.com/nafSadh"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
     </div>
   </div>
 </nav>
@@ -872,6 +889,7 @@
   ];
 
 </script>
+<script src="//unpkg.com/vue2-scrollspy/dist/index.js"></script>
 <script>
   new Vue({
     el: '#skybeam',
@@ -910,6 +928,32 @@
     theme: 'skybee',
     placement: 'left-start'
   })
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+  });
 </script>
 </body>
 </html>
