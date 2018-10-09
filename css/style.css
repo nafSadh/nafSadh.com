@@ -88,3 +88,14 @@ figure.is-centered img{
 .fg-silver { color: #789;}
 .fg-ink{ color: #123;}
 
+
+.social-link{
+  color: #bbc;
+}
+.social-link a{
+  color: #666;
+  margin: 0 .2em;
+}
+.social-link a:hover{
+  color: #07C;
+}
