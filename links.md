@@ -3,7 +3,8 @@
 ### using 
 - https://www.svgbackgrounds.com/#endless-constellation
 - https://www.heropatterns.com/
-- https://atomiks.github.io/tippyjs/
+- https://atomiks.github.io/tippyjs/ via https://github.com/egoist/v-tippy
+- https://qiita.com/reopa_sharkun/items/00b9d11189a4b08db64b
 
 
 ### can be used
@@ -33,6 +34,7 @@
 
 
 ### tools 
+- nuxtjs.org
 - https://www.heropatterns.com/
 - https://www.svgbackgrounds.com/
 - http://thepatternlibrary.com/
