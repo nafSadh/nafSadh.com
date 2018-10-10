@@ -99,3 +99,10 @@ figure.is-centered img{
 .social-link a:hover{
   color: #07C;
 }
+
+.rich-text a{
+  color: #4a4a4a;
+}
+.rich-text a:hover{
+  color: #07C;
+}
