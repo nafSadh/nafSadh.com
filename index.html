@@ -626,13 +626,9 @@
 
 <script src="https://unpkg.com/vue"></script>
 <!--<script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>-->
-<!-- import JavaScript -->
-<script src="https://unpkg.com/vue-truncate-collapsed"></script>
-
 <script src="js/bulma-carousel.min.js"></script>
 <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/min/tiny-slider.js"></script>
-
 
 <script>
   var projects = [
@@ -924,7 +920,6 @@
   ];
 
 </script>
-<script src="//unpkg.com/vue2-scrollspy/dist/index.js"></script>
 <script>
   new Vue({
     el: '#skybeam',
@@ -962,16 +957,13 @@
     duration: 0,
     theme: 'skybee',
     placement: 'left-start'
-  })
+  });
 
   document.addEventListener('DOMContentLoaded', () => {
-
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
-
       // Add a click event on each of them
       $navbarBurgers.forEach( el => {
         el.addEventListener('click', () => {
@@ -987,7 +979,6 @@
         });
       });
     }
-
   });
 </script>
 </body>
