@@ -42,20 +42,27 @@
             </figure>
             <h1 class="title is-1 is-large">nafSadh</h1>
             <h3 class="subtitle is-4">
-              <code style="color: #17afee" title="a.k.a.">&gt;_</code>
-              <strong>Khan MNM Sadh</strong>
+              <code style="color: #17afee" title="a.k.a.">&gt;</code>
+              <strong id="fullname">
+                <vue-typer   :text='[
+                "Khan ‘Sadh’ Mostafa",
+                "Khan MNM Sadh",
+                "Khan Muhammad Nafee Mostafa Sadh"
+                ]' erase-style='clear'></vue-typer>
+              </strong>
             </h3>
+
+
             <br/><br/>
             <p class="rich-text is-size-5">I study theory and applications of computing sciences
               and work as
               a <span class="is-size-3-desktop is-size-4-touch nowrap">software engineer</span>.
               I also
               <span class="is-size-4 nowrap"><i
-                  class="fas fa-pen-nib fa-xs"></i>&thinsp;write</span>,
-              make <span class="is-size-4 nowrap"><i class="fas fa-palette fa-xs"></i>&thinsp;graphic arts</span>,
-              take <span class="is-size-4 nowrap"><i
-                  class="fas fa-camera-retro fa-xs"></i>&thinsp;photos</span> and
-              <span class="is-size-3-desktop is-size-4-touch nowrap"><i class="fas fa-laptop-code fa-xs"></i>&thinsp;build things</span>.
+                  class="fas fa-pen-nib fa-xs"></i>&thinsp;<a href="#writings">write</a></span>,
+              make <span class="is-size-4 nowrap"><i class="fas fa-palette fa-xs"></i>&thinsp;<a href="#art">graphic arts</a></span>,
+              take <span class="is-size-4 nowrap"><i class="fas fa-camera-retro fa-xs"></i>&thinsp;<a href="#photos">photos</a></span> and
+              <span class="is-size-3-desktop is-size-4-touch nowrap"><i class="fas fa-laptop-code fa-xs"></i>&thinsp;<a href="#projects">build things</a></span>.
             </p>
             <br/><br/><br/><br/>
           </div>
@@ -115,7 +122,7 @@
             </p>
             <p>
               I have been involved with several <a href="http://projects.nafSadh.com">projects</a>.
-              Some of their sources are in <a href="https://github.com/nafSadh">GitHub</a>. I have explored wide
+              Some of their sources are on <a href="https://github.com/nafSadh">GitHub</a>. I have explored wide
               range of development stacks including systems, applications, data and web technologies. I dream of
               building a knowledge system that can learn and reason. My other interests include intelligent systems,
               logic, linguistics, and epistemology.
@@ -138,9 +145,9 @@
         <div class="column is-half-fullhd is-two-thirds-widescreen is-three-quarters bg-white glass">
           <div class="content is-medium has-text-justified">
               <span class="is-size-4">
-                  <a href="http://nafSadh.com/bio">bio</a> /
+                  <a href="https://nafSadh.com/bio">bio</a> /
                   <a href="http://re.sadh.me">resume</a> /
-                  <a href="timeline.html">timeline</a>
+                  <a href="https://stackoverflow.com/story/sadh">timeline</a>
                 </span>
           </div>
         </div>
@@ -554,8 +561,8 @@
 <nav class="navbar is-fixed-top" style="box-shadow: 0 0 3px #ccc" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand ">
-      <a class="navbar-item is-size-4">
-        <img src="../../img/nafsadh.png" style="padding-right: 4px">
+      <a class="navbar-item is-size-4" href="https://nafSadh.com">
+        <img src="img/nafsadh.png" style="padding-right: 4px">
         <span>nafSadh</span>
       </a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="homepage-main-navbar">
@@ -611,6 +618,7 @@
       <a href="http://medium.com/@nafSadh"><i class="fab fa-medium-m"></i></a> -
       <a href="http://fb.com/nafSadh"><i class="fab fa-facebook-f"></i></a> -
       <a href="https://www.quora.com/profile/Khan-Sadh-Mostafa"><i class="fab fa-quora"></i></a> -
+      <a href="https://www.slideshare.net/nafSadh"><i class="fab fa-slideshare"></i></a> -
       <a href="https://gitter.im/nafSadh/Lobby"><i class="fab fa-gitter"></i></a> -
       <a href="https://www.goodreads.com/nafsadh"><i class="fab fa-goodreads-g"></i></a> -
       <a href="https://pinterest.com/nafsadh"><i class="fab fa-pinterest-p"></i></a> -
@@ -626,12 +634,10 @@
 
 <script src="https://unpkg.com/vue"></script>
 <!--<script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>-->
-<!-- import JavaScript -->
-<script src="https://unpkg.com/vue-truncate-collapsed"></script>
-
 <script src="js/bulma-carousel.min.js"></script>
 <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/min/tiny-slider.js"></script>
+<script src="https://unpkg.com/vue-typer/dist/vue-typer.min.js"></script>
 
 
 <script>
@@ -924,16 +930,19 @@
   ];
 
 </script>
-<script src="//unpkg.com/vue2-scrollspy/dist/index.js"></script>
 <script>
+  var VueTyper = window.VueTyper.VueTyper;
+
   new Vue({
     el: '#skybeam',
     data: {
       projects: projects
     },
     components: {
-    }
+      'vue-typer': VueTyper
+    },
   });
+
 
   tns({
     container: '.film-reel',
@@ -962,16 +971,13 @@
     duration: 0,
     theme: 'skybee',
     placement: 'left-start'
-  })
+  });
 
   document.addEventListener('DOMContentLoaded', () => {
-
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
-
       // Add a click event on each of them
       $navbarBurgers.forEach( el => {
         el.addEventListener('click', () => {
@@ -987,7 +993,6 @@
         });
       });
     }
-
   });
 </script>
 </body>
