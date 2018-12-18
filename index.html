@@ -42,9 +42,17 @@
             </figure>
             <h1 class="title is-1 is-large">nafSadh</h1>
             <h3 class="subtitle is-4">
-              <code style="color: #17afee" title="a.k.a.">&gt;_</code>
-              <strong>Khan MNM Sadh</strong>
+              <code style="color: #17afee" title="a.k.a.">&gt;</code>
+              <strong id="fullname">
+                <vue-typer   :text='[
+                "Khan ‘Sadh’ Mostafa",
+                "Khan MNM Sadh",
+                "Khan Muhammad Nafee Mostafa Sadh"
+                ]' erase-style='clear'></vue-typer>
+              </strong>
             </h3>
+
+
             <br/><br/>
             <p class="rich-text is-size-5">I study theory and applications of computing sciences
               and work as
@@ -629,6 +637,8 @@
 <script src="js/bulma-carousel.min.js"></script>
 <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.6/min/tiny-slider.js"></script>
+<script src="https://unpkg.com/vue-typer/dist/vue-typer.min.js"></script>
+
 
 <script>
   var projects = [
@@ -921,14 +931,18 @@
 
 </script>
 <script>
+  var VueTyper = window.VueTyper.VueTyper;
+
   new Vue({
     el: '#skybeam',
     data: {
       projects: projects
     },
     components: {
-    }
+      'vue-typer': VueTyper
+    },
   });
+
 
   tns({
     container: '.film-reel',
