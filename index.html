@@ -47,7 +47,7 @@
                 <vue-typer   :text='[
                 "Khan ‘Sadh’ Mostafa",
                 "Khan MNM Sadh",
-                "Khan Muhammad Nafee Mostafa Sadh"
+                "Khan M Nafee M Sadh"
                 ]' erase-style='clear'></vue-typer>
               </strong>
             </h3>
@@ -524,8 +524,8 @@
                     <small v-if="proj.org_work" class="tag is-light"><i class="fas fa-briefcase fg-silver"></i>&nbsp;{{proj.org_work}}</small>
                     <small v-if="proj.school" class="tag is-light"><i class="fas fa-graduation-cap fg-silver"></i>&nbsp;{{proj.school}}</small>
                     <small v-if="proj.org_open" class="tag is-light"><i class="fas fa-door-open fg-silver"></i>&nbsp;{{proj.org_open}}</small>
-                    <small v-if="proj.collab" class="tag is-light"><i class="fas fa-hands-helping fg-silver"></i>&nbsp; with {{proj.collab}}</small>
                     <small v-if="proj.guide" class="tag is-light"><i class="fas fa-brain fg-silver"></i>&nbsp; <small></small>{{proj.guide}}</small>
+                    <small v-if="proj.collab" class="is-light"><br/><i class="fas fa-hands-helping fg-silver"></i>&nbsp; with {{proj.collab}}</small>
                   </div>
                 </div>
                 <div class="media-right">
