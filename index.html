@@ -40,16 +40,23 @@
               <img class="is-rounded avatar-border"
                    src="http://www.gravatar.com/avatar/b3fd795f62899ea17a66ebb4e8bddbd8?s=512&d=mm&r=g">
             </figure>
-            <h1 class="title is-1 is-large">nafSadh</h1>
+            <h1>
+              <span class="title is-1 is-large">nafSadh</span>
+              <span id="fullname" class="title is-4 has-text-weight-light nowrap"> (Khan ‘Sadh’ Mostafa)</span>
+            </h1>
             <h3 class="subtitle is-4">
               <code style="color: #17afee" title="a.k.a.">&gt;</code>
-              <strong id="fullname">
+              <span>
                 <vue-typer   :text='[
-                "Khan ‘Sadh’ Mostafa",
-                "Khan MNM Sadh",
-                "Khan Muhammad Nafee Mostafa Sadh"
+                "I am a software engineer ",
+                "I build things…",
+                "…take photos",
+                "…create art",
+                "…write poetry",
+                "…write prose",
+                "and I write code;"
                 ]' erase-style='clear'></vue-typer>
-              </strong>
+              </span>
             </h3>
 
 
@@ -524,8 +531,8 @@
                     <small v-if="proj.org_work" class="tag is-light"><i class="fas fa-briefcase fg-silver"></i>&nbsp;{{proj.org_work}}</small>
                     <small v-if="proj.school" class="tag is-light"><i class="fas fa-graduation-cap fg-silver"></i>&nbsp;{{proj.school}}</small>
                     <small v-if="proj.org_open" class="tag is-light"><i class="fas fa-door-open fg-silver"></i>&nbsp;{{proj.org_open}}</small>
-                    <small v-if="proj.collab" class="tag is-light"><i class="fas fa-hands-helping fg-silver"></i>&nbsp; with {{proj.collab}}</small>
                     <small v-if="proj.guide" class="tag is-light"><i class="fas fa-brain fg-silver"></i>&nbsp; <small></small>{{proj.guide}}</small>
+                    <small v-if="proj.collab" class="is-light"><br/><i class="fas fa-hands-helping fg-silver"></i>&nbsp; with {{proj.collab}}</small>
                   </div>
                 </div>
                 <div class="media-right">
@@ -606,7 +613,7 @@
 <footer class="footer bg-white-sky" style="box-shadow: 0 0 3px #ccc">
   <div class="container has-text-centered">
     <div class="slight-pad-1">
-      nafSadh &copy; 2010~2018, Khan 'Sadh' Mostafa<br/>
+      nafSadh &copy; 2010~2019, Khan 'Sadh' Mostafa<br/>
       <small>
         Made with <i class="fas fa-heart"></i> + <i class="fab fa-vuejs"></i> on <i class="fab fa-github"></i>
       </small>
