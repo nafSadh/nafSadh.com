@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <title>NafSadh.com - next</title>
     <style>
+      nav {
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color:#11191f;
+      }
       article header h1, 
       article header h2, 
       article header h3 {
@@ -14,19 +22,16 @@
     </style>
   </head>
   <body>
+    <nav class="container">
+      <ul>
+        <li><a href="https://nafSadh.com/"><img src="https://nafsadh.com/img/nafsadh.png" width="48px"/></a></li>
+      </ul>
+      <ul>
+        <li><a href="#about">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+    </nav>
     <main class="container">
-      <header>
-      <nav>
-        <ul>
-          <li><a href="https://nafSadh.com/"><img src="https://nafsadh.com/img/nafsadh.png" width="48px"/></a></li>
-        </ul>
-        <ul>
-          <li><a href="#about">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#" role="button">Button</a></li>
-        </ul>
-      </nav>
-      </header>
       <hgroup>
         <h1>nafSadh</h1>
         <h2>Khan MNM Sadh</h2>
@@ -35,6 +40,38 @@
         I study theory and applications of computing sciences and work as a software 
         engineer for Google. I also write, make graphic arts, take photos and build things.
       </p>     
+      <article>
+        <header>
+          <h3 id="about">about</h3>
+        </header>
+        <p>
+          Born and raised in Bangladesh, trained in computer science at KUET and 
+          Stony Brook, I work as a software engineer for Google and live with my 
+          lovely wife Sampreeti in Mountain View.
+        </p>
+        <p>
+          I have explored wide range of development stacks including systems, 
+          applications, data and web technologies. I dream of building a knowledge 
+          system that can learn and reason. My other interests include intelligent 
+          systems, logic, linguistics, and epistemology.
+        </p>
+        <p>
+          In the past I have built cool stuff at TCI and Samsung. Besides, I am 
+          involved with several other projects. Some of their sources are on 
+          GitHub.
+        </p>
+        <p>
+          I post weblogs on inside the insight. I share my Bengali writings on 
+          Sadhubôchôn and Sulol Songroho. I am also involved as editor and 
+          publisher at Bengali literary community Lekhalikhi. I love to play with 
+          colors, draw pictures and make graphic artworks; you can browse them on 
+          my arts portfolio. I use a Bengali keyboard lay-out named Sonnivo which 
+          happened to be designed by me.
+        </p>
+        <footer>
+          bio / resume / timeline
+        </footer>
+      </article>
       <article>
         <header>
           <h3 id="about">about</h3>
