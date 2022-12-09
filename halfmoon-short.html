@@ -52,11 +52,31 @@
         <!-- Navbar nav -->
         <ul class="navbar-nav d-none d-md-flex">
           <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
-          <li class="nav-item active"><a href="#about" class="nav-link">about</a></li>
-          <li class="nav-item active"><a href="#words" class="nav-link">words</a></li>
-          <li class="nav-item active"><a href="#words" class="nav-link">work</a></li>
-          <li class="nav-item active"><a href="#art" class="nav-link">art</a></li>
-          <li class="nav-item active"><a href="#links" class="nav-link">links</a></li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link" data-toggle="tooltip" data-placement="bottom" data-title="about">
+              <i class="fas fa-user"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link" data-toggle="tooltip" data-placement="bottom" data-title="projects">
+              <i class="fas fa-rocket"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#art" class="nav-link" data-toggle="tooltip" data-placement="bottom" data-title="art">
+              <i class="fas fa-palette"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#writings" class="nav-link" data-toggle="tooltip" data-placement="bottom" data-title="writings">
+              <i class="fas fa-pen-nib"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#photos" class="nav-link" data-toggle="tooltip" data-placement="bottom" data-title="photos">
+              <i class="fas fa-camera-retro"></i>
+            </a>
+          </li>
         </ul>
         <ul class="navbar-nav d-none d-md-flex  ml-auto">
           <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
@@ -136,54 +156,47 @@
           <hr />
           <section class="content row justify-content-center mt-0" id="about">
             <div class="w-lg-600">
-              <article class="font-size-20">
-                I am a software engineer with interest in linguistics, epistemology, logic,
-                natural language understanding, large language models, and AI/ML. I have over a decade of experience in
-                the industry and have built a wide range of systems and infrastructures from the ground up, with a focus
-                on backend development.
-              </article>
               <article class="font-size-16">
                 <p>
-                  Currently, I am working at <b>Google</b> on a team that explores the possibilities of <b>large
-                    language models</b> and AI. Before this, I worked on Android <b>App Safety</b>, where I led multiple
-                  cross-org collaborations to build and maintain the infrastructure behind Android's trust and safety
-                  ecosystem. I also built Google <b>Nest</b>'s backend ML platform that powers Home/Away Presence
-                  Sensing and Home Routines. Before Google, I built <b>TCI</b>'s Loan Origination <b>SaaS</b> and in my
-                  first job at <b>Samsung</b>, I worked on custom system software, DSP, and SoC.
+                  <b class="text-monospace">software engineer</b><br />
+                  <code>#</code> born and raised in Bangladesh, studied computer science<br />
+                  <code>#</code> now at Google
                 </p>
                 <p>
-                  I enjoy reading <a href="https://www.goodreads.com/user/show/41508510-nafsadh">books</a>, indulging in
-                  my love for <a href="https://photos.app.goo.gl/VcPzm5ZEwUQszbHW8">tea</a>, going on hikes, biking and
-                  writing. I co-founded Lekhalikli.com, an online Bengali literary publishing platform that aimed to
-                  nurture amateur writers and contribute to the growth of Bengali literature. Although the platform is
-                  now defunct, I still have an interest in literature and writing.
-                  Read my <a href="https://ins.nafSadh.com">blog</a>, <a href="https://notes.nafsadh.com">notes</a>,
-                  <a href="https://sulol.nafsadh.com/">Bengali literary works</a> and <a
-                    href="https://www.quora.com/profile/Khan-Sadh-Mostafa">answers</a>.
+                  <b class="text-monospace">interests:</b><br />
+                  <code>?</code> AI/ML, large language models<br />
+                  <code>?</code> linguistics, epistemology, logic, philosophy, art
+                  <br />
                 </p>
                 <p>
-                  I am also involved in a number of open source projects, including <a
-                    href="https://flags.fyi">Flags.fyi</a>, a repository of flags for vexillophiles, and <a
-                    href="https://sonnivo.nafsadh.com/">Sonnivo</a>, a Bengali keyboard. You can find more information
-                  about my open source projects on GitHub. I am also an artist, with my work shared on Behance,
-                  DeviantArt, and
-                  nafSadh.art. I have also created a number of maps and released them on Wikimedia Commons.
-                  Additionally, my photographs can be found on Flickr and 500px.
+                  <b class="text-monospace">writings:</b><br />
+                  <code>:</code> notes by nafSadh - random notes<br />
+                  <code>:</code> inside the insight - blog<br />
+                  <code>:</code> Sulol Songroho - Bengali literary works<br />
+                  <code>:</code> Sadhubochon - Bengali articles<br />
+                  also on: Wikipedia English, Quora, Medium.<br />
                 </p>
                 <p>
-                  I studied Computer Science in Stony Brook (MS) and KUET (BS). I am always looking for new challenges
-                  and opportunities to apply my skills and knowledge in the field of large language models and
-                  generative AI.
+                  <b class="text-monospace">some open source projects:</b><br />
+                  <code>></code> <a href="https://flags.fy">Flags.fyi</a> - a vexillophile’s repository of flags<br />
+                  <code>></code> Sonnivo - Bengali keyboard (win, mac)<br />
+                  more on nafSadh.dev and GitHub.
                 </p>
                 <p>
-                  More info: re.sadh.me, LinkedIn/nafSadh, GitHub/nafSadh, and elsewhere.
+                  <b class="text-monospace">paintings / digital art:</b> <br />
+                  <code>~</code> check out: nafSadh.art<br />
+                  also on: DeviantArt, Behance and Wikimedia Commons
                 </p>
+                <p>
+                  <b class="text-monospace">more info:</b><br />
+                  biography | resume | LinkedIn
+                </p>
+
               </article>
             </div>
           </section>
         </article>
-
-
+        <hr />
       </div>
       <!-- Congainer wrapper end -->
     </div>
