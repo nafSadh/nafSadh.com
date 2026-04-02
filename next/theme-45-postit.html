@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito Sans', sans-serif; font-size: 14px; line-height: 1.6;
+      color: #3A3530;
+      /* Cork board */
+      background: #C4A882;
+      background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      padding: 2rem; min-height: 100vh;
+    }
+    a { color: #4A6A5A; text-decoration: none; }
+    a:hover { color: #2A4A3A; }
+
+    /* POST-IT NOTES on a cork board */
+    .board { max-width: 780px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+    .note {
+      padding: 1.25rem; position: relative; min-height: 140px;
+      box-shadow: 2px 3px 8px rgba(60,40,20,0.15);
+    }
+    /* Pin dot */
+    .note::before {
+      content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+      width: 8px; height: 8px; border-radius: 50%; background: #C0392B;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    /* Different colored sticky notes */
+    .n-yellow { background: #FFF9B0; transform: rotate(-1deg); }
+    .n-pink { background: #FFD0D8; transform: rotate(0.5deg); }
+    .n-blue { background: #D0E8FF; transform: rotate(-0.5deg); }
+    .n-green { background: #D0F0D0; transform: rotate(1deg); }
+    .n-orange { background: #FFE0C0; transform: rotate(-0.8deg); }
+    .n-white { background: #FEFCF6; transform: rotate(0.3deg); }
+
+    /* Hero note — spans 2 columns */
+    .n-hero { grid-column: span 2; }
+    .hero-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; padding-top: 0.5rem; }
+    .avatar { width: 48px; height: 48px; border-radius: 50%; }
+    .n-hero h1 { font-family: 'Caveat', cursive; font-size: 1.75rem; font-weight: 700; color: #2A2018; }
+    .n-hero .tagline { font-family: 'Caveat', cursive; font-size: 1rem; color: #6A6058; }
+    .n-hero .bio { font-size: 0.82rem; color: #5A5048; margin-top: 0.4rem; }
+    .n-hero .bio b { color: #2A2018; }
+
+    .n-title { font-family: 'Caveat', cursive; font-size: 1.2rem; font-weight: 600; color: #2A2018; margin-bottom: 0.3rem; margin-top: 0.5rem; }
+    .note p { font-size: 0.78rem; color: #4A4038; margin-bottom: 0.2rem; }
+    .hl { font-weight: 500; }
+    .n-links { margin-top: 0.3rem; }
+    .n-links a { font-size: 0.7rem; margin-right: 0.5rem; color: #6A6058; }
+
+    .pl a { display: block; padding: 0.2rem 0; text-decoration: none; }
+    .pl a:hover .pn { color: #4A6A5A; }
+    .pn { font-size: 0.78rem; font-weight: 500; color: #2A2018; transition: color 0.15s; }
+    .pd { font-family: 'Caveat', cursive; font-size: 0.78rem; color: #7A7068; }
+
+    /* Footer note */
+    .n-footer { grid-column: 1 / -1; text-align: center; min-height: auto; padding: 1rem; }
+    .social-row { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 0.2rem; }
+    .social-row a { font-size: 0.72rem; color: #6A6058; }
+    .f-note { font-family: 'Caveat', cursive; font-size: 0.78rem; color: #8A7A68; }
+
+    @media (max-width: 600px) { .board { grid-template-columns: 1fr; } .n-hero { grid-column: span 1; } .n-footer { grid-column: span 1; } }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <div class="note n-yellow n-hero">
+      <div class="hero-row">
+        <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+        <div><h1>nafSadh</h1><div class="tagline">Maker of things!</div></div>
+      </div>
+      <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+    </div>
+    <div class="note n-pink">
+      <div class="n-title">Work</div>
+      <p><span class="hl">Google DeepMind</span> — Gemini API</p>
+      <p>Prev: App Safety, Nest ML, TCI, Samsung</p>
+      <div class="n-links"><a href="https://re.sadh.me">Resume</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://github.com/nafSadh">GitHub</a></div>
+    </div>
+    <div class="note n-blue">
+      <div class="n-title">Projects</div>
+      <div class="pl">
+        <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">vexillology!</div></a>
+        <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">research</div></a>
+        <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">bengali kbd</div></a>
+      </div>
+    </div>
+    <div class="note n-green">
+      <div class="n-title">Writing</div>
+      <p>Research at <a href="https://read.sadh.app">read&middot;rd</a></p>
+      <p>Poetry — <em>Second Seconds</em></p>
+      <div class="n-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a></div>
+    </div>
+    <div class="note n-orange">
+      <div class="n-title">Art & Photo</div>
+      <p>Painting, digital art, photography</p>
+      <div class="n-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">Behance</a><a href="https://flickr.com/sadh">Flickr</a></div>
+    </div>
+    <div class="note n-white n-footer">
+      <div class="social-row"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <p class="f-note">'Sadh' /ʃadʱ/ &middot; &copy; 2026</p>
+    </div>
+  </div>
+</body>
+</html>

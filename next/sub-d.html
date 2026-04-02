@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh — maker of things</title>
+  <meta name="description" content="nafSadh — computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at Google DeepMind." />
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,200;1,9..144,300&family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── TOKENS ─────────────────────────────────────────────────── */
+    :root {
+      --bg:          #0C0E18;
+      --accent:      #7080D0;
+      --text-hi:     #C0C8E0;
+      --text-mid:    #7888A8;
+      --text-lo:     #404868;
+      --text-ghost:  #20263C;
+      --border:      rgba(112,128,208,0.10);
+      --orb-a:       rgba(80,60,180,0.22);
+      --orb-b:       rgba(60,80,200,0.14);
+      --orb-c:       rgba(100,60,220,0.10);
+      --orb-d:       rgba(40,60,160,0.18);
+      --margin-w:    200px;
+      --gap:         2.5rem;
+      --body-w:      640px;
+    }
+
+    /* ─── BASE ───────────────────────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-mid);
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 60% 50% at 10% 8%,  var(--orb-a) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 90% 22%, var(--orb-b) 0%, transparent 65%),
+        radial-gradient(ellipse 70% 55% at 30% 55%, var(--orb-c) 0%, transparent 60%),
+        radial-gradient(ellipse 45% 45% at 75% 78%, var(--orb-d) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 50% 95%, var(--orb-a) 0%, transparent 55%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover { color: var(--text-hi); }
+
+    /* ─── LAYOUT ─────────────────────────────────────────────────── */
+    .page {
+      max-width: calc(var(--body-w) + var(--margin-w) + var(--gap) + 4rem);
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+    }
+
+    /* Two-column: body on left, margin gloss on right */
+    .entry {
+      display: grid;
+      grid-template-columns: var(--body-w) var(--margin-w);
+      gap: var(--gap);
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    .body  { min-width: 0; }
+    .gloss {
+      min-width: 0;
+      padding-top: 0.2rem;
+      padding-left: 1.25rem;
+      border-left: 1px solid var(--border);
+    }
+
+    /* ─── GLOSS (margin annotations) ────────────────────────────── */
+    .gloss-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-ghost);
+      margin-bottom: 0.4rem;
+    }
+    .gloss-item {
+      display: block;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem;
+      color: var(--text-lo);
+      line-height: 1.8;
+      transition: color 0.15s;
+    }
+    .gloss-item:hover { color: var(--text-mid); }
+    a.gloss-item { color: var(--text-lo); }
+    a.gloss-item:hover { color: var(--accent); }
+    .gloss-note {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem;
+      color: var(--text-ghost);
+      line-height: 1.7;
+      margin-top: 0.3rem;
+    }
+
+    /* ─── HEADER / HERO ──────────────────────────────────────────── */
+    .hero-name {
+      font-family: 'Fraunces', serif;
+      font-size: 3.25rem;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--text-hi);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-tagline {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: var(--text-lo);
+      margin-bottom: 1.4rem;
+      letter-spacing: 0.04em;
+    }
+    .hero-tagline .bracket { color: var(--text-ghost); }
+
+    .hero-bio {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+    .hero-bio strong { color: var(--text-hi); font-weight: 500; }
+    .hero-bio em {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 200;
+      color: var(--text-mid);
+    }
+
+    /* ─── SECTION HEADER ─────────────────────────────────────────── */
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      font-weight: 300;
+      color: var(--text-hi);
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* ─── WORK ───────────────────────────────────────────────────── */
+    .work-entry {
+      margin-bottom: 1.1rem;
+    }
+    .work-org {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-hi);
+    }
+    .work-role {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin-top: 0.1rem;
+    }
+    .work-dot {
+      color: var(--accent);
+      margin: 0 0.3em;
+      opacity: 0.5;
+    }
+    .work-period {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem;
+      color: var(--text-lo);
+    }
+
+    /* ─── PROJECTS as code ───────────────────────────────────────── */
+    .code-block {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      line-height: 2;
+      background: rgba(112,128,208,0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+    }
+    .code-block .ln {
+      display: inline-block;
+      width: 1.5em;
+      color: var(--text-ghost);
+      user-select: none;
+      margin-right: 0.6em;
+    }
+    .tok-kw  { color: #6878D0; }  /* keyword — purple-blue */
+    .tok-id  { color: #8898C8; }  /* identifier */
+    .tok-op  { color: var(--text-lo); }
+    .tok-str { color: #5C8080; }  /* string — teal-ish */
+    .tok-url { color: var(--accent); }
+    .tok-url:hover { color: var(--text-hi); }
+    .tok-cm  { color: var(--text-ghost); font-style: italic; }
+
+    /* ─── WRITING ────────────────────────────────────────────────── */
+    .writing-entry {
+      margin-bottom: 1rem;
+    }
+    .writing-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-hi);
+    }
+    .writing-desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin-top: 0.1rem;
+    }
+
+    /* ─── PROJECTS ───────────────────────────────────────────────── */
+    .project-entry {
+      margin-bottom: 1rem;
+    }
+    .project-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-hi);
+    }
+    .project-desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin-top: 0.1rem;
+    }
+
+    /* ─── POEM (reversed: poem in right, context in left) ────────── */
+    .poem-entry {
+      display: grid;
+      grid-template-columns: var(--body-w) var(--margin-w);
+      gap: var(--gap);
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+    .poem-context {
+      padding-top: 0.5rem;
+    }
+    .poem-context-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem;
+      color: var(--text-ghost);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.06em;
+    }
+    .poem-context-text {
+      font-size: 0.85rem;
+      color: var(--text-lo);
+      line-height: 1.8;
+    }
+    .poem-context-text a { color: var(--text-lo); }
+    .poem-context-text a:hover { color: var(--accent); }
+
+    .poem-verse {
+      padding-left: 1.25rem;
+      border-left: 1px solid rgba(112,128,208,0.18);
+    }
+    .poem-verse-title {
+      font-family: 'Fraunces', serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-ghost);
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+    .poem-verse-lines {
+      font-family: 'Fraunces', serif;
+      font-size: 0.88rem;
+      font-weight: 200;
+      font-style: italic;
+      color: var(--text-lo);
+      line-height: 2.1;
+    }
+    .poem-verse-lines p { color: var(--text-lo); }
+    .poem-attribution {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.6rem;
+      color: var(--text-ghost);
+      margin-top: 0.6rem;
+    }
+
+    /* ─── ART ────────────────────────────────────────────────────── */
+    .art-desc {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────── */
+    .footer-entry {
+      display: grid;
+      grid-template-columns: var(--body-w) var(--margin-w);
+      gap: var(--gap);
+      align-items: start;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .social-links a {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      color: var(--text-lo);
+    }
+    .social-links a:hover { color: var(--accent); }
+
+    .name-note {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      color: var(--text-ghost);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid var(--text-ghost);
+      border-radius: 4px;
+      max-width: 420px;
+    }
+    .name-note strong {
+      color: var(--text-lo);
+      font-weight: 400;
+    }
+
+    .copyright {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem;
+      color: var(--text-ghost);
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      :root { --margin-w: 150px; --gap: 1.75rem; --body-w: 480px; }
+    }
+
+    @media (max-width: 700px) {
+      .entry,
+      .poem-entry,
+      .footer-entry {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .gloss {
+        border-left: none;
+        padding-left: 0;
+        padding-top: 0;
+        border-top: 1px solid var(--border);
+        padding-top: 0.6rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.2rem 1rem;
+      }
+      .gloss-label { display: none; }
+      .gloss-item { display: inline; }
+      .poem-verse {
+        border-left: none;
+        border-top: 1px solid rgba(112,128,208,0.18);
+        padding-left: 0;
+        padding-top: 0.9rem;
+      }
+      .hero-name { font-size: 2.5rem; }
+      .page { padding: 3rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <!-- ─────────────────────────────── HERO ──────────────────────── -->
+    <div class="entry">
+      <div class="body">
+        <h1 class="hero-name">nafSadh</h1>
+        <p class="hero-tagline">
+          <span class="bracket">[ </span>maker of things<span class="bracket"> ]</span>
+        </p>
+        <p class="hero-bio">
+          Computer scientist, engineer, <em>writer</em>, <em>poet</em>, <em>painter</em>, <em>photographer</em>.
+          <strong>Senior Software Engineer at Google DeepMind</strong> — working on
+          <strong>Gemini API</strong> and <strong>agentic capabilities</strong>.
+          Grew up in Bangladesh, studied CS at KUET and Stony Brook, now in the SF Bay Area.
+        </p>
+      </div>
+      <aside class="gloss" aria-label="Name note">
+        <p class="gloss-label">about the name</p>
+        <span class="gloss-item">'Sadh' /ʃadʱ/</span>
+        <span class="gloss-item">Khan M Nafee Mostafa</span>
+        <span class="gloss-note">'nafSadh' is never<br/>broken apart.</span>
+      </aside>
+    </div>
+
+    <hr class="section-rule" />
+
+    <!-- ─────────────────────────────── WORK ──────────────────────── -->
+    <div class="entry">
+      <div class="body">
+        <h2 class="section-title">Work</h2>
+
+        <div class="work-entry">
+          <div class="work-org">Google DeepMind</div>
+          <div class="work-role">
+            Senior SWE
+            <span class="work-dot">·</span>
+            Gemini API &amp; agentic capabilities
+            <span class="work-dot">·</span>
+            <span class="work-period">2023 – present</span>
+          </div>
+        </div>
+
+        <div class="work-entry">
+          <div class="work-org">Google</div>
+          <div class="work-role">
+            SWE &mdash; Android App Safety
+            <span class="work-dot">·</span>
+            co-led cross-org infra for trust &amp; safety ecosystem
+            <span class="work-dot">·</span>
+            <span class="work-period">2020 – 2023</span>
+          </div>
+        </div>
+
+        <div class="work-entry">
+          <div class="work-org">Google</div>
+          <div class="work-role">
+            SWE &mdash; Google Nest
+            <span class="work-dot">·</span>
+            backend ML platform: Home/Away Presence, Geofence, Routines
+            <span class="work-dot">·</span>
+            <span class="work-period">2018 – 2020</span>
+          </div>
+        </div>
+
+        <div class="work-entry">
+          <div class="work-org">TCI</div>
+          <div class="work-role">
+            Loan Origination SaaS
+            <span class="work-dot">·</span>
+            <span class="work-period">2015 – 2018</span>
+          </div>
+        </div>
+
+        <div class="work-entry">
+          <div class="work-org">Samsung</div>
+          <div class="work-role">
+            Custom system software, DSP, SoC
+            <span class="work-dot">·</span>
+            <span class="work-period">2012 – 2015</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="gloss" aria-label="Work links">
+        <p class="gloss-label">// links</p>
+        <a href="https://re.sadh.me" class="gloss-item">résumé</a>
+        <a href="https://linkedin.com/in/nafsadh" class="gloss-item">linkedin</a>
+        <a href="https://github.com/nafSadh" class="gloss-item">github</a>
+        <p class="gloss-note">deepmind.google</p>
+      </aside>
+    </div>
+
+    <hr class="section-rule" />
+
+    <!-- ────────────────────────────── PROJECTS ───────────────────── -->
+    <div class="entry">
+      <div class="body">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-entry">
+          <div class="project-title">
+            <a href="https://flags.fyi">flags.fyi</a>
+          </div>
+          <div class="project-desc">
+            Repository of flags for vexillophiles.
+          </div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">
+            <a href="https://sonnivo.nafsadh.com">sonnivo</a>
+          </div>
+          <div class="project-desc">
+            Bengali keyboard input.
+          </div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">
+            <a href="https://read.sadh.app">read.sadh.app</a>
+          </div>
+          <div class="project-desc">
+            Research deep-dives &amp; reading notes.
+          </div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">
+            <a href="https://notes.nafsadh.com">notes.nafsadh.com</a>
+          </div>
+          <div class="project-desc">
+            Living markdown documents.
+          </div>
+        </div>
+      </div>
+
+      <aside class="gloss" aria-label="Project notes">
+        <p class="gloss-label">// notes</p>
+        <span class="gloss-note">open source work<br/>on github/nafSadh</span>
+        <br/>
+        <a href="https://github.com/nafSadh" class="gloss-item" style="margin-top:0.5rem">↗ github.com/nafSadh</a>
+        <a href="https://ai.nafsadh.art" class="gloss-item">↗ ai.nafSadh.art</a>
+      </aside>
+    </div>
+
+    <hr class="section-rule" />
+
+    <!-- ─────────────────────────────── WRITING ───────────────────── -->
+    <div class="entry">
+      <div class="body">
+        <h2 class="section-title">Writing</h2>
+
+        <div class="writing-entry">
+          <div class="writing-title">
+            <a href="https://ai.nafsadh.com">Augmented Insights</a>
+          </div>
+          <div class="writing-desc">
+            Articles on AI — grounded in ongoing work at DeepMind.
+          </div>
+        </div>
+
+        <div class="writing-entry">
+          <div class="writing-title">
+            <a href="https://ins.nafsadh.com">inside the insight</a>
+          </div>
+          <div class="writing-desc">
+            CS notes, code samples, scribbles on software.
+          </div>
+        </div>
+
+        <div class="writing-entry">
+          <div class="writing-title">
+            <a href="https://sadhubochon.wordpress.com">সাধুবচন</a>
+            <span style="font-family:'Fira Code',monospace;font-size:0.7rem;color:var(--text-lo);font-weight:300;"> /Sadhubôchôn/</span>
+          </div>
+          <div class="writing-desc">
+            Prose &amp; opinion in classical Bengali — Shadhu-bhasha.
+          </div>
+        </div>
+
+        <div class="writing-entry">
+          <div class="writing-title">
+            <a href="https://sulol.nafsadh.com">সুলল সংগ্রহ</a>
+            <span style="font-family:'Fira Code',monospace;font-size:0.7rem;color:var(--text-lo);font-weight:300;"> /Sulol Songroho/</span>
+          </div>
+          <div class="writing-desc">
+            Poetry, in Bengali.
+          </div>
+        </div>
+      </div>
+
+      <aside class="gloss" aria-label="Writing links">
+        <p class="gloss-label">// elsewhere</p>
+        <a href="https://medium.com/@nafsadh" class="gloss-item">medium</a>
+        <a href="https://www.quora.com/profile/Khan-Sadh-Mostafa" class="gloss-item">quora answers</a>
+        <a href="https://en.wikipedia.org/wiki/Special:Contributions/Nafsadh" class="gloss-item">wikipedia</a>
+        <a href="https://notes.nafsadh.com" class="gloss-item">notes</a>
+      </aside>
+    </div>
+
+    <!-- ─── POEM (reversed layout: context left, verse right) ──── -->
+    <div class="poem-entry">
+      <div class="body poem-context">
+        <p class="poem-context-label">// from Second Seconds — English verse, in progress</p>
+        <p class="poem-context-text">
+          Poetry has been a parallel track alongside code. The collection
+          <em style="font-family:'Fraunces',serif;font-style:italic;color:var(--text-mid);">Second Seconds</em>
+          explores attention, impermanence, and the texture of language itself.
+          Bengali verse lives at <a href="https://sulol.nafsadh.com">সুলল সংগ্রহ</a>.
+        </p>
+      </div>
+      <aside class="poem-verse" aria-label="Poem excerpt">
+        <p class="poem-verse-title">— Second Seconds</p>
+        <div class="poem-verse-lines">
+          <p>the weight of a word</p>
+          <p>is not in its letters</p>
+          <p>but in the silence</p>
+          <p>it displaces</p>
+        </div>
+        <p class="poem-attribution">nafSadh</p>
+      </aside>
+    </div>
+
+    <hr class="section-rule" />
+
+    <!-- ─────────────────────────────── ART ───────────────────────── -->
+    <div class="entry">
+      <div class="body">
+        <h2 class="section-title">Art &amp; Photography</h2>
+        <p class="art-desc">
+          Painting, digital art, and photography. I work with acrylics and watercolors, experiment
+          with generative AI as a creative collaborator, and photograph landscapes and people.
+          Maps made for Wikimedia Commons. Currently studying drawing fundamentals.
+        </p>
+      </div>
+
+      <aside class="gloss" aria-label="Art links">
+        <p class="gloss-label">// portfolios</p>
+        <a href="https://nafsadh.art" class="gloss-item">nafsadh.art</a>
+        <a href="https://ai.nafsadh.art" class="gloss-item">ai.nafsadh.art</a>
+        <a href="https://behance.net/nafsadh" class="gloss-item">behance</a>
+        <a href="https://deviantart.com/nafsadh" class="gloss-item">deviantart</a>
+        <a href="https://flickr.com/sadh" class="gloss-item">flickr</a>
+        <a href="https://500px.com/nafsadh" class="gloss-item">500px</a>
+        <a href="https://en.wikipedia.org/wiki/User:Nafsadh/Gallery" class="gloss-item">wikimedia</a>
+      </aside>
+    </div>
+
+    <hr class="section-rule" />
+
+    <!-- ─────────────────────────────── FOOTER ────────────────────── -->
+    <div class="footer-entry">
+      <div class="body">
+        <div class="social-links" aria-label="Social links">
+          <a href="https://github.com/nafSadh">github</a>
+          <a href="https://linkedin.com/in/nafsadh">linkedin</a>
+          <a href="https://twitter.com/nafSadh">twitter/x</a>
+          <a href="https://instagram.com/nafsadh">instagram</a>
+          <a href="https://flickr.com/sadh">flickr</a>
+          <a href="https://behance.net/nafsadh">behance</a>
+          <a href="https://medium.com/@nafsadh">medium</a>
+          <a href="https://www.goodreads.com/nafsadh">goodreads</a>
+          <a href="https://www.quora.com/profile/Khan-Sadh-Mostafa">quora</a>
+          <a href="https://pinterest.com/nafsadh">pinterest</a>
+        </div>
+
+        <div class="name-note" role="note">
+          <strong>nafSadh</strong> is the online name. Preferred spoken name
+          is 'Sadh' /ʃadʱ/ &mdash; also known as
+          <strong>Khan M Nafee Mostafa</strong> on documents.
+          'nafSadh' is never separated into two words.
+        </div>
+
+        <p class="copyright">&copy; 2026 nafSadh &mdash; served on <a href="https://github.com/nafSadh/nafSadh.com" style="color:var(--text-ghost)">GitHub Pages</a></p>
+      </div>
+
+      <aside class="gloss" aria-label="Footer gloss">
+        <p class="gloss-label">// elsewhere</p>
+        <a href="https://re.sadh.me" class="gloss-item">résumé</a>
+        <a href="https://notes.nafsadh.com" class="gloss-item">notes</a>
+        <a href="https://ins.nafsadh.com" class="gloss-item">blog</a>
+        <a href="https://500px.com/nafsadh" class="gloss-item">500px</a>
+        <a href="https://deviantart.com/nafsadh" class="gloss-item">deviantart</a>
+        <a href="https://www.slideshare.net/nafSadh" class="gloss-item">slideshare</a>
+        <a href="https://en.wikipedia.org/wiki/Special:Contributions/Nafsadh" class="gloss-item">wikipedia</a>
+      </aside>
+    </div>
+
+  </main>
+</body>
+</html>

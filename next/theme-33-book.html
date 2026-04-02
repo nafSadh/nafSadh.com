@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito Sans', sans-serif; font-size: 15px; line-height: 1.75;
+      color: #3A3530; background: #E8E0D5;
+      display: flex; justify-content: center; padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+    a { color: #7A5A3A; text-decoration: none; }
+    a:hover { color: #5A3A1A; text-decoration: underline; }
+
+    /* BOOK PAGE: looks like an open book/codex page */
+    .page {
+      background: #FDF8F0;
+      max-width: 640px; width: 100%;
+      padding: 4rem 3.5rem;
+      box-shadow:
+        0 0 0 1px #D8D0C0,
+        4px 4px 15px rgba(60,50,40,0.1),
+        8px 8px 30px rgba(60,50,40,0.05);
+      position: relative;
+    }
+    /* Page edge effect */
+    .page::before {
+      content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3rem;
+      background: linear-gradient(90deg, rgba(200,190,175,0.15) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .page-header { text-align: center; margin-bottom: 2rem; }
+    .avatar { width: 56px; height: 56px; border-radius: 50%; margin-bottom: 1rem; }
+    .page-header h1 {
+      font-family: 'EB Garamond', serif; font-size: 2.25rem;
+      font-weight: 500; color: #1A1510; margin-bottom: 0.1rem;
+    }
+    .page-header .tagline {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 0.95rem; color: #8A7A68;
+    }
+    .page-header .ornament { color: #C8B8A0; margin-top: 0.75rem; letter-spacing: 0.5em; font-size: 0.7rem; }
+
+    .page-body p { font-size: 0.9rem; color: #5A5048; margin-bottom: 0.75rem; text-align: justify; }
+    .page-body b { color: #3A3530; font-weight: 500; }
+
+    .chapter-title {
+      font-family: 'EB Garamond', serif; font-size: 1.1rem;
+      font-weight: 600; color: #2A2018; margin: 2rem 0 0.5rem;
+      text-align: center; text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .chapter-rule { height: 1px; background: #DDD5C8; margin-bottom: 1rem; }
+
+    .s-links { text-align: center; margin-top: 0.5rem; }
+    .s-links a { font-size: 0.82rem; margin: 0 0.4rem; color: #A09080; }
+    .s-links a:hover { color: #7A5A3A; text-decoration: none; }
+
+    .pl { text-align: center; }
+    .pl a { display: inline-block; margin: 0.2rem 0; text-decoration: none; }
+    .pl .pn { font-size: 0.88rem; font-weight: 500; color: #3A3530; }
+    .pl .pd { font-size: 0.7rem; color: #A09080; }
+    .pl a:hover .pn { color: #7A5A3A; }
+
+    .colophon {
+      margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #E0D8C8;
+      text-align: center; font-size: 0.72rem; color: #B0A898;
+    }
+    .colophon .social { display: flex; justify-content: center; gap: 1rem; margin-bottom: 0.4rem; }
+    .colophon .social a { color: #B0A898; font-size: 0.75rem; }
+    .colophon .social a:hover { color: #7A5A3A; }
+
+    @media (max-width: 600px) { .page { padding: 2.5rem 1.5rem; } .page::before { width: 1rem; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="page-header">
+      <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+      <h1>nafSadh</h1>
+      <p class="tagline">Maker of things. Creator. Explorer.</p>
+      <div class="ornament">&loz; &loz; &loz;</div>
+    </div>
+
+    <div class="page-body">
+      <p>I am Sadh — a computer scientist, engineer, writer, poet, painter, and photographer. I build software, write poems in English and Bengali, study art fundamentals, and photograph the world with curiosity. Currently a Senior Software Engineer at <b>Google DeepMind</b>, working on <b>Gemini API</b> and agentic capabilities.</p>
+
+      <div class="chapter-title">Work</div>
+      <div class="chapter-rule"></div>
+      <p><b>Google DeepMind</b> — Gemini API, agentic capabilities. Previously: Android App Safety infrastructure, Nest ML platform, TCI Loan Origination SaaS, Samsung system software.</p>
+      <div class="s-links"><a href="https://re.sadh.me">Resume</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://github.com/nafSadh">GitHub</a></div>
+
+      <div class="chapter-title">Projects</div>
+      <div class="chapter-rule"></div>
+      <div class="pl">
+        <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">Flags for vexillophiles</div></a>
+        <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">Paper-drives, interactive deep-dives, research writing</div></a>
+        <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">Bengali keyboard</div></a>
+      </div>
+
+      <div class="chapter-title">Writing & Poetry</div>
+      <div class="chapter-rule"></div>
+      <p>Research deep-dives at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry in English and Bengali — <em>Second Seconds</em>, an English collection, is in progress.</p>
+      <div class="s-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">Medium</a></div>
+
+      <div class="chapter-title">Art & Photography</div>
+      <div class="chapter-rule"></div>
+      <p>Painting, digital art, and photography. Currently studying drawing fundamentals and building a photography practice.</p>
+      <div class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">Behance</a><a href="https://flickr.com/sadh">Flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+    </div>
+
+    <div class="colophon">
+      <div class="social"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <p>'Sadh' /ʃadʱ/ — Khan M Nafee Mostafa &middot; &copy; 2026 nafSadh</p>
+    </div>
+  </div>
+</body>
+</html>

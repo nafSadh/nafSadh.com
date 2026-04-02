@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,400;0,6..72,500;1,6..72,200&family=Fira+Code:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Fira Code', monospace; font-size: 13px; line-height: 1.7;
+      color: #8898C0;
+      background: #0C0E18;
+      min-height: 100vh;
+    }
+    a { color: #6070C0; text-decoration: none; }
+    a:hover { color: #8898E0; }
+
+    /* TWO COLUMNS: left = large type identity, right = everything else,
+       separated by a glowing vertical line */
+    .layout {
+      display: grid; grid-template-columns: 280px 1px 1fr;
+      min-height: 100vh; max-width: 820px; margin: 0 auto;
+    }
+
+    .col-left {
+      padding: 4rem 2rem; display: flex; flex-direction: column;
+      justify-content: center; text-align: right;
+    }
+    .col-left h1 {
+      font-family: 'Newsreader', serif; font-size: 2.75rem; font-weight: 200;
+      color: #E0E8F8; letter-spacing: 0.02em;
+    }
+    .col-left .tag { font-size: 0.78rem; color: #404868; margin-top: 0.15rem; }
+    .col-left .identities {
+      font-size: 0.68rem; color: #303858; margin-top: 1.5rem; line-height: 2;
+    }
+    .col-left .socials { margin-top: auto; padding-top: 2rem; }
+    .col-left .socials a { display: block; color: #283050; font-size: 0.62rem; margin-bottom: 0.15rem; }
+    .col-left .socials a:hover { color: #6070C0; }
+    .col-left .copy { font-size: 0.55rem; color: #1A2038; margin-top: 1rem; }
+
+    /* Glowing divider */
+    .divider {
+      background: linear-gradient(180deg, transparent, #3050A0, #5070C0, #3050A0, transparent);
+      opacity: 0.4;
+    }
+
+    .col-right { padding: 4rem 2rem; display: flex; flex-direction: column; justify-content: center; }
+    .bio { font-size: 0.82rem; color: #6878A0; margin-bottom: 2.5rem; }
+    .bio b { color: #A0B0D8; font-weight: 500; }
+
+    .section { margin-bottom: 2rem; }
+    .s-title {
+      font-family: 'Newsreader', serif; font-size: 1rem; font-weight: 400;
+      color: #C0C8E0; margin-bottom: 0.3rem;
+    }
+    .section p { font-size: 0.78rem; color: #6070A0; margin-bottom: 0.15rem; }
+    .hl { color: #A0B0D0; }
+    .s-links { margin-top: 0.25rem; }
+    .s-links a { font-size: 0.62rem; margin-right: 0.5rem; color: #384060; }
+    .s-links a:hover { color: #6070C0; }
+
+    .proj-line { color: #5060A0; margin-top: 0.1rem; }
+    .proj-line .k { color: #6070C0; }
+    .proj-line .cm { color: #283050; }
+    .proj-line a { color: #5060A0; }
+
+    .poem {
+      font-family: 'Newsreader', serif; font-size: 0.95rem; font-weight: 200;
+      font-style: italic; color: #5868A0; line-height: 2; margin: 0.3rem 0;
+    }
+    .poem-attr { font-size: 0.55rem; color: #283050; margin-top: 0.15rem; font-style: normal; }
+
+    @media (max-width: 650px) {
+      .layout { grid-template-columns: 1fr; grid-template-rows: auto 1px auto; }
+      .col-left { text-align: left; padding: 3rem 2rem 2rem; justify-content: flex-start; }
+      .col-left .identities { margin-top: 0.75rem; }
+      .col-left .socials { display: none; }
+      .divider { background: linear-gradient(90deg, transparent, #3050A0, #5070C0, #3050A0, transparent); height: 1px; width: 100%; }
+      .col-right { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="col-left">
+      <div>
+        <h1>nafSadh</h1>
+        <p class="tag">maker of things</p>
+        <div class="identities">
+          computer scientist<br/>
+          engineer<br/>
+          writer & poet<br/>
+          painter<br/>
+          photographer
+        </div>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/nafSadh">GitHub</a>
+        <a href="https://linkedin.com/in/nafsadh">LinkedIn</a>
+        <a href="https://x.com/nafSadh">X</a>
+        <a href="https://instagram.com/nafsadh">Instagram</a>
+      </div>
+      <p class="copy">'Sadh' /ʃadʱ/ &middot; &copy; 2026</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="col-right">
+      <p class="bio">Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+
+      <div class="section">
+        <div class="s-title">Work</div>
+        <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities.</p>
+        <p>Prev: App Safety, Nest ML, TCI, Samsung.</p>
+        <div class="s-links"><a href="https://re.sadh.me">resume</a><a href="https://linkedin.com/in/nafsadh">linkedin</a><a href="https://github.com/nafSadh">github</a></div>
+      </div>
+
+      <div class="section">
+        <div class="s-title">Projects</div>
+        <div class="proj-line"><span class="k">flags</span>: <a href="https://flags.fyi">flags.fyi</a> <span class="cm">// vexillology</span></div>
+        <div class="proj-line"><span class="k">readrd</span>: <a href="https://read.sadh.app">read.sadh.app</a> <span class="cm">// research</span></div>
+        <div class="proj-line"><span class="k">sonnivo</span>: <a href="https://sonnivo.nafsadh.com">sonnivo</a> <span class="cm">// bengali kbd</span></div>
+      </div>
+
+      <div class="section">
+        <div class="s-title">Writing & Poetry</div>
+        <div class="poem">
+          the weight of a word<br/>
+          is not in its letters<br/>
+          but in the silence<br/>
+          it displaces
+        </div>
+        <p class="poem-attr">&mdash; Second Seconds</p>
+        <div class="s-links"><a href="https://read.sadh.app">read·rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">medium</a></div>
+      </div>
+
+      <div class="section">
+        <div class="s-title">Art & Photography</div>
+        <p>Painting, digital art, photography. Drawing fundamentals.</p>
+        <div class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">behance</a><a href="https://flickr.com/sadh">flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

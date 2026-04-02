@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Fira+Code:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.65;
+      color: #C8D0E8;
+      /* Blurple-tinted dark with subtle grain */
+      background: #141420;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse at 30% 50%, rgba(80,60,160,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(40,100,180,0.04) 0%, transparent 50%);
+      min-height: 100vh;
+    }
+    a { color: #7880D0; text-decoration: none; }
+    a:hover { color: #98A0F0; }
+    .container { max-width: 600px; margin: 0 auto; padding: 0 2rem; }
+
+    .hero { padding: 4.5rem 0 2rem; }
+    .hero h1 {
+      font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 300;
+      color: #E8ECF8; margin-bottom: 0.15rem;
+    }
+    .hero-tag { font-size: 0.85rem; color: #505878; margin-bottom: 1.5rem; }
+    .hero-bio { font-size: 0.9rem; color: #7888A8; font-weight: 300; }
+    .hero-bio b { color: #B0B8D8; }
+
+    /* Sections as paint-swatch left borders — but blue/purple/cyan */
+    .section {
+      padding: 1.5rem 0 1.5rem 1.25rem; margin-bottom: 0.5rem;
+      border-left: 3px solid; position: relative;
+    }
+    .section::before {
+      content: ''; position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+      background: rgba(255,255,255,0.01); border-radius: 0 6px 6px 0;
+      pointer-events: none;
+    }
+    .s1 { border-left-color: #5060C0; }
+    .s2 { border-left-color: #7050B8; }
+    .s3 { border-left-color: #3090B0; }
+    .s4 { border-left-color: #4870C0; }
+
+    .s-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
+    .s-title {
+      font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 400; color: #D8DCF0;
+    }
+    .s-links a { font-family: 'Fira Code', monospace; font-size: 0.62rem; margin-left: 0.5rem; color: #404868; }
+    .s-links a:hover { color: #7880D0; }
+    .section p { font-size: 0.85rem; color: #7888A8; margin-bottom: 0.2rem; }
+    .hl { color: #B0B8D8; font-weight: 400; }
+
+    .code-inline {
+      background: rgba(120,128,208,0.04); border: 1px solid rgba(120,128,208,0.08);
+      border-radius: 4px; padding: 0.7rem 0.9rem; margin-top: 0.35rem;
+      font-family: 'Fira Code', monospace; font-size: 0.72rem; color: #6878A0; line-height: 1.7;
+    }
+    .code-inline .cm { color: #404868; }
+    .code-inline .k { color: #7880D0; }
+    .code-inline a { color: #6878A0; }
+    .code-inline a:hover { color: #98A0D0; }
+
+    .poem-inline {
+      margin: 0.5rem 0 0; padding: 0.6rem 0;
+      font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 300;
+      font-style: italic; color: #8890B8; line-height: 1.9;
+    }
+    .poem-inline .attr { font-family: 'Fira Code', monospace; font-size: 0.6rem; color: #404868; font-style: normal; margin-top: 0.3rem; }
+
+    .note { font-family: 'Fira Code', monospace; font-size: 0.62rem; color: #303050; padding: 1.5rem 0 0.5rem; }
+
+    .footer { border-top: 1px solid #1E2030; padding: 1.25rem 0 2rem; }
+    .ft { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .ft-links a { font-family: 'Fira Code', monospace; font-size: 0.62rem; margin-right: 0.6rem; color: #303050; }
+    .ft-links a:hover { color: #7880D0; }
+    .ft-c { font-family: 'Fira Code', monospace; font-size: 0.58rem; color: #202038; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>nafSadh</h1>
+      <p class="hero-tag">Maker of things. Creator. Explorer.</p>
+      <p class="hero-bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+    </header>
+
+    <div class="section s1">
+      <div class="s-head">
+        <span class="s-title">Work</span>
+        <span class="s-links"><a href="https://re.sadh.me">resume</a><a href="https://linkedin.com/in/nafsadh">linkedin</a><a href="https://github.com/nafSadh">github</a></span>
+      </div>
+      <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities.</p>
+      <p>Prev: Android App Safety, Nest ML, TCI, Samsung.</p>
+    </div>
+
+    <div class="section s2">
+      <div class="s-head"><span class="s-title">Projects</span></div>
+      <div class="code-inline">
+        <span class="cm">// things I build</span><br/>
+        <span class="k">flags</span>: <a href="https://flags.fyi">"flags.fyi"</a> <span class="cm">// vexillology</span><br/>
+        <span class="k">readrd</span>: <a href="https://read.sadh.app">"read.sadh.app"</a> <span class="cm">// research</span><br/>
+        <span class="k">sonnivo</span>: <a href="https://sonnivo.nafsadh.com">"sonnivo"</a> <span class="cm">// bengali kbd</span>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <div class="s-head">
+        <span class="s-title">Writing & Poetry</span>
+        <span class="s-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">medium</a></span>
+      </div>
+      <p>Research deep-dives. Poetry in English and Bengali.</p>
+      <div class="poem-inline">
+        the weight of a word<br/>
+        is not in its letters<br/>
+        but in the silence<br/>
+        it displaces
+        <div class="attr">&mdash; Second Seconds (in progress)</div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <div class="s-head">
+        <span class="s-title">Art & Photography</span>
+        <span class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">behance</a><a href="https://flickr.com/sadh">flickr</a><a href="https://500px.com/nafsadh">500px</a></span>
+      </div>
+      <p>Painting, digital art, photography. Studying drawing fundamentals.</p>
+    </div>
+
+    <p class="note">'Sadh' /ʃadʱ/ &mdash; Khan M Nafee Mostafa</p>
+
+    <footer class="footer"><div class="ft">
+      <div class="ft-links"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <span class="ft-c">&copy; 2026 nafSadh</span>
+    </div></footer>
+  </div>
+</body>
+</html>

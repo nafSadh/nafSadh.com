@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="https://nafsadh.com/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #10121C;
+      --accent:    #7888D8;
+      --accent2:   #5060B0;
+      --accent3:   #3A4890;
+      --text-hi:   #E0E8F8;
+      --text-mid:  #8090C0;
+      --text-dim:  #404868;
+      --text-gh:   #283050;
+      --rule-base: #1C2040;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-mid);
+      font-family: 'Fira Code', monospace;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--accent2); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent); }
+
+    /* ─────────────────────────────────────────────────────────
+       LAYOUT
+    ──────────────────────────────────────────────────────── */
+    .wrap {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       THE RULES — each is a deliberate mark on the canvas.
+       Weight, color, style, width, animation all vary.
+       They ARE the structure; content breathes between them.
+    ──────────────────────────────────────────────────────── */
+
+    /* Primary anchor — thick blurple gradient, full column width */
+    .r-anchor {
+      border: none;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        transparent   0%,
+        var(--accent3) 12%,
+        var(--accent)  50%,
+        var(--accent3) 88%,
+        transparent  100%
+      );
+      margin: 0;
+    }
+
+    /* Glow pulse — warm, animated, used for the creative sections */
+    .r-glow {
+      border: none;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent   0%,
+        var(--accent2) 35%,
+        var(--accent)  50%,
+        var(--accent2) 65%,
+        transparent  100%
+      );
+      margin: 0;
+      animation: pulseRule 5s ease-in-out infinite;
+    }
+    @keyframes pulseRule {
+      0%, 100% { opacity: 0.45; }
+      50%       { opacity: 1; filter: drop-shadow(0 0 4px var(--accent2)); }
+    }
+
+    /* Hairline — structural, barely visible */
+    .r-hair {
+      border: none;
+      height: 1px;
+      background: var(--rule-base);
+      margin: 0;
+    }
+
+    /* Dotted — textural, like pencil stippling */
+    .r-dot {
+      border: none;
+      height: 1px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--text-gh) 0px,
+        var(--text-gh) 2px,
+        transparent    2px,
+        transparent    8px
+      );
+      margin: 0;
+    }
+
+    /* Bleed — extends beyond column, a brushstroke that escapes the frame */
+    .r-bleed-wrap {
+      /* full-viewport bleed container */
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+    .r-bleed {
+      border: none;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        transparent   0%,
+        var(--accent3) 8%,
+        var(--accent2) 45%,
+        var(--accent3) 72%,
+        transparent  100%
+      );
+      margin: 0;
+      /* offset so the visible gradient occupies ~the column + a bit more */
+      padding: 0;
+    }
+
+    /* Ghost — barely there, a whisper of division */
+    .r-ghost {
+      border: none;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent  0%,
+        var(--text-gh) 25%,
+        var(--text-gh) 75%,
+        transparent 100%
+      );
+      margin: 0;
+      opacity: 0.35;
+    }
+
+    /* Slash — offset, like a quick brushstroke dab closing the page */
+    .r-slash {
+      border: none;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent   42%,
+        var(--accent)  62%,
+        transparent  100%
+      );
+      margin: 0;
+      opacity: 0.55;
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       SPACING TOKENS
+    ──────────────────────────────────────────────────────── */
+    .sp-xl { height: 4.5rem; }
+    .sp-lg  { height: 2.75rem; }
+    .sp-md  { height: 1.75rem; }
+    .sp-sm  { height: 1rem; }
+    .sp-xs  { height: 0.5rem; }
+
+    /* ─────────────────────────────────────────────────────────
+       TYPOGRAPHY
+    ──────────────────────────────────────────────────────── */
+
+    /* Name — Cormorant, large, white, never wraps */
+    .name-display {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.9rem, 9vw, 4.2rem);
+      font-weight: 300;
+      color: var(--text-hi);
+      letter-spacing: 0.01em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .tagline {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem;
+      font-weight: 300;
+      color: var(--text-dim);
+      letter-spacing: 0.16em;
+      text-transform: lowercase;
+      margin-top: 0.65rem;
+    }
+
+    .bio {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-top: 1.5rem;
+    }
+    .bio strong {
+      font-weight: 500;
+      color: var(--text-hi);
+    }
+
+    /* Section label — small-caps feel, monospace */
+    .s-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.6rem;
+      font-weight: 400;
+      color: var(--text-dim);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* Section heading — Cormorant, large, used optionally */
+    .s-head {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--text-hi);
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      margin-top: 0.15rem;
+    }
+
+    /* Work timeline entries */
+    .work-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      margin-top: 0.85rem;
+    }
+    .work-co {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      color: var(--text-hi);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .work-note {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+    .work-note .hi { color: var(--accent); }
+
+    /* Projects as code block */
+    .code-block {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      font-weight: 300;
+      line-height: 2.1;
+      margin-top: 0.6rem;
+    }
+    .code-block .kw  { color: var(--accent); font-weight: 400; }
+    .code-block .sep { color: var(--text-gh); margin: 0 0.3em; }
+    .code-block .cm  { color: var(--text-gh); }
+    .code-block a    { color: var(--text-mid); }
+    .code-block a:hover { color: var(--accent); }
+
+    /* Poem */
+    .poem {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 2.3;
+      margin-top: 0.6rem;
+    }
+    .poem-attr {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.58rem;
+      font-weight: 300;
+      color: var(--text-gh);
+      margin-top: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* Prose blurb — Cormorant, dimmer tone */
+    .blurb {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.9;
+      margin-top: 0.6rem;
+    }
+    .blurb a { color: var(--text-dim); }
+    .blurb a:hover { color: var(--accent); }
+
+    /* Social links */
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0;
+      margin-top: 0.4rem;
+    }
+    .socials a {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem;
+      font-weight: 300;
+      color: var(--text-dim);
+      letter-spacing: 0.03em;
+    }
+    .socials a:hover { color: var(--accent); }
+    .socials .dot {
+      color: var(--text-gh);
+      font-size: 0.5rem;
+      margin: 0 0.55rem;
+      line-height: 1;
+    }
+
+    /* Footer fine print */
+    .name-note {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.58rem;
+      font-weight: 300;
+      color: var(--text-gh);
+      letter-spacing: 0.04em;
+      margin-top: 0.9rem;
+    }
+    .copy {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.52rem;
+      font-weight: 300;
+      color: var(--text-gh);
+      opacity: 0.45;
+      margin-top: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════ HEADER ══════ -->
+  <div class="sp-xl"></div>
+
+  <div class="wrap">
+    <div class="name-display">nafSadh</div>
+    <div class="tagline">maker of things</div>
+  </div>
+
+  <div class="sp-md"></div>
+
+  <!-- Primary anchor — opens the page with weight -->
+  <div class="wrap"><hr class="r-anchor" /></div>
+
+  <div class="sp-md"></div>
+
+  <div class="wrap">
+    <p class="bio">
+      Computer scientist, engineer, writer, poet, painter, photographer.<br/>
+      <strong>Senior SWE</strong> at <strong>Google DeepMind</strong> —
+      Gemini API &amp; agentic capabilities.
+    </p>
+  </div>
+
+  <div class="sp-xl"></div>
+
+  <!-- ═══════════════════════════════════ WORK ════════ -->
+  <!-- Bleed rule — sweeps past the column, like a wide brushstroke -->
+  <div class="r-bleed-wrap"><hr class="r-bleed" /></div>
+
+  <div class="sp-md"></div>
+
+  <div class="wrap">
+    <span class="s-label">Work</span>
+
+    <div class="work-row">
+      <span class="work-co" style="font-size: 1.15rem;">Google DeepMind</span>
+      <span class="work-note"><span class="hi">Gemini API</span> &amp; agentic capabilities</span>
+    </div>
+
+    <div class="sp-xs"></div>
+    <hr class="r-ghost" />
+    <div class="sp-xs"></div>
+
+    <div class="work-row">
+      <span class="work-co" style="font-size: 1rem; color: var(--text-mid);">App Safety</span>
+      <span class="work-note">prev — Android trust &amp; safety infrastructure</span>
+    </div>
+    <div class="work-row">
+      <span class="work-co" style="font-size: 0.95rem; color: var(--text-dim);">Nest ML</span>
+      <span class="work-note">prev — on-device machine learning platform</span>
+    </div>
+    <div class="work-row">
+      <span class="work-co" style="font-size: 0.9rem; color: var(--text-dim);">TCI</span>
+      <span class="work-note">prev — loan origination SaaS</span>
+    </div>
+    <div class="work-row">
+      <span class="work-co" style="font-size: 0.85rem; color: var(--text-gh);">Samsung</span>
+      <span class="work-note" style="color: var(--text-gh);">prev — DSP &amp; SoC system software</span>
+    </div>
+  </div>
+
+  <div class="sp-lg"></div>
+
+  <!-- ═══════════════════════════════════ PROJECTS ════ -->
+  <!-- Hairline — quiet structural division -->
+  <div class="wrap"><hr class="r-hair" /></div>
+
+  <div class="sp-md"></div>
+
+  <div class="wrap">
+    <span class="s-label">Projects</span>
+
+    <div class="blurb">
+      <div style="margin-top: 0.6rem; line-height: 1.95;">
+        <a href="https://flags.fyi">flags.fyi</a> — vexillology explorer
+      </div>
+      <div style="margin-top: 0.6rem;">
+        <a href="https://read.sadh.app">read.sadh.app</a> — research &amp; reading
+      </div>
+      <div style="margin-top: 0.6rem;">
+        <a href="https://sonnivo.nafsadh.com">sonnivo</a> — Bengali keyboard
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-lg"></div>
+
+  <!-- ═══════════════════════════════════ WRITING ═════ -->
+  <!-- Glow rule — warm, pulsing, marks the creative turn -->
+  <div class="wrap"><hr class="r-glow" /></div>
+
+  <div class="sp-md"></div>
+
+  <div class="wrap">
+    <span class="s-label">Writing &amp; Poetry</span>
+
+    <div class="poem">
+      the weight of a word<br/>
+      is not in its letters<br/>
+      but in the silence<br/>
+      it displaces
+    </div>
+    <div class="poem-attr">— <em>Second Seconds</em>&ensp;(in progress)</div>
+
+    <div class="sp-sm"></div>
+
+    <div class="blurb">
+      Essays, research deep-dives, Bengali poetry, and occasional fiction.
+      Scattered across <a href="https://read.sadh.app">read.sadh.app</a>,
+      <a href="https://sadhubochon.wordpress.com">সাধুবচন</a>,
+      and <a href="https://medium.com/@nafsadh">Medium</a>.
+    </div>
+  </div>
+
+  <div class="sp-lg"></div>
+
+  <!-- ═══════════════════════════════════ ART ═════════ -->
+  <!-- Dotted rule — textural, like the edge of a sketchbook page -->
+  <div class="wrap"><hr class="r-dot" /></div>
+
+  <div class="sp-md"></div>
+
+  <div class="wrap">
+    <span class="s-label">Art &amp; Photography</span>
+
+    <div class="blurb">
+      Painting in oil, watercolor, and digital media. Photography drawn to
+      light, geometry, and the in-between. Drawing fundamentals as a long,
+      patient practice. Work at
+      <a href="https://nafsadh.art">nafsadh.art</a>,
+      <a href="https://behance.net/nafsadh">Behance</a>,
+      <a href="https://flickr.com/sadh">Flickr</a>.
+    </div>
+  </div>
+
+  <div class="sp-xl"></div>
+
+  <!-- ═══════════════════════════════════ FOOTER ══════ -->
+  <!-- Slash rule — offset right, a closing gesture -->
+  <div class="wrap"><hr class="r-slash" /></div>
+
+  <div class="sp-sm"></div>
+
+  <!-- Closing anchor — mirrors the opening, symmetry as rhythm -->
+  <div class="wrap"><hr class="r-anchor" /></div>
+
+  <div class="sp-md"></div>
+
+  <div class="wrap">
+    <div class="socials">
+      <a href="https://github.com/nafSadh">GitHub</a>
+      <span class="dot">·</span>
+      <a href="https://linkedin.com/in/nafsadh">LinkedIn</a>
+      <span class="dot">·</span>
+      <a href="https://x.com/nafSadh">X</a>
+      <span class="dot">·</span>
+      <a href="https://instagram.com/nafsadh">Instagram</a>
+    </div>
+
+    <div class="name-note">'Sadh' /ʃadʱ/&ensp;—&ensp;Khan M Nafee Mostafa</div>
+    <div class="copy">&copy; 2026 nafSadh</div>
+  </div>
+
+  <div class="sp-xl"></div>
+
+</body>
+</html>

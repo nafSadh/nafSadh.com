@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,800;1,9..144,300&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* GRADIENT SHIFTS AS YOU SCROLL via scroll-timeline */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Fira Code', monospace; font-size: 14px; line-height: 1.7;
+      color: #C0C8E0;
+      background: #0C0E18;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; border-bottom: 1px solid #2A3050; }
+    a:hover { border-bottom-color: #6070C0; color: #A0B0F0; }
+
+    /* Floating gradient blob that stays in viewport */
+    .glow {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(600px circle at 20% 30%, rgba(70,50,160,0.1) 0%, transparent 100%),
+        radial-gradient(500px circle at 80% 70%, rgba(40,100,200,0.07) 0%, transparent 100%);
+    }
+
+    .container { max-width: 520px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+    /* ULTRA MINIMAL: just typography, no boxes, no cards, no borders.
+       The whole page reads like a single document. */
+    .hero { padding: 5rem 0 3rem; }
+    .hero h1 {
+      font-family: 'Fraunces', serif; font-size: 4rem; font-weight: 800;
+      color: #E8ECF8; letter-spacing: -0.03em; line-height: 1;
+    }
+    .hero p {
+      font-size: 0.82rem; color: #404868; margin-top: 1.5rem; max-width: 360px;
+    }
+    .hero p b { color: #7080A0; font-weight: 500; }
+
+    .block { margin-bottom: 3rem; }
+    .block-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; color: #303058; margin-bottom: 0.75rem; }
+    .block p { color: #6070A0; margin-bottom: 0.3rem; }
+    .block p .w { color: #9AA0C0; }
+
+    /* Projects as a simple indented list */
+    .indent { padding-left: 1.5rem; }
+    .indent a { display: block; padding: 0.2rem 0; border-bottom: none; color: #6070A0; }
+    .indent a:hover { color: #A0B0F0; }
+    .indent .sub { color: #303058; font-size: 0.72rem; margin-left: 0.5rem; }
+
+    /* Poem — just text, no box */
+    .poem {
+      font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 300;
+      font-style: italic; color: #5868A0; line-height: 2; margin: 0.5rem 0;
+    }
+    .poem-attr { font-family: 'Fira Code', monospace; font-size: 0.62rem; color: #303058; margin-top: 0.3rem; font-style: normal; }
+
+    .links-row { margin-top: 0.4rem; }
+    .links-row a { margin-right: 0.6rem; color: #404868; font-size: 0.72rem; border-bottom: none; }
+    .links-row a:hover { color: #7080D0; }
+
+    footer { padding: 2rem 0 3rem; }
+    .f-links a { margin-right: 0.75rem; color: #252848; font-size: 0.72rem; border-bottom: none; }
+    .f-links a:hover { color: #6070C0; }
+    .f-copy { font-size: 0.6rem; color: #1A1E38; margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="container">
+    <header class="hero">
+      <h1>naf<br/>Sadh</h1>
+      <p>Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+    </header>
+
+    <div class="block">
+      <div class="block-label">work</div>
+      <p><span class="w">Google DeepMind</span> — Gemini API, agentic capabilities.</p>
+      <p>Previously: App Safety, Nest ML, TCI, Samsung.</p>
+      <div class="links-row"><a href="https://re.sadh.me">resume</a><a href="https://linkedin.com/in/nafsadh">linkedin</a><a href="https://github.com/nafSadh">github</a></div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">projects</div>
+      <div class="indent">
+        <a href="https://flags.fyi">flags.fyi <span class="sub">vexillology</span></a>
+        <a href="https://read.sadh.app">read.sadh.app <span class="sub">research deep-dives</span></a>
+        <a href="https://sonnivo.nafsadh.com">sonnivo <span class="sub">bengali keyboard</span></a>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">writing & poetry</div>
+      <div class="poem">
+        the weight of a word<br/>
+        is not in its letters<br/>
+        but in the silence<br/>
+        it displaces
+      </div>
+      <p class="poem-attr">&mdash; Second Seconds (in progress)</p>
+      <div class="links-row"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">medium</a></div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">art & photography</div>
+      <p>Painting, digital art, photography. Drawing fundamentals.</p>
+      <div class="links-row"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">behance</a><a href="https://flickr.com/sadh">flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+    </div>
+
+    <footer>
+      <div class="f-links"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <p class="f-copy">'Sadh' /ʃadʱ/ — Khan M Nafee Mostafa &middot; &copy; 2026</p>
+    </footer>
+  </div>
+</body>
+</html>

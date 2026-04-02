@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.65;
+      color: #3A3530;
+      /* Dot grid paper like Rhodia/Leuchtturm */
+      background: #FEFBF4;
+      background-image: radial-gradient(circle, #D0C8B8 0.7px, transparent 0.7px);
+      background-size: 20px 20px;
+      display: flex; justify-content: center; padding: 2.5rem 1rem; min-height: 100vh;
+    }
+    a { color: #5A7A5A; text-decoration: none; }
+    a:hover { color: #3A5A3A; }
+
+    .page { max-width: 580px; width: 100%; }
+
+    .hero { padding: 1rem 0 2rem; }
+    .hero-row { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1rem; }
+    .avatar { width: 64px; height: 64px; border-radius: 50%; border: 2px solid #E8E0D0; }
+    .hero h1 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 500; color: #1A1510; }
+    .hero .tagline { font-size: 0.88rem; color: #7A6A58; font-weight: 300; }
+    .hero .bio { font-size: 0.9rem; color: #5A5048; }
+    .hero .bio b { color: #2A2520; }
+
+    /* Sections with hand-drawn-feel underlines */
+    .section { margin-bottom: 1.75rem; }
+    .s-title {
+      font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 500;
+      color: #1A1510; margin-bottom: 0.4rem; display: inline-block;
+      border-bottom: 2px solid; padding-bottom: 2px;
+    }
+    .section:nth-child(1) .s-title { border-color: #C85A4A; }
+    .section:nth-child(2) .s-title { border-color: #D89848; }
+    .section:nth-child(3) .s-title { border-color: #4A7AA0; }
+    .section:nth-child(4) .s-title { border-color: #5A8A5A; }
+    .section p { font-size: 0.88rem; color: #5A5048; margin-bottom: 0.3rem; }
+    .hl { color: #2A2520; font-weight: 500; }
+
+    .s-links { margin-top: 0.4rem; }
+    .s-links a { font-size: 0.8rem; margin-right: 0.75rem; color: #8A7A68; }
+    .s-links a:hover { color: #5A7A5A; }
+
+    .pl a { display: inline-block; margin-right: 1.5rem; margin-bottom: 0.5rem; text-decoration: none; vertical-align: top; }
+    .pl a:hover .pn { color: #5A7A5A; }
+    .pn { font-size: 0.88rem; font-weight: 500; color: #2A2520; transition: color 0.15s; }
+    .pd { font-size: 0.7rem; color: #A09080; }
+
+    .footer {
+      padding-top: 1.5rem; margin-top: 1rem; border-top: 1px solid #E0D8C8;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .fl a { font-size: 0.8rem; margin-right: 1rem; color: #A09080; }
+    .fl a:hover { color: #5A7A5A; }
+    .fn { font-size: 0.7rem; color: #B0A898; font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-row">
+        <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+        <div><h1>nafSadh</h1><div class="tagline">Maker of things. Creator. Explorer.</div></div>
+      </div>
+      <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+    </header>
+    <div class="section">
+      <div class="s-title">Work</div>
+      <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities. Prev: App Safety, Nest ML, TCI, Samsung.</p>
+      <div class="s-links"><a href="https://re.sadh.me">Resume</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://github.com/nafSadh">GitHub</a></div>
+    </div>
+    <div class="section">
+      <div class="s-title">Projects</div>
+      <div class="pl">
+        <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">Flags for vexillophiles</div></a>
+        <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">Research deep-dives</div></a>
+        <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">Bengali keyboard</div></a>
+      </div>
+    </div>
+    <div class="section">
+      <div class="s-title">Writing & Poetry</div>
+      <p>Research at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry — <em>Second Seconds</em>. English & Bengali.</p>
+      <div class="s-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">Medium</a></div>
+    </div>
+    <div class="section">
+      <div class="s-title">Art & Photography</div>
+      <p>Painting, digital art, photography. Drawing fundamentals.</p>
+      <div class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">Behance</a><a href="https://flickr.com/sadh">Flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+    </div>
+    <div class="footer">
+      <div class="fl"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <span class="fn">'Sadh' /ʃadʱ/ &middot; &copy; 2026</span>
+    </div>
+  </div>
+</body>
+</html>

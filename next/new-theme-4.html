@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.65;
+      color: #C0C8E0;
+      background: #10131E;
+      background-image:
+        radial-gradient(ellipse at 25% 40%, rgba(80,90,180,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 70%, rgba(60,120,180,0.06) 0%, transparent 50%);
+      min-height: 100vh;
+    }
+    a { color: #6888E0; text-decoration: none; }
+    a:hover { color: #88A8FF; }
+    .container { max-width: 620px; margin: 0 auto; padding: 0 2rem; }
+
+    .hero { padding: 4.5rem 0 2.5rem; }
+    .hero h1 {
+      font-family: 'Fraunces', serif; font-size: 2.75rem; font-weight: 300;
+      color: #E8ECF8; margin-bottom: 0.15rem; letter-spacing: -0.01em;
+    }
+    .hero-tag { font-size: 0.88rem; color: #5060888; font-weight: 300; margin-bottom: 1.5rem; }
+    .hero-bio { font-size: 0.92rem; color: #7888A8; font-weight: 300; max-width: 480px; }
+    .hero-bio b { color: #B0B8D8; font-weight: 400; }
+    .hero-name { font-size: 0.72rem; color: #303850; margin-top: 0.75rem; font-family: 'Fira Code', monospace; }
+
+    /* Cards that float up from the dark */
+    .cards { display: flex; flex-direction: column; gap: 0.6rem; padding: 1rem 0 3rem; }
+    .card {
+      background: rgba(255,255,255,0.025); border: 1px solid rgba(100,120,200,0.08);
+      border-radius: 8px; padding: 1.4rem 1.5rem; transition: all 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .card:hover { border-color: rgba(100,120,200,0.18); background: rgba(255,255,255,0.04); }
+    .card-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; }
+    .card-title {
+      font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 400; color: #D0D4E8;
+    }
+    .card-links a { font-family: 'Fira Code', monospace; font-size: 0.65rem; margin-left: 0.6rem; color: #404868; }
+    .card-links a:hover { color: #6888E0; }
+    .card p { font-size: 0.85rem; color: #7080A0; margin-bottom: 0.2rem; }
+    .hl { color: #B0B8D8; font-weight: 400; }
+
+    /* Code in project card */
+    .code-inline {
+      background: rgba(100,120,200,0.06); border: 1px solid rgba(100,120,200,0.08);
+      border-radius: 4px; padding: 0.7rem 0.9rem; margin-top: 0.4rem;
+      font-family: 'Fira Code', monospace; font-size: 0.72rem; color: #6080B0; line-height: 1.7;
+    }
+    .code-inline .cm { color: #404868; }
+    .code-inline .k { color: #6888E0; }
+    .code-inline a { color: #6080B0; }
+    .code-inline a:hover { color: #88A8D8; }
+
+    /* Poem in writing card */
+    .poem-inline {
+      margin: 0.6rem 0 0; padding: 0.75rem 1rem;
+      border-left: 2px solid #303868;
+      font-family: 'Fraunces', serif; font-size: 0.92rem; font-weight: 300;
+      font-style: italic; color: #8890B0; line-height: 1.9;
+    }
+    .poem-inline .attr {
+      font-size: 0.65rem; color: #404868; font-style: normal; margin-top: 0.35rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .footer { border-top: 1px solid rgba(100,120,200,0.06); padding: 1.25rem 0 2rem; }
+    .ft { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .ft-links a { font-family: 'Fira Code', monospace; font-size: 0.65rem; margin-right: 0.6rem; color: #303850; }
+    .ft-links a:hover { color: #6888E0; }
+    .ft-note { font-size: 0.65rem; color: #252840; font-family: 'Fira Code', monospace; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>nafSadh</h1>
+      <p class="hero-tag">Maker of things. Creator. Explorer.</p>
+      <p class="hero-bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+      <p class="hero-name">'Sadh' /ʃadʱ/ &mdash; Khan M Nafee Mostafa</p>
+    </header>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Work</span>
+          <span class="card-links"><a href="https://re.sadh.me">resume</a><a href="https://linkedin.com/in/nafsadh">linkedin</a><a href="https://github.com/nafSadh">github</a></span>
+        </div>
+        <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities.</p>
+        <p>Previously: Android App Safety, Nest ML platform, TCI SaaS, Samsung DSP/SoC.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><span class="card-title">Projects</span></div>
+        <div class="code-inline">
+          <span class="cm">// things I build</span><br/>
+          <span class="k">flags</span>: <a href="https://flags.fyi">"flags.fyi"</a> <span class="cm">// vexillology</span><br/>
+          <span class="k">readrd</span>: <a href="https://read.sadh.app">"read.sadh.app"</a> <span class="cm">// research</span><br/>
+          <span class="k">sonnivo</span>: <a href="https://sonnivo.nafsadh.com">"sonnivo"</a> <span class="cm">// bengali kbd</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Writing & Poetry</span>
+          <span class="card-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">medium</a></span>
+        </div>
+        <p>Research deep-dives. Poetry in English and Bengali.</p>
+        <div class="poem-inline">
+          the weight of a word<br/>
+          is not in its letters<br/>
+          but in the silence<br/>
+          it displaces
+          <div class="attr">&mdash; Second Seconds (in progress)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Art & Photography</span>
+          <span class="card-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">behance</a><a href="https://flickr.com/sadh">flickr</a><a href="https://500px.com/nafsadh">500px</a></span>
+        </div>
+        <p>Painting, digital art, photography. Studying drawing fundamentals.</p>
+      </div>
+    </div>
+
+    <footer class="footer"><div class="ft">
+      <div class="ft-links"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <span class="ft-note">&copy; 2026 nafSadh</span>
+    </div></footer>
+  </div>
+</body>
+</html>

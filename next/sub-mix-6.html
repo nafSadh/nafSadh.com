@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh — palimpsest</title>
+  <meta name="description" content="nafSadh — computer scientist, engineer, writer, poet, painter, photographer." />
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,200;1,9..144,300;1,9..144,400&family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ================================================================
+       PALIMPSEST — a page written over itself
+       ================================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0C0E18;
+      --accent:    #7080D0;
+      --text-hi:   #C0C8E0;
+      --text-mid:  #7888A8;
+      --text-lo:   #404868;
+      --text-ghost:#1C2038;
+      --echo-opacity: 0.12;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-color: var(--text-lo) var(--bg);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text-mid);
+      background: var(--bg);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s, opacity 0.2s;
+    }
+    a:hover { color: var(--text-hi); }
+
+    /* ================================================================
+       THE PALIMPSEST LAYER — ghostly echoes behind the manuscript
+       ================================================================ */
+
+    .palimpsest-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .echo {
+      position: absolute;
+      font-family: 'Fraunces', serif;
+      font-weight: 200;
+      font-style: italic;
+      color: var(--text-mid);
+      white-space: nowrap;
+      user-select: none;
+      will-change: transform;
+    }
+
+    /* Each echo has unique placement, rotation, size, and opacity */
+    .echo-1  { top: 6%;   left: 5%;   font-size: 2.8rem;  opacity: 0.06; transform: rotate(-1.2deg); }
+    .echo-2  { top: 12%;  right: 8%;  font-size: 1.1rem;  opacity: 0.09; transform: rotate(0.8deg); }
+    .echo-3  { top: 22%;  left: 12%;  font-size: 0.95rem; opacity: 0.07; transform: rotate(-0.5deg); }
+    .echo-4  { top: 30%;  right: 15%; font-size: 1.6rem;  opacity: 0.05; transform: rotate(1.5deg); }
+    .echo-5  { top: 38%;  left: 3%;   font-size: 0.85rem; opacity: 0.08; transform: rotate(-2deg); }
+    .echo-6  { top: 48%;  right: 5%;  font-size: 1.3rem;  opacity: 0.06; transform: rotate(0.7deg); }
+    .echo-7  { top: 55%;  left: 20%;  font-size: 0.9rem;  opacity: 0.07; transform: rotate(-1.8deg); }
+    .echo-8  { top: 65%;  right: 12%; font-size: 1.05rem; opacity: 0.05; transform: rotate(1.1deg); }
+    .echo-9  { top: 72%;  left: 8%;   font-size: 2.2rem;  opacity: 0.04; transform: rotate(-0.3deg); }
+    .echo-10 { top: 80%;  right: 18%; font-size: 0.8rem;  opacity: 0.08; transform: rotate(1.9deg); }
+    .echo-11 { top: 88%;  left: 15%;  font-size: 1.15rem; opacity: 0.06; transform: rotate(-1.4deg); }
+    .echo-12 { top: 15%;  left: 45%;  font-size: 0.75rem; opacity: 0.05; transform: rotate(2.1deg); }
+    .echo-13 { top: 42%;  left: 55%;  font-size: 0.7rem;  opacity: 0.06; transform: rotate(-0.9deg); }
+    .echo-14 { top: 58%;  right: 30%; font-size: 1.8rem;  opacity: 0.035;transform: rotate(0.4deg); }
+    .echo-15 { top: 92%;  left: 40%;  font-size: 0.65rem; opacity: 0.07; transform: rotate(-1.7deg); }
+
+    /* Slow drift animation for echoes — they breathe */
+    @keyframes echo-drift-1 { 0%, 100% { transform: rotate(-1.2deg) translate(0,0); } 50% { transform: rotate(-1deg) translate(8px, 12px); } }
+    @keyframes echo-drift-2 { 0%, 100% { transform: rotate(0.8deg) translate(0,0); } 50% { transform: rotate(1deg) translate(-6px, 8px); } }
+    @keyframes echo-drift-3 { 0%, 100% { transform: rotate(-0.5deg) translate(0,0); } 50% { transform: rotate(-0.3deg) translate(10px, -5px); } }
+    @keyframes echo-drift-4 { 0%, 100% { transform: rotate(1.5deg) translate(0,0); } 50% { transform: rotate(1.8deg) translate(-12px, 6px); } }
+    @keyframes echo-drift-5 { 0%, 100% { transform: rotate(-2deg) translate(0,0); } 50% { transform: rotate(-1.7deg) translate(5px, 10px); } }
+
+    .echo-1  { animation: echo-drift-1 38s ease-in-out infinite; }
+    .echo-2  { animation: echo-drift-2 32s ease-in-out infinite; }
+    .echo-3  { animation: echo-drift-3 44s ease-in-out infinite; }
+    .echo-4  { animation: echo-drift-4 36s ease-in-out infinite; }
+    .echo-5  { animation: echo-drift-5 42s ease-in-out infinite; }
+    .echo-6  { animation: echo-drift-1 40s ease-in-out infinite reverse; }
+    .echo-7  { animation: echo-drift-2 46s ease-in-out infinite; }
+    .echo-8  { animation: echo-drift-3 34s ease-in-out infinite reverse; }
+    .echo-9  { animation: echo-drift-4 50s ease-in-out infinite; }
+    .echo-10 { animation: echo-drift-5 38s ease-in-out infinite reverse; }
+    .echo-11 { animation: echo-drift-1 44s ease-in-out infinite; }
+    .echo-12 { animation: echo-drift-2 48s ease-in-out infinite reverse; }
+    .echo-13 { animation: echo-drift-3 36s ease-in-out infinite; }
+    .echo-14 { animation: echo-drift-4 52s ease-in-out infinite reverse; }
+    .echo-15 { animation: echo-drift-5 30s ease-in-out infinite; }
+
+    /* ================================================================
+       TEXTURE OVERLAY — subtle noise for parchment feel
+       ================================================================ */
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    /* ================================================================
+       INK WASH — ambient color behind the manuscript
+       ================================================================ */
+
+    .ink-wash {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 45% at 15% 10%, rgba(70,55,160,0.14) 0%, transparent 70%),
+        radial-gradient(ellipse 45% 40% at 85% 25%, rgba(55,70,180,0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 50% at 40% 60%, rgba(90,60,200,0.06) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 35% at 70% 85%, rgba(50,60,150,0.10) 0%, transparent 60%);
+    }
+
+    /* ================================================================
+       MANUSCRIPT — the main text layer
+       ================================================================ */
+
+    .manuscript {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 12vh 2rem 10vh;
+    }
+
+    /* ── Sections with scroll-fade ── */
+    .folio {
+      margin-bottom: 8rem;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .folio.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Inline echoes: secondary text that feels like a prior draft ── */
+    .draft-echo {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 200;
+      color: var(--text-lo);
+      opacity: 0.28;
+      font-size: 0.82rem;
+      margin-top: 0.4rem;
+      transform: translateX(6px) rotate(-0.3deg);
+      letter-spacing: 0.02em;
+      transition: opacity 0.6s;
+      user-select: none;
+    }
+    .folio:hover .draft-echo { opacity: 0.45; }
+
+    /* ── Margin annotation — floats beside or below text ── */
+    .margin-note {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.62rem;
+      color: var(--text-lo);
+      opacity: 0.35;
+      letter-spacing: 0.06em;
+      margin-top: 1rem;
+      padding-left: 1.5rem;
+      border-left: 1px solid rgba(112,128,208,0.12);
+      transition: opacity 0.4s;
+    }
+    .folio:hover .margin-note { opacity: 0.6; }
+
+    /* ================================================================
+       HERO / NAME
+       ================================================================ */
+
+    .hero-folio {
+      margin-bottom: 10rem;
+      padding-top: 8vh;
+    }
+
+    .hero-name {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(4rem, 12vw, 7.5rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: -0.03em;
+      color: var(--text-hi);
+      line-height: 0.9;
+      position: relative;
+    }
+
+    /* Ghost echo of the name, offset */
+    .hero-name::before {
+      content: 'nafSadh';
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      opacity: 0.06;
+      font-weight: 200;
+      transform: rotate(-0.8deg);
+      z-index: -1;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-family: 'Fira Code', monospace;
+      font-size: clamp(0.72rem, 1.6vw, 0.88rem);
+      color: var(--text-lo);
+      letter-spacing: 0.1em;
+      margin-top: 1rem;
+    }
+
+    .hero-bio {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-top: 2rem;
+      max-width: 520px;
+    }
+    .hero-bio em {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-hi);
+    }
+
+    /* ================================================================
+       RULE — the faint horizontal mark between folios
+       ================================================================ */
+
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(112,128,208,0.15) 30%, rgba(112,128,208,0.15) 70%, transparent 100%);
+      margin-bottom: 5rem;
+    }
+
+    /* ================================================================
+       SECTION HEADINGS
+       ================================================================ */
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--text-hi);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    /* A ghostly alternate heading behind */
+    .section-title .alt {
+      position: absolute;
+      top: 3px;
+      left: 6px;
+      opacity: 0.07;
+      font-weight: 200;
+      transform: rotate(0.4deg);
+      z-index: -1;
+      color: var(--accent);
+      pointer-events: none;
+    }
+
+    /* ================================================================
+       WORK
+       ================================================================ */
+
+    .work-current {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      max-width: 540px;
+    }
+    .work-current strong {
+      color: var(--text-hi);
+      font-weight: 500;
+    }
+
+    .work-trail {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: var(--text-lo);
+      margin-top: 1.2rem;
+      line-height: 2;
+      letter-spacing: 0.02em;
+    }
+    .work-trail .sep {
+      color: var(--text-ghost);
+      margin: 0 0.3em;
+    }
+
+    /* ================================================================
+       PROJECTS
+       ================================================================ */
+
+    .project-list {
+      list-style: none;
+    }
+
+    .project-item {
+      margin-bottom: 1.6rem;
+      position: relative;
+    }
+
+    .project-name {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.88rem;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+    .project-name a { color: var(--accent); }
+    .project-name a:hover { color: var(--text-hi); }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      margin-top: 0.15rem;
+      max-width: 440px;
+    }
+
+    /* ================================================================
+       POEM
+       ================================================================ */
+
+    .poem-block {
+      padding: 2rem 0 2rem 1.5rem;
+      border-left: 1px solid rgba(112,128,208,0.18);
+      position: relative;
+    }
+
+    .poem-line {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-weight: 200;
+      font-style: italic;
+      color: var(--text-hi);
+      line-height: 2.1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .poem-block.visible .poem-line {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered reveal */
+    .poem-line:nth-child(1)  { transition-delay: 0.0s; }
+    .poem-line:nth-child(2)  { transition-delay: 0.12s; }
+    .poem-line:nth-child(3)  { transition-delay: 0.24s; }
+    .poem-line:nth-child(4)  { transition-delay: 0.36s; }
+    .poem-line:nth-child(5)  { transition-delay: 0.48s; }
+    .poem-line:nth-child(6)  { transition-delay: 0.60s; }
+
+    .poem-spacer { display: block; height: 1rem; }
+
+    .poem-attr {
+      display: block;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.6rem;
+      color: var(--text-lo);
+      margin-top: 1.2rem;
+      letter-spacing: 0.08em;
+      opacity: 0;
+      transition: opacity 0.6s 0.8s;
+    }
+    .poem-block.visible .poem-attr { opacity: 0.5; }
+
+    /* ================================================================
+       ART
+       ================================================================ */
+
+    .art-text {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      max-width: 480px;
+      margin-bottom: 1.2rem;
+    }
+
+    .link-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.9rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+    }
+    .link-cluster a { color: var(--text-lo); }
+    .link-cluster a:hover { color: var(--accent); }
+    .link-cluster .dot {
+      color: var(--text-ghost);
+      user-select: none;
+    }
+
+    /* ================================================================
+       FOOTER / COLOPHON
+       ================================================================ */
+
+    .colophon {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(112,128,208,0.08);
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 0.9rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      margin-bottom: 2rem;
+    }
+    .social-row a { color: var(--text-lo); }
+    .social-row a:hover { color: var(--accent); }
+
+    .name-note {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.7rem;
+      color: var(--text-ghost);
+      line-height: 1.8;
+      max-width: 400px;
+      margin-bottom: 1.5rem;
+    }
+    .name-note strong {
+      color: var(--text-lo);
+      font-weight: 400;
+    }
+
+    .copyright {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.6rem;
+      color: var(--text-ghost);
+      letter-spacing: 0.06em;
+    }
+    .copyright a { color: var(--text-ghost); }
+    .copyright a:hover { color: var(--accent); }
+
+    /* ================================================================
+       THE CURSOR — a blinking mark suggesting ongoing writing
+       ================================================================ */
+
+    .writing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--accent);
+      margin-left: 4px;
+      vertical-align: text-bottom;
+      animation: blink 1.1s step-end infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 0.5; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* ================================================================
+       RESPONSIVE
+       ================================================================ */
+
+    @media (max-width: 700px) {
+      .manuscript {
+        padding: 8vh 1.5rem 6vh;
+      }
+      .hero-folio { padding-top: 4vh; margin-bottom: 6rem; }
+      .folio { margin-bottom: 5rem; }
+      .echo { display: none; } /* echoes too crowded on small screens */
+      .hero-name::before { display: none; }
+      .section-title .alt { display: none; }
+    }
+
+    /* ================================================================
+       REDUCED MOTION
+       ================================================================ */
+
+    @media (prefers-reduced-motion: reduce) {
+      .echo { animation: none !important; }
+      .folio { opacity: 1; transform: none; transition: none; }
+      .poem-line { opacity: 1; transform: none; transition: none; }
+      .poem-attr { opacity: 0.5; transition: none; }
+      @keyframes blink { 0%, 100% { opacity: 0.5; } }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       THE INK WASH — ambient color
+       ════════════════════════════════════════════════════════════════ -->
+  <div class="ink-wash" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       THE PALIMPSEST LAYER — ghostly prior drafts
+       ════════════════════════════════════════════════════════════════ -->
+  <div class="palimpsest-layer" aria-hidden="true">
+    <span class="echo echo-1">nafSadh</span>
+    <span class="echo echo-2">software engineer</span>
+    <span class="echo echo-3">working on large language models</span>
+    <span class="echo echo-4">maker</span>
+    <span class="echo echo-5">a decade of building systems</span>
+    <span class="echo echo-6">co-founded Lekhalikhi</span>
+    <span class="echo echo-7">grew up in Bangladesh</span>
+    <span class="echo echo-8">the desire to say something true</span>
+    <span class="echo echo-9">poet</span>
+    <span class="echo echo-10">studied CS at KUET and Stony Brook</span>
+    <span class="echo echo-11">still being written</span>
+    <span class="echo echo-12">somewhere between compile and run</span>
+    <span class="echo echo-13">flags that flew above no country</span>
+    <span class="echo echo-14">Sadh</span>
+    <span class="echo echo-15">the language I dream in</span>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       THE MANUSCRIPT — foreground text
+       ════════════════════════════════════════════════════════════════ -->
+  <main class="manuscript">
+
+    <!-- ─── HERO ─── -->
+    <div class="folio hero-folio">
+      <h1 class="hero-name">nafSadh</h1>
+      <p class="hero-sub">maker of things<span class="writing-cursor"></span></p>
+      <p class="hero-bio">
+        Computer scientist, engineer, <em>writer</em>, <em>poet</em>,
+        <em>painter</em>, <em>photographer</em>.
+      </p>
+      <span class="draft-echo">an engineer who writes poems on the side</span>
+    </div>
+
+    <!-- ─── WORK ─── -->
+    <div class="folio">
+      <div class="rule"></div>
+      <h2 class="section-title">
+        Work
+        <span class="alt">Career</span>
+      </h2>
+
+      <p class="work-current">
+        I ship <strong>Gemini</strong> at <strong>Google DeepMind</strong> --
+        people use it across surfaces and via API.
+      </p>
+
+      <div class="work-trail">
+        Previously:
+        App Safety<span class="sep">&middot;</span>Nest ML<span class="sep">&middot;</span>TCI<span class="sep">&middot;</span>Samsung
+      </div>
+
+      <span class="draft-echo">senior software engineer, building infrastructure for frontier AI</span>
+      <div class="margin-note">// a dozen years of systems, then the models arrived</div>
+    </div>
+
+    <!-- ─── PROJECTS ─── -->
+    <div class="folio">
+      <div class="rule"></div>
+      <h2 class="section-title">
+        Projects
+        <span class="alt">Things I've built</span>
+      </h2>
+
+      <ul class="project-list">
+        <li class="project-item">
+          <div class="project-name"><a href="https://flags.fyi">flags.fyi</a></div>
+          <div class="project-desc">Flags for flag lovers.</div>
+        </li>
+        <li class="project-item">
+          <div class="project-name"><a href="https://read.sadh.app">read.sadh.app</a></div>
+          <div class="project-desc">Research deep-dives.</div>
+        </li>
+        <li class="project-item">
+          <div class="project-name"><a href="https://sonnivo.nafsadh.com">sonnivo</a></div>
+          <div class="project-desc">Bengali keyboard input.</div>
+        </li>
+      </ul>
+
+      <span class="draft-echo">side projects as the truest resume</span>
+    </div>
+
+    <!-- ─── POEM ─── -->
+    <div class="folio">
+      <div class="rule"></div>
+      <h2 class="section-title">
+        Verse
+        <span class="alt">A poem</span>
+      </h2>
+
+      <div class="poem-block">
+        <span class="poem-line">Between the compile and the run</span>
+        <span class="poem-line">there is a silence shaped like thought --</span>
+        <span class="poem-line">where logic folds into metaphor</span>
+        <span class="poem-spacer"></span>
+        <span class="poem-line">and every variable holds a name</span>
+        <span class="poem-line">for something unnamed still.</span>
+        <span class="poem-spacer"></span>
+        <span class="poem-line">The poem and the program share a god:</span>
+        <span class="poem-attr">— Second Seconds (in progress)</span>
+      </div>
+    </div>
+
+    <!-- ─── WRITING ─── -->
+    <div class="folio">
+      <div class="rule"></div>
+      <h2 class="section-title">
+        Writing
+        <span class="alt">Essays</span>
+      </h2>
+
+      <p class="art-text">
+        Essays, deep-dives, and reflections.
+      </p>
+
+      <div class="link-cluster">
+        <a href="https://read.sadh.me">read</a>
+        <span class="dot">&middot;</span>
+        <a href="https://sadhubochon.wordpress.com">rd/সাধুবচন</a>
+        <span class="dot">&middot;</span>
+        <a href="https://medium.com/@nafsadh">Medium</a>
+      </div>
+    </div>
+
+    <!-- ─── ART ─── -->
+    <div class="folio">
+      <div class="rule"></div>
+      <h2 class="section-title">
+        Art
+        <span class="alt">Colors</span>
+      </h2>
+
+      <p class="art-text">
+        Painting, digital art, photography.
+      </p>
+
+      <div class="link-cluster">
+        <a href="https://nafsadh.art">nafsadh.art</a>
+        <span class="dot">&middot;</span>
+        <a href="https://behance.net/nafsadh">Behance</a>
+        <span class="dot">&middot;</span>
+        <a href="https://flickr.com/sadh">Flickr</a>
+      </div>
+
+      <span class="draft-echo">algorithms composing images I could not have imagined alone</span>
+    </div>
+
+    <!-- ─── COLOPHON ─── -->
+    <div class="folio colophon">
+
+      <div class="social-row">
+        <a href="https://github.com/nafSadh">GitHub</a>
+        <a href="https://linkedin.com/in/nafsadh">LinkedIn</a>
+        <a href="https://twitter.com/nafSadh">X</a>
+        <a href="https://instagram.com/nafsadh">Instagram</a>
+      </div>
+
+      <div class="name-note">
+        <strong>'Sadh'</strong> /&#x283;ad&#x631;/ &mdash;
+        Khan M Nafee Mostafa
+      </div>
+
+      <p class="copyright">&copy; 2026 nafSadh</p>
+
+      <span class="draft-echo">this page is still being written</span>
+    </div>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       SCROLL REVEAL + PARALLAX
+       ════════════════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ── Folio scroll reveal ──
+      const folios = document.querySelectorAll('.folio');
+      const poemBlocks = document.querySelectorAll('.poem-block');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      folios.forEach((f) => observer.observe(f));
+      poemBlocks.forEach((p) => observer.observe(p));
+
+      // ── Palimpsest parallax — echoes drift with scroll ──
+      const echoes = document.querySelectorAll('.echo');
+      const rates = [];
+      echoes.forEach(() => {
+        rates.push(0.015 + Math.random() * 0.04);
+      });
+
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            echoes.forEach((el, i) => {
+              const offset = scrollY * rates[i];
+              el.style.transform =
+                el.style.transform.replace(/translateY\([^)]*\)/, '') +
+                ` translateY(${-offset}px)`;
+            });
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      // Only apply parallax on larger screens
+      if (window.matchMedia('(min-width: 701px)').matches) {
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+
+      // ── Immediately show the hero ──
+      const hero = document.querySelector('.hero-folio');
+      if (hero) {
+        requestAnimationFrame(() => {
+          hero.classList.add('visible');
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

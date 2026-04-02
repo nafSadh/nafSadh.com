@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7;
+      color: #3A3530; background: #E8E2D8;
+      display: flex; justify-content: center; padding: 2rem 1rem; min-height: 100vh;
+    }
+    a { color: #5A4A38; text-decoration: none; }
+    a:hover { color: #3A2A18; text-decoration: underline; }
+
+    /* SKETCHBOOK: graph paper background, handwritten headers, pencil-stroke borders */
+    .notebook {
+      background: #FEFCF6;
+      max-width: 620px; width: 100%; padding: 3rem 3rem 2.5rem;
+      position: relative;
+      box-shadow: 2px 3px 12px rgba(60,50,40,0.12), 0 0 0 1px #D8D0C0;
+      /* Graph paper lines */
+      background-image:
+        linear-gradient(rgba(160,180,200,0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(160,180,200,0.12) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    /* Red margin line */
+    .notebook::before {
+      content: ''; position: absolute; top: 0; bottom: 0; left: 3.5rem;
+      width: 1px; background: rgba(200,100,100,0.2);
+    }
+    /* Spiral binding dots */
+    .notebook::after {
+      content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 2rem;
+      background: repeating-linear-gradient(
+        180deg,
+        transparent 0, transparent 22px,
+        #D0C8B8 22px, #D0C8B8 26px,
+        transparent 26px, transparent 40px
+      );
+    }
+
+    .content { margin-left: 1rem; }
+
+    .hero { margin-bottom: 2rem; }
+    .hero-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+    .avatar { width: 56px; height: 56px; border-radius: 50%; border: 2px solid #D8D0C0; }
+    .hero h1 {
+      font-family: 'Caveat', cursive; font-size: 2.5rem; font-weight: 700;
+      color: #2A2018; line-height: 1;
+    }
+    .hero .tagline {
+      font-family: 'Caveat', cursive; font-size: 1.15rem; color: #8A7A68;
+    }
+    .hero .bio { font-size: 0.88rem; color: #6A6058; }
+    .hero .bio b { color: #3A3530; }
+
+    /* Sections look like notebook entries */
+    .entry { margin-bottom: 1.75rem; position: relative; }
+    .entry-title {
+      font-family: 'Caveat', cursive; font-size: 1.5rem; font-weight: 600;
+      color: #2A2018; margin-bottom: 0.35rem;
+      text-decoration: underline; text-decoration-style: wavy;
+      text-decoration-color: rgba(160,140,100,0.3); text-underline-offset: 4px;
+    }
+    .entry p { font-size: 0.85rem; color: #6A6058; margin-bottom: 0.3rem; }
+    .hl { color: #3A3530; font-weight: 500; }
+
+    .e-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem; }
+    .e-links a { font-size: 0.78rem; color: #8A7A68; }
+
+    .pl a {
+      display: block; padding: 0.3rem 0; text-decoration: none;
+      border-bottom: 1px dashed #E0D8C8;
+    }
+    .pl a:last-child { border-bottom: none; }
+    .pl a:hover .pn { color: #5A4A38; }
+    .pn { font-size: 0.85rem; font-weight: 500; color: #3A3530; transition: color 0.2s; }
+    .pd { font-family: 'Caveat', cursive; font-size: 0.82rem; color: #A09080; }
+
+    /* Doodle-style separator */
+    .squiggle { text-align: center; padding: 0.5rem 0; color: #C8B8A0; font-size: 0.8rem; letter-spacing: 0.3em; }
+
+    .footer {
+      padding-top: 1rem; border-top: 1px dashed #D8D0C0;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-links { display: flex; gap: 0.75rem; }
+    .footer-links a { font-size: 0.78rem; color: #A09080; }
+    .footer-links a:hover { color: #5A4A38; text-decoration: none; }
+    .footer-note { font-family: 'Caveat', cursive; font-size: 0.82rem; color: #B0A898; }
+
+    @media (max-width: 500px) {
+      .notebook { padding: 2rem 1.5rem 2rem 2.5rem; }
+      .notebook::before { left: 2rem; }
+      .content { margin-left: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notebook">
+    <div class="content">
+      <header class="hero">
+        <div class="hero-row">
+          <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+          <div>
+            <h1>nafSadh</h1>
+            <div class="tagline">Maker of things. Creator. Explorer.</div>
+          </div>
+        </div>
+        <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+      </header>
+
+      <div class="entry">
+        <div class="entry-title">Work</div>
+        <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities.</p>
+        <p>Previously: Android App Safety, Nest ML, TCI, Samsung.</p>
+        <div class="e-links"><a href="https://re.sadh.me">Resume</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://github.com/nafSadh">GitHub</a></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Projects</div>
+        <div class="pl">
+          <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">flags for vexillophiles</div></a>
+          <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">research deep-dives & paper-drives</div></a>
+          <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">Bengali keyboard</div></a>
+        </div>
+      </div>
+
+      <div class="squiggle">~ ~ ~</div>
+
+      <div class="entry">
+        <div class="entry-title">Writing & Poetry</div>
+        <p>Research at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry — <em>Second Seconds</em>. English & Bengali.</p>
+        <div class="e-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">Medium</a></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-title">Art & Photography</div>
+        <p>Painting, digital art, photography. Studying drawing fundamentals.</p>
+        <div class="e-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">Behance</a><a href="https://flickr.com/sadh">Flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-links"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+        <span class="footer-note">'Sadh' /ʃadʱ/ &middot; &copy; 2026</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

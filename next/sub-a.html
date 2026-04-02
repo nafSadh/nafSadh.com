@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,200;1,9..144,300&family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #10121C;
+      --accent:    #7888D8;
+      --bright:    #E0E8F8;
+      --mid:       #8898C0;
+      --dim:       #404868;
+      --ghost:     #283050;
+      --orb-a:     rgba(80, 60, 200, 0.13);
+      --orb-b:     rgba(100, 80, 220, 0.08);
+      --orb-c:     rgba(60, 40, 160, 0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--mid);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0 1.5rem;
+      /* Radial orbs */
+      background-image:
+        radial-gradient(ellipse 60vw 50vh at 15% 20%, var(--orb-a), transparent),
+        radial-gradient(ellipse 40vw 40vh at 85% 65%, var(--orb-b), transparent),
+        radial-gradient(ellipse 50vw 35vh at 55% 90%, var(--orb-c), transparent);
+    }
+
+    /* ─── MAIN COLUMN ─── */
+    main {
+      width: 100%;
+      max-width: 560px;
+      padding: 5rem 0 4rem;
+      position: relative;
+    }
+
+    /* ─── TYPOGRAPHIC TOKENS ─── */
+    .f-serif     { font-family: 'Fraunces', serif; }
+    .f-mono      { font-family: 'Fira Code', monospace; }
+    .f-sans      { font-family: 'Inter', sans-serif; }
+
+    .t-bright    { color: var(--bright); }
+    .t-mid       { color: var(--mid); }
+    .t-dim       { color: var(--dim); }
+    .t-ghost     { color: var(--ghost); }
+    .t-accent    { color: var(--accent); }
+
+    /* ─── NAME BLOCK ─── */
+    .name {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 7vw, 3.6rem);
+      font-weight: 300;
+      color: var(--bright);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      white-space: nowrap;
+      margin-bottom: 0.35rem;
+    }
+
+    .tagline {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--dim);
+      letter-spacing: 0.18em;
+      text-transform: lowercase;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ─── FLOWING TEXT ─── */
+
+    /* A "paragraph" in the flow — just a block of text, no box */
+    .flow {
+      margin-bottom: 0.9rem;
+    }
+    .flow + .flow.push { margin-top: 2.2rem; }
+    .flow.lead {
+      font-size: 1.05rem;
+      color: var(--bright);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Section marker — tiny label that sits to the left, inline */
+    .marker {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem;
+      font-weight: 300;
+      color: var(--ghost);
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 0.5rem;
+      margin-top: 3rem;
+      text-transform: lowercase;
+    }
+
+    /* ─── LINKS ─── */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    a:hover {
+      color: var(--bright);
+      border-bottom-color: var(--ghost);
+    }
+
+    /* ─── ROLE / IDENTITY PILLS (inline) ─── */
+    .roles {
+      color: var(--dim);
+      font-size: 0.82rem;
+      line-height: 2.2;
+      word-spacing: 0.05em;
+    }
+    .roles .sep { color: var(--ghost); margin: 0 0.3em; }
+    .roles .lit { color: var(--mid); }
+
+    /* ─── WORK TIMELINE — still flowing, no boxes ─── */
+    .work-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 0 1.2rem;
+      margin-bottom: 0.45rem;
+      align-items: baseline;
+      font-size: 0.85rem;
+    }
+    .work-row .org {
+      color: var(--mid);
+      font-weight: 500;
+      text-align: right;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.03em;
+    }
+    .work-row .org.current { color: var(--accent); }
+    .work-row .desc { color: var(--dim); }
+    .work-row .desc em {
+      font-style: normal;
+      color: var(--mid);
+    }
+
+    /* ─── POEM ─── */
+    .poem {
+      margin: 2.5rem 0;
+      padding-left: 1.8rem;
+      border-left: 1px solid var(--ghost);
+    }
+    .poem-line {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      font-weight: 200;
+      font-style: italic;
+      color: var(--mid);
+      line-height: 2.1;
+      display: block;
+    }
+    .poem-line.indent { padding-left: 1.5rem; }
+    .poem-source {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem;
+      color: var(--ghost);
+      margin-top: 0.6rem;
+      display: block;
+    }
+
+    /* ─── CODE BLOCK ─── */
+    /* The only hard-edged structural element — intentional contrast against the flow */
+    .code-block {
+      background: rgba(16, 20, 40, 0.85);
+      border: 1px solid var(--ghost);
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      margin: 2.5rem 0;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.76rem;
+      font-weight: 300;
+      line-height: 2;
+      overflow-x: auto;
+      position: relative;
+    }
+    .code-block::before {
+      content: 'projects';
+      position: absolute;
+      top: -0.55rem;
+      left: 1rem;
+      background: var(--bg);
+      padding: 0 0.5rem;
+      font-size: 0.62rem;
+      color: var(--ghost);
+      letter-spacing: 0.1em;
+    }
+    /* Syntax tokens */
+    .c-kw     { color: #9B7FD4; }   /* keyword — purple */
+    .c-var    { color: var(--accent); } /* identifier — blurple */
+    .c-str    { color: #7FB88A; }   /* string — muted green */
+    .c-url    { color: #6BA8D4; }   /* url — steel blue */
+    .c-cmt    { color: var(--dim); font-style: italic; }  /* comment */
+    .c-op     { color: var(--ghost); } /* operator / punctuation */
+
+    /* ─── SOCIAL ROW ─── */
+    .social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 1.4rem;
+      margin-top: 2.8rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+    }
+    .social a { color: var(--dim); border-bottom: none; }
+    .social a:hover { color: var(--accent); }
+
+    /* ─── FOOTER ─── */
+    .foot {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--ghost);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.7rem;
+      color: var(--ghost);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .name-note {
+      font-style: italic;
+      color: var(--ghost);
+    }
+
+    /* ─── SELECTION ─── */
+    ::selection { background: rgba(120, 136, 216, 0.25); color: var(--bright); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 480px) {
+      .work-row { grid-template-columns: 1fr; gap: 0; }
+      .work-row .org { text-align: left; margin-bottom: 0.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- ══ NAME ══ -->
+    <h1 class="name">nafSadh</h1>
+    <p class="tagline">// maker of things</p>
+
+    <!-- ══ BIO / LEAD ══ -->
+    <p class="flow lead">
+      Computer scientist. Engineer. Writer. Poet. Painter. Photographer.
+    </p>
+    <p class="flow">
+      Senior software engineer at <span class="t-bright">Google DeepMind</span> —
+      working on <span class="t-bright">Gemini API</span> and agentic capabilities.
+      A decade-plus of building systems that range from SoC firmware to
+      large-language-model infrastructure.
+    </p>
+    <p class="flow">
+      Grew up in Bangladesh. Studied computer science at
+      <span class="t-mid">KUET</span> and <span class="t-mid">Stony Brook</span>.
+      Now in the Bay Area, still accumulating half-finished notebooks.
+    </p>
+
+    <span class="marker">// work</span>
+
+    <!-- ══ WORK ══ -->
+    <div class="work-row">
+      <span class="org current">Google DeepMind</span>
+      <span class="desc">Senior SWE — <em>Gemini API, agentic capabilities</em></span>
+    </div>
+    <div class="work-row">
+      <span class="org">App Safety</span>
+      <span class="desc"><em>Android trust &amp; safety infrastructure</em></span>
+    </div>
+    <div class="work-row">
+      <span class="org">Nest ML</span>
+      <span class="desc"><em>backend ML — Home/Away Presence, Geofence, Routines</em></span>
+    </div>
+    <div class="work-row">
+      <span class="org">TCI</span>
+      <span class="desc"><em>Loan Origination SaaS</em></span>
+    </div>
+    <div class="work-row">
+      <span class="org">Samsung</span>
+      <span class="desc"><em>custom system software, DSP, SoC</em></span>
+    </div>
+
+    <!-- ══ PROJECTS ══ -->
+    <span class="marker">// projects</span>
+
+    <p class="flow">
+      <a href="https://flags.fyi">flags.fyi</a><br>
+      <span class="t-dim">vexillology — a repository for flag lovers</span>
+    </p>
+
+    <p class="flow">
+      <a href="https://read.sadh.app">read.sadh.app</a><br>
+      <span class="t-dim">research deep-dives &amp; reading notes</span>
+    </p>
+
+    <p class="flow">
+      <a href="https://sonnivo.nafsadh.com">sonnivo.nafsadh.com</a><br>
+      <span class="t-dim">Bengali phonetic keyboard for the web</span>
+    </p>
+
+    <!-- ══ WRITING ══ -->
+    <span class="marker">// writing &amp; poetry</span>
+
+    <p class="flow">
+      Essays and AI commentary at
+      <a href="https://ai.nafSadh.com">Augmented Insights</a>.
+      Bengali prose in classical Shadhu-bhasha at
+      <a href="https://sadhubochon.wordpress.com">সাধুবচন</a>.
+      Bengali poetry collected at
+      <a href="https://sulol.nafsadh.com">সুলল সংগ্রহ</a>.
+      Scattered notes at <a href="https://notes.nafsadh.com">notes.nafsadh.com</a>.
+    </p>
+
+    <!-- inline poem excerpt -->
+    <div class="poem" aria-label="Poem excerpt">
+      <span class="poem-line">the weight of a word</span>
+      <span class="poem-line">is not in its letters</span>
+      <span class="poem-line indent">but in the silence</span>
+      <span class="poem-line indent">it displaces —</span>
+      <span class="poem-line">the hollow it leaves</span>
+      <span class="poem-line">when it finally arrives.</span>
+      <span class="poem-source">— <em>Second Seconds</em> (in progress)</span>
+    </div>
+
+    <p class="flow t-dim" style="font-size:0.82rem;">
+      Also on <a href="https://medium.com/@nafsadh">Medium</a>
+      and <a href="https://www.quora.com/profile/Khan-Sadh-Mostafa">Quora</a>.
+    </p>
+
+    <!-- ══ ART ══ -->
+    <span class="marker">// art &amp; photography</span>
+
+    <p class="flow">
+      Paintings and graphic work on
+      <a href="https://behance.net/nafsadh">Behance</a> and
+      <a href="https://deviantart.com/nafsadh">DeviantArt</a>.
+      AI-assisted experiments at
+      <a href="https://ai.nafsadh.art">ai.nafSadh.art</a>.
+      Photographs on
+      <a href="https://flickr.com/sadh">Flickr</a> and
+      <a href="https://500px.com/nafsadh">500px</a>.
+    </p>
+
+    <!-- ══ SOCIAL ══ -->
+    <div class="social" aria-label="Social links">
+      <a href="https://github.com/nafSadh">github</a>
+      <a href="https://linkedin.com/in/nafsadh">linkedin</a>
+      <a href="https://x.com/nafSadh">x</a>
+      <a href="https://instagram.com/nafsadh">instagram</a>
+    </div>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="foot">
+      <span class="name-note">'Sadh'&thinsp;/ʃadʱ/ — Khan M Nafee Mostafa</span>
+      <span>&copy; 2026 nafSadh</span>
+    </footer>
+
+  </main>
+</body>
+</html>

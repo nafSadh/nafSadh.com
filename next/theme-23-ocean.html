@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh — maker of things</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Lexend', sans-serif; font-size: 15px; line-height: 1.6;
+      color: #B8D0E0;
+      background: #0A1620;
+      background-image:
+        radial-gradient(ellipse at 30% 80%, rgba(30,100,160,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 20%, rgba(50,130,180,0.1) 0%, transparent 50%);
+      min-height: 100vh;
+    }
+    a { color: #60B0D8; text-decoration: none; }
+    a:hover { color: #80D0F0; }
+    .container { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
+
+    .hero { padding: 4rem 0 2rem; }
+    .hero-flex { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; }
+    .hero-avatar { width: 64px; height: 64px; border-radius: 50%; border: 2px solid rgba(96,176,216,0.15); }
+    .hero h1 { font-size: 1.75rem; font-weight: 600; color: #E0F0FF; }
+    .hero-tag { font-size: 0.82rem; color: #4A7090; font-weight: 300; }
+    .hero-intro {
+      font-size: 1.35rem; font-weight: 300; line-height: 1.4;
+      color: #90B8D0; margin-bottom: 1rem;
+    }
+    .hero-detail { font-size: 0.88rem; color: #5A8AA8; }
+    .hero-detail b { color: #A0C8E0; font-weight: 500; }
+
+    /* Masonry-ish bento */
+    .bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; padding: 1.5rem 0 3rem; }
+    .b {
+      background: rgba(30,80,120,0.12); border: 1px solid rgba(96,176,216,0.06);
+      border-radius: 10px; padding: 1.1rem; transition: all 0.2s;
+    }
+    .b:hover { border-color: rgba(96,176,216,0.15); background: rgba(30,80,120,0.18); }
+    .b.w2 { grid-column: span 2; }
+    .b-t { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #3A6A88; margin-bottom: 0.45rem; }
+    .b p { font-size: 0.8rem; color: #6A98B0; margin-bottom: 0.3rem; }
+    .hl { color: #A0C8E0; font-weight: 500; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.45rem; }
+    .tags a {
+      font-size: 0.68rem; padding: 0.15rem 0.4rem; border-radius: 4px;
+      background: rgba(96,176,216,0.06); color: #5A8AA8; transition: all 0.15s;
+    }
+    .tags a:hover { background: rgba(96,176,216,0.15); color: #80D0F0; }
+
+    .pl a { display: block; padding: 0.25rem 0; text-decoration: none; }
+    .pl a:hover .pn { color: #60B0D8; }
+    .pn { font-size: 0.8rem; font-weight: 500; color: #A0C8E0; transition: color 0.15s; }
+    .pd { font-size: 0.6rem; color: #3A6A88; }
+
+    .aside { font-size: 0.68rem; color: #2A4A60; padding-bottom: 1.5rem; }
+
+    footer { border-top: 1px solid rgba(96,176,216,0.06); padding: 1rem 0; }
+    .ft { display: flex; justify-content: space-between; align-items: center; }
+    .ft-links { display: flex; gap: 0.75rem; }
+    .ft-links a { color: #2A4A60; font-size: 0.72rem; }
+    .ft-links a:hover { color: #60B0D8; }
+    .ft-c { font-size: 0.6rem; color: #1A3A50; }
+
+    @media (max-width: 600px) { .bento { grid-template-columns: 1fr; } .b.w2 { grid-column: span 1; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-flex">
+        <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="hero-avatar" />
+        <div><h1>nafSadh</h1><div class="hero-tag">'Sadh' /ʃadʱ/ &middot; Maker of things</div></div>
+      </div>
+      <p class="hero-intro">Computer scientist, poet, painter,<br/>and photographer.</p>
+      <p class="hero-detail">Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+    </header>
+    <div class="bento">
+      <div class="b w2">
+        <div class="b-t">Work</div>
+        <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities. Previously: Android App Safety, Nest ML, TCI, Samsung.</p>
+        <div class="tags"><a href="https://re.sadh.me">Resume</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://github.com/nafSadh">GitHub</a></div>
+      </div>
+      <div class="b">
+        <div class="b-t">Projects</div>
+        <div class="pl">
+          <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">Vexillology</div></a>
+          <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">Research</div></a>
+          <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">Bengali kbd</div></a>
+        </div>
+      </div>
+      <div class="b">
+        <div class="b-t">Writing</div>
+        <p>Research & poetry. <em>Second Seconds</em>.</p>
+        <div class="tags"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">Medium</a></div>
+      </div>
+      <div class="b w2">
+        <div class="b-t">Art & Photography</div>
+        <p>Painting, digital art, photography. Studying drawing fundamentals.</p>
+        <div class="tags"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">Behance</a><a href="https://deviantart.com/nafsadh">DeviantArt</a><a href="https://flickr.com/sadh">Flickr</a><a href="https://500px.com/nafsadh">500px</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      </div>
+    </div>
+  </div>
+  <footer><div class="container"><div class="ft"><span class="ft-c">&copy; 2026 nafSadh</span><div class="ft-links"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a></div></div></div></footer>
+</body>
+</html>

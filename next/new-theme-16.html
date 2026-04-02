@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fira+Code:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.65;
+      color: #B8C8E0;
+      background: #10131E;
+      min-height: 100vh; overflow-x: hidden;
+    }
+    a { color: #6880D0; text-decoration: none; }
+    a:hover { color: #88A0F0; }
+
+    /* HORIZONTAL RULE COMPOSITION — the page is structured by horizontal lines
+       of varying weight/color. Content sits between them. The lines ARE the design. */
+    .container { max-width: 540px; margin: 0 auto; padding: 0 2rem; }
+
+    .rule { height: 1px; background: #1C2038; margin: 0; }
+    .rule-thick { height: 2px; background: linear-gradient(90deg, #3050A0, #5070C0, #3050A0); }
+    .rule-thin { height: 1px; background: #181C30; }
+    .rule-glow { height: 1px; background: linear-gradient(90deg, transparent, #4060B0, transparent); }
+
+    .pad-lg { padding: 3rem 0; }
+    .pad-md { padding: 1.75rem 0; }
+    .pad-sm { padding: 1rem 0; }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300;
+      color: #E0E8F8; letter-spacing: 0.02em;
+    }
+    .tag { font-size: 0.78rem; color: #404868; margin-top: 0.15rem; }
+    .bio { font-size: 0.82rem; color: #6878A0; font-weight: 300; margin-top: 1rem; }
+    .bio b { color: #A0B0D8; }
+    .name { font-family: 'Fira Code', monospace; font-size: 0.6rem; color: #283050; margin-top: 0.5rem; }
+
+    .row { display: flex; justify-content: space-between; align-items: baseline; }
+    .s-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400;
+      color: #C8D0E8;
+    }
+    .s-links a { font-family: 'Fira Code', monospace; font-size: 0.6rem; margin-left: 0.5rem; color: #303858; }
+    .s-links a:hover { color: #6880D0; }
+    p { font-size: 0.8rem; color: #6070A0; margin-top: 0.25rem; font-weight: 300; }
+    .hl { color: #A0B0D8; }
+
+    .proj-line { font-family: 'Fira Code', monospace; font-size: 0.7rem; color: #5068A0; margin-top: 0.15rem; }
+    .proj-line .cm { color: #283050; }
+    .proj-line .k { color: #6880D0; }
+    .proj-line a { color: #5068A0; }
+
+    .poem {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 300;
+      font-style: italic; color: #5868A0; line-height: 2.1; margin-top: 0.25rem;
+    }
+    .poem-attr { font-family: 'Fira Code', monospace; font-size: 0.55rem; color: #283050; margin-top: 0.2rem; font-style: normal; }
+
+    .footer-links a { font-family: 'Fira Code', monospace; font-size: 0.6rem; margin-right: 0.6rem; color: #283050; }
+    .footer-links a:hover { color: #6880D0; }
+    .f-copy { font-family: 'Fira Code', monospace; font-size: 0.55rem; color: #181C30; margin-top: 0.3rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="pad-lg">
+      <h1>nafSadh</h1>
+      <p class="tag">maker of things · creator · explorer</p>
+      <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer.<br/>Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+      <p class="name">'Sadh' /ʃadʱ/ — Khan M Nafee Mostafa</p>
+    </div>
+
+    <div class="rule-thick"></div>
+
+    <div class="pad-md">
+      <div class="row"><span class="s-title">Work</span><span class="s-links"><a href="https://re.sadh.me">resume</a><a href="https://linkedin.com/in/nafsadh">linkedin</a><a href="https://github.com/nafSadh">github</a></span></div>
+      <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities. Prev: App Safety, Nest ML, TCI, Samsung.</p>
+    </div>
+
+    <div class="rule-glow"></div>
+
+    <div class="pad-md">
+      <div class="row"><span class="s-title">Projects</span></div>
+      <div class="proj-line"><span class="k">flags</span>: <a href="https://flags.fyi">flags.fyi</a> <span class="cm">// vexillology</span></div>
+      <div class="proj-line"><span class="k">readrd</span>: <a href="https://read.sadh.app">read.sadh.app</a> <span class="cm">// research deep-dives</span></div>
+      <div class="proj-line"><span class="k">sonnivo</span>: <a href="https://sonnivo.nafsadh.com">sonnivo</a> <span class="cm">// bengali keyboard</span></div>
+    </div>
+
+    <div class="rule-thin"></div>
+
+    <div class="pad-md">
+      <div class="row"><span class="s-title">Writing & Poetry</span><span class="s-links"><a href="https://read.sadh.app">read·rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">medium</a></span></div>
+      <div class="poem">
+        the weight of a word<br/>
+        is not in its letters<br/>
+        but in the silence<br/>
+        it displaces
+      </div>
+      <p class="poem-attr">&mdash; Second Seconds (in progress)</p>
+    </div>
+
+    <div class="rule-glow"></div>
+
+    <div class="pad-md">
+      <div class="row"><span class="s-title">Art & Photography</span><span class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">behance</a><a href="https://flickr.com/sadh">flickr</a></span></div>
+      <p>Painting, digital art, photography. Drawing fundamentals.</p>
+    </div>
+
+    <div class="rule-thick"></div>
+
+    <div class="pad-sm">
+      <div class="footer-links"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <p class="f-copy">&copy; 2026 nafSadh</p>
+    </div>
+
+  </div>
+</body>
+</html>

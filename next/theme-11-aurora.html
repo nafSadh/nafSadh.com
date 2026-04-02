@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh — maker of things</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px;
+      line-height: 1.65; color: #F0EDE8;
+      background: #1a1520;
+      background-image:
+        radial-gradient(ellipse at 15% 20%, rgba(120,80,200,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 60%, rgba(60,180,160,0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 90%, rgba(200,130,80,0.12) 0%, transparent 45%);
+      min-height: 100vh;
+    }
+    a { color: #B8A0E0; text-decoration: none; }
+    a:hover { color: #D4C0F0; }
+    .container { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Hero — left-aligned, more personality */
+    .hero { padding: 4rem 0 1.5rem; }
+    .hero-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .hero-avatar { width: 56px; height: 56px; border-radius: 50%; border: 2px solid rgba(184,160,224,0.3); }
+    .hero-name { font-size: 1.5rem; font-weight: 700; }
+    .hero h2 {
+      font-size: 2.25rem; font-weight: 300; line-height: 1.25; margin-bottom: 1rem;
+      background: linear-gradient(135deg, #E0D0F0 0%, #90D0C0 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-bio { color: #A09890; font-size: 0.95rem; max-width: 500px; }
+    .hero-bio b { color: #D0C8C0; }
+
+    /* Bento grid */
+    .bento { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto; gap: 0.75rem; padding: 1.5rem 0 3rem; }
+    .bento-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px; padding: 1.25rem; backdrop-filter: blur(12px);
+      transition: background 0.2s;
+    }
+    .bento-card:hover { background: rgba(255,255,255,0.07); }
+    .bento-card.wide { grid-column: 1 / -1; }
+    .bento-card.tall { grid-row: span 2; }
+    .bento-label {
+      font-size: 0.65rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.12em; color: #7A7070; margin-bottom: 0.6rem;
+    }
+    .bento-card p { font-size: 0.88rem; color: #B0A8A0; margin-bottom: 0.4rem; }
+    .bento-card p:last-child { margin-bottom: 0; }
+    .hl { color: #E0D8D0; font-weight: 500; }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.6rem; }
+    .pill {
+      font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08); color: #A09890; transition: all 0.2s;
+      text-decoration: none;
+    }
+    .pill:hover { border-color: #B8A0E0; color: #B8A0E0; }
+
+    .project-row { display: flex; flex-direction: column; gap: 0.4rem; }
+    .proj {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-decoration: none;
+    }
+    .proj:last-child { border-bottom: none; }
+    .proj:hover .proj-n { color: #B8A0E0; }
+    .proj-n { font-size: 0.88rem; font-weight: 500; color: #D0C8C0; transition: color 0.2s; }
+    .proj-d { font-size: 0.7rem; color: #7A7070; }
+
+    /* Name note as a subtle aside */
+    .aside {
+      font-size: 0.75rem; color: #605850; margin-top: 0.75rem;
+      border-left: 2px solid rgba(255,255,255,0.06); padding-left: 0.75rem;
+    }
+
+    footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 0; }
+    .foot-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .foot-links { display: flex; gap: 1rem; }
+    .foot-links a { color: #605850; font-size: 0.8rem; }
+    .foot-links a:hover { color: #B8A0E0; }
+    .foot-copy { font-size: 0.7rem; color: #504840; }
+
+    @media (max-width: 600px) { .bento { grid-template-columns: 1fr; } .bento-card.tall { grid-row: span 1; } .hero h2 { font-size: 1.75rem; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-top">
+        <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="hero-avatar" />
+        <span class="hero-name">nafSadh</span>
+      </div>
+      <h2>Computer scientist, poet,<br/>painter, photographer.</h2>
+      <p class="hero-bio">Currently at <b>Google DeepMind</b> working on <b>Gemini API</b> and agentic capabilities. I also write poetry in English and Bengali, paint, and photograph.</p>
+    </header>
+
+    <div class="bento">
+      <div class="bento-card">
+        <div class="bento-label">Work</div>
+        <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities</p>
+        <p>Prev: Android App Safety, Nest ML, TCI, Samsung</p>
+        <div class="pill-row"><a href="https://re.sadh.me" class="pill">Resume</a><a href="https://linkedin.com/in/nafsadh" class="pill">LinkedIn</a><a href="https://github.com/nafSadh" class="pill">GitHub</a></div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-label">Projects</div>
+        <div class="project-row">
+          <a href="https://flags.fyi" class="proj"><span class="proj-n">Flags.fyi</span><span class="proj-d">vexillology</span></a>
+          <a href="https://read.sadh.app" class="proj"><span class="proj-n">read&middot;rd</span><span class="proj-d">research deep-dives</span></a>
+          <a href="https://sonnivo.nafsadh.com" class="proj"><span class="proj-n">Sonnivo</span><span class="proj-d">Bengali keyboard</span></a>
+        </div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-label">Writing & Poetry</div>
+        <p>Research at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry in English and Bengali — <em>Second Seconds</em> collection in progress.</p>
+        <div class="pill-row"><a href="https://read.sadh.app" class="pill">read&middot;rd</a><a href="https://sadhubochon.wordpress.com" class="pill">সাধুবচন</a><a href="https://medium.com/@nafsadh" class="pill">Medium</a></div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-label">Art & Photography</div>
+        <p>Painting, digital art, photography. Studying drawing fundamentals.</p>
+        <div class="pill-row"><a href="https://nafsadh.art" class="pill">nafsadh.art</a><a href="https://behance.net/nafsadh" class="pill">Behance</a><a href="https://flickr.com/sadh" class="pill">Flickr</a><a href="https://500px.com/nafsadh" class="pill">500px</a></div>
+      </div>
+    </div>
+    <div class="aside">'Sadh' /ʃadʱ/ — also Khan M Nafee Mostafa on documents, 'nafSadh' online.</div>
+  </div>
+  <footer><div class="container"><div class="foot-row"><span class="foot-copy">&copy; 2026 nafSadh</span><div class="foot-links"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div></div></div></footer>
+</body>
+</html>

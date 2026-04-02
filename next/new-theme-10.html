@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'IBM Plex Mono', monospace; font-size: 14px; line-height: 1.7;
+      color: #C0C8E0;
+      background: #0E1018;
+      background-image:
+        radial-gradient(ellipse at 15% 25%, rgba(80,60,170,0.1) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 60%, rgba(50,110,200,0.07) 0%, transparent 50%);
+      min-height: 100vh;
+    }
+    a { color: #7080D0; text-decoration: none; }
+    a:hover { color: #90A0F0; }
+    .container { max-width: 640px; margin: 0 auto; padding: 0 2rem; }
+
+    /* IDE wrapper */
+    .ide {
+      background: #12141E; border: 1px solid #1E2038; border-radius: 6px;
+      overflow: hidden; margin-top: 2rem; margin-bottom: 2rem;
+    }
+    .ide-titlebar {
+      display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.85rem;
+      background: #181C28; border-bottom: 1px solid #1E2038;
+    }
+    .ide-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .ide-dot:nth-child(1) { background: #E05050; }
+    .ide-dot:nth-child(2) { background: #E0B040; }
+    .ide-dot:nth-child(3) { background: #50C060; }
+    .ide-filename { font-size: 0.65rem; color: #505878; margin-left: 0.5rem; }
+
+    .ide-body { display: flex; }
+    .ide-gutter {
+      padding: 1.25rem 0.6rem; text-align: right; color: #252840;
+      font-size: 0.62rem; line-height: 2.05; border-right: 1px solid #1E2038;
+      user-select: none; min-width: 2.5rem;
+    }
+    .ide-content { padding: 1.25rem 1.25rem; flex: 1; }
+
+    /* Hero inside IDE */
+    .hero { margin-bottom: 1rem; }
+    .hero h1 {
+      font-family: 'Caveat', cursive; font-size: 2.5rem; font-weight: 700;
+      color: #E0E8F8; margin-bottom: 0.1rem;
+    }
+    .hero-tag { font-size: 0.75rem; color: #404868; margin-bottom: 0.75rem; }
+    .hero-bio { font-size: 0.78rem; color: #7080A0; }
+    .hero-bio b { color: #A0B0D0; }
+    .hero-name { font-size: 0.62rem; color: #303858; margin-top: 0.4rem; }
+
+    .sep { height: 1px; background: #1E2038; margin: 1rem 0; }
+
+    .section { margin-bottom: 1.25rem; }
+    .s-title {
+      font-family: 'Caveat', cursive; font-size: 1.35rem; font-weight: 600;
+      color: #C8D0F0; margin-bottom: 0.3rem;
+    }
+    .section p { font-size: 0.78rem; color: #6878A0; margin-bottom: 0.2rem; }
+    .hl { color: #A0B0D0; }
+    .s-links { margin-top: 0.3rem; }
+    .s-links a { font-size: 0.65rem; margin-right: 0.5rem; color: #384060; }
+    .s-links a:hover { color: #7080D0; }
+
+    /* Inline code for projects */
+    .proj-code { margin-top: 0.3rem; color: #5870A0; line-height: 1.8; font-size: 0.72rem; }
+    .proj-code .cm { color: #303858; }
+    .proj-code .k { color: #7080D0; }
+    .proj-code a { color: #5870A0; }
+    .proj-code a:hover { color: #88A0D0; }
+
+    /* Poem */
+    .poem {
+      border-left: 2px solid #2A3060; padding: 0.6rem 1rem; margin: 0.5rem 0;
+      font-family: 'Fraunces', serif; font-size: 0.88rem; font-weight: 300;
+      font-style: italic; color: #7888B0; line-height: 1.9;
+    }
+    .poem .attr {
+      font-family: 'Caveat', cursive; font-size: 0.82rem; color: #404868;
+      font-style: normal; margin-top: 0.25rem;
+    }
+
+    /* Status bar */
+    .ide-status {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.3rem 0.85rem; background: #4A58A0; color: #D0D8F0;
+      font-size: 0.58rem;
+    }
+    .ide-status a { color: #D0D8F0; margin-left: 0.5rem; }
+    .ide-status a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="ide">
+      <div class="ide-titlebar">
+        <div class="ide-dot"></div><div class="ide-dot"></div><div class="ide-dot"></div>
+        <span class="ide-filename">nafSadh.md</span>
+      </div>
+      <div class="ide-body">
+        <div class="ide-gutter">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35</div>
+        <div class="ide-content">
+          <header class="hero">
+            <h1>nafSadh</h1>
+            <p class="hero-tag">Maker of things &middot; Creator &middot; Explorer</p>
+            <p class="hero-bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+            <p class="hero-name">'Sadh' /ʃadʱ/ — Khan M Nafee Mostafa</p>
+          </header>
+
+          <div class="sep"></div>
+
+          <div class="section">
+            <div class="s-title">Work</div>
+            <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities.</p>
+            <p>Prev: App Safety, Nest ML, TCI, Samsung.</p>
+            <div class="s-links"><a href="https://re.sadh.me">resume</a><a href="https://linkedin.com/in/nafsadh">linkedin</a><a href="https://github.com/nafSadh">github</a></div>
+          </div>
+
+          <div class="section">
+            <div class="s-title">Projects</div>
+            <div class="proj-code">
+              <span class="cm">// things I build</span><br/>
+              <span class="k">flags</span>: <a href="https://flags.fyi">"flags.fyi"</a> <span class="cm">// vexillology</span><br/>
+              <span class="k">readrd</span>: <a href="https://read.sadh.app">"read.sadh.app"</a> <span class="cm">// research</span><br/>
+              <span class="k">sonnivo</span>: <a href="https://sonnivo.nafsadh.com">"sonnivo"</a> <span class="cm">// bengali kbd</span>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="s-title">Writing & Poetry</div>
+            <p>Research at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry in English & Bengali.</p>
+            <div class="poem">
+              the weight of a word<br/>
+              is not in its letters<br/>
+              but in the silence<br/>
+              it displaces
+              <div class="attr">&mdash; Second Seconds</div>
+            </div>
+            <div class="s-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">medium</a></div>
+          </div>
+
+          <div class="section">
+            <div class="s-title">Art & Photography</div>
+            <p>Painting, digital art, photography. Drawing fundamentals.</p>
+            <div class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">behance</a><a href="https://flickr.com/sadh">flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="ide-status">
+        <span>&copy; 2026 nafSadh</span>
+        <span><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── ROOT TOKENS ── */
+    :root {
+      --bg:          #0C0E18;
+      --bg2:         #0F1120;
+      --bg3:         #12152A;
+      --trace:       #1E2245;
+      --trace-lit:   #2A3066;
+      --accent:      #6070C0;
+      --accent2:     #4A8FB5;
+      --accent3:     #7A60C8;
+      --glow:        #8090D8;
+      --cyan:        #40A0C0;
+      --text-hi:     #E8ECF8;
+      --text-mid:    #9AA0C8;
+      --text-lo:     #4A5080;
+      --text-ghost:  #2A2E50;
+      --pad:         #1A1E38;
+      --pad-hi:      #222648;
+      --serif:       'Fraunces', Georgia, serif;
+      --mono:        'Fira Code', 'Courier New', monospace;
+    }
+
+    /* ── BODY / BOARD ── */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-mid);
+      background-color: var(--bg);
+      min-height: 100vh;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* PCB grid texture overlay */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(96,112,192,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96,112,192,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Subtle vignette */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 50% 30%, transparent 40%, rgba(6,8,16,0.7) 100%);
+    }
+
+    /* ── LAYOUT WRAPPER ── */
+    .board {
+      position: relative; z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── SCHEMATIC LINK / TRACE LINES ── */
+    /* Horizontal traces between components */
+    .trace-h {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--trace-lit) 20%, var(--trace-lit) 80%, transparent);
+      margin: 0.5rem 0;
+      position: relative;
+    }
+    .trace-h::before {
+      content: '';
+      position: absolute; left: 50%; top: -3px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    /* Connector label on traces */
+    .trace-label {
+      font-size: 0.6rem;
+      color: var(--text-ghost);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-align: center;
+      margin: -0.25rem 0 0.25rem;
+    }
+
+    /* ── COMPONENT BOXES ── */
+    /* The core design concept: each section is a labeled schematic component */
+    .component {
+      border: 1px solid var(--trace);
+      background: var(--bg2);
+      position: relative;
+      margin-bottom: 0;
+    }
+
+    /* Component reference designator — top-left outside the box */
+    .ref-des {
+      position: absolute;
+      top: -1.2rem; left: 0;
+      font-size: 0.6rem;
+      color: var(--text-lo);
+      letter-spacing: 0.1em;
+      font-family: var(--mono);
+    }
+
+    /* Component title — the label on the box border, centered top */
+    .comp-title {
+      position: absolute;
+      top: -0.65rem; left: 50%; transform: translateX(-50%);
+      background: var(--bg2);
+      padding: 0 0.6rem;
+      font-size: 0.65rem;
+      color: var(--text-lo);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Component value (bottom right) */
+    .comp-value {
+      position: absolute;
+      bottom: -1rem; right: 0;
+      font-size: 0.6rem;
+      color: var(--text-ghost);
+      letter-spacing: 0.08em;
+    }
+
+    .comp-body {
+      padding: 1.75rem 1.5rem 1.5rem;
+    }
+
+    /* Highlight pin markers on sides of component */
+    .component::before,
+    .component::after {
+      content: '';
+      position: absolute;
+      width: 8px; height: 8px;
+      border: 1px solid var(--trace-lit);
+      background: var(--bg);
+      border-radius: 1px;
+    }
+    .component::before { left: -4px; top: 50%; transform: translateY(-50%); }
+    .component::after  { right: -4px; top: 50%; transform: translateY(-50%); }
+
+    /* ── MAIN COMPONENT: HERO / IC ── */
+    .comp-hero {
+      border-color: var(--accent);
+      background: var(--bg3);
+      margin-bottom: 0;
+    }
+    .comp-hero::before,
+    .comp-hero::after {
+      border-color: var(--accent);
+      box-shadow: 0 0 6px rgba(96,112,192,0.4);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem 1.75rem 1.75rem;
+    }
+
+    /* IC chip notch */
+    .ic-notch {
+      width: 48px; height: 48px;
+      border: 1.5px solid var(--accent);
+      border-radius: 4px 4px 4px 4px;
+      position: relative;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg);
+    }
+    .ic-notch::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 50%; transform: translateX(-50%);
+      width: 12px; height: 5px;
+      border-radius: 0 0 6px 6px;
+      background: var(--bg2);
+      border: 1.5px solid var(--accent);
+      border-top: none;
+    }
+    .ic-notch-text {
+      font-size: 0.55rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* IC pin rows on sides of hero */
+    .ic-pins {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .ic-pins.left { left: -10px; }
+    .ic-pins.right { right: -10px; }
+    .ic-pin {
+      width: 8px; height: 2px;
+      background: var(--trace-lit);
+    }
+    .ic-pin-label {
+      position: absolute;
+      font-size: 0.52rem;
+      color: var(--text-ghost);
+      white-space: nowrap;
+    }
+    .ic-pins.left .ic-pin-label { left: 12px; transform: translateY(-50%); }
+    .ic-pins.right .ic-pin-label { right: 12px; transform: translateY(-50%); text-align: right; }
+
+    /* Name */
+    .hero-name {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--text-hi);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.2rem;
+    }
+    .hero-name span {
+      color: var(--glow);
+      text-shadow: 0 0 20px rgba(128,144,216,0.35);
+    }
+    .hero-tagline {
+      font-size: 0.72rem;
+      color: var(--accent2);
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      font-family: var(--mono);
+    }
+    .hero-bio {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+    .hero-bio strong {
+      color: var(--text-hi);
+      font-weight: 400;
+    }
+
+    /* pronunciation bubble */
+    .pronunciation {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-lo);
+      border: 1px solid var(--trace);
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      margin-top: 0.5rem;
+    }
+
+    /* ── SECTION ROW: side-by-side components ── */
+    .comp-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 600px) {
+      .comp-row { grid-template-columns: 1fr; }
+      .hero-inner { flex-direction: column; gap: 1rem; }
+    }
+
+    /* ── FULL-WIDTH COMPONENT SPACING ── */
+    .comp-full {
+      margin-top: 2.5rem;
+    }
+
+    /* ── SECTION CONTENT STYLES ── */
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { color: var(--cyan); text-decoration: underline; }
+
+    .work-entry {
+      margin-bottom: 0.75rem;
+    }
+    .work-co {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      color: var(--text-hi);
+      font-weight: 400;
+    }
+    .work-role {
+      font-size: 0.72rem;
+      color: var(--text-mid);
+    }
+    .work-detail {
+      font-size: 0.72rem;
+      color: var(--text-lo);
+      margin-top: 0.15rem;
+    }
+    .bullet { color: var(--text-ghost); }
+
+    /* ── CODE BLOCK: syntax-highlighted projects ── */
+    .code-block {
+      background: var(--bg);
+      border: 1px solid var(--trace);
+      padding: 1.1rem 1.25rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      line-height: 1.85;
+      overflow-x: auto;
+    }
+    .code-block::-webkit-scrollbar { height: 4px; }
+    .code-block::-webkit-scrollbar-track { background: var(--bg); }
+    .code-block::-webkit-scrollbar-thumb { background: var(--trace-lit); }
+
+    /* Syntax token colors */
+    .tok-kw    { color: #9B7FD4; }        /* keyword: purple */
+    .tok-fn    { color: #5EADD6; }        /* function: cyan-blue */
+    .tok-str   { color: #7EBFA8; }        /* string: teal */
+    .tok-num   { color: #E09A6A; }        /* number: amber */
+    .tok-type  { color: #8090D8; }        /* type: blurple */
+    .tok-op    { color: #6A7AAA; }        /* operator */
+    .tok-cmt   { color: #3A4060; font-style: italic; } /* comment */
+    .tok-punc  { color: #5A6090; }        /* punctuation */
+    .tok-url   { color: #4A8FB5; text-decoration: underline; cursor: pointer; }
+    .tok-url:hover { color: var(--cyan); }
+    .tok-nl    { display: block; }        /* newline = block */
+
+    /* Line numbers */
+    .ln {
+      display: inline-block;
+      color: var(--text-ghost);
+      width: 2em; text-align: right;
+      margin-right: 1.2em;
+      user-select: none;
+      font-size: 0.65rem;
+    }
+
+    /* ── POETRY SECTION: manuscript feel within dark ── */
+    .poem-block {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 2;
+      color: var(--text-mid);
+      padding: 1.25rem 1.75rem;
+      border-left: 2px solid var(--accent3);
+      margin: 0.5rem 0;
+    }
+    .poem-block .verse {
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+    .poem-block .verse-break {
+      display: block;
+      height: 0.8rem;
+    }
+    .poem-title {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-lo);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .poem-cta {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-lo);
+      margin-top: 0.75rem;
+    }
+
+    /* ── ART SECTION: museum label style ── */
+    .art-entry {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--trace);
+    }
+    .art-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .art-medium {
+      font-size: 0.6rem;
+      color: var(--text-ghost);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-family: var(--mono);
+    }
+    .art-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--text-hi);
+      font-weight: 300;
+      margin: 0.15rem 0;
+    }
+    .art-desc {
+      font-family: var(--serif);
+      font-size: 0.82rem;
+      color: var(--text-mid);
+    }
+    .art-link {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--accent2);
+      margin-top: 0.25rem;
+      display: block;
+    }
+
+    /* ── WRITING ENTRY ── */
+    .writing-entry {
+      margin-bottom: 0.75rem;
+    }
+    .writing-title {
+      font-family: var(--serif);
+      font-size: 0.92rem;
+      color: var(--text-hi);
+    }
+    .writing-where {
+      font-size: 0.68rem;
+      color: var(--text-lo);
+      font-family: var(--mono);
+    }
+
+    /* ── SOCIAL / FOOTER COMPONENT ── */
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      padding: 0.25rem 0;
+    }
+    .social-link {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-lo);
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.15s;
+    }
+    .social-link:hover { color: var(--cyan); text-decoration: none; }
+    .social-icon {
+      width: 14px; height: 14px;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+
+    /* ── BOARD HEADER: edge connector label ── */
+    .board-edge {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--trace);
+    }
+    .edge-connector {
+      display: flex;
+      gap: 4px;
+      align-items: flex-end;
+    }
+    .edge-pin {
+      width: 6px;
+      background: var(--trace-lit);
+      border-radius: 1px 1px 0 0;
+    }
+    .edge-pin:nth-child(1) { height: 14px; }
+    .edge-pin:nth-child(2) { height: 18px; }
+    .edge-pin:nth-child(3) { height: 22px; }
+    .edge-pin:nth-child(4) { height: 16px; }
+    .edge-pin:nth-child(5) { height: 20px; }
+    .edge-pin:nth-child(6) { height: 12px; }
+
+    .board-id {
+      font-size: 0.62rem;
+      color: var(--text-ghost);
+      letter-spacing: 0.12em;
+    }
+    .board-id strong { color: var(--text-lo); }
+
+    /* ── FOOTER ── */
+    .board-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--trace);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-note {
+      font-size: 0.62rem;
+      color: var(--text-ghost);
+      letter-spacing: 0.08em;
+    }
+    .footer-copy {
+      font-size: 0.62rem;
+      color: var(--text-ghost);
+    }
+
+    /* ── CONNECTOR DOT decoration ── */
+    .dot {
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+      vertical-align: middle;
+      margin: 0 0.3rem;
+    }
+    .dot-cyan { background: var(--cyan); box-shadow: 0 0 6px var(--cyan); }
+    .dot-purple { background: var(--accent3); box-shadow: 0 0 6px var(--accent3); }
+
+    /* ── SILK-SCREEN TEXT (decorative board text) ── */
+    .silk {
+      font-size: 0.55rem;
+      color: var(--text-ghost);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+
+    /* Full-bleed schematic divider */
+    .schematic-divider {
+      position: relative;
+      height: 2.5rem;
+      display: flex; align-items: center;
+      margin: 0;
+    }
+    .schematic-divider::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; top: 50%;
+      height: 1px;
+      background: var(--trace);
+    }
+    .schematic-divider-inner {
+      background: var(--bg);
+      padding: 0 0.75rem;
+      position: relative;
+      z-index: 1;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    /* Section wrapper with margin for ref-des */
+    .section-wrap {
+      position: relative;
+      padding-top: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    /* Hover glow for components */
+    .component:hover {
+      border-color: var(--trace-lit);
+      transition: border-color 0.3s;
+    }
+    .comp-hero:hover {
+      border-color: var(--glow);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="board">
+
+    <!-- ── BOARD EDGE CONNECTOR ── -->
+    <div class="board-edge">
+      <div class="edge-connector">
+        <div class="edge-pin"></div>
+        <div class="edge-pin"></div>
+        <div class="edge-pin"></div>
+        <div class="edge-pin"></div>
+        <div class="edge-pin"></div>
+        <div class="edge-pin"></div>
+      </div>
+      <div class="board-id">
+        <strong>PCB-NS1</strong> &nbsp;·&nbsp; REV 2026.1 &nbsp;·&nbsp; nafsadh.com
+      </div>
+      <div style="margin-left:auto" class="silk">MAKER OF THINGS</div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         U1 — IDENTITY / MAIN IC
+    ══════════════════════════════════════════ -->
+    <div class="section-wrap">
+      <span class="ref-des">U1</span>
+
+      <div class="component comp-hero">
+        <span class="comp-title">IDENTITY MODULE</span>
+        <span class="comp-value">V_CC = curiosity</span>
+
+        <div class="hero-inner">
+          <!-- IC chip symbol -->
+          <div style="flex-shrink:0; padding-top:0.25rem;">
+            <div class="ic-notch">
+              <div class="ic-notch-text">nafS<br/>adh</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="hero-name">naf<span>Sadh</span></div>
+            <div class="hero-tagline">// maker of things &nbsp;<span class="dot dot-cyan"></span></div>
+            <div class="hero-bio">
+              Computer scientist, engineer, writer, poet, painter, photographer.
+              <strong>Senior SWE</strong> at <strong>Google DeepMind</strong> —
+              Gemini API &amp; agentic capabilities.
+              Builds things at the intersection of language, machine intelligence, and craft.
+            </div>
+            <div class="pronunciation">
+              <span style="color:var(--text-lo)">// name note:</span>
+              &nbsp;<strong style="color:var(--text-mid)">'Sadh'</strong>
+              &nbsp;<span style="color:var(--text-ghost)">/ʃadʱ/</span>
+              &nbsp;<span style="color:var(--text-ghost)">— as in "shade" with an aspiration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════
+         R1 + C1 — WORK & PROJECTS (side by side)
+    ══════════════════════════════════════════ -->
+    <div class="comp-row" style="margin-top:2.5rem;">
+
+      <!-- R1 — WORK -->
+      <div class="section-wrap" style="margin-top:0;">
+        <span class="ref-des">R1</span>
+        <div class="component" style="height:100%;">
+          <span class="comp-title">WORK HISTORY</span>
+          <span class="comp-value">Ω = impact</span>
+          <div class="comp-body">
+
+            <div class="work-entry">
+              <div class="work-co">Google DeepMind</div>
+              <div class="work-role">Senior Software Engineer</div>
+              <div class="work-detail">
+                <span class="dot dot-cyan"></span>
+                Gemini API · agentic capabilities
+              </div>
+            </div>
+
+            <div class="work-entry">
+              <div class="work-co" style="color:var(--text-mid)">Google — App Safety</div>
+              <div class="work-detail">Trust &amp; safety ML systems</div>
+            </div>
+
+            <div class="work-entry">
+              <div class="work-co" style="color:var(--text-mid)">Google Nest / TCI</div>
+              <div class="work-detail">ML at the edge · smart home</div>
+            </div>
+
+            <div class="work-entry">
+              <div class="work-co" style="color:var(--text-lo)">Samsung Research</div>
+              <div class="work-detail">Early career · vision</div>
+            </div>
+
+            <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:0.35rem 0.75rem;">
+              <a href="https://re.sadh.me" class="silk" style="color:var(--accent2);">résumé →</a>
+              <a href="https://linkedin.com/in/nafsadh" class="silk" style="color:var(--accent2);">linkedin →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- C1 — WRITING & POETRY -->
+      <div class="section-wrap" style="margin-top:0;">
+        <span class="ref-des">C1</span>
+        <div class="component" style="height:100%;">
+          <span class="comp-title">WRITING &amp; POETRY</span>
+          <span class="comp-value">F = resonance</span>
+          <div class="comp-body">
+
+            <div class="poem-title">// excerpt — "In Measure"</div>
+            <div class="poem-block">
+              <span class="verse">I count the things I cannot name</span>
+              <span class="verse">in units of before and after —</span>
+              <span class="verse">the small erosions no one frames,</span>
+              <span class="verse">the slow accretion of thereafter.</span>
+              <span class="verse-break"></span>
+              <span class="verse">Each line I write is calibration,</span>
+              <span class="verse">a tick-mark on the dial of days.</span>
+            </div>
+
+            <div class="poem-cta">
+              <span class="bullet">··</span>
+              <a href="https://medium.com/@nafSadh">essays on Medium</a>
+              &nbsp;·&nbsp;
+              <a href="https://nafsadh.com">more poems →</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ══════════════════════════════════════════
+         Q1 — PROJECTS (full width, code block)
+    ══════════════════════════════════════════ -->
+    <div class="section-wrap comp-full">
+      <span class="ref-des">Q1</span>
+      <div class="component">
+        <span class="comp-title">PROJECTS</span>
+        <span class="comp-value">β = open-source</span>
+        <div class="comp-body" style="padding-bottom:1.25rem;">
+
+          <div class="code-block">
+<span class="tok-nl"><span class="ln">1</span><span class="tok-cmt">// nafSadh/projects — selected builds</span></span>
+<span class="tok-nl"><span class="ln">2</span></span>
+<span class="tok-nl"><span class="ln">3</span><span class="tok-kw">const</span> <span class="tok-fn">projects</span> <span class="tok-op">=</span> <span class="tok-punc">[</span></span>
+<span class="tok-nl"><span class="ln">4</span>  <span class="tok-punc">{</span></span>
+<span class="tok-nl"><span class="ln">5</span>    <span class="tok-type">name</span><span class="tok-op">:</span>  <span class="tok-str">"flags.fyi"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">6</span>    <span class="tok-type">desc</span><span class="tok-op">:</span>  <span class="tok-str">"Flags for vexillophiles — explore world flags with depth"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">7</span>    <span class="tok-type">url</span><span class="tok-op">:</span>   <a href="https://flags.fyi" target="_blank" rel="noopener" class="tok-url">"https://flags.fyi"</a><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">8</span>  <span class="tok-punc">},</span></span>
+<span class="tok-nl"><span class="ln">9</span>  <span class="tok-punc">{</span></span>
+<span class="tok-nl"><span class="ln">10</span>    <span class="tok-type">name</span><span class="tok-op">:</span>  <span class="tok-str">"scribe"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">11</span>    <span class="tok-type">desc</span><span class="tok-op">:</span>  <span class="tok-str">"Text structuring &amp; writing tools"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">12</span>    <span class="tok-type">url</span><span class="tok-op">:</span>   <a href="https://github.com/nafSadh/scribe" target="_blank" rel="noopener" class="tok-url">"github.com/nafSadh/scribe"</a><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">13</span>  <span class="tok-punc">},</span></span>
+<span class="tok-nl"><span class="ln">14</span>  <span class="tok-punc">{</span></span>
+<span class="tok-nl"><span class="ln">15</span>    <span class="tok-type">name</span><span class="tok-op">:</span>  <span class="tok-str">"tldrlegal"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">16</span>    <span class="tok-type">desc</span><span class="tok-op">:</span>  <span class="tok-str">"Software licenses explained in plain English"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">17</span>    <span class="tok-type">url</span><span class="tok-op">:</span>   <a href="https://tldrlegal.com" target="_blank" rel="noopener" class="tok-url">"https://tldrlegal.com"</a><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">18</span>  <span class="tok-punc">},</span></span>
+<span class="tok-nl"><span class="ln">19</span>  <span class="tok-punc">{</span></span>
+<span class="tok-nl"><span class="ln">20</span>    <span class="tok-type">name</span><span class="tok-op">:</span>  <span class="tok-str">"sonnivo"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">21</span>    <span class="tok-type">desc</span><span class="tok-op">:</span>  <span class="tok-str">"Musical experiments in code and sound"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">22</span>    <span class="tok-type">url</span><span class="tok-op">:</span>   <a href="https://sonnivo.com" target="_blank" rel="noopener" class="tok-url">"https://sonnivo.com"</a><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">23</span>  <span class="tok-punc">},</span></span>
+<span class="tok-nl"><span class="ln">24</span>  <span class="tok-punc">{</span></span>
+<span class="tok-nl"><span class="ln">25</span>    <span class="tok-type">name</span><span class="tok-op">:</span>  <span class="tok-str">"nafSadh.com"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">26</span>    <span class="tok-type">desc</span><span class="tok-op">:</span>  <span class="tok-str">"This page — itself a project in ongoing revision"</span><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">27</span>    <span class="tok-type">url</span><span class="tok-op">:</span>   <a href="https://nafsadh.com" target="_blank" rel="noopener" class="tok-url">"https://nafsadh.com"</a><span class="tok-punc">,</span></span>
+<span class="tok-nl"><span class="ln">28</span>  <span class="tok-punc">},</span></span>
+<span class="tok-nl"><span class="ln">29</span><span class="tok-punc">]</span><span class="tok-op">;</span></span>
+<span class="tok-nl"><span class="ln">30</span></span>
+<span class="tok-nl"><span class="ln">31</span><span class="tok-cmt">// more: </span><a href="https://github.com/nafSadh" target="_blank" rel="noopener" class="tok-url tok-cmt">github.com/nafSadh</a></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════
+         D1 + L1 — ART & PHOTO + LINKS (side by side)
+    ══════════════════════════════════════════ -->
+    <div class="comp-row">
+
+      <!-- D1 — ART & PHOTOGRAPHY -->
+      <div class="section-wrap" style="margin-top:0;">
+        <span class="ref-des">D1</span>
+        <div class="component" style="height:100%;">
+          <span class="comp-title">ART &amp; PHOTOGRAPHY</span>
+          <span class="comp-value">λ = medium</span>
+          <div class="comp-body">
+
+            <div class="art-entry">
+              <div class="art-medium">painting — acrylic / oil</div>
+              <div class="art-title">Chromatic Studies</div>
+              <div class="art-desc">
+                Texture-forward abstracts exploring color weight and surface.
+                Canvas as code: layered, iterative, never final.
+              </div>
+            </div>
+
+            <div class="art-entry">
+              <div class="art-medium">photography — street / portrait</div>
+              <div class="art-title">Available Light</div>
+              <div class="art-desc">
+                Found moments at dusk. People mid-sentence. Cities between frames.
+              </div>
+              <a href="https://instagram.com/nafSadh" class="art-link">
+                @nafSadh on Instagram →
+              </a>
+            </div>
+
+            <div class="art-entry">
+              <div class="art-medium">mixed media</div>
+              <div class="art-title">Code-Generated Forms</div>
+              <div class="art-desc">
+                Algorithmic sketches rendered and printed — where generative process meets physical artifact.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- L1 — CONNECT / SOCIAL -->
+      <div class="section-wrap" style="margin-top:0;">
+        <span class="ref-des">L1</span>
+        <div class="component" style="height:100%;">
+          <span class="comp-title">CONNECT</span>
+          <span class="comp-value">Z = signal</span>
+          <div class="comp-body">
+
+            <div class="silk" style="margin-bottom:1rem; color:var(--text-ghost);">// output pins</div>
+
+            <div class="socials">
+
+              <!-- GitHub -->
+              <a href="https://github.com/nafSadh" target="_blank" rel="noopener" class="social-link">
+                <svg class="social-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                github/nafSadh
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://linkedin.com/in/nafsadh" target="_blank" rel="noopener" class="social-link">
+                <svg class="social-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 01.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg>
+                linkedin/nafsadh
+              </a>
+
+              <!-- X / Twitter -->
+              <a href="https://x.com/nafSadh" target="_blank" rel="noopener" class="social-link">
+                <svg class="social-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                </svg>
+                x/nafSadh
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://instagram.com/nafSadh" target="_blank" rel="noopener" class="social-link">
+                <svg class="social-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                </svg>
+                instagram/nafSadh
+              </a>
+
+              <!-- Resume -->
+              <a href="https://re.sadh.me" target="_blank" rel="noopener" class="social-link">
+                <svg class="social-icon" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+                  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+                </svg>
+                résumé
+              </a>
+
+            </div>
+
+            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--trace);">
+              <div class="silk" style="color:var(--text-ghost); line-height:2;">
+                <span class="dot"></span> signal: always building<br/>
+                <span class="dot dot-cyan"></span> location: NYC / remote<br/>
+                <span class="dot dot-purple"></span> status: curious
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         BOARD FOOTER
+    ══════════════════════════════════════════ -->
+    <div class="board-footer">
+      <div>
+        <div class="footer-note">
+          <strong style="color:var(--text-lo)">nafSadh</strong>
+          &nbsp;<span class="dot"></span>&nbsp;
+          'Sadh' /ʃadʱ/
+        </div>
+        <div class="footer-note" style="margin-top:0.25rem;">
+          PCB-NS1 · MAKER OF THINGS · REV 2026.1
+        </div>
+      </div>
+      <div>
+        <div class="footer-copy">© 2026 nafSadh</div>
+        <div class="footer-note" style="text-align:right; margin-top:0.25rem;">
+          nafsadh.com
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .board -->
+</body>
+</html>

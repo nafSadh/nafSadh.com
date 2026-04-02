@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #B0B8D0;
+      background: #0E1020;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    a { color: #7080D0; text-decoration: none; transition: color 0.15s; }
+    a:hover { color: #A0B0F0; }
+
+    /* ── THE ARTIFACT ── */
+    .artifact {
+      width: 100%;
+      max-width: 820px;
+      background: #12141E;
+      border: 1px solid #1C2038;
+      /* subtle drop shadow to float it */
+      box-shadow: 0 8px 48px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4);
+      /* thin top accent line like a gallery label or ticket header */
+      border-top: 2px solid #7080D0;
+    }
+
+    /* ── HEADER BAND ── full width, the "title plate" */
+    .hdr {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.4rem 2rem 1.1rem;
+      border-bottom: 1px solid #1C2038;
+      gap: 1rem;
+    }
+    .hdr-left { display: flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap; }
+    .hdr-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: #E2E8F8;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .hdr-role {
+      font-size: 0.65rem;
+      color: #404868;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .hdr-id {
+      font-size: 0.55rem;
+      color: #1C2038;
+      letter-spacing: 0.08em;
+      text-align: right;
+      white-space: nowrap;
+      align-self: flex-end;
+    }
+
+    /* ── MAIN BODY: asymmetric zone grid ── */
+    /*
+       Layout (on desktop):
+       ┌─────────────────────────┬──────────────────┐
+       │  BIO (wide)             │  POEM (narrow)   │
+       │                         │  (taller)        │
+       ├──────────┬──────────────┤                  │
+       │  WORK    │  PROJECTS    │                  │
+       │          │  (code)      ├──────────────────┤
+       │          │              │  ART (bottom-R)  │
+       └──────────┴──────────────┴──────────────────┘
+    */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 1fr 220px;
+      grid-template-rows: auto auto;
+    }
+
+    /* zones */
+    .z {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid #1C2038;
+    }
+    .z-label {
+      font-size: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #283050;
+      margin-bottom: 0.55rem;
+    }
+
+    /* BIO: spans cols 1+2, row 1 */
+    .z-bio {
+      grid-column: 1 / 3;
+      grid-row: 1;
+      border-right: 1px solid #1C2038;
+    }
+    .bio-disciplines {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: #6878A0;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .bio-disciplines span { color: #8898C8; }
+    .bio-text {
+      font-size: 0.72rem;
+      color: #505878;
+      line-height: 1.75;
+    }
+    .bio-text b { color: #8898C0; font-weight: 400; }
+
+    /* POEM: spans col 3, rows 1+2 */
+    .z-poem {
+      grid-column: 3;
+      grid-row: 1 / 3;
+      border-bottom: none;
+      border-left: 1px solid #1C2038;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .poem-lines {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #505878;
+      line-height: 2.1;
+      flex: 1;
+    }
+    .poem-lines em { color: #6878A0; font-style: normal; }
+    .poem-attr {
+      font-size: 0.5rem;
+      color: #283050;
+      margin-top: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+    .poem-links {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .poem-links a {
+      font-size: 0.6rem;
+      color: #303858;
+    }
+    .poem-links a:hover { color: #7080D0; }
+
+    /* WORK: col 1, row 2 */
+    .z-work {
+      grid-column: 1;
+      grid-row: 2;
+      border-right: 1px solid #1C2038;
+    }
+    .work-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #8898C0;
+      margin-bottom: 0.1rem;
+    }
+    .work-sub {
+      font-size: 0.62rem;
+      color: #404868;
+      margin-bottom: 0.55rem;
+    }
+    .work-prev {
+      font-size: 0.6rem;
+      color: #303858;
+      line-height: 1.9;
+    }
+    .work-links { margin-top: 0.5rem; }
+    .work-links a {
+      font-size: 0.6rem;
+      color: #303858;
+      margin-right: 0.5rem;
+    }
+    .work-links a:hover { color: #7080D0; }
+
+    /* PROJECTS: col 2, row 2 */
+    .z-proj {
+      grid-column: 2;
+      grid-row: 2;
+      border-right: 1px solid #1C2038;
+    }
+    .proj-list {
+      font-size: 0.72rem;
+      color: #505878;
+      line-height: 1.75;
+    }
+    .proj-item {
+      margin-bottom: 0.7rem;
+    }
+    .proj-item a {
+      color: #7080D0;
+      font-weight: 400;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .proj-item a:hover {
+      color: #A0B0F0;
+    }
+    .proj-desc {
+      font-size: 0.65rem;
+      color: #404868;
+      display: block;
+      margin-top: 0.2rem;
+    }
+    .proj-links {
+      margin-top: 0.8rem;
+      font-size: 0.65rem;
+      color: #303858;
+    }
+    .proj-links a {
+      color: #303858;
+      transition: color 0.15s;
+    }
+    .proj-links a:hover {
+      color: #7080D0;
+    }
+
+    /* ── FOOTER BAND ── */
+    .ftr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 2rem;
+      border-top: 1px solid #1C2038;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .ftr-socials { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .ftr-socials a {
+      font-size: 0.6rem;
+      color: #303858;
+      letter-spacing: 0.06em;
+    }
+    .ftr-socials a:hover { color: #7080D0; }
+    .ftr-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.15rem;
+    }
+    .ftr-name-note {
+      font-size: 0.5rem;
+      color: #1C2038;
+      letter-spacing: 0.04em;
+    }
+    .ftr-copy {
+      font-size: 0.5rem;
+      color: #1C2038;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      .z-bio { grid-column: 1; grid-row: 1; border-right: none; }
+      .z-work { grid-column: 1; grid-row: 2; border-right: none; }
+      .z-proj { grid-column: 1; grid-row: 3; border-right: none; }
+      .z-poem { grid-column: 1; grid-row: 4; border-left: none; border-bottom: 1px solid #1C2038; }
+      .hdr-name { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="artifact">
+
+  <!-- ── HEADER ── -->
+  <header class="hdr">
+    <div class="hdr-left">
+      <span class="hdr-name">nafSadh</span>
+      <span class="hdr-role">maker of things</span>
+    </div>
+    <span class="hdr-id">54 · nafsadh.com</span>
+  </header>
+
+  <!-- ── BODY ZONES ── -->
+  <div class="body">
+
+    <!-- BIO zone: wide, top-left -->
+    <section class="z z-bio">
+      <div class="z-label">about</div>
+      <p class="bio-disciplines">
+        <span>computer scientist</span> &thinsp;&middot;&thinsp;
+        <span>engineer</span> &thinsp;&middot;&thinsp;
+        <span>writer</span> &thinsp;&middot;&thinsp;
+        <span>poet</span> &thinsp;&middot;&thinsp;
+        <span>painter</span> &thinsp;&middot;&thinsp;
+        <span>photographer</span>
+      </p>
+      <p class="bio-text">
+        Senior Software Engineer at <b>Google DeepMind</b>, working on <b>Gemini API</b> and <b>agentic capabilities</b>.
+        Previously: Android App Safety &middot; Google Nest ML &middot; TCI &middot; Samsung.
+        Grew up in Bangladesh; now in the SF Bay Area.
+        CS at <b>Stony Brook</b> and KUET.
+        Interested in linguistics, epistemology, natural language, large language models, and generative AI.
+      </p>
+    </section>
+
+    <!-- POEM zone: tall, right column, spans both rows -->
+    <section class="z z-poem">
+      <div class="z-label">verse</div>
+      <div class="poem-lines">
+        the weight<br/>
+        of a word<br/>
+        is not in<br/>
+        its letters<br/>
+        <br/>
+        but in the<br/>
+        <em>silence</em><br/>
+        it displaces
+      </div>
+      <div class="poem-attr">&mdash; Second Seconds</div>
+      <div class="poem-links">
+        <a href="https://sulol.nafsadh.com">সুলল সংগ্রহ</a>
+        <a href="https://sadhubochon.wordpress.com">সাধুবচন</a>
+        <a href="https://read.sadh.app">read&middot;rd</a>
+        <a href="https://ai.nafsadh.com">Augmented Insights</a>
+        <a href="https://ins.nafsadh.com">inside the insight</a>
+        <a href="https://medium.com/@nafsadh">medium</a>
+      </div>
+    </section>
+
+    <!-- WORK zone: bottom-left -->
+    <section class="z z-work">
+      <div class="z-label">work</div>
+      <p class="work-title">Google DeepMind</p>
+      <p class="work-sub">Gemini API · agentic capabilities</p>
+      <p class="work-prev">
+        prev &nbsp;App Safety<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nest ML<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCI &nbsp;· Samsung
+      </p>
+      <div class="work-links">
+        <a href="https://re.sadh.me">résumé</a>
+        <a href="https://linkedin.com/in/nafsadh">linkedin</a>
+        <a href="https://github.com/nafSadh">github</a>
+      </div>
+    </section>
+
+    <!-- PROJECTS zone: bottom-center, elegant list -->
+    <section class="z z-proj">
+      <div class="z-label">projects</div>
+      <div class="proj-list">
+        <p class="proj-item">
+          <a href="https://flags.fyi">flags.fyi</a><br/>
+          <span class="proj-desc">vexillology repo</span>
+        </p>
+        <p class="proj-item">
+          <a href="https://read.sadh.app">read.sadh.app</a><br/>
+          <span class="proj-desc">reading tracker</span>
+        </p>
+        <p class="proj-item">
+          <a href="https://sonnivo.nafsadh.com">sonnivo</a><br/>
+          <span class="proj-desc">Bengali keyboard</span>
+        </p>
+        <p class="proj-links">
+          <a href="https://nafsadh.art">nafsadh.art</a> &middot;
+          <a href="https://behance.net/nafsadh">behance</a> &middot;
+          <a href="https://flickr.com/sadh">flickr</a>
+        </p>
+      </div>
+    </section>
+
+  </div><!-- /.body -->
+
+  <!-- ── FOOTER ── -->
+  <footer class="ftr">
+    <nav class="ftr-socials">
+      <a href="https://github.com/nafSadh">GitHub</a>
+      <a href="https://linkedin.com/in/nafsadh">LinkedIn</a>
+      <a href="https://x.com/nafSadh">X</a>
+      <a href="https://instagram.com/nafsadh">Instagram</a>
+      <a href="https://nafsadh.art">nafSadh.art</a>
+      <a href="https://behance.net/nafsadh">Behance</a>
+      <a href="https://flickr.com/sadh">Flickr</a>
+      <a href="https://500px.com/nafsadh">500px</a>
+      <a href="https://goodreads.com/nafsadh">Goodreads</a>
+    </nav>
+    <div class="ftr-right">
+      <span class="ftr-name-note">'Sadh' &nbsp;/ʃadʱ/ &nbsp;&middot;&nbsp; never separated</span>
+      <span class="ftr-copy">&copy; 2026 nafSadh</span>
+    </div>
+  </footer>
+
+</div><!-- /.artifact -->
+
+</body>
+</html>

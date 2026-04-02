@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6;
+      color: #D8D0C8;
+      background: #0E0E0C;
+      min-height: 100vh; overflow-x: hidden;
+    }
+    a { color: #E0B880; text-decoration: none; }
+    a:hover { color: #F0D0A0; }
+
+    /* SCATTERED: positioned cards with slight rotations, like photos on a desk */
+    .desk { position: relative; max-width: 900px; margin: 0 auto; min-height: 100vh; padding: 2rem; }
+
+    .floating {
+      position: absolute; background: #1A1818; border: 1px solid #2A2828;
+      border-radius: 8px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      max-width: 320px; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .floating:hover { transform: scale(1.02) !important; box-shadow: 0 12px 40px rgba(0,0,0,0.5); z-index: 10; }
+
+    .f-label { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #5A5048; margin-bottom: 0.5rem; }
+    .floating p { font-size: 0.82rem; color: #8A8078; margin-bottom: 0.3rem; }
+    .hl { color: #D0C8C0; font-weight: 500; }
+    .f-links { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+    .f-links a { font-size: 0.72rem; color: #6A605A; }
+    .f-links a:hover { color: #E0B880; }
+
+    /* Identity card — largest, centered */
+    .f-identity {
+      top: 3%; left: 50%; transform: translateX(-50%) rotate(-0.5deg);
+      max-width: 400px; text-align: center; z-index: 5;
+      background: #161414; border-color: #282420;
+    }
+    .f-identity .avatar { width: 64px; height: 64px; border-radius: 50%; margin-bottom: 0.75rem; }
+    .f-identity h1 { font-family: 'Instrument Serif', serif; font-size: 2rem; font-weight: 400; color: #F0E8E0; margin-bottom: 0.15rem; }
+    .f-identity .tagline { font-size: 0.88rem; color: #7A706A; margin-bottom: 0.75rem; }
+    .f-identity .bio { font-size: 0.82rem; color: #8A8078; }
+    .f-identity .bio b { color: #C8C0B8; }
+
+    /* Position cards around the identity */
+    .f-work { top: 32%; left: 3%; transform: rotate(-2deg); }
+    .f-proj { top: 28%; right: 3%; transform: rotate(1.5deg); }
+    .f-write { top: 58%; left: 8%; transform: rotate(1deg); }
+    .f-art { top: 55%; right: 5%; transform: rotate(-1.5deg); }
+    .f-social { top: 80%; left: 50%; transform: translateX(-50%) rotate(0.5deg); max-width: 280px; text-align: center; }
+
+    .pl a { display: block; padding: 0.2rem 0; text-decoration: none; }
+    .pl a:hover .pn { color: #E0B880; }
+    .pn { font-size: 0.82rem; font-weight: 500; color: #C8C0B8; transition: color 0.15s; }
+    .pd { font-size: 0.62rem; color: #5A5048; }
+
+    .social-row { display: flex; justify-content: center; gap: 1rem; }
+    .social-row a { color: #4A4038; font-size: 0.78rem; }
+    .social-row a:hover { color: #E0B880; }
+    .note { font-size: 0.65rem; color: #3A3028; margin-top: 0.5rem; }
+
+    /* Mobile: stack everything */
+    @media (max-width: 768px) {
+      .desk { position: static; padding: 1.5rem; }
+      .floating {
+        position: static !important; transform: none !important;
+        max-width: 100%; margin-bottom: 0.75rem;
+      }
+      .f-identity { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="desk">
+    <div class="floating f-identity">
+      <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+      <h1>nafSadh</h1>
+      <p class="tagline">Maker of things. Creator. Explorer.</p>
+      <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+    </div>
+
+    <div class="floating f-work">
+      <div class="f-label">Work</div>
+      <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities</p>
+      <p>Prev: App Safety, Nest ML, TCI, Samsung</p>
+      <div class="f-links"><a href="https://re.sadh.me">Resume</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://github.com/nafSadh">GitHub</a></div>
+    </div>
+
+    <div class="floating f-proj">
+      <div class="f-label">Projects</div>
+      <div class="pl">
+        <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">Flags for vexillophiles</div></a>
+        <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">Research deep-dives</div></a>
+        <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">Bengali keyboard</div></a>
+      </div>
+    </div>
+
+    <div class="floating f-write">
+      <div class="f-label">Writing & Poetry</div>
+      <p>Research at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry — <em>Second Seconds</em>. English & Bengali.</p>
+      <div class="f-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">Medium</a></div>
+    </div>
+
+    <div class="floating f-art">
+      <div class="f-label">Art & Photography</div>
+      <p>Painting, digital art, photography. Drawing fundamentals.</p>
+      <div class="f-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">Behance</a><a href="https://flickr.com/sadh">Flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+    </div>
+
+    <div class="floating f-social">
+      <div class="social-row"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <p class="note">'Sadh' /ʃadʱ/ &middot; &copy; 2026 nafSadh</p>
+    </div>
+  </div>
+</body>
+</html>

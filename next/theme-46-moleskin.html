@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Code+Pro:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Lora', Georgia, serif; font-size: 15px; line-height: 1.75;
+      color: #2A2520; background: #1A1510;
+      display: flex; justify-content: center; padding: 2rem 1rem; min-height: 100vh;
+    }
+    a { color: #6A5A48; text-decoration: none; border-bottom: 1px dotted #C0B0A0; }
+    a:hover { color: #4A3A28; border-bottom-style: solid; }
+
+    /* MOLESKINE: rounded-corner black notebook with elastic band, cream pages */
+    .moleskine {
+      max-width: 560px; width: 100%; background: #222;
+      border-radius: 8px; overflow: hidden; position: relative;
+      box-shadow: 4px 6px 20px rgba(0,0,0,0.4), 0 0 0 1px #333;
+    }
+    /* Elastic band */
+    .moleskine::after {
+      content: ''; position: absolute; top: 0; bottom: 0; right: 2.5rem;
+      width: 3px; background: #8A2020; z-index: 2;
+    }
+
+    .page {
+      background: #FBF6EC; margin: 0.5rem; border-radius: 4px;
+      padding: 3rem 3.5rem 2.5rem 2.5rem; position: relative;
+      /* Lined paper */
+      background-image: repeating-linear-gradient(
+        transparent, transparent 27px, #E8E0D4 27px, #E8E0D4 28px
+      );
+      background-position: 0 1rem;
+    }
+
+    .hero { margin-bottom: 1.5rem; }
+    .hero-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+    .avatar { width: 52px; height: 52px; border-radius: 50%; }
+    .hero h1 { font-size: 1.5rem; font-weight: 600; color: #1A1510; }
+    .hero .tagline { font-size: 0.85rem; font-style: italic; color: #7A6A58; }
+    .hero .bio { font-size: 0.88rem; color: #4A4038; }
+    .hero .bio b { color: #1A1510; }
+
+    .section { margin-bottom: 1.5rem; }
+    .s-title { font-size: 1rem; font-weight: 600; color: #1A1510; margin-bottom: 0.3rem; }
+    .section p { font-size: 0.85rem; color: #4A4038; margin-bottom: 0.25rem; }
+    .hl { color: #1A1510; font-weight: 500; }
+    .s-links { margin-top: 0.3rem; }
+    .s-links a { font-family: 'Source Code Pro', monospace; font-size: 0.72rem; margin-right: 0.6rem; border-bottom: none; color: #7A6A58; }
+    .s-links a:hover { color: #4A3A28; }
+
+    .pl a { display: block; padding: 0.25rem 0; text-decoration: none; border-bottom: none; }
+    .pl a:hover .pn { color: #6A5A48; }
+    .pn { font-size: 0.85rem; font-weight: 500; color: #1A1510; transition: color 0.15s; }
+    .pd { font-family: 'Source Code Pro', monospace; font-size: 0.68rem; color: #8A7A68; }
+
+    .page-footer {
+      padding-top: 1rem; border-top: 1px solid #E0D8C8;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .pf-links a { font-family: 'Source Code Pro', monospace; font-size: 0.7rem; margin-right: 0.6rem; border-bottom: none; color: #A09080; }
+    .pf-links a:hover { color: #6A5A48; }
+    .pf-note { font-size: 0.68rem; color: #B0A090; font-style: italic; }
+
+    @media (max-width: 500px) { .page { padding: 2rem 1.5rem; } .moleskine::after { right: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="moleskine">
+    <div class="page">
+      <header class="hero">
+        <div class="hero-row">
+          <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+          <div><h1>nafSadh</h1><div class="tagline">Maker of things. Creator. Explorer.</div></div>
+        </div>
+        <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+      </header>
+      <div class="section">
+        <div class="s-title">Work</div>
+        <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities. Prev: App Safety, Nest ML, TCI, Samsung.</p>
+        <div class="s-links"><a href="https://re.sadh.me">resume</a><a href="https://linkedin.com/in/nafsadh">linkedin</a><a href="https://github.com/nafSadh">github</a></div>
+      </div>
+      <div class="section">
+        <div class="s-title">Projects</div>
+        <div class="pl">
+          <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">flags for vexillophiles</div></a>
+          <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">paper-drives & research</div></a>
+          <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">Bengali keyboard</div></a>
+        </div>
+      </div>
+      <div class="section">
+        <div class="s-title">Writing & Poetry</div>
+        <p>Research at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry — <em>Second Seconds</em>. English & Bengali.</p>
+        <div class="s-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">medium</a></div>
+      </div>
+      <div class="section">
+        <div class="s-title">Art & Photography</div>
+        <p>Painting, digital art, photography. Drawing fundamentals.</p>
+        <div class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">behance</a><a href="https://flickr.com/sadh">flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+      </div>
+      <div class="page-footer">
+        <div class="pf-links"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+        <span class="pf-note">'Sadh' /ʃadʱ/ &middot; &copy; 2026</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

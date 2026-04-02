@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Fira+Code:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Fira Code', monospace; font-size: 13px; line-height: 1.7;
+      color: #B0B8D0;
+      background: #0E1020;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem;
+    }
+    a { color: #7080D0; text-decoration: none; }
+    a:hover { color: #98A8F0; }
+
+    /* SINGLE CARD — but the card itself is split into zones by subtle inner borders,
+       like a well-designed business card or passport page */
+    .card {
+      max-width: 580px; width: 100%;
+      border: 1px solid #1C2038;
+      background: #12141E;
+    }
+
+    .card-top {
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid #1C2038;
+    }
+    .card-top h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+      font-weight: 300; color: #E0E8F8; letter-spacing: 0.02em;
+    }
+    .card-top .tag { color: #404868; margin-top: 0.1rem; }
+    .card-top .bio { color: #6878A0; font-size: 0.8rem; margin-top: 0.75rem; }
+    .card-top .bio b { color: #A0B0D8; font-weight: 500; }
+
+    /* Middle: 2-column grid of zones */
+    .card-mid { display: grid; grid-template-columns: 1fr 1fr; }
+    .zone {
+      padding: 1.25rem 1.5rem; border-bottom: 1px solid #1C2038;
+    }
+    .zone:nth-child(odd) { border-right: 1px solid #1C2038; }
+    .zone-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.15em; color: #303858; margin-bottom: 0.4rem; }
+    .zone p { font-size: 0.78rem; color: #6878A0; margin-bottom: 0.15rem; }
+    .zone .hl { color: #A0B0D8; }
+    .zone a { font-size: 0.72rem; }
+    .zone-links { margin-top: 0.25rem; }
+    .zone-links a { display: inline; margin-right: 0.4rem; color: #404868; font-size: 0.65rem; }
+    .zone-links a:hover { color: #7080D0; }
+
+    .proj-line { color: #5868A0; margin-top: 0.1rem; font-size: 0.72rem; }
+    .proj-line .k { color: #7080D0; }
+    .proj-line .cm { color: #283050; }
+    .proj-line a { color: #5868A0; font-size: 0.72rem; }
+
+    .poem {
+      font-family: 'Cormorant Garamond', serif; font-size: 0.92rem; font-weight: 300;
+      font-style: italic; color: #5868A0; line-height: 1.9;
+    }
+    .poem-attr { font-size: 0.55rem; color: #283050; margin-top: 0.2rem; font-style: normal; font-family: 'Fira Code', monospace; }
+
+    .card-bottom {
+      padding: 0.85rem 1.5rem; display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 0.4rem;
+    }
+    .card-bottom a { color: #303858; font-size: 0.62rem; margin-right: 0.4rem; }
+    .card-bottom a:hover { color: #7080D0; }
+    .card-bottom .copy { font-size: 0.55rem; color: #1C2038; }
+
+    @media (max-width: 500px) {
+      .card-mid { grid-template-columns: 1fr; }
+      .zone:nth-child(odd) { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-top">
+      <h1>nafSadh</h1>
+      <p class="tag">maker of things · creator · explorer</p>
+      <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+    </div>
+
+    <div class="card-mid">
+      <div class="zone">
+        <div class="zone-label">work</div>
+        <p><span class="hl">Google DeepMind</span></p>
+        <p>Gemini API, agentic capabilities</p>
+        <p>prev: App Safety · Nest ML · TCI · Samsung</p>
+        <div class="zone-links"><a href="https://re.sadh.me">resume</a><a href="https://linkedin.com/in/nafsadh">linkedin</a><a href="https://github.com/nafSadh">github</a></div>
+      </div>
+      <div class="zone">
+        <div class="zone-label">projects</div>
+        <div class="proj-line"><span class="k">flags</span>: <a href="https://flags.fyi">flags.fyi</a> <span class="cm">// vex</span></div>
+        <div class="proj-line"><span class="k">readrd</span>: <a href="https://read.sadh.app">read.sadh.app</a></div>
+        <div class="proj-line"><span class="k">sonnivo</span>: <a href="https://sonnivo.nafsadh.com">sonnivo</a></div>
+      </div>
+      <div class="zone">
+        <div class="zone-label">writing & poetry</div>
+        <div class="poem">
+          the weight of a word<br/>
+          is not in its letters<br/>
+          but in the silence<br/>
+          it displaces
+        </div>
+        <p class="poem-attr">&mdash; Second Seconds</p>
+        <div class="zone-links"><a href="https://read.sadh.app">read·rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">medium</a></div>
+      </div>
+      <div class="zone">
+        <div class="zone-label">art & photography</div>
+        <p>painting · digital art · photography</p>
+        <p>studying drawing fundamentals</p>
+        <div class="zone-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">behance</a><a href="https://flickr.com/sadh">flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+      </div>
+    </div>
+
+    <div class="card-bottom">
+      <div><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <span class="copy">'Sadh' /ʃadʱ/ · &copy; 2026</span>
+    </div>
+  </div>
+</body>
+</html>

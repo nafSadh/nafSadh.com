@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.65;
+      color: #B8C0D8;
+      background: #282838;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      min-height: 100vh;
+    }
+    a { color: #80A0E0; text-decoration: none; }
+    a:hover { color: #A0C0FF; }
+    .container { max-width: 640px; margin: 0 auto; padding: 0 2rem; }
+
+    .hero { padding: 4rem 0 2rem; }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: 2.5rem;
+      font-weight: 300; color: #E0E4F0; text-shadow: 0 0 30px rgba(160,180,240,0.06);
+      margin-bottom: 0.2rem;
+    }
+    .hero-tag { font-size: 0.85rem; color: #5A6080; margin-bottom: 1.25rem; }
+    .hero-bio { font-size: 0.88rem; font-weight: 300; color: #8090B0; }
+    .hero-bio b { color: #B8C0D8; }
+
+    /* Two-column: text + artifact */
+    .duo {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+      padding: 2rem 0; border-top: 1px solid #363848;
+    }
+
+    .s-label {
+      font-family: 'Fira Code', monospace; font-size: 0.58rem; text-transform: uppercase;
+      letter-spacing: 0.12em; color: #4A5070; margin-bottom: 0.5rem;
+    }
+    .s-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+      font-weight: 400; color: #D0D4E8; margin-bottom: 0.35rem;
+    }
+    p { font-size: 0.85rem; font-weight: 300; color: #8090B0; margin-bottom: 0.25rem; }
+    .hl { color: #B8C0D8; font-weight: 400; }
+    .s-links { margin-top: 0.35rem; }
+    .s-links a { font-family: 'Fira Code', monospace; font-size: 0.65rem; margin-right: 0.6rem; color: #4A5070; }
+    .s-links a:hover { color: #80A0E0; }
+
+    .artifact-code {
+      background: #20222E; border: 1px solid #363848; border-radius: 4px;
+      padding: 1rem; font-family: 'Fira Code', monospace; font-size: 0.72rem;
+      color: #7088B0; line-height: 1.7;
+    }
+    .artifact-code .cm { color: #4A5A78; }
+    .artifact-code .key { color: #7090E0; }
+    .artifact-code a { color: #7088B0; }
+    .artifact-code a:hover { color: #A0B8E0; }
+
+    .artifact-poem {
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      font-style: italic; font-weight: 300; color: #9098B8; line-height: 2;
+      padding: 0.5rem 0;
+    }
+    .artifact-poem .attr { font-size: 0.68rem; color: #4A5070; font-style: normal; margin-top: 0.5rem; font-family: 'Inter', sans-serif; }
+
+    .footer { border-top: 1px solid #363848; padding: 1.5rem 0 2.5rem; }
+    .ft { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .ft-links a { font-family: 'Fira Code', monospace; font-size: 0.65rem; margin-right: 0.6rem; color: #363848; }
+    .ft-links a:hover { color: #80A0E0; }
+    .ft-note { font-size: 0.7rem; font-style: italic; color: #363848; }
+
+    @media (max-width: 600px) { .duo { grid-template-columns: 1fr; gap: 1rem; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>nafSadh</h1>
+      <p class="hero-tag">Maker of things &middot; Creator &middot; Explorer</p>
+      <p class="hero-bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+    </header>
+
+    <div class="duo">
+      <div>
+        <div class="s-label">work</div>
+        <div class="s-title">Google DeepMind</div>
+        <p><span class="hl">Gemini API</span>, agentic capabilities.</p>
+        <p>Prev: App Safety, Nest ML, TCI, Samsung.</p>
+        <div class="s-links"><a href="https://re.sadh.me">resume</a><a href="https://linkedin.com/in/nafsadh">linkedin</a><a href="https://github.com/nafSadh">github</a></div>
+      </div>
+      <div>
+        <div class="s-label">projects</div>
+        <div class="artifact-code">
+          <span class="cm">// things I build</span><br/>
+          <span class="key">flags</span>: <a href="https://flags.fyi">"flags.fyi"</a><br/>
+          <span class="key">readrd</span>: <a href="https://read.sadh.app">"read.sadh.app"</a><br/>
+          <span class="key">sonnivo</span>: <a href="https://sonnivo.nafsadh.com">"sonnivo"</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div>
+        <div class="s-label">writing & poetry</div>
+        <div class="s-title">Words</div>
+        <p>Research at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry in English and Bengali.</p>
+        <div class="s-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">medium</a></div>
+      </div>
+      <div>
+        <div class="artifact-poem">
+          appetite is not hunger —<br/>
+          it is the memory<br/>
+          of having been full<br/>
+          and wanting it again
+          <div class="attr">&mdash; <em>Second Seconds</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div>
+        <div class="s-label">art & photography</div>
+        <div class="s-title">Visual</div>
+        <p>Painting, digital art, photography. Studying drawing fundamentals.</p>
+        <div class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">behance</a><a href="https://flickr.com/sadh">flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+      </div>
+      <div></div>
+    </div>
+
+    <footer class="footer"><div class="ft">
+      <div class="ft-links"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <span class="ft-note">'Sadh' /ʃadʱ/ &middot; &copy; 2026</span>
+    </div></footer>
+  </div>
+</body>
+</html>

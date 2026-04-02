@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; line-height: 1.7;
+      color: #2A2520;
+      background: #F0EBE0;
+      display: flex; justify-content: center; padding: 3rem 1rem; min-height: 100vh;
+    }
+    a { color: #5A4A38; text-decoration: none; }
+    a:hover { color: #3A2A18; }
+
+    /* LETTERPRESS: heavy ink impression feel, deep indented type, thick/thin contrast */
+    .press { max-width: 560px; width: 100%; }
+
+    .hero { text-align: center; padding: 2rem 0 1.5rem; }
+    .avatar { width: 64px; height: 64px; border-radius: 50%; margin-bottom: 1.25rem; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif; font-size: 4rem;
+      font-weight: 900; color: #1A1510; letter-spacing: -0.02em;
+      text-shadow: 1px 1px 0 rgba(180,170,150,0.4);
+    }
+    .hero .tagline {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      font-style: italic; font-weight: 400; color: #8A7A68;
+      letter-spacing: 0.1em; margin-top: 0.25rem;
+    }
+
+    /* Thick double rule */
+    .double-rule {
+      border: none; height: 0; margin: 1.5rem 0;
+      border-top: 3px solid #2A2520; border-bottom: 1px solid #2A2520;
+      padding-top: 4px;
+    }
+
+    .bio {
+      text-align: center; font-size: 0.92rem; color: #5A5048;
+      max-width: 440px; margin: 0 auto; padding-bottom: 1.5rem;
+    }
+    .bio b { color: #2A2520; }
+
+    .thin-rule { border: none; height: 1px; background: #C8B8A0; margin: 0; }
+
+    .section { padding: 1.25rem 0; border-bottom: 1px solid #D8D0C0; }
+    .section:last-of-type { border-bottom: none; }
+    .s-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
+    .s-title {
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      font-weight: 700; color: #1A1510; text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .s-links a { font-size: 0.75rem; margin-left: 0.5rem; color: #A09080; }
+    .s-links a:hover { color: #5A4A38; }
+    .section p { font-size: 0.85rem; color: #5A5048; margin-bottom: 0.25rem; }
+    .hl { color: #2A2520; font-weight: 500; }
+
+    .pl { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.25rem; }
+    .pl a { text-decoration: none; }
+    .pl a:hover .pn { color: #5A4A38; }
+    .pn { font-size: 0.85rem; font-weight: 500; color: #2A2520; transition: color 0.15s; }
+    .pd { font-size: 0.68rem; color: #A09080; }
+
+    .colophon {
+      padding-top: 1.5rem; text-align: center;
+      border-top: 3px solid #2A2520;
+    }
+    .colophon::after { content: ''; display: block; border-top: 1px solid #2A2520; margin-top: 4px; }
+    .social-row { display: flex; justify-content: center; gap: 1.25rem; margin: 0.75rem 0 0.4rem; }
+    .social-row a { font-size: 0.78rem; color: #A09080; text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Playfair Display', serif; }
+    .social-row a:hover { color: #5A4A38; }
+    .col-note { font-size: 0.68rem; color: #B0A898; font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="press">
+    <header class="hero">
+      <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+      <h1>nafSadh</h1>
+      <p class="tagline">Maker of things &middot; Creator &middot; Explorer</p>
+    </header>
+    <hr class="double-rule" />
+    <p class="bio">Computer scientist, engineer, writer, poet, painter, and photographer. Senior SWE at <b>Google DeepMind</b> — <b>Gemini API</b> & agentic capabilities.</p>
+    <hr class="thin-rule" />
+
+    <div class="section">
+      <div class="s-head">
+        <span class="s-title">Work</span>
+        <span class="s-links"><a href="https://re.sadh.me">Resume</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://github.com/nafSadh">GitHub</a></span>
+      </div>
+      <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities. Previously: App Safety, Nest ML, TCI, Samsung.</p>
+    </div>
+    <div class="section">
+      <div class="s-head"><span class="s-title">Projects</span></div>
+      <div class="pl">
+        <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">Vexillology</div></a>
+        <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">Research</div></a>
+        <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">Bengali kbd</div></a>
+      </div>
+    </div>
+    <div class="section">
+      <div class="s-head">
+        <span class="s-title">Writing</span>
+        <span class="s-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">Medium</a></span>
+      </div>
+      <p>Research deep-dives. Poetry — <em>Second Seconds</em>. English & Bengali.</p>
+    </div>
+    <div class="section">
+      <div class="s-head">
+        <span class="s-title">Art</span>
+        <span class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">Behance</a><a href="https://flickr.com/sadh">Flickr</a></span>
+      </div>
+      <p>Painting, digital art, photography. Drawing fundamentals.</p>
+    </div>
+
+    <div class="colophon">
+      <div class="social-row"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <p class="col-note">'Sadh' /ʃadʱ/ — Khan M Nafee Mostafa &middot; &copy; 2026</p>
+    </div>
+  </div>
+</body>
+</html>

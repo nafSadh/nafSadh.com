@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Serif', Georgia, serif; font-size: 15px; line-height: 1.75;
+      color: #1A1510;
+      /* Rice paper — very pale warm white */
+      background: #FAF5EA;
+      min-height: 100vh; padding: 4rem 1.5rem;
+    }
+    a { color: #3A3530; text-decoration: none; border-bottom: 1px solid #D0C8B0; }
+    a:hover { border-bottom-color: #3A3530; }
+    .container { max-width: 500px; margin: 0 auto; }
+
+    /* INK WASH: east-Asian inspired, minimal, lots of space, single black ink,
+       like sumi-e painting — only black and negative space */
+    .hero { padding: 0 0 3rem; }
+    .avatar { width: 48px; height: 48px; border-radius: 50%; margin-bottom: 2rem; opacity: 0.8; }
+    .hero h1 { font-size: 2.5rem; font-weight: 300; color: #1A1510; margin-bottom: 0.15rem; }
+    .hero .tagline { font-size: 0.9rem; font-weight: 300; font-style: italic; color: #8A8078; margin-bottom: 2rem; }
+    .hero .bio { font-size: 0.88rem; font-weight: 300; color: #5A5048; }
+    .hero .bio b { color: #1A1510; font-weight: 400; }
+
+    /* Ink brush stroke divider */
+    .brush {
+      height: 2px; margin: 0 0 3rem;
+      background: linear-gradient(90deg, #1A1510 0%, #1A1510 30%, transparent 100%);
+      opacity: 0.15;
+    }
+
+    .section { margin-bottom: 2.5rem; }
+    .s-title { font-size: 0.88rem; font-weight: 600; color: #1A1510; margin-bottom: 0.4rem; }
+    .section p { font-size: 0.85rem; font-weight: 300; color: #5A5048; margin-bottom: 0.25rem; }
+    .hl { color: #1A1510; font-weight: 400; }
+    .s-links { margin-top: 0.4rem; }
+    .s-links a { font-size: 0.78rem; margin-right: 0.75rem; color: #8A8078; border-bottom: none; }
+    .s-links a:hover { color: #1A1510; }
+
+    .pl a { display: block; padding: 0.35rem 0; text-decoration: none; border-bottom: none; }
+    .pl a:hover .pn { color: #5A5048; }
+    .pn { font-size: 0.88rem; font-weight: 400; color: #1A1510; transition: color 0.2s; }
+    .pd { font-size: 0.72rem; font-weight: 300; color: #A09888; }
+
+    .footer { padding-top: 2rem; }
+    .brush-footer { height: 1px; background: linear-gradient(90deg, transparent, #1A151030, transparent); margin-bottom: 1.5rem; }
+    .fl { display: flex; gap: 1rem; margin-bottom: 0.5rem; }
+    .fl a { font-size: 0.78rem; color: #A09888; border-bottom: none; }
+    .fl a:hover { color: #1A1510; }
+    .fn { font-size: 0.72rem; color: #C0B8A8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+      <h1>nafSadh</h1>
+      <p class="tagline">Maker of things. Creator. Explorer.</p>
+      <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+    </header>
+    <div class="brush"></div>
+
+    <div class="section">
+      <div class="s-title">Work</div>
+      <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities. Prev: App Safety, Nest ML, TCI, Samsung.</p>
+      <div class="s-links"><a href="https://re.sadh.me">Resume</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://github.com/nafSadh">GitHub</a></div>
+    </div>
+    <div class="section">
+      <div class="s-title">Projects</div>
+      <div class="pl">
+        <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">Flags for vexillophiles</div></a>
+        <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">Paper-drives & research</div></a>
+        <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">Bengali keyboard</div></a>
+      </div>
+    </div>
+    <div class="section">
+      <div class="s-title">Writing & Poetry</div>
+      <p>Research at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry — <em>Second Seconds</em>. English & Bengali.</p>
+      <div class="s-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">Medium</a></div>
+    </div>
+    <div class="section">
+      <div class="s-title">Art & Photography</div>
+      <p>Painting, digital art, photography. Drawing fundamentals.</p>
+      <div class="s-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">Behance</a><a href="https://flickr.com/sadh">Flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+    </div>
+
+    <footer class="footer">
+      <div class="brush-footer"></div>
+      <div class="fl"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <p class="fn">'Sadh' /ʃadʱ/ — Khan M Nafee Mostafa &middot; &copy; 2026</p>
+    </footer>
+  </div>
+</body>
+</html>

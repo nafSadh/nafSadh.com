@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,200;1,6..72,300&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0A0C14;
+      --accent:  #6070C0;
+      --cyan:    #40A0B0;
+      --text-hi: #C8D0E8;
+      --text-md: #7080A8;
+      --text-lo: #384060;
+      --text-gh: #1E2440;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-md);
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 300vh;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    a:hover { color: var(--text-hi); }
+
+    /* ── The Thread ── */
+    .thread {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      height: 100vh;
+      z-index: 10;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        #5060A0 8%,
+        var(--accent) 25%,
+        #7888D8 42%,
+        var(--cyan) 60%,
+        #309098 78%,
+        transparent 100%
+      );
+      opacity: 0.4;
+    }
+
+    .thread::before {
+      content: '';
+      position: absolute;
+      top: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 200px;
+      background: radial-gradient(ellipse at center,
+        rgba(96, 112, 192, 0.25) 0%,
+        rgba(64, 160, 176, 0.08) 50%,
+        transparent 80%
+      );
+      animation: thread-breathe 6s ease-in-out infinite;
+    }
+
+    .thread::after {
+      content: '';
+      position: absolute;
+      top: 62%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 160px;
+      background: radial-gradient(ellipse at center,
+        rgba(64, 160, 176, 0.2) 0%,
+        transparent 75%
+      );
+      animation: thread-breathe 6s ease-in-out infinite 3s;
+    }
+
+    @keyframes thread-breathe {
+      0%, 100% { opacity: 0.5; }
+      50%      { opacity: 1; }
+    }
+
+    /* ── Canvas ── */
+    .canvas {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Floating elements ── */
+    .drift {
+      position: relative;
+      padding: 0;
+      opacity: 0;
+      transition: none;
+    }
+
+    /* Positioning: left-leaning, right-leaning, centered */
+    .drift--left {
+      text-align: left;
+      margin-right: 52%;
+      padding-right: 2rem;
+    }
+
+    .drift--right {
+      text-align: right;
+      margin-left: 52%;
+      padding-left: 2rem;
+    }
+
+    .drift--center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 60%;
+    }
+
+    .drift--slight-left {
+      text-align: left;
+      margin-right: 35%;
+      padding-right: 1rem;
+    }
+
+    .drift--slight-right {
+      text-align: right;
+      margin-left: 35%;
+      padding-left: 1rem;
+    }
+
+    /* Spacing between elements */
+    .gap-s  { margin-top: 60px; }
+    .gap-m  { margin-top: 75px; }
+    .gap-l  { margin-top: 90px; }
+    .gap-xl { margin-top: 100px; }
+    .gap-hero { margin-top: 42vh; }
+
+    /* ── Scroll-driven animations ── */
+    @supports (animation-timeline: view()) {
+      .drift--left {
+        animation: enter-left linear both;
+        animation-timeline: view();
+        animation-range: entry 10% entry 25%;
+      }
+      .drift--slight-left {
+        animation: enter-left linear both;
+        animation-timeline: view();
+        animation-range: entry 10% entry 25%;
+      }
+      .drift--right {
+        animation: enter-right linear both;
+        animation-timeline: view();
+        animation-range: entry 10% entry 25%;
+      }
+      .drift--slight-right {
+        animation: enter-right linear both;
+        animation-timeline: view();
+        animation-range: entry 10% entry 25%;
+      }
+      .drift--center {
+        animation: enter-up linear both;
+        animation-timeline: view();
+        animation-range: entry 10% entry 20%;
+      }
+      @keyframes enter-left {
+        from { opacity: 0; transform: translateX(-60px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes enter-right {
+        from { opacity: 0; transform: translateX(60px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes enter-up {
+        from { opacity: 0; transform: translateY(40px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    }
+
+    /* Fallback for browsers without scroll-driven animations */
+    @supports not (animation-timeline: view()) {
+      .drift { opacity: 0; }
+      .drift.visible { opacity: 1; transition: opacity 0.8s ease, transform 0.8s ease; }
+      .drift--left.visible,
+      .drift--slight-left.visible { transform: translateX(0); }
+      .drift--right.visible,
+      .drift--slight-right.visible { transform: translateX(0); }
+      .drift--center.visible { transform: translateY(0); }
+      .drift--left,
+      .drift--slight-left { transform: translateX(-60px); }
+      .drift--right,
+      .drift--slight-right { transform: translateX(60px); }
+      .drift--center { transform: translateY(40px); }
+    }
+
+    /* ── Typography ── */
+    .t-name {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(3rem, 9vw, 5.5rem);
+      font-weight: 200;
+      letter-spacing: 0.02em;
+      color: var(--text-hi);
+      line-height: 1;
+    }
+
+    .t-tagline {
+      font-family: 'Newsreader', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-lo);
+      letter-spacing: 0.08em;
+    }
+
+    .t-body {
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-md);
+      line-height: 1.8;
+    }
+
+    .t-body strong {
+      color: var(--text-hi);
+      font-weight: 400;
+    }
+
+    .t-mono {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.82rem;
+      color: var(--text-lo);
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+    }
+
+    .t-roles {
+      font-family: 'Newsreader', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-md);
+      line-height: 2;
+    }
+
+    .t-roles .sep {
+      color: var(--text-gh);
+      margin: 0 0.15em;
+    }
+
+    .t-poem {
+      font-family: 'Newsreader', serif;
+      font-size: 1.15rem;
+      font-weight: 200;
+      font-style: italic;
+      color: var(--text-hi);
+      line-height: 2.2;
+      opacity: 0.85;
+    }
+
+    .t-project {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.88rem;
+      color: var(--text-md);
+      line-height: 1.7;
+    }
+
+    .t-project a {
+      color: var(--cyan);
+      transition: color 0.2s;
+    }
+    .t-project a:hover { color: var(--text-hi); }
+
+    .t-project .desc {
+      font-family: 'Newsreader', serif;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-lo);
+      display: block;
+      margin-top: 0.15rem;
+    }
+
+    .t-links {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      color: var(--text-lo);
+      letter-spacing: 0.06em;
+      line-height: 2.2;
+    }
+
+    .t-links a {
+      color: var(--text-lo);
+      transition: color 0.25s;
+    }
+    .t-links a:hover { color: var(--accent); }
+
+    .t-links .dot {
+      color: var(--text-gh);
+      margin: 0 0.5em;
+    }
+
+    .t-art {
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-md);
+    }
+
+    .t-footer {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.7rem;
+      color: var(--text-gh);
+      letter-spacing: 0.06em;
+      line-height: 1.7;
+    }
+
+    .t-footer .ipa {
+      color: var(--text-lo);
+    }
+
+    /* ── Poem lines: staggered reveal ── */
+    @supports (animation-timeline: view()) {
+      .poem-line {
+        display: block;
+        animation: poem-fade linear both;
+        animation-timeline: view();
+      }
+      .poem-line:nth-child(1) { animation-range: entry 0% entry 30%; }
+      .poem-line:nth-child(2) { animation-range: entry 8% entry 36%; }
+      .poem-line:nth-child(3) { animation-range: entry 16% entry 42%; }
+      .poem-line:nth-child(4) { animation-range: entry 24% entry 48%; }
+      .poem-line:nth-child(5) { animation-range: entry 32% entry 54%; }
+      .poem-line:nth-child(6) { animation-range: entry 40% entry 60%; }
+
+      @keyframes poem-fade {
+        from { opacity: 0; filter: blur(4px); transform: translateY(8px); }
+        to   { opacity: 0.85; filter: blur(0); transform: translateY(0); }
+      }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      .canvas { padding: 0 1.2rem; }
+
+      .drift--left,
+      .drift--slight-left {
+        margin-right: 30%;
+        padding-right: 1rem;
+      }
+
+      .drift--right,
+      .drift--slight-right {
+        margin-left: 30%;
+        padding-left: 1rem;
+      }
+
+      .drift--center { max-width: 80%; }
+
+      .gap-hero { margin-top: 30vh; }
+      .gap-xl { margin-top: 85px; }
+      .gap-l  { margin-top: 75px; }
+      .gap-m  { margin-top: 65px; }
+
+      .t-name { font-size: clamp(2.4rem, 12vw, 3.5rem); }
+      .t-poem { font-size: 1.02rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- The Thread: a single line of light down the center -->
+  <div class="thread" aria-hidden="true"></div>
+
+  <div class="canvas">
+
+    <!-- ═══ nafSadh — the one thing on the axis ═══ -->
+    <div class="drift drift--center gap-hero">
+      <div class="t-name">nafSadh</div>
+    </div>
+
+    <!-- tagline — slightly right (creative side) -->
+    <div class="drift drift--slight-right gap-m">
+      <div class="t-tagline">maker of things</div>
+    </div>
+
+    <!-- identity — right (the poet enumerates) -->
+    <div class="drift drift--right gap-l">
+      <div class="t-roles">
+        Computer scientist<span class="sep">,</span>
+        engineer<span class="sep">,</span>
+        writer<span class="sep">,</span>
+        poet<span class="sep">,</span>
+        painter<span class="sep">,</span>
+        photographer.
+      </div>
+    </div>
+
+    <!-- work — left (engineer side): grouped together -->
+    <div class="drift drift--left gap-l">
+      <div class="t-body">
+        I ship <strong>Gemini</strong> at <strong>Google DeepMind</strong> &mdash;
+        people use it across surfaces and via API.
+      </div>
+      <div class="t-mono" style="margin-top: 0.6rem;">
+        Previously: App Safety &middot; Nest ML &middot; TCI &middot; Samsung
+      </div>
+      <div class="t-links" style="margin-top: 0.5rem;">
+        <a href="https://re.sadh.me">resume</a>
+        <span class="dot">&middot;</span>
+        <a href="https://linkedin.com/in/nafsadh">linkedin</a>
+        <span class="dot">&middot;</span>
+        <a href="https://github.com/nafSadh">github</a>
+      </div>
+    </div>
+
+    <!-- projects — right, grouped -->
+    <div class="drift drift--right gap-l">
+      <div class="t-project">
+        <a href="https://flags.fyi" target="_blank" rel="noopener">flags.fyi</a>
+        <span class="desc">flags for flag lovers</span>
+      </div>
+      <div class="t-project" style="margin-top: 0.6rem;">
+        <a href="https://read.sadh.app" target="_blank" rel="noopener">read.sadh.app</a>
+        <span class="desc">research deep-dives</span>
+      </div>
+      <div class="t-project" style="margin-top: 0.6rem;">
+        <a href="https://sonnivo.nafsadh.com" target="_blank" rel="noopener">sonnivo</a>
+        <span class="desc">Bengali keyboard</span>
+      </div>
+    </div>
+
+    <!-- ═══ The Poem — drifts right, the creative side ═══ -->
+    <div class="drift drift--slight-right gap-xl">
+      <div class="t-poem">
+        <span class="poem-line">Between the compile and the run</span>
+        <span class="poem-line">there is a silence shaped like thought &mdash;</span>
+        <span class="poem-line">where logic folds into metaphor</span>
+        <span class="poem-line">and every variable holds a name</span>
+        <span class="poem-line">for something unnamed still.</span>
+      </div>
+    </div>
+
+    <!-- writing + art — left, grouped -->
+    <div class="drift drift--left gap-l">
+      <div class="t-body" style="margin-bottom: 0.8rem;">
+        Research at <a href="https://read.sadh.app">read&thinsp;&middot;&thinsp;rd</a>.
+        Poetry in English and Bengali.
+      </div>
+      <div class="t-links">
+        <a href="https://read.sadh.app">read&thinsp;&middot;&thinsp;rd</a>
+        <span class="dot">&middot;</span>
+        <a href="https://sadhubochon.wordpress.com">&#x09B8;&#x09BE;&#x09A7;&#x09C1;&#x09AC;&#x099A;&#x09A8;</a>
+        <span class="dot">&middot;</span>
+        <a href="https://medium.com/@nafsadh">Medium</a>
+      </div>
+    </div>
+
+    <!-- art — right -->
+    <div class="drift drift--right gap-m">
+      <div class="t-art" style="margin-bottom: 0.5rem;">Painting, digital art, photography.</div>
+      <div class="t-links">
+        <a href="https://nafsadh.art">nafsadh.art</a>
+        <span class="dot">&middot;</span>
+        <a href="https://behance.net/nafsadh">Behance</a>
+        <span class="dot">&middot;</span>
+        <a href="https://flickr.com/sadh">Flickr</a>
+      </div>
+    </div>
+
+    <!-- social — center -->
+    <div class="drift drift--center gap-l">
+      <div class="t-links">
+        <a href="https://github.com/nafSadh">GitHub</a>
+        <span class="dot">&middot;</span>
+        <a href="https://linkedin.com/in/nafsadh">LinkedIn</a>
+        <span class="dot">&middot;</span>
+        <a href="https://x.com/nafSadh">X</a>
+        <span class="dot">&middot;</span>
+        <a href="https://instagram.com/nafsadh">Instagram</a>
+      </div>
+    </div>
+
+    <!-- footer — centered, back on the axis -->
+    <div class="drift drift--center gap-xl" style="padding-bottom: 12vh;">
+      <div class="t-footer">
+        <span class="ipa">'Sadh'&thinsp;/&#x0283;ad&#x02B1;/</span><br />
+        Khan M Nafee Mostafa<br />
+        &copy;&thinsp;2026
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Fallback: IntersectionObserver for browsers without scroll-driven animations
+    (function () {
+      if (CSS.supports && CSS.supports('animation-timeline: view()')) return;
+
+      var els = document.querySelectorAll('.drift');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+      els.forEach(function (el) { observer.observe(el); });
+    })();
+
+    // Thread glow: subtle pulse tied to scroll position
+    (function () {
+      var thread = document.querySelector('.thread');
+      var docHeight = 0;
+      var ticking = false;
+
+      function update() {
+        docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var scrollPct = docHeight > 0 ? window.scrollY / docHeight : 0;
+
+        // Shift the gradient hotspot as user scrolls
+        var topStop = Math.max(0, scrollPct * 100 - 20);
+        var midStop = scrollPct * 100;
+        var botStop = Math.min(100, scrollPct * 100 + 20);
+
+        thread.style.background =
+          'linear-gradient(180deg, ' +
+          'transparent ' + topStop + '%, ' +
+          '#5060A0 ' + (topStop + 8) + '%, ' +
+          'rgba(96,112,192,0.7) ' + midStop + '%, ' +
+          'rgba(64,160,176,0.5) ' + (midStop + 12) + '%, ' +
+          '#309098 ' + botStop + '%, ' +
+          'transparent ' + (botStop + 8) + '%)';
+
+        // Opacity shifts slightly with scroll
+        thread.style.opacity = 0.3 + scrollPct * 0.35;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      update();
+    })();
+  </script>
+</body>
+</html>

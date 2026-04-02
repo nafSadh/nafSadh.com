@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.65;
+      color: #D0C8C0; background: #F0EBE3;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 3rem 1.5rem; min-height: 100vh;
+    }
+    a { color: #7A6040; text-decoration: none; }
+    a:hover { color: #5A4020; }
+
+    /* STACKED CARDS: cards layered with slight offset, like a deck of paper */
+    .stack { position: relative; width: 100%; max-width: 560px; }
+
+    .card {
+      background: #FEFCF8; border: 1px solid #E0D8CC; border-radius: 8px;
+      padding: 2rem; margin-bottom: -1.5rem; position: relative;
+      box-shadow: 0 2px 8px rgba(60,50,40,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(60,50,40,0.1); z-index: 10; }
+    .card:nth-child(1) { z-index: 5; }
+    .card:nth-child(2) { z-index: 4; margin-left: 0.4rem; }
+    .card:nth-child(3) { z-index: 3; margin-left: 0.8rem; }
+    .card:nth-child(4) { z-index: 2; margin-left: 0.4rem; }
+    .card:nth-child(5) { z-index: 1; margin-left: 0rem; margin-bottom: 0; }
+    .card:nth-child(6) { z-index: 0; margin-left: 0.4rem; margin-bottom: 0; }
+
+    /* Hero card */
+    .c-hero { display: flex; align-items: center; gap: 1.25rem; background: #1A1614; color: #D0C8C0; border-color: #2A2520; }
+    .c-hero .avatar { width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0; }
+    .c-hero h1 { font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 300; color: #F0E8E0; margin-bottom: 0.1rem; }
+    .c-hero .tagline { font-size: 0.82rem; color: #7A706A; }
+    .c-hero .bio { font-size: 0.82rem; color: #8A8078; margin-top: 0.4rem; }
+    .c-hero .bio b { color: #C8C0B8; }
+
+    .c-label { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #A09080; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.85rem; color: #6A6058; margin-bottom: 0.3rem; }
+    .hl { color: #3A3530; font-weight: 500; }
+    .c-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+    .c-links a { font-size: 0.78rem; color: #A09080; }
+    .c-links a:hover { color: #7A6040; }
+
+    .pl a { display: block; padding: 0.35rem 0; border-bottom: 1px solid #EDE5DA; text-decoration: none; }
+    .pl a:last-child { border-bottom: none; }
+    .pl a:hover .pn { color: #7A6040; }
+    .pn { font-size: 0.85rem; font-weight: 500; color: #3A3530; transition: color 0.2s; }
+    .pd { font-size: 0.68rem; color: #A09080; }
+
+    /* Footer card */
+    .c-footer { text-align: center; background: #F5F0E8; }
+    .social-row { display: flex; justify-content: center; gap: 1rem; margin-bottom: 0.3rem; }
+    .social-row a { color: #B0A898; font-size: 0.78rem; }
+    .social-row a:hover { color: #7A6040; }
+    .note { font-size: 0.65rem; color: #C0B8A8; }
+
+    @media (max-width: 500px) { .c-hero { flex-direction: column; text-align: center; } .card { margin-left: 0 !important; } }
+  </style>
+</head>
+<body>
+  <div class="stack">
+    <div class="card c-hero">
+      <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+      <div>
+        <h1>nafSadh</h1>
+        <div class="tagline">Maker of things &middot; Creator &middot; Explorer</div>
+        <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="c-label">Work</div>
+      <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities. Prev: App Safety, Nest ML, TCI, Samsung.</p>
+      <div class="c-links"><a href="https://re.sadh.me">Resume</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://github.com/nafSadh">GitHub</a></div>
+    </div>
+    <div class="card">
+      <div class="c-label">Projects</div>
+      <div class="pl">
+        <a href="https://flags.fyi"><div class="pn">Flags.fyi</div><div class="pd">Flags for vexillophiles</div></a>
+        <a href="https://read.sadh.app"><div class="pn">read&middot;rd</div><div class="pd">Research deep-dives</div></a>
+        <a href="https://sonnivo.nafsadh.com"><div class="pn">Sonnivo</div><div class="pd">Bengali keyboard</div></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="c-label">Writing & Poetry</div>
+      <p>Research at <a href="https://read.sadh.app">read&middot;rd</a>. Poetry — <em>Second Seconds</em>. English & Bengali.</p>
+      <div class="c-links"><a href="https://read.sadh.app">read&middot;rd</a><a href="https://sadhubochon.wordpress.com">সাধুবচন</a><a href="https://medium.com/@nafsadh">Medium</a></div>
+    </div>
+    <div class="card">
+      <div class="c-label">Art & Photography</div>
+      <p>Painting, digital art, photography. Drawing fundamentals.</p>
+      <div class="c-links"><a href="https://nafsadh.art">nafsadh.art</a><a href="https://behance.net/nafsadh">Behance</a><a href="https://flickr.com/sadh">Flickr</a><a href="https://500px.com/nafsadh">500px</a></div>
+    </div>
+    <div class="card c-footer">
+      <div class="social-row"><a href="https://github.com/nafSadh">GitHub</a><a href="https://linkedin.com/in/nafsadh">LinkedIn</a><a href="https://x.com/nafSadh">X</a><a href="https://instagram.com/nafsadh">Instagram</a></div>
+      <p class="note">'Sadh' /ʃadʱ/ — Khan M Nafee Mostafa &middot; &copy; 2026</p>
+    </div>
+  </div>
+</body>
+</html>

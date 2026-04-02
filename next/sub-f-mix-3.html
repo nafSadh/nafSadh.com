@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <meta name="description" content="nafSadh — computer scientist, engineer, writer, poet, painter. Senior SWE at Google DeepMind." />
+  <link rel="icon" href="https://nafsadh.com/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #10121C;
+      --accent:    #6878D0;
+      --secondary: #4060A0;
+      --text-hi:   #D0D8F0;
+      --text-mid:  #7888A8;
+      --text-lo:   #384060;
+      --text-ghost:#202840;
+      --orb1:      rgba(104, 120, 208, 0.13);
+      --orb2:      rgba(64,  96,  160, 0.09);
+      --orb3:      rgba(80, 110, 190, 0.07);
+      --border:    rgba(104, 120, 208, 0.10);
+
+      /* layout */
+      --margin-w:  190px;
+      --gap:       2.6rem;
+      --body-max:  600px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-hi);
+      font-family: 'Fraunces', Georgia, serif;
+      font-optical-sizing: auto;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Orb field ── */
+    .orb-field {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .orb-a {
+      width: 60vmax; height: 60vmax;
+      top: -20vmax; left: -15vmax;
+      background: radial-gradient(circle, var(--orb1) 0%, transparent 70%);
+      animation: drift-a 28s ease-in-out infinite alternate;
+    }
+    .orb-b {
+      width: 50vmax; height: 50vmax;
+      bottom: -10vmax; right: -10vmax;
+      background: radial-gradient(circle, var(--orb2) 0%, transparent 70%);
+      animation: drift-b 34s ease-in-out infinite alternate;
+    }
+    .orb-c {
+      width: 35vmax; height: 35vmax;
+      top: 40%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, var(--orb3) 0%, transparent 70%);
+      animation: drift-c 22s ease-in-out infinite alternate;
+    }
+    @keyframes drift-a {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(8vw, 12vh) scale(1.1); }
+    }
+    @keyframes drift-b {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(-10vw, -8vh) scale(1.08); }
+    }
+    @keyframes drift-c {
+      from { transform: translate(-50%, -50%) scale(1); }
+      to   { transform: translate(-46%, -54%) scale(1.15); }
+    }
+
+    /* ── Page wrapper ── */
+    main { position: relative; z-index: 1; }
+
+    .page-wrap {
+      max-width: calc(var(--body-max) + var(--margin-w) + var(--gap) + 12vw);
+      margin: 0 auto;
+      padding: 0 6vw;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      max-width: calc(var(--body-max) + var(--margin-w) + var(--gap) + 12vw);
+      margin: 0 auto;
+      padding: 0 6vw;
+    }
+    .divider-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.18;
+    }
+
+    /* ── Two-column section layout ── */
+    .section-row {
+      display: grid;
+      grid-template-columns: var(--body-max) var(--margin-w);
+      gap: var(--gap);
+      align-items: start;
+      padding: 9vh 0;
+    }
+
+    .section-body { min-width: 0; }
+
+    /* ── Margin gloss ── */
+    .section-gloss {
+      min-width: 0;
+      padding-top: 0.3rem;
+      padding-left: 1.4rem;
+      border-left: 1px solid var(--border);
+    }
+
+    .gloss-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-ghost);
+      margin-bottom: 0.5rem;
+    }
+    .gloss-item {
+      display: block;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.67rem;
+      color: var(--text-lo);
+      line-height: 2;
+      transition: color 0.15s;
+      text-decoration: none;
+      border-bottom: none;
+    }
+    .gloss-item:hover { color: var(--accent); }
+    .gloss-note {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.62rem;
+      color: var(--text-ghost);
+      line-height: 1.65;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* ── Scroll-driven animations ── */
+    @supports (animation-timeline: view()) {
+      .reveal-left {
+        animation: slide-from-left linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 42%;
+      }
+      .reveal-right {
+        animation: slide-from-right linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 42%;
+      }
+      .reveal-up {
+        animation: slide-from-below linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 38%;
+      }
+      /* Margin notes fade in slightly later */
+      .reveal-gloss {
+        animation: fade-in-gloss linear both;
+        animation-timeline: view();
+        animation-range: entry 8% entry 50%;
+      }
+
+      @keyframes slide-from-left {
+        from { opacity: 0; transform: translateX(-56px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes slide-from-right {
+        from { opacity: 0; transform: translateX(56px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes slide-from-below {
+        from { opacity: 0; transform: translateY(44px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fade-in-gloss {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    }
+    @supports not (animation-timeline: view()) {
+      .reveal-left, .reveal-right, .reveal-up, .reveal-gloss { opacity: 1; }
+    }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1.3rem;
+      padding: 0 6vw;
+      max-width: calc(var(--body-max) + var(--margin-w) + var(--gap) + 12vw);
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-tagline {
+      font-family: 'Fira Code', monospace;
+      font-size: clamp(0.72rem, 1.6vw, 0.92rem);
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+    .hero-tagline::before { content: '// '; opacity: 0.45; }
+
+    .hero-name {
+      font-size: clamp(3.2rem, 10vw, 6.5rem);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      background: linear-gradient(135deg, #D0D8F0 0%, #8898D8 50%, #6878D0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+    }
+    .hero-desc {
+      font-size: clamp(0.92rem, 2vw, 1.2rem);
+      font-weight: 300;
+      color: var(--text-mid);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+    .hero-desc em {
+      color: var(--text-hi);
+      font-style: italic;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 3.5vh;
+      left: 6vw;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.62rem;
+      color: var(--text-lo);
+      letter-spacing: 0.14em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 34px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: pulse-line 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse-line {
+      0%, 100% { opacity: 0.2; }
+      50%       { opacity: 0.65; }
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.66rem;
+      color: var(--secondary);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 1.6rem;
+      height: 1px;
+      background: var(--secondary);
+    }
+
+    /* ── Headings ── */
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text-hi);
+      line-height: 1.1;
+      margin-bottom: 1.6rem;
+    }
+
+    p {
+      color: var(--text-mid);
+      font-size: 1rem;
+      max-width: 580px;
+      margin-bottom: 1.1rem;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    a:hover {
+      color: var(--text-hi);
+      border-bottom-color: rgba(104, 120, 208, 0.45);
+    }
+
+    /* ── Work ── */
+    .work-blurb {
+      color: var(--text-mid);
+      font-size: 1rem;
+      max-width: 560px;
+      line-height: 1.72;
+      margin-bottom: 0;
+    }
+    .work-blurb em {
+      color: var(--text-hi);
+      font-style: italic;
+    }
+
+    /* ── Projects ── */
+    .project-list { margin-top: 0.4rem; }
+    .project-item {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(104, 120, 208, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .project-item:last-child { border-bottom: none; }
+    .project-name {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-hi);
+    }
+    .project-name a {
+      color: var(--accent);
+      border-bottom: none;
+      font-style: italic;
+    }
+    .project-name a:hover { color: var(--text-hi); }
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin: 0;
+      max-width: none;
+    }
+
+    /* ── Writing ── */
+    .writing-list { list-style: none; }
+    .writing-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(104, 120, 208, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .writing-list li:last-child { border-bottom: none; }
+    .w-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-hi);
+    }
+    .w-desc {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+    }
+
+    /* ── About ── */
+    .about-para {
+      color: var(--text-mid);
+      font-size: 1rem;
+      max-width: 580px;
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+    .about-para:last-child { margin-bottom: 0; }
+    .about-para em { color: var(--text-hi); font-style: italic; }
+
+    /* ── Poem: full-width break ── */
+    #poem-section {
+      padding: 9vh 6vw;
+      max-width: calc(var(--body-max) + var(--margin-w) + var(--gap) + 12vw);
+      margin: 0 auto;
+    }
+    .poem-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.2rem;
+    }
+    .poem-eyebrow {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.62rem;
+      color: var(--text-lo);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .poem-body {
+      text-align: center;
+    }
+    .poem-line {
+      display: block;
+      font-size: clamp(1rem, 2.2vw, 1.28rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-hi);
+      line-height: 1.9;
+    }
+    .poem-spacer { display: block; height: 0.65rem; }
+    .poem-attribution {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.62rem;
+      color: var(--text-lo);
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    @supports (animation-timeline: view()) {
+      .poem-line {
+        animation: poem-reveal linear both;
+        animation-timeline: view();
+      }
+      .poem-line:nth-child(1)  { animation-range: entry 4%  entry 22%; }
+      .poem-line:nth-child(2)  { animation-range: entry 10% entry 28%; }
+      .poem-line:nth-child(3)  { animation-range: entry 16% entry 34%; }
+      .poem-line:nth-child(4)  { animation-range: entry 22% entry 40%; }
+      .poem-line:nth-child(5)  { animation-range: entry 28% entry 46%; }
+      .poem-line:nth-child(6)  { animation-range: entry 34% entry 52%; }
+      .poem-line:nth-child(7)  { animation-range: entry 40% entry 58%; }
+      .poem-line:nth-child(8)  { animation-range: entry 46% entry 64%; }
+      .poem-line:nth-child(9)  { animation-range: entry 52% entry 70%; }
+      .poem-line:nth-child(10) { animation-range: entry 58% entry 76%; }
+      .poem-line:nth-child(11) { animation-range: entry 64% entry 82%; }
+      .poem-line:nth-child(12) { animation-range: entry 70% entry 88%; }
+      @keyframes poem-reveal {
+        from { opacity: 0; transform: translateY(18px); filter: blur(5px); }
+        to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+      }
+    }
+
+    /* ── Social ── */
+    .social-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.6rem;
+      margin-top: 1.2rem;
+    }
+    .social-strip a {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.76rem;
+      color: var(--text-lo);
+      border-bottom: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .social-strip a:hover { color: var(--accent); }
+
+    /* ── Name note ── */
+    .name-note {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.76rem;
+      color: var(--text-lo);
+      line-height: 1.65;
+      border-left: 2px solid rgba(64, 96, 160, 0.35);
+      padding-left: 1rem;
+      margin-top: 1.6rem;
+      max-width: 460px;
+    }
+    .name-note .ipa { color: var(--secondary); }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3.5rem 6vw 5rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem;
+      color: var(--text-lo);
+      letter-spacing: 0.08em;
+    }
+    footer a { color: var(--text-lo); border-bottom: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      :root {
+        --margin-w: 160px;
+        --gap: 2rem;
+        --body-max: 480px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      /* Stack: margin notes move below their section */
+      .section-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 7vh 0;
+      }
+      .section-gloss {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+        padding-top: 0.8rem;
+        margin-top: 1.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.15rem 1.1rem;
+        align-items: baseline;
+      }
+      .gloss-label { display: none; }
+      .gloss-item { display: inline; line-height: 2; }
+      .gloss-note { display: none; }
+
+      .hero-name { white-space: normal; }
+      #poem-section { padding: 7vh 0; }
+      #hero { padding: 0 5vw; }
+      .page-wrap { padding: 0 5vw; }
+      .divider { padding: 0 5vw; }
+    }
+
+    @media (max-width: 420px) {
+      h2 { font-size: 1.7rem; }
+      .hero-name { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated orb background -->
+  <div class="orb-field" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+  </div>
+
+  <main>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section id="hero" aria-labelledby="hero-name">
+      <div class="hero-tagline">maker of things</div>
+      <h1 class="hero-name" id="hero-name">nafSadh</h1>
+      <p class="hero-desc">
+        Computer scientist. Engineer. Writer. Poet. Painter.<br />
+        <em>Senior SWE at Google DeepMind</em> —<br />
+        building Gemini.
+      </p>
+      <div class="scroll-hint" aria-hidden="true">scroll</div>
+    </section>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- ══════════ WORK ══════════ -->
+    <div class="page-wrap">
+      <section id="work" aria-labelledby="work-heading">
+        <div class="section-row">
+          <div class="section-body reveal-right">
+            <div class="section-label">work</div>
+            <h2 id="work-heading">what I ship</h2>
+            <p class="work-blurb">
+              I work on <em>Gemini</em> at Google DeepMind.
+              People use Gemini everywhere — in products, on different surfaces,
+              and via API. My work lives close to the model and the developer
+              experience around it.
+            </p>
+          </div>
+          <aside class="section-gloss reveal-gloss" aria-label="Work links">
+            <p class="gloss-label">// links</p>
+            <a href="https://re.sadh.me" class="gloss-item">résumé</a>
+            <a href="https://linkedin.com/in/nafsadh" class="gloss-item">linkedin</a>
+            <a href="https://github.com/nafSadh" class="gloss-item">github</a>
+            <p class="gloss-note">deepmind.google</p>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- ══════════ PROJECTS ══════════ -->
+    <div class="page-wrap">
+      <section id="projects" aria-labelledby="projects-heading">
+        <div class="section-row">
+          <div class="section-body reveal-left">
+            <div class="section-label">projects</div>
+            <h2 id="projects-heading">online things you can use</h2>
+            <div class="project-list">
+
+              <div class="project-item">
+                <div class="project-name"><a href="https://flags.fyi">flags.fyi</a></div>
+                <p class="project-desc">A repository of world flags — clean, accurate, queryable. For vexillophiles.</p>
+              </div>
+
+              <div class="project-item">
+                <div class="project-name"><a href="https://read.sadh.app">read.sadh.app</a></div>
+                <p class="project-desc">Research deep-dives and reading notes, shared openly.</p>
+              </div>
+
+              <div class="project-item">
+                <div class="project-name"><a href="https://sonnivo.nafsadh.com">sonnivo</a></div>
+                <p class="project-desc">A Bengali phonetic keyboard. Type in Bangla the way you speak it.</p>
+              </div>
+
+            </div>
+          </div>
+          <aside class="section-gloss reveal-gloss" aria-label="Project notes">
+            <p class="gloss-label">// open source</p>
+            <a href="https://github.com/nafSadh" class="gloss-item">github/nafSadh</a>
+            <p class="gloss-note">personal pet projects —<br/>built for fun, kept running</p>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- ══════════ WRITING ══════════ -->
+    <div class="page-wrap">
+      <section id="writing" aria-labelledby="writing-heading">
+        <div class="section-row">
+          <div class="section-body reveal-right">
+            <div class="section-label">writing</div>
+            <h2 id="writing-heading">words I've kept</h2>
+            <ul class="writing-list">
+              <li>
+                <a class="w-title" href="https://read.sadh.app">read·rd</a>
+                <span class="w-desc">Deep reading notes and synthesis. Slow, careful thinking out loud.</span>
+              </li>
+              <li>
+                <a class="w-title" href="https://sadhubochon.wordpress.com">সাধুবচন</a>
+                <span class="w-desc">Prose and satire in classical Shadhu-bhasha Bengali.</span>
+              </li>
+              <li>
+                <a class="w-title" href="https://medium.com/@nafsadh">Medium</a>
+                <span class="w-desc">Longer essays and stories, cross-posted.</span>
+              </li>
+            </ul>
+          </div>
+          <aside class="section-gloss reveal-gloss" aria-label="Social links">
+            <p class="gloss-label">// social</p>
+            <a href="https://github.com/nafSadh" class="gloss-item">github</a>
+            <a href="https://linkedin.com/in/nafsadh" class="gloss-item">linkedin</a>
+            <a href="https://twitter.com/nafSadh" class="gloss-item">x / twitter</a>
+            <a href="https://instagram.com/nafsadh" class="gloss-item">instagram</a>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- ══════════ POEM — full width break ══════════ -->
+    <section id="poem-section" aria-labelledby="poem-heading">
+      <div class="poem-wrap">
+        <span class="poem-eyebrow reveal-up">a poem</span>
+        <div class="poem-body" role="article" aria-label="Poem: in the space between keystrokes">
+          <span class="poem-line">Between the compile and the run</span>
+          <span class="poem-line">there is a silence shaped like thought —</span>
+          <span class="poem-line">where logic folds into metaphor</span>
+          <span class="poem-line">and every variable holds a name</span>
+          <span class="poem-line">for something unnamed still.</span>
+          <span class="poem-spacer"></span>
+          <span class="poem-line">I have lived in stacks and heaps,</span>
+          <span class="poem-line">in recursion that forgot to stop,</span>
+          <span class="poem-line">in flags that flew above no country</span>
+          <span class="poem-line">and keyboards clicking into mother tongue.</span>
+          <span class="poem-spacer"></span>
+          <span class="poem-line">The poem and the program share a god:</span>
+          <span class="poem-line">the desire to say something true</span>
+          <span class="poem-line">in the fewest possible tokens.</span>
+          <span class="poem-attribution">— nafSadh</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"><div class="divider-line"></div></div>
+
+    <!-- ══════════ ABOUT ══════════ -->
+    <div class="page-wrap">
+      <section id="about" aria-labelledby="about-heading">
+        <div class="section-row">
+          <div class="section-body reveal-left">
+            <div class="section-label">about</div>
+            <h2 id="about-heading">who I am</h2>
+            <p class="about-para">
+              I build systems that scale and models that think.
+              Over a decade of engineering spanning backend infrastructure,
+              mobile platforms, ML pipelines, and — lately —
+              <em>large language models and generative AI at Google DeepMind</em>.
+            </p>
+            <p class="about-para">
+              My interests drift freely: from epistemology and linguistics
+              to mountain trails and the ritual of tea.
+              The love for Bengali letters runs deep.
+            </p>
+            <div class="social-strip" aria-label="Social links">
+              <a href="https://github.com/nafSadh">github</a>
+              <a href="https://linkedin.com/in/nafsadh">linkedin</a>
+              <a href="https://twitter.com/nafSadh">x</a>
+              <a href="https://instagram.com/nafsadh">instagram</a>
+            </div>
+            <div class="name-note" role="note">
+              <strong>nafSadh</strong> — one word, never split.<br />
+              Preferred name: <em>Sadh</em>,&nbsp;
+              <span class="ipa">/ʃadʱ/</span>.<br />
+              On documents: <em>Khan M Nafee Mostafa</em>.
+            </div>
+          </div>
+          <aside class="section-gloss reveal-gloss" aria-label="About links">
+            <p class="gloss-label">// find me</p>
+            <a href="https://re.sadh.me" class="gloss-item">résumé</a>
+            <a href="https://github.com/nafSadh" class="gloss-item">github</a>
+            <a href="https://linkedin.com/in/nafsadh" class="gloss-item">linkedin</a>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 nafSadh
+    &nbsp;&middot;&nbsp;
+    <a href="https://github.com/nafSadh/nafSadh.com">served on GitHub Pages</a>
+  </footer>
+
+</body>
+</html>

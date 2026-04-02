@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Courier Prime', 'Courier New', monospace; font-size: 14px; line-height: 2;
+      color: #2A2520;
+      /* Slightly yellowed paper */
+      background: #F8F2E4;
+      display: flex; justify-content: center; padding: 2rem 1rem; min-height: 100vh;
+    }
+    a { color: #2A2520; text-decoration: underline; }
+    a:hover { color: #000; }
+
+    /* MANUSCRIPT: looks like a typed manuscript — Courier, double-spaced,
+       1-inch margins, like something from a typewriter */
+    .manuscript {
+      max-width: 540px; width: 100%; background: #FFF;
+      padding: 4rem 4rem 3rem; position: relative;
+      box-shadow: 0 2px 10px rgba(60,50,40,0.08);
+    }
+    /* Page number */
+    .manuscript::before {
+      content: '1'; position: absolute; top: 1.5rem; right: 2rem;
+      font-size: 0.85rem; color: #A09080;
+    }
+
+    .hero { margin-bottom: 2rem; text-align: center; }
+    .avatar { width: 48px; height: 48px; border-radius: 50%; margin-bottom: 1rem; }
+    .hero h1 { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.25rem; }
+    .hero .tagline { font-size: 0.85rem; font-style: italic; color: #6A6058; }
+
+    .bio { text-align: center; margin-bottom: 2rem; font-size: 0.85rem; color: #4A4038; }
+    .bio b { font-weight: 700; }
+
+    .center-rule { text-align: center; padding: 1rem 0; color: #C0B8A8; letter-spacing: 0.3em; }
+
+    .section { margin-bottom: 1.5rem; }
+    .s-title { font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem; font-size: 0.85rem; letter-spacing: 0.1em; }
+    .section p { font-size: 0.82rem; color: #3A3530; }
+    .s-links { margin-top: 0.25rem; }
+    .s-links a { font-size: 0.78rem; margin-right: 0.5rem; }
+
+    .pl a { display: block; text-decoration: none; margin-bottom: 0.25rem; }
+    .pl a:hover .pn { text-decoration: underline; }
+    .pn { font-size: 0.82rem; font-weight: 700; }
+    .pd { font-size: 0.78rem; color: #6A6058; font-style: italic; }
+
+    .footer {
+      margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #E0D8C8;
+      text-align: center; font-size: 0.78rem; color: #8A7A68;
+    }
+    .footer a { color: #6A6058; margin: 0 0.35rem; }
+    .footer .note { margin-top: 0.5rem; font-style: italic; }
+
+    @media (max-width: 500px) { .manuscript { padding: 2.5rem 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="manuscript">
+    <header class="hero">
+      <img src="https://www.gravatar.com/avatar/df2b909a95ca45b6e5444ff665ba2695?s=256&d=mm&r=g" alt="Sadh" class="avatar" />
+      <h1>nafSadh</h1>
+      <p class="tagline">Maker of things. Creator. Explorer.</p>
+    </header>
+    <p class="bio">Computer scientist, engineer, writer, poet, painter, and photographer. Senior SWE at <b>Google DeepMind</b> -- <b>Gemini API</b> & agentic capabilities.</p>
+    <div class="center-rule">* * *</div>
+
+    <div class="section">
+      <div class="s-title">WORK</div>
+      <p><b>Google DeepMind</b> -- Gemini API, agentic capabilities. Previously: Android App Safety, Nest ML, TCI, Samsung.</p>
+      <div class="s-links"><a href="https://re.sadh.me">Resume</a> <a href="https://linkedin.com/in/nafsadh">LinkedIn</a> <a href="https://github.com/nafSadh">GitHub</a></div>
+    </div>
+    <div class="section">
+      <div class="s-title">PROJECTS</div>
+      <div class="pl">
+        <a href="https://flags.fyi"><span class="pn">Flags.fyi</span> -- <span class="pd">flags for vexillophiles</span></a>
+        <a href="https://read.sadh.app"><span class="pn">read.rd</span> -- <span class="pd">paper-drives & research</span></a>
+        <a href="https://sonnivo.nafsadh.com"><span class="pn">Sonnivo</span> -- <span class="pd">Bengali keyboard</span></a>
+      </div>
+    </div>
+    <div class="section">
+      <div class="s-title">WRITING & POETRY</div>
+      <p>Research at <a href="https://read.sadh.app">read.rd</a>. Poetry -- <i>Second Seconds</i>. English & Bengali.</p>
+      <div class="s-links"><a href="https://read.sadh.app">read.rd</a> <a href="https://sadhubochon.wordpress.com">সাধুবচন</a> <a href="https://medium.com/@nafsadh">Medium</a></div>
+    </div>
+    <div class="section">
+      <div class="s-title">ART & PHOTOGRAPHY</div>
+      <p>Painting, digital art, photography. Studying drawing fundamentals.</p>
+      <div class="s-links"><a href="https://nafsadh.art">nafsadh.art</a> <a href="https://behance.net/nafsadh">Behance</a> <a href="https://flickr.com/sadh">Flickr</a> <a href="https://500px.com/nafsadh">500px</a></div>
+    </div>
+    <div class="center-rule">- - -</div>
+    <div class="footer">
+      <a href="https://github.com/nafSadh">GitHub</a> | <a href="https://linkedin.com/in/nafsadh">LinkedIn</a> | <a href="https://x.com/nafSadh">X</a> | <a href="https://instagram.com/nafsadh">Instagram</a>
+      <p class="note">'Sadh' /ʃadʱ/ -- Khan M Nafee Mostafa -- &copy; 2026</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,700;1,9..144,200&family=Fira+Code:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Fira Code', monospace; font-size: 13px; line-height: 1.7;
+      color: #8898C0;
+      background: #0C0E18;
+      min-height: 100vh;
+    }
+    a { color: #6878C0; text-decoration: none; }
+    a:hover { color: #98A8E0; }
+
+    /* MARGIN NOTES — main content left, annotations in right margin */
+    .container { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+
+    .entry {
+      display: grid; grid-template-columns: 1fr 160px; gap: 2rem;
+      margin-bottom: 2.5rem; align-items: start;
+    }
+
+    .main {}
+    .margin {
+      font-size: 0.62rem; color: #303858; border-left: 1px solid #1C2038;
+      padding-left: 0.75rem; padding-top: 0.15rem;
+    }
+    .margin a { color: #404868; font-size: 0.62rem; display: block; margin-bottom: 0.15rem; }
+    .margin a:hover { color: #7888D0; }
+
+    h1 {
+      font-family: 'Fraunces', serif; font-size: 2.25rem; font-weight: 400;
+      color: #E0E8F8; margin-bottom: 0.1rem;
+    }
+    .tag { color: #404868; margin-bottom: 0.5rem; }
+    .bio { color: #6878A0; font-size: 0.82rem; }
+    .bio b { color: #A0B0D0; font-weight: 500; }
+
+    .s-title {
+      font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 400;
+      color: #C0C8E0; margin-bottom: 0.3rem;
+    }
+    p { font-size: 0.8rem; color: #6878A0; margin-bottom: 0.2rem; }
+    .hl { color: #A0B0D0; }
+
+    .proj-line { color: #5868A0; margin-top: 0.15rem; }
+    .proj-line .k { color: #6878C0; }
+    .proj-line .cm { color: #283050; }
+    .proj-line a { color: #5868A0; }
+
+    .poem {
+      font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 200;
+      font-style: italic; color: #5868A0; line-height: 2; margin: 0.3rem 0;
+    }
+
+    .f-copy { font-size: 0.58rem; color: #1C2038; margin-top: 1rem; }
+
+    @media (max-width: 600px) {
+      .entry { grid-template-columns: 1fr; gap: 0.5rem; }
+      .margin { border-left: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 0.6rem; }
+      .margin a { display: inline; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="entry">
+      <div class="main">
+        <h1>nafSadh</h1>
+        <p class="tag">maker of things · creator · explorer</p>
+        <p class="bio">Computer scientist, engineer, writer, poet, painter, photographer. Senior SWE at <b>Google DeepMind</b> — Gemini API & agentic capabilities.</p>
+      </div>
+      <div class="margin">
+        'Sadh' /ʃadʱ/<br/>Khan M Nafee Mostafa
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="main">
+        <div class="s-title">Work</div>
+        <p><span class="hl">Google DeepMind</span> — Gemini API, agentic capabilities.</p>
+        <p>Prev: App Safety, Nest ML, TCI, Samsung.</p>
+      </div>
+      <div class="margin">
+        <a href="https://re.sadh.me">resume</a>
+        <a href="https://linkedin.com/in/nafsadh">linkedin</a>
+        <a href="https://github.com/nafSadh">github</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="main">
+        <div class="s-title">Projects</div>
+        <div class="proj-line"><span class="k">flags</span>: <a href="https://flags.fyi">flags.fyi</a> <span class="cm">// vexillology</span></div>
+        <div class="proj-line"><span class="k">readrd</span>: <a href="https://read.sadh.app">read.sadh.app</a> <span class="cm">// research</span></div>
+        <div class="proj-line"><span class="k">sonnivo</span>: <a href="https://sonnivo.nafsadh.com">sonnivo</a> <span class="cm">// bengali kbd</span></div>
+      </div>
+      <div class="margin"></div>
+    </div>
+
+    <div class="entry">
+      <div class="main">
+        <div class="s-title">Writing & Poetry</div>
+        <div class="poem">
+          the weight of a word<br/>
+          is not in its letters<br/>
+          but in the silence<br/>
+          it displaces
+        </div>
+        <p style="color:#283050; font-size:0.68rem;">&mdash; Second Seconds</p>
+      </div>
+      <div class="margin">
+        <a href="https://read.sadh.app">read·rd</a>
+        <a href="https://sadhubochon.wordpress.com">সাধুবচন</a>
+        <a href="https://medium.com/@nafsadh">medium</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="main">
+        <div class="s-title">Art & Photography</div>
+        <p>Painting, digital art, photography. Drawing fundamentals.</p>
+      </div>
+      <div class="margin">
+        <a href="https://nafsadh.art">nafsadh.art</a>
+        <a href="https://behance.net/nafsadh">behance</a>
+        <a href="https://flickr.com/sadh">flickr</a>
+        <a href="https://500px.com/nafsadh">500px</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="main">
+        <div style="display:flex; gap:0.6rem;">
+          <a href="https://github.com/nafSadh">GitHub</a>
+          <a href="https://linkedin.com/in/nafsadh">LinkedIn</a>
+          <a href="https://x.com/nafSadh">X</a>
+          <a href="https://instagram.com/nafsadh">Instagram</a>
+        </div>
+        <p class="f-copy">&copy; 2026 nafSadh</p>
+      </div>
+      <div class="margin"></div>
+    </div>
+
+  </div>
+</body>
+</html>

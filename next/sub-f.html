@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nafSadh</title>
+  <link rel="icon" href="https://nafsadh.com/img/nafsadh.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #10121C;
+      --accent:   #6878D0;
+      --secondary:#4060A0;
+      --text-hi:  #D0D8F0;
+      --text-mid: #7888A8;
+      --text-lo:  #384060;
+      --orb1:     rgba(104, 120, 208, 0.13);
+      --orb2:     rgba(64,  96,  160, 0.09);
+      --orb3:     rgba(80, 110, 190, 0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-hi);
+      font-family: 'Fraunces', Georgia, serif;
+      font-optical-sizing: auto;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Orb canvas ── */
+    .orb-field {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .orb-a {
+      width: 60vmax; height: 60vmax;
+      top: -20vmax; left: -15vmax;
+      background: radial-gradient(circle, var(--orb1) 0%, transparent 70%);
+      animation: drift-a 28s ease-in-out infinite alternate;
+    }
+    .orb-b {
+      width: 50vmax; height: 50vmax;
+      bottom: -10vmax; right: -10vmax;
+      background: radial-gradient(circle, var(--orb2) 0%, transparent 70%);
+      animation: drift-b 34s ease-in-out infinite alternate;
+    }
+    .orb-c {
+      width: 35vmax; height: 35vmax;
+      top: 40%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, var(--orb3) 0%, transparent 70%);
+      animation: drift-c 22s ease-in-out infinite alternate;
+    }
+    @keyframes drift-a {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(8vw, 12vh) scale(1.1); }
+    }
+    @keyframes drift-b {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(-10vw, -8vh) scale(1.08); }
+    }
+    @keyframes drift-c {
+      from { transform: translate(-50%, -50%) scale(1); }
+      to   { transform: translate(-46%, -54%) scale(1.15); }
+    }
+
+    /* ── Layout ── */
+    main { position: relative; z-index: 1; }
+
+    /* ── Divider ── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.25;
+    }
+
+    /* ── Sections ── */
+    section {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      padding: 10vh 6vw;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    section .inner {
+      width: 100%;
+    }
+
+    /* ── Scroll-driven animations ── */
+    @supports (animation-timeline: view()) {
+      .reveal-left {
+        animation: slide-from-left linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 42%;
+      }
+      .reveal-right {
+        animation: slide-from-right linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 42%;
+      }
+      .reveal-up {
+        animation: slide-from-below linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 38%;
+      }
+      @keyframes slide-from-left {
+        from { opacity: 0; transform: translateX(-64px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes slide-from-right {
+        from { opacity: 0; transform: translateX(64px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes slide-from-below {
+        from { opacity: 0; transform: translateY(50px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    }
+    /* Fallback */
+    @supports not (animation-timeline: view()) {
+      .reveal-left, .reveal-right, .reveal-up { opacity: 1; }
+    }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1.4rem;
+      max-width: 1100px;
+      padding: 0 6vw;
+      position: relative;
+    }
+    .hero-tagline {
+      font-family: 'Fira Code', monospace;
+      font-size: clamp(0.78rem, 1.8vw, 1rem);
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+    .hero-tagline::before { content: '// '; opacity: 0.5; }
+
+    .hero-name {
+      font-size: clamp(3.4rem, 11vw, 7rem);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      background: linear-gradient(135deg, #D0D8F0 0%, #8898D8 50%, #6878D0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+    }
+
+    .hero-desc {
+      font-size: clamp(0.95rem, 2.2vw, 1.3rem);
+      font-weight: 300;
+      color: var(--text-mid);
+      max-width: 540px;
+      line-height: 1.65;
+    }
+    .hero-desc em {
+      color: var(--text-hi);
+      font-style: italic;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 3.5vh;
+      left: 6vw;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.65rem;
+      color: var(--text-lo);
+      letter-spacing: 0.14em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: pulse-line 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse-line {
+      0%, 100% { opacity: 0.25; }
+      50%       { opacity: 0.7; }
+    }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem;
+      color: var(--secondary);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 1.8rem;
+      height: 1px;
+      background: var(--secondary);
+    }
+
+    /* ── Headings ── */
+    h2 {
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text-hi);
+      line-height: 1.1;
+      margin-bottom: 1.8rem;
+    }
+
+    p {
+      color: var(--text-mid);
+      font-size: 1.02rem;
+      max-width: 600px;
+      margin-bottom: 1.2rem;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    a:hover {
+      color: var(--text-hi);
+      border-bottom-color: rgba(104, 120, 208, 0.5);
+    }
+
+    /* ── Work ── */
+    .role-block { margin-bottom: 2.2rem; }
+    .role-title {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+    }
+    .role-org {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-hi);
+      margin-bottom: 0.4rem;
+      font-style: italic;
+    }
+    .role-desc {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      max-width: 580px;
+      line-height: 1.65;
+    }
+
+    /* ── Projects ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1.2rem;
+    }
+    .project-card {
+      background: rgba(104, 120, 208, 0.05);
+      border: 1px solid rgba(104, 120, 208, 0.13);
+      border-radius: 6px;
+      padding: 1.6rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .project-card:hover {
+      border-color: rgba(104, 120, 208, 0.28);
+      background: rgba(104, 120, 208, 0.1);
+      transform: translateY(-3px);
+    }
+    .proj-name {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--text-hi);
+      margin-bottom: 0.2rem;
+    }
+    .proj-name a { color: var(--accent); border-bottom: none; transition: color 0.2s; }
+    .proj-name a:hover { color: var(--text-hi); }
+    .proj-tag {
+      font-size: 0.72rem;
+      color: var(--secondary);
+      letter-spacing: 0.03em;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+    .proj-desc {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin: 0;
+      max-width: none;
+    }
+
+    /* ── Writing ── */
+    .writing-list { list-style: none; }
+    .writing-list li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(104, 120, 208, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .writing-list li:last-child { border-bottom: none; }
+    .w-title {
+      font-size: 1.03rem;
+      font-weight: 500;
+      color: var(--text-hi);
+    }
+    .w-desc {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+    }
+
+    /* ── Poem ── */
+    #poem-section {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .poem-container {
+      margin-top: 1.8rem;
+      max-width: 540px;
+    }
+    .poem-line {
+      display: block;
+      font-size: clamp(0.98rem, 2.1vw, 1.22rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-hi);
+      line-height: 1.85;
+    }
+    .poem-spacer { display: block; height: 0.75rem; }
+
+    @supports (animation-timeline: view()) {
+      .poem-line {
+        animation: poem-reveal linear both;
+        animation-timeline: view();
+      }
+      .poem-line:nth-child(1)  { animation-range: entry 4%  entry 22%; }
+      .poem-line:nth-child(2)  { animation-range: entry 10% entry 27%; }
+      .poem-line:nth-child(3)  { animation-range: entry 16% entry 32%; }
+      .poem-line:nth-child(4)  { animation-range: entry 22% entry 37%; }
+      .poem-line:nth-child(5)  { animation-range: entry 28% entry 42%; }
+      .poem-line:nth-child(6)  { animation-range: entry 34% entry 48%; }
+      .poem-line:nth-child(7)  { animation-range: entry 40% entry 54%; }
+      .poem-line:nth-child(8)  { animation-range: entry 46% entry 60%; }
+      .poem-line:nth-child(9)  { animation-range: entry 52% entry 66%; }
+      .poem-line:nth-child(10) { animation-range: entry 58% entry 72%; }
+      .poem-line:nth-child(11) { animation-range: entry 64% entry 78%; }
+      .poem-line:nth-child(12) { animation-range: entry 70% entry 84%; }
+      .poem-line:nth-child(13) { animation-range: entry 76% entry 90%; }
+
+      @keyframes poem-reveal {
+        from { opacity: 0; transform: translateY(14px); filter: blur(5px); }
+        to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+      }
+    }
+
+    /* ── Art ── */
+    .art-platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+    .art-chip {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      border: 1px solid rgba(104, 120, 208, 0.16);
+      border-radius: 2px;
+      padding: 0.38rem 0.85rem;
+      transition: color 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+    .art-chip:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ── Name note ── */
+    .name-note {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      color: var(--text-lo);
+      line-height: 1.65;
+      border-left: 2px solid rgba(64, 96, 160, 0.4);
+      padding-left: 1rem;
+      margin-top: 1.8rem;
+      max-width: 480px;
+    }
+    .name-note .ipa { color: var(--secondary); }
+
+    /* ── Socials ── */
+    .social-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 1.8rem;
+      margin-top: 1.4rem;
+    }
+    .social-strip a {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: var(--text-lo);
+      border-bottom: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .social-strip a:hover { color: var(--accent); }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 4rem 6vw 5rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      color: var(--text-lo);
+      letter-spacing: 0.08em;
+    }
+    footer a {
+      color: var(--text-lo);
+      border-bottom: none;
+    }
+    footer a:hover { color: var(--accent); }
+
+    /* ── Fixed Nav ── */
+    nav.fixed-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(16, 18, 28, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(104, 120, 208, 0.06);
+    }
+    .nav-brand {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-bottom: none;
+    }
+    .nav-brand:hover { color: var(--text-hi); }
+
+    nav.fixed-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+    nav.fixed-nav ul li a {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.7rem;
+      color: var(--text-lo);
+      letter-spacing: 0.1em;
+      border-bottom: none;
+      transition: color 0.2s;
+    }
+    nav.fixed-nav ul li a:hover { color: var(--text-hi); }
+
+    @media (max-width: 560px) {
+      nav.fixed-nav ul { display: none; }
+      section { padding: 8vh 5vw; min-height: 55vh; }
+      #hero   { padding: 0 5vw; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .hero-name { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed animated orb background -->
+  <div class="orb-field" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed-nav" aria-label="Primary navigation">
+    <a href="#hero" class="nav-brand">nafSadh</a>
+    <ul>
+      <li><a href="#about">about</a></li>
+      <li><a href="#work">work</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#writing">writing</a></li>
+      <li><a href="#art">art</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section id="hero" aria-labelledby="hero-name">
+      <div class="hero-tagline">maker of things</div>
+      <h1 class="hero-name" id="hero-name">nafSadh</h1>
+      <p class="hero-desc">
+        Computer scientist. Engineer. Writer. Poet. Painter. Photographer.<br />
+        <em>Senior SWE at Google DeepMind</em> —<br />
+        Gemini API &amp; agentic capabilities.
+      </p>
+      <div class="scroll-hint" aria-hidden="true">scroll</div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════ ABOUT ══════════ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="inner reveal-left">
+        <div class="section-label">about</div>
+        <h2 id="about-heading">who I am</h2>
+        <p>
+          I build systems that scale and models that think.
+          Over a decade of engineering spanning backend infrastructure,
+          mobile platforms, ML pipelines, and — most recently — large language
+          models and generative AI at Google DeepMind.
+        </p>
+        <p>
+          I grew up in Bangladesh, studied Computer Science at
+          <a href="https://en.wikipedia.org/wiki/KUET">KUET</a> and
+          <a href="https://www.cs.stonybrook.edu/">Stony Brook University</a>,
+          and now live in the SF Bay Area. My interests drift freely: from
+          epistemology and linguistics to mountain trails and the ritual of tea.
+        </p>
+        <p>
+          I co-founded <em>Lekhalikhi</em>, an online Bengali literary platform
+          that nurtured amateur writers. The platform is gone. The love for
+          Bengali letters is not.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════ WORK ══════════ -->
+    <section id="work" aria-labelledby="work-heading">
+      <div class="inner reveal-right">
+        <div class="section-label">work</div>
+        <h2 id="work-heading">where I've been</h2>
+
+        <div class="role-block">
+          <div class="role-title">current · Senior Software Engineer</div>
+          <div class="role-org">Google DeepMind</div>
+          <p class="role-desc">
+            Building the Gemini API and agentic capabilities — the infrastructure
+            and developer interfaces for frontier AI. Previously on Google Labs,
+            bringing experimental AI products into the world.
+          </p>
+        </div>
+
+        <div class="role-block">
+          <div class="role-title">prior · Software Engineer</div>
+          <div class="role-org">Google — Android App Safety &amp; Nest</div>
+          <p class="role-desc">
+            Co-led cross-org efforts for Android's trust &amp; safety ecosystem.
+            Built Google Nest's backend ML platform: Home/Away Presence Sensing,
+            Geofence, and Home Routines.
+          </p>
+        </div>
+
+        <div class="role-block">
+          <div class="role-title">earlier</div>
+          <div class="role-org">TCI &amp; Samsung</div>
+          <p class="role-desc">
+            Loan Origination SaaS at TCI.
+            Custom system software, DSP, and SoC at Samsung Research.
+          </p>
+        </div>
+
+        <p>
+          <a href="https://re.sadh.me">Résumé</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://www.linkedin.com/in/nafsadh/">LinkedIn</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://github.com/nafSadh">GitHub</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════ PROJECTS ══════════ -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="inner reveal-left">
+        <div class="section-label">projects</div>
+        <h2 id="projects-heading">things I've built</h2>
+
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="proj-name"><a href="https://flags.fyi">flags.fyi</a></div>
+            <div class="proj-tag">open-source · vexillography</div>
+            <p class="proj-desc">A repository of world flags for vexillophiles — clean, accurate, and queryable.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="proj-name"><a href="https://sonnivo.nafsadh.com/">Sonnivo</a></div>
+            <div class="proj-tag">open-source · language · tools</div>
+            <p class="proj-desc">A Bengali phonetic keyboard — type in Bangla naturally, the way you speak it.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="proj-name"><a href="https://ai.nafsadh.art">ai.nafSadh.art</a></div>
+            <div class="proj-tag">generative art · AI · aesthetics</div>
+            <p class="proj-desc">AI-aided visual works — computation and aesthetics, finding each other.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="proj-name"><a href="https://sulol.nafsadh.com/">সুলল সংগ্রহ</a></div>
+            <div class="proj-tag">literature · Bengali · poetry</div>
+            <p class="proj-desc">A curated collection of Bengali literary works in my mother tongue.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="proj-name"><a href="https://notes.nafsadh.com">Notes by nafSadh</a></div>
+            <div class="proj-tag">markdown · knowledge · open</div>
+            <p class="proj-desc">Living notes in markdown — CS concepts, references, and working knowledge.</p>
+          </div>
+
+          <div class="project-card">
+            <div class="proj-name">
+              <a href="https://en.wikipedia.org/wiki/User:Nafsadh/Gallery">Wikimedia Maps</a>
+            </div>
+            <div class="proj-tag">cartography · commons</div>
+            <p class="proj-desc">Maps created and released to the commons — geography rendered clearly and freely.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════ WRITING ══════════ -->
+    <section id="writing" aria-labelledby="writing-heading">
+      <div class="inner reveal-right">
+        <div class="section-label">writing</div>
+        <h2 id="writing-heading">words I've kept</h2>
+
+        <ul class="writing-list">
+          <li>
+            <a class="w-title" href="https://ai.nafSadh.com">Augmented Insights</a>
+            <span class="w-desc">Thoughts on AI from inside the work — often copyedited with generative AI.</span>
+          </li>
+          <li>
+            <a class="w-title" href="https://ins.nafSadh.com">inside the insight</a>
+            <span class="w-desc">CS thoughts, quick solutions, code samples, and other scribbles.</span>
+          </li>
+          <li>
+            <a class="w-title" href="https://notes.nafsadh.com">Notes by nafSadh</a>
+            <span class="w-desc">Living markdown documents on GitHub — knowledge that grows.</span>
+          </li>
+          <li>
+            <a class="w-title" href="https://sulol.nafSadh.com">সুলল সংগ্রহ</a>
+            <span class="w-desc">Poetry, in Bengali. The language I dream in.</span>
+          </li>
+          <li>
+            <a class="w-title" href="https://sadhubochon.wordpress.com">সাধুবচন</a>
+            <span class="w-desc">Prose and satire in classical Shadhu-bhasha Bengali.</span>
+          </li>
+          <li>
+            <a class="w-title" href="https://medium.com/@nafsadh">Medium</a>
+            <span class="w-desc">Stories and longer essays, cross-posted.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════ POEM ══════════ -->
+    <section id="poem-section" aria-labelledby="poem-heading">
+      <div class="inner">
+        <div class="section-label reveal-up">a poem</div>
+        <h2 id="poem-heading" class="reveal-up">in the space between keystrokes</h2>
+        <div class="poem-container" role="article" aria-label="Poem: in the space between keystrokes">
+          <span class="poem-line">Between the compile and the run</span>
+          <span class="poem-line">there is a silence shaped like thought —</span>
+          <span class="poem-line">where logic folds into metaphor</span>
+          <span class="poem-line">and every variable holds a name</span>
+          <span class="poem-line">for something unnamed still.</span>
+          <span class="poem-spacer"></span>
+          <span class="poem-line">I have lived in stacks and heaps,</span>
+          <span class="poem-line">in recursion that forgot to stop,</span>
+          <span class="poem-line">in flags that flew above no country</span>
+          <span class="poem-line">and keyboards clicking into mother tongue.</span>
+          <span class="poem-spacer"></span>
+          <span class="poem-line">The poem and the program share a god:</span>
+          <span class="poem-line">the desire to say something true</span>
+          <span class="poem-line">in the fewest possible tokens.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════ ART ══════════ -->
+    <section id="art" aria-labelledby="art-heading">
+      <div class="inner reveal-left">
+        <div class="section-label">art</div>
+        <h2 id="art-heading">colors I've mixed</h2>
+        <p>
+          I paint, photograph, and play with pixels.
+          Watercolors on paper. Light through a lens.
+          Algorithms composing images I could not have imagined alone.
+        </p>
+        <p>
+          Maps, too — cartography as a form of visual writing.
+        </p>
+        <div class="art-platforms">
+          <a class="art-chip" href="https://behance.net/nafsadh">Behance</a>
+          <a class="art-chip" href="https://deviantart.com/nafsadh">DeviantArt</a>
+          <a class="art-chip" href="https://ai.nafsadh.art">ai.nafSadh.art</a>
+          <a class="art-chip" href="https://flickr.com/sadh">Flickr</a>
+          <a class="art-chip" href="https://500px.com/nafsadh">500px</a>
+          <a class="art-chip" href="https://www.instagram.com/nafsadh">Instagram</a>
+          <a class="art-chip" href="https://en.wikipedia.org/wiki/User:Nafsadh/Gallery">Wikimedia</a>
+          <a class="art-chip" href="https://pinterest.com/nafsadh">Pinterest</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════ CONNECT ══════════ -->
+    <section id="connect" aria-labelledby="connect-heading">
+      <div class="inner reveal-right">
+        <div class="section-label">connect</div>
+        <h2 id="connect-heading">find me elsewhere</h2>
+
+        <div class="social-strip">
+          <a href="https://github.com/nafSadh">github</a>
+          <a href="https://linkedin.com/in/nafsadh/">linkedin</a>
+          <a href="https://twitter.com/nafSadh">twitter / x</a>
+          <a href="https://medium.com/@nafSadh">medium</a>
+          <a href="https://www.goodreads.com/nafsadh">goodreads</a>
+          <a href="https://www.quora.com/profile/Khan-Sadh-Mostafa">quora</a>
+          <a href="https://behance.net/nafsadh">behance</a>
+          <a href="https://deviantart.com/nafsadh">deviantart</a>
+          <a href="https://flickr.com/sadh">flickr</a>
+          <a href="https://500px.com/nafsadh">500px</a>
+          <a href="https://www.instagram.com/nafsadh">instagram</a>
+          <a href="https://pinterest.com/nafsadh">pinterest</a>
+          <a href="https://www.slideshare.net/nafSadh">slideshare</a>
+          <a href="https://fb.com/nafSadh">facebook</a>
+          <a href="https://en.wikipedia.org/wiki/Special:Contributions/Nafsadh">wikipedia</a>
+        </div>
+
+        <div class="name-note">
+          <strong>nafSadh</strong> is one word — always written together, never split.<br />
+          My preferred name is <em>Sadh</em>,&nbsp;
+          pronounced <span class="ipa">shaadh</span>&nbsp;<span class="ipa">/ʃadʱ/</span>.<br />
+          On documents: <em>Khan M Nafee Mostafa</em>.&nbsp;
+          Online: <em>nafSadh</em> — undivided.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 nafSadh
+    &nbsp;&middot;&nbsp;
+    <a href="https://github.com/nafSadh/nafSadh.com">served on GitHub Pages</a>
+  </footer>
+
+</body>
+</html>
