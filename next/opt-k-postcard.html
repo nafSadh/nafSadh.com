@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<meta name="description" content="Sadh MNM Khan (nafSadh). Software Engineer + aspiring artist, painter, photographer, poet, storyteller.">
+<link rel="icon" href="/img/nafsadh.png">
+<style>
+  :root { --ink:#1b2f6b; --ink-2:#4a5a8f; --ink-3:#9aa6c9; --paper:#fff; --tape:rgba(239,226,176,.8); }
+  html { background: var(--paper); }
+  body { margin:0; color:var(--ink);
+    font-family:"Courier Prime","American Typewriter","Courier New",Courier,monospace;
+    font-size:16px; line-height:1.7; }
+  a { color:var(--ink); }
+  a:hover { background:var(--ink); color:#fff; text-decoration:none; }
+  a:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  h1 { font-size:1.6rem; font-weight:normal; margin:0; line-height:1.2; }
+  h1 small { display:block; font-size:1rem; }
+  p { margin:0 0 1.25rem; }
+  dl { margin:0 0 1.25rem; display:grid; grid-template-columns:max-content 1fr; gap:0 1.5rem; }
+  dt, dd { margin:0; }
+  .elsewhere { font-size:.82rem; }
+  hr { border:0; border-top:1px solid var(--ink); margin:1.5rem 0; }
+  footer { font-size:.85rem; }
+  /* film strip: fixed height, each frame keeps its own ratio */
+  .film { position:relative; display:flex; gap:.35rem; width:max-content; max-width:100%; padding:.55rem .5rem;
+    background:var(--ink); overflow:hidden; box-shadow:0 6px 14px rgba(27,47,107,.22),0 1px 2px rgba(0,0,0,.2); }
+  .film::before, .film::after { content:""; position:absolute; left:0; right:0; height:.42rem; opacity:.92;
+    background:repeating-linear-gradient(90deg,transparent 0 .55rem,#fff .55rem 1.05rem,transparent 1.05rem 1.45rem); }
+  .film::before { top:.07rem; } .film::after { bottom:.07rem; }
+  .film img { display:block; height:11rem; width:auto; border:2px solid #0f1d47; }
+  .film .tape { position:absolute; top:-.5rem; right:1.2rem; width:4.5rem; height:1.3rem; background:var(--tape);
+    transform:rotate(8deg); box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  @media (max-width:560px) { .film img { height:7.2rem; } .film { gap:.25rem; } }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+
+  /* ---- K: postcard, mark as the stamp ---- */
+
+  html, body { background:#f3f4f8; }
+  .wrap { max-width:46rem; margin:3rem auto 4rem; padding:0 1rem; }
+  .front { display:flex; justify-content:center; margin-bottom:2.2rem; }
+  .front .film { transform:rotate(-1.5deg); }
+  .back { position:relative; background:#fff; display:grid; grid-template-columns:1fr 1px 1fr; gap:0 1.6rem; padding:1.6rem 1.6rem 1.4rem;
+    box-shadow:0 10px 30px rgba(27,47,107,.14), 0 1px 2px rgba(0,0,0,.12); transform:rotate(.6deg); }
+  .back .divider { background:var(--ink); opacity:.5; }
+  .back .msg p { margin-bottom:1rem; }
+  .back .addr { padding-top:6.4rem; }
+  .back .addr dl { gap:0 1rem; margin:0; }
+  .back .addr dt, .back .addr dd { border-bottom:1px solid rgba(27,47,107,.35); padding:.15rem 0; }
+  .back .stamp { position:absolute; right:1.2rem; top:1.1rem; width:4.6rem; height:5.4rem; border:1px dashed var(--ink); display:grid; place-items:center; }
+  .back .stamp img { width:3rem; }
+  .back .postmark { position:absolute; right:5.2rem; top:1.6rem; width:4.2rem; height:4.2rem; border:1.5px solid var(--ink); border-radius:50%; opacity:.5;
+    font-size:.5rem; line-height:1.2; display:grid; place-items:center; text-align:center; transform:rotate(-12deg); }
+  .back .elsewhere { grid-column:1 / -1; margin:1.2rem 0 0; color:var(--ink-2); }
+  .back footer { grid-column:1 / -1; font-size:.8rem; color:var(--ink-2); }
+  @media (max-width:720px) { .back { grid-template-columns:1fr; } .back .divider { display:none; } .back .addr { padding-top:1rem; } .back .postmark { display:none; } }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="front"><div class="film" aria-label="pictures of Sadh"><span class="tape"></span>
+  <img src="/img/film/f1.jpg" alt="Sadh, Aug 2026">
+  <img src="/img/film/f2.jpg" alt="self-portrait, colored pencil">
+  <img src="/img/film/f3.jpg" alt="Sadh, Dec 2025">
+  <img src="/img/film/f4.jpg" alt="Sadh, in watercolor">
+</div></div>
+  <div class="back">
+    <div class="msg">
+      <h1>Sadh MNM Khan <small>nafSadh</small></h1>
+      <br>
+      <p class="tag">Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+      <p>[<a href="/bio.html">read more</a>] [<a href="/timeline.html">timeline</a>] [<a href="/profile.html">profile</a>]</p>
+    </div>
+    <div class="divider"></div>
+    <div class="addr">
+      <dl>
+        <dt><a href="https://sadh.ink">sadh.ink</a></dt>       <dd>poetry and prose</dd>
+        <dt><a href="https://sadh.studio">sadh.studio</a></dt> <dd>photos etc.</dd>
+        <dt><a href="https://nafsadh.art">nafsadh.art</a></dt> <dd>paintings etc.</dd>
+        <dt><a href="https://sadh.app">sadh.app</a></dt>       <dd>tools</dd>
+      </dl>
+    </div>
+    <div class="postmark">nafSadh.com<br>2026<br>Bay Area</div>
+    <div class="stamp"><img src="/img/nafsadh-logo.svg" alt=""></div>
+    <p class="elsewhere">Elsewhere: 
+  <a href="https://linkedin.com/in/nafsadh">LinkedIn</a> /
+  <a href="https://instagram.com/nafsadh">Instagram</a> /
+  <a href="https://github.com/nafSadh">GitHub</a> /
+  <a href="https://www.reddit.com/user/nafsadh">Reddit</a> /
+  <a href="https://www.quora.com/profile/nafSadh">Quora</a> /
+  <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...
+</p>
+    <footer>nafSadh.com &middot; 2026</footer>
+  </div>
+</div>
+</body>
+</html>
