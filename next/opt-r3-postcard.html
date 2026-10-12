@@ -102,7 +102,7 @@
 
   .message { padding-top: 34px; }
   .message .name {
-    font-weight: bold;
+    font-weight: normal;
     font-size: 17px;
     margin: 0 0 14px;
   }
@@ -211,6 +211,9 @@
     }
     .edge { flex-direction: column; gap: 4px; }
   }
+  /* quieter links: thin, pale underline; full ink only on hover */
+  a { text-decoration: underline; text-decoration-color: rgba(27,47,107,.32); text-decoration-thickness: 1px; text-underline-offset: .22em; }
+  a:hover { background: #1b2f6b; color: #fff; text-decoration: none; }
 </style>
 </head>
 <body>

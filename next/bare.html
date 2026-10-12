@@ -37,6 +37,9 @@
   footer { font-size: 0.85rem; }
   .elsewhere { font-size: 0.82rem; }
   @media (max-width: 420px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .5rem; } header { flex-wrap: wrap; } }
+  /* quieter links: thin, pale underline; full ink only on hover */
+  a { text-decoration: underline; text-decoration-color: rgba(27,47,107,.32); text-decoration-thickness: 1px; text-underline-offset: .22em; }
+  a:hover { background: #1b2f6b; color: #fff; text-decoration: none; }
 </style>
 </head>
 <body>

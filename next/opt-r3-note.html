@@ -53,7 +53,7 @@
     margin: 0;
     font-size: 1.5rem;
     line-height: calc(var(--lh) * 2);
-    font-weight: 700;
+    font-weight:normal;
   }
   h1 span { font-weight: 400; }
 
@@ -125,6 +125,9 @@
     main { padding: calc(var(--lh) * 2) 1rem; }
     .strip { padding: var(--band) 6px; gap: 4px; }
   }
+  /* quieter links: thin, pale underline; full ink only on hover */
+  a { text-decoration: underline; text-decoration-color: rgba(27,47,107,.32); text-decoration-thickness: 1px; text-underline-offset: .22em; }
+  a:hover { background: #1b2f6b; color: #fff; text-decoration: none; }
 </style>
 </head>
 <body>
