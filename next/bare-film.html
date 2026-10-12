@@ -8,15 +8,13 @@
 <link rel="icon" href="/img/nafsadh.png">
 <style>
   html { background: #fff; }
-  /* a watercolor of mine, printed faintly into the paper */
-  body::before {
-    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-    background: url(/img/stones-watercolor.jpg) no-repeat;
-    background-position: right max(0rem, calc(50% - 30rem)) top 2rem;
-    background-size: 24rem auto;
+  /* a watercolor of mine, printed faintly into the paper; its pedestal stroke sits on the rule above the footer */
+  .paper { position: relative; }
+  .paper .wash {
+    position: absolute; right: -14rem; bottom: calc(5.2rem - 6.3rem); width: 24rem; z-index: -1; pointer-events: none;
     opacity: 0.32; mix-blend-mode: multiply;
   }
-  @media (max-width: 900px) { body::before { background-position: right -4rem top 1rem; background-size: 16rem auto; opacity: 0.22; } }
+  @media (max-width: 900px) { .paper .wash { right: -6rem; width: 18rem; bottom: calc(3.1rem - 4.7rem); opacity: 0.22; } }
   body {
     margin: 0; padding: 2.5rem 1rem 4rem;
     font-family: "Courier Prime", "American Typewriter", "Courier New", Courier, monospace;
@@ -42,16 +40,31 @@
   .film::before { top: 0.07rem; } .film::after { bottom: 0.07rem; }
   .film img {
     flex: 0 0 auto; width: 9.55rem; height: 6.37rem; object-fit: cover; display: block;
-    border: 2px solid #0f1d47;
+    border: 2px solid #0f1d47; background: #0f1d47;
   }
+  .film img.contain { object-fit: contain; }
+  .film .blank { flex: 0 0 auto; width: 9.55rem; height: 6.37rem; border: 2px solid #0f1d47; background: #22367a; }
+  /* the self-portrait, taped over the second frame */
+  .strip { position: relative; margin-bottom: 2.6rem; }
+  .strip .painting {
+    position: absolute; left: 9.4rem; top: -1.4rem; width: 7.4rem; transform: rotate(2.5deg);
+    box-shadow: 0 4px 10px rgba(27,47,107,.25); border: 1px solid #e8e6df;
+  }
+  .strip .painting::after {
+    content: ""; position: absolute; left: 50%; top: -0.55rem; width: 3.6rem; height: 1.1rem; margin-left: -1.8rem;
+    background: rgba(240,228,180,.75); transform: rotate(-4deg); box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  }
+  .strip .painting img { display: block; width: 100%; }
   .film .tape {
     position: absolute; top: -0.5rem; right: 2.2rem; width: 4.5rem; height: 1.3rem;
     background: rgba(240,228,180,.7); transform: rotate(8deg); box-shadow: 0 1px 2px rgba(0,0,0,.15);
   }
   .film .num { position: absolute; left: 0.3rem; top: 0.1rem; font-size: 0.5rem; color: #c9d3f2; letter-spacing: .15em; }
 
-  header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.4rem; }
+  header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.4rem; position: relative; }
   header img { width: 64px; height: 64px; }
+  /* desktop: the mark sits in the left margin, outside the text column */
+  @media (min-width: 900px) { header img { position: absolute; left: -6.2rem; top: -0.4rem; width: 84px; height: 84px; } }
   h1 { font-size: 1.6rem; font-weight: normal; margin: 0; line-height: 1.2; }
   h1 small { display: block; font-size: 1rem; }
   p { margin: 0 0 1.25rem; }
@@ -65,12 +78,16 @@
 </head>
 <body>
 
+<div class="paper">
+<div class="strip">
 <div class="film" aria-label="pictures of Sadh">
   <span class="num">nafSadh 400 · 24A</span><span class="tape"></span>
-  <img src="/img/film/f1.jpg" alt="Sadh, in watercolor">
-  <img src="/img/film/f2.jpg" alt="Sadh, Dec 2025">
-  <img src="/img/film/f3.jpg" alt="Sadh, Aug 2026">
-  <img src="/img/film/f4.jpg" alt="self-portrait, colored pencil">
+  <img src="/img/film/f1.jpg" alt="Sadh, Aug 2026">
+  <span class="blank"></span>
+  <img src="/img/film/f3.jpg" alt="Sadh, Dec 2025">
+  <img class="contain" src="/img/film/f4.jpg" alt="Sadh, in watercolor">
+</div>
+<div class="painting"><img src="/img/film/f2.jpg" alt="self-portrait, colored pencil"></div>
 </div>
 
 <header>
@@ -101,6 +118,8 @@
 
 <hr>
 <footer>nafSadh.com &middot; 2026</footer>
+<img class="wash" src="/img/stones-watercolor.jpg" alt="" aria-hidden="true">
+</div>
 
 </body>
 </html>
