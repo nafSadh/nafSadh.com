@@ -8,6 +8,15 @@
 <link rel="icon" href="/img/nafsadh.png">
 <style>
   html { background: #fff; }
+  /* letterhead: the mark printed faintly into the paper, behind the text */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: url(/img/nafsadh-logo.svg) no-repeat;
+    background-position: right max(1rem, calc(50% - 26rem)) top 4rem;
+    background-size: 30rem;
+    opacity: 0.055;
+  }
+  @media (max-width: 900px) { body::before { background-position: center top 3rem; background-size: 24rem; opacity: 0.045; } }
   body {
     margin: 0; padding: 3rem 1rem 4rem;
     font-family: "Courier Prime", "American Typewriter", "Courier New", Courier, monospace;
@@ -33,7 +42,6 @@
 
 <header>
   <img class="photo" src="/img/photo.jpg" alt="Sadh">
-  <img src="/img/nafsadh-logo.svg" alt="" aria-hidden="true">
   <h1>Sadh MNM Khan <small>nafSadh</small></h1>
 </header>
 
