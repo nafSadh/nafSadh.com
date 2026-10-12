@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nafSadh</title>
+<meta name="description" content="nafSadh — Senior SWE at Google DeepMind. Maker of things." />
+<link rel="icon" href="/img/nafsadh.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+/* ──────────────────────────────────────────────────────────────────
+   nafSadh.com — imprint / title-page
+   The homepage is the colophon of a person. One screen. No scroll
+   narrative. The kite-flame mark is the dominant visual; everything
+   else hangs in its weight. Vocabulary borrowed from sub-f-mix-3 and
+   sub-d (// Fira Code marginalia, gradient wordmark, drift orbs,
+   margin gloss) — but rearranged as a title page, not a long page.
+   ────────────────────────────────────────────────────────────────── */
+:root {
+  --bg:        #10121C;
+  --bg-2:      #0C0E18;
+  --accent:    #6878D0;
+  --secondary: #4060A0;
+  --text-hi:   #D0D8F0;
+  --text-mid:  #7888A8;
+  --text-lo:   #384060;
+  --text-ghost:#202840;
+  --orb-1:     rgba(104, 120, 208, 0.13);
+  --orb-2:     rgba(64,  96,  160, 0.09);
+  --line:      rgba(104, 120, 208, 0.10);
+
+  --display: 'Fraunces', Georgia, serif;
+  --mono:    'Fira Code', ui-monospace, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text-mid);
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  line-height: 1.65;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* drift orbs — same family as sub-f-mix-3, kept quieter */
+.orb-field { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.orb { position: absolute; border-radius: 50%; filter: blur(80px); }
+.orb-a {
+  width: 60vmax; height: 60vmax;
+  top: -20vmax; left: -15vmax;
+  background: radial-gradient(circle, var(--orb-1) 0%, transparent 70%);
+  animation: drift-a 32s ease-in-out infinite alternate;
+}
+.orb-b {
+  width: 50vmax; height: 50vmax;
+  bottom: -10vmax; right: -10vmax;
+  background: radial-gradient(circle, var(--orb-2) 0%, transparent 70%);
+  animation: drift-b 38s ease-in-out infinite alternate;
+}
+@keyframes drift-a {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(8vw, 12vh) scale(1.08); }
+}
+@keyframes drift-b {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-10vw, -8vh) scale(1.06); }
+}
+
+/* main page composition */
+main {
+  position: relative;
+  z-index: 1;
+  width: min(680px, calc(100vw - 4rem));
+  padding: 5vh 0;
+  text-align: center;
+}
+
+/* ── kite-flame mark — the dominant visual ── */
+.mark {
+  width: clamp(96px, 14vmin, 144px);
+  margin: 0 auto 2.4rem;
+  color: var(--accent);
+  display: block;
+}
+.mark svg { width: 100%; height: 100%; display: block; }
+.mark .center {
+  transform-box: view-box;
+  transform-origin: 100px 130px;
+  animation: pulse 2.8s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(0.9); opacity: 0.65; }
+  50%      { transform: scale(1.1); opacity: 1; }
+}
+
+/* ── wordmark ── */
+.wordmark {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(3rem, 8.5vw, 5.6rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background: linear-gradient(135deg, #D0D8F0 0%, #8898D8 50%, #6878D0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.4rem;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+
+/* ── etymology block — three lines, each a definition ── */
+.etym {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1.6rem;
+  max-width: 560px;
+  margin: 0 auto 2.6rem;
+  text-align: left;
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+.etym dt {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--secondary);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding-top: 0.15em;
+}
+.etym dt .ipa { color: var(--text-lo); margin-left: 0.4em; }
+.etym dd {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--text-mid);
+  font-size: 0.96rem;
+  font-variation-settings: "opsz" 72;
+}
+.etym dd em { color: var(--text-hi); font-style: italic; }
+
+/* ── one-line bio in Fira Code ── */
+.line {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--text-lo);
+  line-height: 1.85;
+  max-width: 540px;
+  margin: 0 auto 2.6rem;
+}
+.line .c { color: var(--text-ghost); }
+.line a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.line a:hover { border-bottom-color: rgba(104,120,208,0.45); }
+.line .em { color: var(--text-hi); font-style: italic; font-family: var(--display); font-size: 0.95rem; }
+
+/* ── link cluster — Fira Code, dot-separated ── */
+.links {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-lo);
+  letter-spacing: 0.04em;
+  margin: 0 auto 3rem;
+  max-width: 560px;
+  line-height: 2.2;
+}
+.links .label {
+  display: block;
+  color: var(--text-ghost);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.1em;
+}
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.links a:hover { color: var(--text-hi); border-bottom-color: rgba(104,120,208,0.45); }
+.links .dot { color: var(--text-ghost); margin: 0 0.5em; }
+
+/* ── poem excerpt ── */
+.poem {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.92rem, 1.6vw, 1.05rem);
+  line-height: 2.0;
+  color: var(--text-mid);
+  max-width: 480px;
+  margin: 0 auto 2.4rem;
+  font-variation-settings: "opsz" 72, "SOFT" 50;
+}
+.poem .from {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.66rem;
+  color: var(--text-ghost);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1.2rem;
+}
+.poem .from a { color: var(--text-lo); text-decoration: none; }
+.poem .from a:hover { color: var(--accent); }
+.poem em { color: var(--text-hi); font-style: italic; }
+
+/* ── imprint footer ── */
+.imprint {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--text-ghost);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--line);
+  padding-top: 1.6rem;
+  margin-top: 0.8rem;
+}
+.imprint .swash { color: var(--accent); margin: 0 0.6em; opacity: 0.5; }
+
+/* ── responsive ── */
+@media (max-width: 540px) {
+  main { padding: 3vh 0; }
+  .etym { grid-template-columns: 1fr; gap: 0.15rem; max-width: 100%; }
+  .etym dt { padding-top: 0.6rem; }
+  .etym dt:first-child { padding-top: 0; }
+  .line { font-size: 0.72rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-a, .orb-b, .mark .center { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="orb-field" aria-hidden="true">
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+</div>
+
+<main>
+  <!-- The mark — the dominant visual element. Static body, pulsing center
+       (the heartbeat dot, sized down to fit the architecture). -->
+  <div class="mark" aria-hidden="true">
+    <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 14 Q86 32 88 48 Q100 54 110 66 Q112 78 104 82 Q98 76 99 60 Q98 32 100 14 Z" fill="currentColor" stroke="none"/>
+      <path d="M76 82 Q100 96 124 82 L168 130 L100 178 L32 130 Z" stroke-width="5"/>
+      <circle class="center" cx="100" cy="130" r="8" stroke-width="3.5"/>
+      <path d="M100 178 Q80 184 60 188" stroke-width="3"/>
+      <path d="M100 178 Q96 184 92 188" stroke-width="3"/>
+      <path d="M100 178 Q120 180 138 180" stroke-width="3"/>
+    </svg>
+  </div>
+
+  <!-- The wordmark, smaller than sub-f-mix-3's hero scale — this is a
+       title page, not a stage. The mark above already announces. -->
+  <h1 class="wordmark">nafSadh</h1>
+
+  <!-- Etymology block — the title page's matter-of-fact identification.
+       This is the move sub-d puts in the gloss; here it is the hero. -->
+  <dl class="etym">
+    <dt>nafSadh</dt>
+    <dd>one word, never split</dd>
+    <dt>Sadh <span class="ipa">/ʃadʱ/</span></dt>
+    <dd>preferred name — what people call me</dd>
+    <dt>Khan M Nafee Mostafa</dt>
+    <dd>full name, on documents</dd>
+  </dl>
+
+  <!-- One line of code-comment bio. The // is the eyebrow's grammar. -->
+  <p class="line">
+    <span class="c">// </span><span class="em">Senior SWE at Google DeepMind</span> — building
+    <a href="https://deepmind.google/technologies/gemini/">Gemini</a> APIs and agentic
+    capabilities. Computer scientist by training, writer and poet by lamp-light, photographer
+    when the light agrees. Bengali first; English fluent. Bay Area, by way of KUET and Stony Brook.
+  </p>
+
+  <!-- A small constellation of // links. Not a navigation bar — a list. -->
+  <p class="links">
+    <span class="label">// elsewhere</span>
+    <a href="https://re.sadh.me">résumé</a><span class="dot">·</span>
+    <a href="https://github.com/nafSadh">github</a><span class="dot">·</span>
+    <a href="https://linkedin.com/in/nafsadh">linkedin</a><span class="dot">·</span>
+    <a href="https://ai.nafsadh.com">augmented insights</a><span class="dot">·</span>
+    <a href="https://poems.sadh.com">poems</a><span class="dot">·</span>
+    <a href="https://sahityo.com">sahityo</a><span class="dot">·</span>
+    <a href="https://flags.fyi">flags.fyi</a><span class="dot">·</span>
+    <a href="https://sonnivo.nafsadh.com">sonnivo</a><span class="dot">·</span>
+    <a href="https://medium.com/@nafsadh">medium</a><span class="dot">·</span>
+    <a href="mailto:hi@nafsadh.com">email</a>
+  </p>
+
+  <!-- A real poem excerpt — yours, not made up. The closing thought
+       of the title page. -->
+  <blockquote class="poem">
+    <span class="from">from <a href="https://poems.sadh.com">a poem</a></span>
+    The poem and the program share a god:<br>
+    the desire to say something <em>true</em><br>
+    in the fewest possible tokens.
+  </blockquote>
+
+  <!-- Imprint — the colophon line every printed book has at the bottom
+       of its title page. -->
+  <p class="imprint">
+    nafSadh.com <span class="swash">·</span> kept since 2008 <span class="swash">·</span> Bay Area
+  </p>
+</main>
+
+</body>
+</html>
