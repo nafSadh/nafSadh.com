@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<meta name="description" content="Sadh MNM Khan / nafSadh. Software Engineer + aspiring artist, painter, photographer, poet, storyteller.">
+<style>
+  :root {
+    --ink: #1b2f6b;
+    --paper: #fff;
+    --tape: rgba(236, 230, 207, .82);
+    --lh: 1.5rem;          /* 24px rhythm; every vertical gap is a multiple of this */
+    --fh: 168px;           /* film frame height */
+    --band: 24px;          /* sprocket band height, top and bottom */
+    --hole: 8px;
+  }
+  html { background: var(--paper); overflow-x: hidden; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    color: var(--ink);
+    background: var(--paper);
+    font: 1rem/var(--lh) "Courier Prime", "American Typewriter", "Courier New", Courier, monospace;
+  }
+  ::selection { background: var(--ink); color: var(--paper); }
+
+  a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+  a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  main {
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: calc(var(--lh) * 3) 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* letterhead corner */
+  .corner {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    height: 56px;
+    margin-bottom: calc(96px - 56px);   /* 56 + 40 = 96 = 4 lines */
+  }
+  .corner img { width: 56px; height: 56px; display: block; }
+  .corner p { margin: 0; font-size: .75rem; line-height: var(--lh); }
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: calc(var(--lh) * 2);
+    font-weight: 700;
+  }
+  h1 span { font-weight: 400; }
+
+  /* film strip */
+  .film { margin: calc(var(--lh) * 2) 0; }
+  .strip {
+    position: relative;
+    display: inline-flex;
+    gap: 6px;
+    padding: var(--band) 10px;
+    background-color: var(--ink);
+    background-image:
+      repeating-linear-gradient(90deg, transparent 0 6px, var(--paper) 6px 17px, transparent 17px 22px),
+      repeating-linear-gradient(90deg, transparent 0 6px, var(--paper) 6px 17px, transparent 17px 22px);
+    background-size: 100% var(--hole), 100% var(--hole);
+    background-position: 0 calc((var(--band) - var(--hole)) / 2), 0 calc(100% - (var(--band) - var(--hole)) / 2);
+    background-repeat: no-repeat;
+    transform: rotate(-1deg);
+    vertical-align: top;
+  }
+  .strip img { display: block; height: var(--fh); width: auto; }
+  .strip::before, .strip::after {
+    content: "";
+    position: absolute;
+    width: 4.5rem;
+    height: 1.25rem;
+    background: var(--tape);
+  }
+  .strip::before { top: -9px; left: 12px; transform: rotate(-6deg); }
+  .strip::after  { bottom: -9px; right: 16px; transform: rotate(4deg); }
+
+  p { margin: 0 0 var(--lh); }
+
+  .links { margin: 0; padding: 0; list-style: none; }
+  .links li { margin: 0; }
+  .links + p { margin-top: var(--lh); }
+
+  .small { font-size: .75rem; line-height: var(--lh); }
+
+  .more { display: flex; flex-wrap: wrap; gap: 0 2ch; margin: var(--lh) 0 0; }
+
+  footer { margin-top: calc(var(--lh) * 3); }
+  footer p { margin: 0; }
+
+  /* watercolor, lower right, outside the column */
+  .stones {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    width: min(16rem, calc((100vw - 38rem) / 2 - 2rem));
+    opacity: .38;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @media (min-width: 38rem) {
+    .links { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1rem; }
+  }
+  @media (min-width: 62rem) {
+    .stones { display: block; }
+  }
+  @media (max-width: 40rem) {
+    :root { --fh: 120px; }
+  }
+  @media (max-width: 30rem) {
+    :root { --fh: 104px; --band: 20px; --hole: 6px; }
+    main { padding: calc(var(--lh) * 2) 1rem; }
+    .strip { padding: var(--band) 6px; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="corner">
+    <img src="/img/nafsadh-logo.svg" alt="nafSadh mark" width="56" height="56">
+    <p>nafSadh.com<br>Bay Area</p>
+  </header>
+
+  <h1>Sadh MNM Khan <span>/ nafSadh</span></h1>
+
+  <figure class="film">
+    <div class="strip">
+      <img src="/img/film/f1.jpg" alt="Sadh, frame 1" width="480" height="720">
+      <img src="/img/film/f2.jpg" alt="Sadh, frame 2" width="474" height="720">
+      <img src="/img/film/f3.jpg" alt="Sadh, frame 3" width="576" height="720">
+      <img src="/img/film/f4.jpg" alt="Sadh, frame 4" width="720" height="720">
+    </div>
+  </figure>
+
+  <p>Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+
+  <p>Links:</p>
+  <ul class="links">
+    <li><a href="https://sadh.ink">sadh.ink</a> (poetry and prose)</li>
+    <li><a href="https://sadh.studio">sadh.studio</a> (photos etc.)</li>
+    <li><a href="https://nafsadh.art">nafsadh.art</a> (paintings etc.)</li>
+    <li><a href="https://sadh.app">sadh.app</a> (tools)</li>
+  </ul>
+
+  <p class="small">Elsewhere:
+    <a href="https://linkedin.com/in/nafsadh">LinkedIn</a> /
+    <a href="https://instagram.com/nafsadh">Instagram</a> /
+    <a href="https://github.com/nafSadh">GitHub</a> /
+    <a href="https://www.reddit.com/user/nafsadh">Reddit</a> /
+    <a href="https://www.quora.com/profile/nafSadh">Quora</a> /
+    <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...
+  </p>
+
+  <nav class="more">
+    <a href="/bio.html">[read more]</a>
+    <a href="/timeline.html">[timeline]</a>
+    <a href="/profile.html">[profile]</a>
+  </nav>
+
+  <footer>
+    <p class="small">nafSadh.com &middot; 2026</p>
+  </footer>
+</main>
+
+<img class="stones" src="/img/stones-watercolor.jpg" alt="" aria-hidden="true">
+</body>
+</html>
