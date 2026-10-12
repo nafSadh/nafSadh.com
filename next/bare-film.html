@@ -39,22 +39,10 @@
   }
   .film::before { top: 0.07rem; } .film::after { bottom: 0.07rem; }
   .film img {
-    flex: 0 0 auto; width: 9.55rem; height: 6.37rem; object-fit: cover; display: block;
+    flex: 0 0 auto; width: 12.9rem; height: 8.6rem; object-fit: cover; display: block;
     border: 2px solid #0f1d47; background: #0f1d47;
   }
   .film img.contain { object-fit: contain; }
-  .film .blank { flex: 0 0 auto; width: 9.55rem; height: 6.37rem; border: 2px solid #0f1d47; background: #22367a; }
-  /* the self-portrait, taped over the second frame */
-  .strip { position: relative; margin-bottom: 2.6rem; }
-  .strip .painting {
-    position: absolute; left: 9.4rem; top: -1.4rem; width: 7.4rem; transform: rotate(2.5deg);
-    box-shadow: 0 4px 10px rgba(27,47,107,.25); border: 1px solid #e8e6df;
-  }
-  .strip .painting::after {
-    content: ""; position: absolute; left: -1.1rem; top: 0.2rem; width: 3.4rem; height: 0.95rem;
-    background: rgba(240,228,180,.75); transform: rotate(-40deg); box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  }
-  .strip .painting img { display: block; width: 100%; }
   .film .tape {
     position: absolute; top: -0.5rem; right: 2.2rem; width: 4.5rem; height: 1.3rem;
     background: rgba(240,228,180,.7); transform: rotate(8deg); box-shadow: 0 1px 2px rgba(0,0,0,.15);
@@ -73,7 +61,7 @@
   .elsewhere { font-size: 0.82rem; }
   hr { border: 0; border-top: 1px solid #1b2f6b; margin: 1.5rem 0; }
   footer { font-size: 0.85rem; }
-  @media (max-width: 420px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .5rem; } .film img { width: 8.2rem; height: 5.47rem; } }
+  @media (max-width: 420px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .5rem; } .film img { width: 10rem; height: 6.67rem; } }
 </style>
 </head>
 <body>
@@ -83,11 +71,9 @@
 <div class="film" aria-label="pictures of Sadh">
   <span class="num">nafSadh 400 · 24A</span><span class="tape"></span>
   <img src="/img/film/f1.jpg" alt="Sadh, Aug 2026">
-  <span class="blank"></span>
   <img src="/img/film/f3.jpg" alt="Sadh, Dec 2025">
   <img class="contain" src="/img/film/f4.jpg" alt="Sadh, in watercolor">
 </div>
-<div class="painting"><img src="/img/film/f2.jpg" alt="self-portrait, colored pencil"></div>
 </div>
 
 <header>
