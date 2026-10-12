@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<meta name="description" content="Sadh MNM Khan (nafSadh). Software Engineer + aspiring artist, painter, photographer, poet, storyteller.">
+<link rel="icon" href="/img/nafsadh.png">
+<style>
+  html { background: #fff; }
+  /* letterhead: the mark printed faintly into the paper, behind the text */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: url(/img/nafsadh-logo.svg) no-repeat;
+    background-position: right max(1rem, calc(50% - 26rem)) top 4rem;
+    background-size: 30rem;
+    opacity: 0.055;
+  }
+  @media (max-width: 900px) { body::before { background-position: center top 3rem; background-size: 24rem; opacity: 0.045; } }
+  body {
+    margin: 0; padding: 3rem 1rem 4rem;
+    font-family: "Courier Prime", "American Typewriter", "Courier New", Courier, monospace;
+    font-size: 16px; line-height: 1.7; color: #1b2f6b;
+    max-width: 38rem; margin-left: auto; margin-right: auto;
+  }
+  a { color: #1b2f6b; }
+  a:hover { background: #1b2f6b; color: #fff; text-decoration: none; }
+  header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; }
+  header img { width: 96px; height: 96px; }
+  header .photo { border-radius: 50%; object-fit: cover; }
+  h1 { font-size: 1.6rem; font-weight: normal; margin: 0; line-height: 1.2; }
+  h1 small { display: block; font-size: 1rem; }
+  p { margin: 0 0 1.25rem; }
+  dl { margin: 0 0 1.25rem; display: grid; grid-template-columns: max-content 1fr; gap: 0 1.5rem; }
+  dt, dd { margin: 0; }
+  hr { border: 0; border-top: 1px solid #1b2f6b; margin: 1.5rem 0; }
+  footer { font-size: 0.85rem; }
+
+  /* a strip of 35mm film laid on the paper */
+  .film {
+    position: relative; margin: 0 -1rem 2rem; padding: 0.55rem 0;
+    display: flex; gap: 0.35rem; overflow: hidden;
+    background: #16181c;
+    transform: rotate(-1.4deg);
+    box-shadow: 0 6px 14px rgba(27,47,107,.18), 0 1px 2px rgba(0,0,0,.25);
+  }
+  .film::before, .film::after {
+    content: ""; position: absolute; left: 0; right: 0; height: 0.45rem;
+    background: repeating-linear-gradient(90deg, transparent 0 0.55rem, #fff 0.55rem 1.05rem, transparent 1.05rem 1.45rem);
+    opacity: .9;
+  }
+  .film::before { top: 0.05rem; } .film::after { bottom: 0.05rem; }
+  .film img {
+    flex: 1 0 auto; width: 11.2rem; height: 7.5rem; object-fit: cover; display: block;
+    filter: sepia(.28) contrast(1.05) saturate(.85); border: 2px solid #0a0b0d;
+  }
+  .film .tape {
+    position: absolute; top: -0.5rem; right: 2.2rem; width: 4.5rem; height: 1.3rem;
+    background: rgba(240,228,180,.75); transform: rotate(8deg); box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  }
+  .film .num { position: absolute; left: 0.3rem; top: 0.12rem; font-size: 0.5rem; color: #d8c58a; letter-spacing: .15em; }
+  @media (max-width: 420px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .5rem; } header { flex-wrap: wrap; } }
+</style>
+</head>
+<body>
+
+<div class="film" aria-label="photos of Sadh">
+  <span class="num">nafSadh 400 · 24A</span><span class="tape"></span>
+  <img src="/img/film/f2.jpg" alt="Sadh, Dec 2025">
+  <img src="/img/film/f1.jpg" alt="Sadh, Aug 2026">
+  <img src="/img/film/f4.jpg" alt="Sadh, Jul 2026">
+  <img src="/img/film/f3.jpg" alt="Sadh, Dec 2025">
+</div>
+
+<header>
+  <h1>Sadh MNM Khan <small>nafSadh</small></h1>
+</header>
+
+<p>Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+
+<p>Links:</p>
+<dl>
+  <dt><a href="https://sadh.ink">sadh.ink</a></dt>       <dd>poetry and prose</dd>
+  <dt><a href="https://sadh.studio">sadh.studio</a></dt> <dd>photos etc.</dd>
+  <dt><a href="https://nafsadh.art">nafsadh.art</a></dt> <dd>paintings etc.</dd>
+  <dt><a href="https://sadh.app">sadh.app</a></dt>       <dd>tools</dd>
+</dl>
+
+<p>Elsewhere:<br>
+  <a href="https://linkedin.com/in/nafsadh">LinkedIn</a> /
+  <a href="https://instagram.com/nafsadh">Instagram</a> /
+  <a href="https://github.com/nafSadh">GitHub</a> /
+  <a href="https://www.reddit.com/user/nafsadh">Reddit</a> /
+  <a href="https://www.quora.com/profile/nafSadh">Quora</a> /
+  <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...
+</p>
+
+<p>[<a href="/bio.html">read more</a>] [<a href="/timeline.html">timeline</a>] [<a href="/profile.html">profile</a>]</p>
+
+<hr>
+<footer>nafSadh.com &middot; 2026</footer>
+
+</body>
+</html>
