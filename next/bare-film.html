@@ -11,7 +11,7 @@
   /* a watercolor of mine, printed faintly into the paper; its pedestal stroke sits on the rule above the footer */
   .paper { position: relative; }
   .paper .wash {
-    position: absolute; right: -14rem; bottom: calc(5.2rem - 6.3rem); width: 24rem; z-index: -1; pointer-events: none;
+    position: absolute; right: -14rem; bottom: calc(3.2rem - 6.3rem); width: 24rem; z-index: -1; pointer-events: none;
     opacity: 0.32; mix-blend-mode: multiply;
   }
   @media (max-width: 900px) { .paper .wash { right: -6rem; width: 18rem; bottom: calc(3.1rem - 4.7rem); opacity: 0.22; } }
@@ -51,7 +51,8 @@
   header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.4rem; position: relative; }
   header img { width: 64px; height: 64px; }
   /* desktop: the mark sits in the left margin, outside the text column */
-  @media (min-width: 900px) { header img { position: absolute; left: -6.2rem; top: -0.4rem; width: 84px; height: 84px; } }
+  .paper .mark { display: none; position: absolute; left: -7.6rem; top: -0.4rem; width: 96px; height: 96px; }
+  @media (min-width: 900px) { header img { display: none; } .paper .mark { display: block; } }
   h1 { font-size: 1.6rem; font-weight: normal; margin: 0; line-height: 1.2; }
   h1 small { display: block; font-size: 1rem; }
   p { margin: 0 0 1.25rem; }
@@ -66,10 +67,12 @@
 <body>
 
 <div class="paper">
+<img class="mark" src="/img/nafsadh-logo.svg" alt="" aria-hidden="true">
 <div class="strip">
 <div class="film" aria-label="pictures of Sadh">
   <span class="num">nafSadh 400 · 24A</span><span class="tape"></span>
   <img src="/img/film/f1.jpg" alt="Sadh, Aug 2026">
+  <img src="/img/film/f2.jpg" alt="self-portrait, colored pencil">
   <img src="/img/film/f3.jpg" alt="Sadh, Dec 2025">
   <img src="/img/film/f4.jpg" alt="Sadh, in watercolor">
 </div>
