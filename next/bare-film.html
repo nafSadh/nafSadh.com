@@ -26,8 +26,8 @@
 
   /* a strip of 35mm film laid on the paper, in the ink */
   .film {
-    position: relative; margin: 0 -1rem 2.2rem; padding: 0.55rem 0;
-    display: flex; gap: 0.35rem; overflow: hidden;
+    position: relative; margin: 0 0 2.2rem -1rem; padding: 0.55rem 0.5rem;
+    display: flex; gap: 0.35rem; width: max-content; max-width: calc(100% + 2rem); overflow: hidden;
     background: #1b2f6b;
     transform: rotate(-1.4deg);
     box-shadow: 0 6px 14px rgba(27,47,107,.22), 0 1px 2px rgba(0,0,0,.2);
@@ -39,12 +39,11 @@
   }
   .film::before { top: 0.07rem; } .film::after { bottom: 0.07rem; }
   .film img {
-    flex: 0 0 auto; width: 12.9rem; height: 8.6rem; object-fit: cover; display: block;
+    flex: 0 0 auto; width: 8.4rem; height: 12.6rem; object-fit: cover; display: block;
     border: 2px solid #0f1d47; background: #0f1d47;
   }
-  .film img.contain { object-fit: contain; }
   .film .tape {
-    position: absolute; top: -0.5rem; right: 2.2rem; width: 4.5rem; height: 1.3rem;
+    position: absolute; top: -0.5rem; right: 1.2rem; width: 4.5rem; height: 1.3rem;
     background: rgba(240,228,180,.7); transform: rotate(8deg); box-shadow: 0 1px 2px rgba(0,0,0,.15);
   }
   .film .num { position: absolute; left: 0.3rem; top: 0.1rem; font-size: 0.5rem; color: #c9d3f2; letter-spacing: .15em; }
@@ -61,7 +60,7 @@
   .elsewhere { font-size: 0.82rem; }
   hr { border: 0; border-top: 1px solid #1b2f6b; margin: 1.5rem 0; }
   footer { font-size: 0.85rem; }
-  @media (max-width: 420px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .5rem; } .film img { width: 10rem; height: 6.67rem; } }
+  @media (max-width: 420px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .5rem; } .film img { width: 6.4rem; height: 9.6rem; } }
 </style>
 </head>
 <body>
@@ -72,7 +71,7 @@
   <span class="num">nafSadh 400 · 24A</span><span class="tape"></span>
   <img src="/img/film/f1.jpg" alt="Sadh, Aug 2026">
   <img src="/img/film/f3.jpg" alt="Sadh, Dec 2025">
-  <img class="contain" src="/img/film/f4.jpg" alt="Sadh, in watercolor">
+  <img src="/img/film/f4.jpg" alt="Sadh, in watercolor">
 </div>
 </div>
 
