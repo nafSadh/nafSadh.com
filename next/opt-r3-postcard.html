@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<style>
+  html, body { background: #efefed; }
+  body {
+    margin: 0;
+    color: #1b2f6b;
+    font-family: "Courier Prime", "American Typewriter", "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .mail {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 44px 16px 56px;
+  }
+
+  /* ---------- the card ---------- */
+  .card {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(27,47,107,.10), 0 10px 28px rgba(27,47,107,.08);
+    box-sizing: border-box;
+  }
+  .card + .card { margin-top: 36px; }
+
+  /* ---------- front: a strip of 35mm negatives taped on ---------- */
+  .front {
+    aspect-ratio: 6 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .strip {
+    position: relative;
+    display: flex;
+    transform: rotate(-1.4deg);
+  }
+  .seg {
+    position: relative;
+    display: flex;
+    gap: 18px;
+    background: #1b2f6b;
+    padding: 26px 0 26px 18px;
+  }
+  .seg:last-child { padding-right: 18px; }
+  .seg + .seg { margin-left: -1px; padding-left: 19px; }
+  .seg::before, .seg::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    height: 9px;
+    background: repeating-linear-gradient(90deg,
+      transparent 0 4.5px, #fff 4.5px 11.5px, transparent 11.5px 16px);
+  }
+  .seg::before { top: 8px; }
+  .seg::after { bottom: 8px; }
+  .frame {
+    width: 150px;
+    height: 225px;
+    display: block;
+    object-fit: cover;
+    background: #fff;
+  }
+  .tape {
+    position: absolute;
+    width: 78px;
+    height: 24px;
+    background: rgba(234,226,198,.78);
+    box-shadow: 0 0 0 .5px rgba(27,47,107,.06);
+    z-index: 2;
+  }
+  .tape.a { left: -26px; top: -6px; transform: rotate(-42deg); }
+  .tape.b { right: -26px; bottom: -6px; transform: rotate(-42deg); }
+
+  /* ---------- back: the note ---------- */
+  .back {
+    aspect-ratio: 6 / 4;
+    padding: 28px 30px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    column-gap: 60px;
+  }
+  .divider {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    bottom: 64px;
+    width: 1px;
+    background: rgba(27,47,107,.55);
+  }
+
+  .message { padding-top: 34px; }
+  .message .name {
+    font-weight: normal;
+    font-size: 17px;
+    margin: 0 0 14px;
+  }
+  .message .tagline { margin: 0 0 42px; }
+  .message .more { margin: 0; white-space: nowrap; }
+  .message .more a { margin-right: 10px; }
+
+  .stamp {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 96px;
+    height: 112px;
+    box-sizing: border-box;
+    padding: 8px;
+    transform: rotate(1.6deg);
+    background:
+      radial-gradient(circle, #1b2f6b 0 1.5px, transparent 2.1px) 0 0 / 8px 8px;
+  }
+  .stamp .in {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #1b2f6b;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+  }
+  .stamp img { width: 100%; height: 100%; display: block; }
+
+  .postmark {
+    position: absolute;
+    top: 42px;
+    right: 12px;
+    width: 226px;
+    height: 108px;
+    opacity: .82;
+    pointer-events: none;
+  }
+  .postmark text {
+    font-family: inherit;
+    fill: #1b2f6b;
+  }
+
+  .address {
+    align-self: end;
+    padding-bottom: 20px;
+  }
+  .address .label { margin: 0 0 4px; font-size: 12px; }
+  .address .line {
+    display: block;
+    border-bottom: 1px solid rgba(27,47,107,.5);
+    padding: 10px 0 1px;
+    line-height: 1.4;
+  }
+
+  .edge {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 11px;
+    letter-spacing: .02em;
+    line-height: 1.5;
+  }
+  .edge a:hover { text-decoration: underline; }
+
+  /* ---------- small screens: stack front over back, address under message ---------- */
+  @media (max-width: 700px) {
+    body { font-size: 13px; }
+    .mail { padding: 20px 16px 36px; }
+    .card + .card { margin-top: 22px; }
+    .front { aspect-ratio: auto; padding: 22px 0; }
+    .strip { flex-direction: column; gap: 14px; transform: rotate(-1deg); }
+    .seg { padding: 24px 16px; gap: 16px; }
+    .seg:last-child { padding-right: 16px; }
+    .frame { width: 134px; height: 201px; }
+    .tape { width: 66px; height: 20px; }
+    .tape.a { left: -16px; top: -4px; }
+    .tape.b { right: -16px; bottom: -4px; }
+
+    .back {
+      aspect-ratio: auto;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      padding: 22px 20px 18px;
+      row-gap: 0;
+    }
+    .divider { display: none; }
+    .message { padding-top: 140px; }
+    .message .name { font-size: 15px; }
+    .message .tagline { margin-bottom: 28px; }
+    .message .more { white-space: normal; }
+    .stamp {
+      top: 18px; right: 18px; width: 84px; height: 104px; padding: 8px;
+      background-size: 8.4px 8px;
+    }
+    .postmark { top: 34px; right: 6px; width: 206px; height: 98px; }
+    .address {
+      margin-top: 30px;
+      padding-top: 18px;
+      padding-bottom: 26px;
+      border-top: 1px solid rgba(27,47,107,.55);
+    }
+    .edge { flex-direction: column; gap: 4px; }
+  }
+  /* links: no underline at rest; a thin ink underline appears on hover */
+  a { text-decoration: none; }
+  a:hover { background: transparent; color: #1b2f6b; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+</style>
+</head>
+<body>
+<main class="mail">
+
+  <!-- front -->
+  <section class="card front" aria-label="front of the postcard">
+    <div class="strip">
+      <span class="tape a"></span>
+      <div class="seg">
+        <img class="frame" src="/img/film/f1.jpg" alt="Sadh, portrait">
+        <img class="frame" src="/img/film/f2.jpg" alt="Sadh, drawing">
+      </div>
+      <div class="seg">
+        <img class="frame" src="/img/film/f3.jpg" alt="Sadh, smiling">
+        <img class="frame" src="/img/film/f4.jpg" alt="Sadh, painted">
+      </div>
+      <span class="tape b"></span>
+    </div>
+  </section>
+
+  <!-- back -->
+  <section class="card back" aria-label="back of the postcard">
+    <div class="divider"></div>
+
+    <div class="stamp">
+      <div class="in"><img src="/img/nafsadh-logo.svg" alt="nafSadh"></div>
+    </div>
+
+    <svg class="postmark" viewBox="0 0 226 108" aria-hidden="true">
+      <defs>
+        <path id="arc" d="M 16.5 56 A 37.5 37.5 0 0 1 91.5 56"/>
+      </defs>
+      <circle cx="54" cy="56" r="47" fill="none" stroke="#1b2f6b" stroke-width="1.6"/>
+      <circle cx="54" cy="56" r="32" fill="none" stroke="#1b2f6b" stroke-width="1" stroke-dasharray="3 2.5"/>
+      <text font-size="10" letter-spacing=".6" text-anchor="middle">
+        <textPath href="#arc" startOffset="50%">nafSadh.com</textPath>
+      </text>
+      <text x="54" y="60" font-size="12" text-anchor="middle" font-weight="bold">2026</text>
+      <text x="15" y="59" font-size="11" text-anchor="middle">&#183;</text>
+      <text x="93" y="59" font-size="11" text-anchor="middle">&#183;</text>
+      <g fill="none" stroke="#1b2f6b" stroke-width="1.5" stroke-linecap="round">
+        <path d="M 100 40 q 12 -6 24 0 t 24 0 t 24 0 t 24 0 t 24 0"/>
+        <path d="M 102 51 q 12 -6 24 0 t 24 0 t 24 0 t 24 0 t 24 0"/>
+        <path d="M 102 62 q 12 -6 24 0 t 24 0 t 24 0 t 24 0 t 24 0"/>
+        <path d="M 100 73 q 12 -6 24 0 t 24 0 t 24 0 t 24 0 t 24 0"/>
+      </g>
+    </svg>
+
+    <div class="message">
+      <p class="name">Sadh MNM Khan / nafSadh</p>
+      <p class="tagline">Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+      <p class="more"><a href="/bio.html">[read more]</a> <a href="/timeline.html">[timeline]</a> <a href="/profile.html">[profile]</a></p>
+    </div>
+
+    <div class="address">
+      <p class="label">Links:</p>
+      <a class="line" href="https://sadh.ink">sadh.ink (poetry and prose)</a>
+      <a class="line" href="https://sadh.studio">sadh.studio (photos etc.)</a>
+      <a class="line" href="https://nafsadh.art">nafsadh.art (paintings etc.)</a>
+      <a class="line" href="https://sadh.app">sadh.app (tools)</a>
+    </div>
+
+    <div class="edge">
+      <span>Elsewhere:
+        <a href="https://linkedin.com/in/nafsadh">LinkedIn</a> /
+        <a href="https://instagram.com/nafsadh">Instagram</a> /
+        <a href="https://github.com/nafSadh">GitHub</a> /
+        <a href="https://www.reddit.com/user/nafsadh">Reddit</a> /
+        <a href="https://www.quora.com/profile/nafSadh">Quora</a> /
+        <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...
+      </span>
+      <span>nafSadh.com &#183; 2026</span>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

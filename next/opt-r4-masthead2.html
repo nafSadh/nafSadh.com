@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #111;
+    --blue: #1b2f6b;
+    --paper: #fff;
+    --rule: #111;
+    --serif: "Bodoni Moda", "Bodoni 72", "Didot", "Playfair Display", Georgia, serif;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --gutter: 48px;
+    --label: 500 10.5px/1 var(--sans);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); }
+  body { font-family: var(--serif); font-size: 17px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 0.14em; text-decoration-thickness: 1px; }
+  img { display: block; }
+  .page { max-width: 1280px; margin: 0 auto; padding: 14px var(--gutter) 14px; }
+
+  .folio { display: flex; align-items: center; justify-content: space-between; height: 34px;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    font: var(--label); letter-spacing: 0.2em; text-transform: uppercase; }
+  .folio > * { flex: 1; }
+  .folio > :last-child { text-align: right; }
+  .folio .mark { text-align: center; }
+  .folio .mark img { height: 26px; width: auto; display: inline-block; vertical-align: middle; }
+
+  .masthead { margin: 0; padding: 0.02em 0 0.12em; text-align: center; white-space: nowrap;
+    font: italic 500 var(--display)/0.82 var(--serif); font-variation-settings: "opsz" 96; letter-spacing: -0.045em;
+    --display: clamp(3.5rem, 27vw - 26px, 19.4rem); }
+  .masthead a { color: var(--ink); }
+  .masthead a:hover { text-decoration: none; color: var(--blue); }
+
+  .dateline { display: flex; align-items: baseline; justify-content: space-between; padding: 7px 0 6px;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .dateline .name { font: 500 19px/1 var(--serif); font-variant-caps: all-small-caps; letter-spacing: 0.22em; }
+  .dateline .site { font: var(--label); letter-spacing: 0.2em; text-transform: uppercase; }
+
+  .hero { display: grid; grid-template-columns: 3fr 9fr; min-height: 380px; border-bottom: 1px solid var(--rule); }
+  .hero > * { min-width: 0; }
+  .lead { margin: 0; position: relative; overflow: hidden; }
+  .lead img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+  figcaption { position: absolute; left: 0; bottom: 0; padding: 6px 10px; background: var(--paper);
+    font: 500 10px/1 var(--sans); letter-spacing: 0.22em; }
+
+  .copy { display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+    padding: 18px 0 18px 36px; border-left: 1px solid var(--rule); }
+  .deck { margin: 0; font: italic 400 clamp(1.5rem, 2.5vw, 2.05rem)/1.18 var(--serif); font-variation-settings: "opsz" 36;
+    letter-spacing: -0.01em; text-wrap: balance; }
+  .deck strong { font-style: normal; font-weight: 500; }
+  .deck .plus { font-variation-settings: "opsz" 6; font-weight: 400; }
+
+  .toc { list-style: none; margin: 0; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .toc li + li { margin-top: 8px; }
+  .toc a { display: flex; align-items: baseline; gap: 10px; color: var(--ink); font-size: 18px; line-height: 1.2; }
+  .toc a:hover { text-decoration: none; }
+  .toc a:hover .n { text-decoration: underline; text-underline-offset: 0.14em; }
+  .toc .leader { flex: 1; border-bottom: 1px dotted var(--ink); transform: translateY(-1px); min-width: 24px; }
+  .toc .n { color: var(--blue); font-weight: 500; letter-spacing: 0.01em; }
+
+  .inside { display: flex; flex-wrap: wrap; align-items: stretch; justify-content: space-between; gap: 20px 32px; }
+  .thumbs { display: flex; gap: 1px; height: 102px; background: var(--rule); border: 1px solid var(--rule); flex: none; }
+  .thumbs figure { margin: 0; position: relative; height: 100%; background: var(--paper); }
+  .thumbs img { height: 100%; width: auto; }
+  .thumbs figcaption { padding: 4px 7px; font-size: 9px; }
+  .aside { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; flex: 1 1 280px; min-width: 0; }
+  .elsewhere { margin: 0; font: 500 16px/1.7 var(--serif); font-variant-caps: all-small-caps; letter-spacing: 0.1em; }
+  .elsewhere span { color: var(--ink); opacity: 0.45; }
+  .refs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .refs a { font: var(--label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink);
+    border: 1px solid var(--rule); padding: 8px 12px 7px; }
+  .refs a:hover { text-decoration: none; background: var(--ink); color: var(--paper); }
+
+  .foot { text-align: center; padding-top: 8px; font: var(--label); letter-spacing: 0.2em; text-transform: uppercase; }
+  .foot a { color: var(--ink); }
+
+  @media (max-width: 760px) {
+    :root { --gutter: 16px; }
+    .page { padding-top: 12px; }
+    .folio { height: 34px; font-size: 9.5px; letter-spacing: 0.16em; }
+    .folio .mark img { height: 24px; }
+    .masthead { --display: calc(29.3vw - 10px); padding-bottom: 0.26em; }
+    .dateline .name { font-size: 17px; }
+    .dateline .site { font-size: 9.5px; }
+    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .lead { aspect-ratio: 4 / 5; max-height: 60vh; width: 100%; }
+    .lead img { object-position: 50% 30%; }
+    .copy { padding: 22px 0 24px; border-left: 0; gap: 22px; }
+    .deck { font-size: 1.6rem; }
+    .inside { flex-direction: column; align-items: stretch; gap: 22px; }
+    .thumbs { height: auto; width: 100%; }
+    .thumbs figure { height: auto; min-width: 0; }
+    .thumbs img { width: 100%; height: auto; }
+    .thumbs .f2 { flex: 540 1 0; } .thumbs .f3 { flex: 576 1 0; } .thumbs .f4 { flex: 720 1 0; }
+    .aside { flex: none; gap: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="folio">
+    <span>Earth, Sol</span>
+    <span class="mark"><img src="/img/nafsadh-logo.svg" alt=""></span>
+    <span>2026</span>
+  </div>
+
+  <h1 class="masthead"><a href="/">nafSadh</a></h1>
+
+  <div class="dateline">
+    <span class="name">Sadh MNM Khan</span>
+    <span class="site">nafSadh.com</span>
+  </div>
+
+  <section class="hero">
+    <figure class="lead"><img src="/img/film/f1.jpg" alt="" width="480" height="720"><figcaption>01</figcaption></figure>
+
+    <div class="copy">
+      <p class="deck"><strong>Software Engineer <span class="plus">+</span></strong> aspiring artist, painter, photographer, poet, storyteller</p>
+
+      <ul class="toc">
+        <li><a href="https://sadh.ink"><span>poetry and prose</span><span class="leader"></span><span class="n">sadh.ink</span></a></li>
+        <li><a href="https://sadh.studio"><span>photos etc.</span><span class="leader"></span><span class="n">sadh.studio</span></a></li>
+        <li><a href="https://nafsadh.art"><span>paintings etc.</span><span class="leader"></span><span class="n">nafsadh.art</span></a></li>
+        <li><a href="https://sadh.app"><span>tools</span><span class="leader"></span><span class="n">sadh.app</span></a></li>
+      </ul>
+
+      <div class="inside">
+        <div class="thumbs">
+          <figure class="f2"><img src="/img/film/f2.jpg" alt="" width="540" height="720"><figcaption>02</figcaption></figure>
+          <figure class="f3"><img src="/img/film/f3.jpg" alt="" width="576" height="720"><figcaption>03</figcaption></figure>
+          <figure class="f4"><img src="/img/film/f4.jpg" alt="" width="720" height="720"><figcaption>04</figcaption></figure>
+        </div>
+        <div class="aside">
+          <p class="elsewhere">
+            <a href="https://www.linkedin.com/in/nafsadh">LinkedIn</a> <span>/</span> <a href="https://www.instagram.com/nafsadh">Instagram</a> <span>/</span> <a href="https://github.com/nafSadh">GitHub</a> <span>/</span> <a href="https://www.reddit.com/user/nafsadh">Reddit</a> <span>/</span> <a href="https://www.quora.com/profile/nafSadh">Quora</a> <span>/</span> <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> <span>...</span>
+          </p>
+          <nav class="refs">
+            <a href="/bio.html">read more</a>
+            <a href="/timeline.html">timeline</a>
+            <a href="/profile.html">profile</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot"><a href="/">nafSadh.com</a>&nbsp;·&nbsp;2026</div>
+
+</div>
+</body>
+</html>

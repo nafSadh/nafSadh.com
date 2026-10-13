@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="tl" x1="0.7" y1="0.05" x2="0.05" y2="0.85">
+      <stop offset="0%"   stop-color="#f6f6f8"/>
+      <stop offset="55%"  stop-color="#dcdce2"/>
+      <stop offset="100%" stop-color="#bcbcc5"/>
+    </linearGradient>
+    <linearGradient id="tr" x1="0.3" y1="0.05" x2="0.95" y2="0.85">
+      <stop offset="0%"   stop-color="#cfcfd6"/>
+      <stop offset="55%"  stop-color="#a9a9b2"/>
+      <stop offset="100%" stop-color="#8a8a93"/>
+    </linearGradient>
+    <linearGradient id="bl" x1="0.7" y1="0.95" x2="0.05" y2="0.15">
+      <stop offset="0%"   stop-color="#e3e3e8"/>
+      <stop offset="55%"  stop-color="#c3c3cb"/>
+      <stop offset="100%" stop-color="#a3a3ad"/>
+    </linearGradient>
+    <linearGradient id="br" x1="0.3" y1="0.95" x2="0.95" y2="0.15">
+      <stop offset="0%"   stop-color="#b6b6be"/>
+      <stop offset="55%"  stop-color="#969ea0"/>
+      <stop offset="100%" stop-color="#7a7a83"/>
+    </linearGradient>
+  </defs>
+
+  <g stroke="#5e5e69" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.35">
+    <path d="M 24 1.5 L 1.5 23.5 L 24 23.5 Z" fill="url(#tl)"/>
+    <path d="M 24 1.5 L 46.5 24 L 24 23.5 Z" fill="url(#tr)"/>
+    <path d="M 1.5 23.5 L 24 46 L 24 23.5 Z" fill="url(#bl)"/>
+    <path d="M 46.5 24 L 24 46 L 24 23.5 Z" fill="url(#br)"/>
+  </g>
+  <line x1="24" y1="1.5" x2="24" y2="46" stroke="#4a4a55" stroke-width="0.45" stroke-linecap="round"/>
+</svg>

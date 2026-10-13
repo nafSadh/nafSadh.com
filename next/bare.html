@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<meta name="description" content="Sadh MNM Khan (nafSadh). Software Engineer + aspiring artist, painter, photographer, poet, storyteller.">
+<link rel="icon" href="/img/nafsadh.png">
+<style>
+  html { background: #fff; }
+  /* letterhead: the mark printed faintly into the paper, behind the text */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: url(/img/nafsadh-logo.svg) no-repeat;
+    background-position: right max(1rem, calc(50% - 26rem)) top 4rem;
+    background-size: 30rem;
+    opacity: 0.055;
+  }
+  @media (max-width: 900px) { body::before { background-position: center top 3rem; background-size: 24rem; opacity: 0.045; } }
+  body {
+    margin: 0; padding: 3rem 1rem 4rem;
+    font-family: "Courier Prime", "American Typewriter", "Courier New", Courier, monospace;
+    font-size: 16px; line-height: 1.7; color: #1b2f6b;
+    max-width: 38rem; margin-left: auto; margin-right: auto;
+  }
+  a { color: #1b2f6b; }
+  a:hover { background: #1b2f6b; color: #fff; text-decoration: none; }
+  header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; }
+  header img { width: 96px; height: 96px; }
+  header .photo { border-radius: 50%; object-fit: cover; }
+  h1 { font-size: 1.6rem; font-weight: normal; margin: 0; line-height: 1.2; }
+  h1 small { display: block; font-size: 1rem; }
+  p { margin: 0 0 1.25rem; }
+  dl { margin: 0 0 1.25rem; display: grid; grid-template-columns: max-content 1fr; gap: 0 1.5rem; }
+  dt, dd { margin: 0; }
+  hr { border: 0; border-top: 1px solid #1b2f6b; margin: 1.5rem 0; }
+  footer { font-size: 0.85rem; }
+  .elsewhere { font-size: 0.82rem; }
+  @media (max-width: 420px) { dl { grid-template-columns: 1fr; } dd { margin-bottom: .5rem; } header { flex-wrap: wrap; } }
+  /* links: no underline at rest; a thin ink underline appears on hover */
+  a { text-decoration: none; }
+  a:hover { background: transparent; color: #1b2f6b; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+</style>
+</head>
+<body>
+
+<header>
+  <img class="photo" src="/img/photo.jpg" alt="Sadh">
+  <h1>Sadh MNM Khan <small>nafSadh</small></h1>
+</header>
+
+<p>Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+
+<p>Links:</p>
+<dl>
+  <dt><a href="https://sadh.ink">sadh.ink</a></dt>       <dd>poetry and prose</dd>
+  <dt><a href="https://sadh.studio">sadh.studio</a></dt> <dd>photos etc.</dd>
+  <dt><a href="https://nafsadh.art">nafsadh.art</a></dt> <dd>paintings etc.</dd>
+  <dt><a href="https://sadh.app">sadh.app</a></dt>       <dd>tools</dd>
+</dl>
+
+<p class="elsewhere">Elsewhere:<br>
+  <a href="https://linkedin.com/in/nafsadh">LinkedIn</a> /
+  <a href="https://instagram.com/nafsadh">Instagram</a> /
+  <a href="https://github.com/nafSadh">GitHub</a> /
+  <a href="https://www.reddit.com/user/nafsadh">Reddit</a> /
+  <a href="https://www.quora.com/profile/nafSadh">Quora</a> /
+  <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...
+</p>
+
+<p>[<a href="/bio.html">read more</a>] [<a href="/timeline.html">timeline</a>] [<a href="/profile.html">profile</a>]</p>
+
+<hr>
+<footer>nafSadh.com &middot; 2026</footer>
+
+</body>
+</html>

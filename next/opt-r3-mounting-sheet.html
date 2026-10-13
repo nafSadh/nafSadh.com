@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<style>
+  :root{
+    --ink:#1b2f6b;
+    --paper:#ffffff;
+    --tape:rgba(237,228,198,.84);
+  }
+  html,body{margin:0;background:var(--paper);color:var(--ink)}
+  body{
+    font-family:"Courier Prime","American Typewriter","Courier New",Courier,monospace;
+    font-size:15px;line-height:1.55;
+    padding:44px 24px 64px;
+  }
+  a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{text-decoration-style:dotted}
+  p{margin:0}
+
+  .sheet{max-width:1000px;margin:0 auto}
+
+  /* the prints, held down with paper straps */
+  .mounts{
+    display:flex;flex-wrap:wrap;align-items:flex-start;
+    justify-content:space-between;gap:40px 32px;padding:12px 0 0 10px;
+  }
+  .mount{position:relative;flex:0 0 auto;margin:0}
+  .mount img{
+    display:block;height:270px;width:auto;
+    box-shadow:0 1px 2px rgba(27,47,107,.18),0 0 0 1px rgba(27,47,107,.07);
+  }
+  .mount:nth-child(1){transform:rotate(-.7deg)}
+  .mount:nth-child(2){transform:rotate(.5deg);margin-top:12px}
+  .mount:nth-child(3){transform:rotate(-.35deg);margin-top:4px}
+  .mount:nth-child(4){transform:rotate(.6deg);margin-top:16px}
+
+  .tape{
+    position:absolute;left:50%;width:56px;height:17px;margin-left:-28px;
+    background:var(--tape);
+    box-shadow:0 0 0 .5px rgba(27,47,107,.06);
+  }
+  .tape.t{top:-9px}
+  .tape.b{bottom:-9px}
+  .mount:nth-child(1) .tape.t{transform:rotate(-3deg)}
+  .mount:nth-child(1) .tape.b{transform:rotate(2deg);left:62%}
+  .mount:nth-child(2) .tape.t{transform:rotate(2.5deg);left:44%}
+  .mount:nth-child(2) .tape.b{transform:rotate(-1.5deg)}
+  .mount:nth-child(3) .tape.t{transform:rotate(-2deg);left:56%}
+  .mount:nth-child(3) .tape.b{transform:rotate(3deg);left:40%}
+  .mount:nth-child(4) .tape.t{transform:rotate(1.5deg);left:38%}
+  .mount:nth-child(4) .tape.b{transform:rotate(-2.5deg);left:60%}
+
+  /* the typed label, bottom right of the sheet; the accession stamp, bottom left */
+  .foot{
+    margin-top:96px;
+    display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;
+    gap:36px 40px;
+  }
+  .label{
+    border:1px solid var(--ink);
+    padding:20px 24px 22px;
+    max-width:560px;
+  }
+  .label .name{
+    font-size:17px;
+    padding-bottom:10px;margin-bottom:12px;
+    border-bottom:1px solid var(--ink);
+  }
+  .label .what{margin-bottom:16px}
+  .hang{padding-left:7ch;text-indent:-7ch}
+  .hang.wide{padding-left:11ch;text-indent:-11ch;margin-top:12px}
+  .more{margin-top:18px}
+  .more a{margin-right:1ch;text-decoration:none}
+  .more a:hover{text-decoration:underline}
+
+  .stamp{
+    display:inline-flex;align-items:center;gap:14px;
+    margin:0 0 -6px 26px;
+    padding:9px 16px 9px 12px;
+    border:2px solid var(--ink);border-radius:5px;
+    outline:1px solid var(--ink);outline-offset:3px;
+    transform:rotate(-6deg);
+    opacity:.84;
+    white-space:nowrap;
+    letter-spacing:.06em;
+    font-size:13px;line-height:1;
+  }
+  .stamp img{display:block;width:56px;height:56px}
+
+  @media (max-width:640px){
+    body{font-size:14px;padding:28px 16px 48px}
+    .mounts{gap:30px 18px;padding:10px 0 0 4px;justify-content:flex-start}
+    .mount img{height:168px}
+    .mount:nth-child(2){margin-top:8px}
+    .mount:nth-child(3){margin-top:2px}
+    .mount:nth-child(4){margin-top:10px}
+    .tape{width:44px;height:14px;margin-left:-22px}
+    .tape.t{top:-7px}
+    .tape.b{bottom:-7px}
+    .foot{margin-top:72px;gap:30px}
+    .label{max-width:none;width:100%;padding:16px 16px 18px}
+    .label .name{font-size:16px}
+    .hang.wide{padding-left:7ch;text-indent:-7ch}
+    .stamp{order:2;margin:4px 0 0 10px;transform:rotate(-4deg);font-size:12px;padding:8px 12px 8px 10px;gap:10px}
+    .stamp img{width:40px;height:40px}
+  }
+  /* links: no underline at rest; a thin ink underline appears on hover */
+  a { text-decoration: none; }
+  a:hover { background: transparent; color: #1b2f6b; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <section class="mounts" aria-label="pictures">
+    <figure class="mount">
+      <span class="tape t"></span>
+      <img src="/img/film/f1.jpg" alt="Sadh, photograph" width="480" height="720">
+      <span class="tape b"></span>
+    </figure>
+    <figure class="mount">
+      <span class="tape t"></span>
+      <img src="/img/film/f2.jpg" alt="Sadh, coloured pencil self-portrait" width="474" height="720">
+      <span class="tape b"></span>
+    </figure>
+    <figure class="mount">
+      <span class="tape t"></span>
+      <img src="/img/film/f3.jpg" alt="Sadh, photograph" width="576" height="720">
+      <span class="tape b"></span>
+    </figure>
+    <figure class="mount">
+      <span class="tape t"></span>
+      <img src="/img/film/f4.jpg" alt="Sadh, watercolour portrait" width="720" height="720">
+      <span class="tape b"></span>
+    </figure>
+  </section>
+
+  <section class="foot">
+    <div class="stamp" aria-label="nafSadh.com 2026">
+      <img src="/img/nafsadh-logo.svg" alt="">
+      <span>nafSadh.com &middot; 2026</span>
+    </div>
+
+    <div class="label">
+      <p class="name">Sadh MNM Khan / nafSadh</p>
+      <p class="what">Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+
+      <p class="hang">Links: <a href="https://sadh.ink">sadh.ink</a> (poetry and prose),<br>
+        <a href="https://sadh.studio">sadh.studio</a> (photos etc.),<br>
+        <a href="https://nafsadh.art">nafsadh.art</a> (paintings etc.),<br>
+        <a href="https://sadh.app">sadh.app</a> (tools)</p>
+
+      <p class="hang wide">Elsewhere: <a href="https://linkedin.com/in/nafsadh">LinkedIn</a> / <a href="https://instagram.com/nafsadh">Instagram</a> / <a href="https://github.com/nafSadh">GitHub</a> / <a href="https://www.reddit.com/user/nafsadh">Reddit</a> / <a href="https://www.quora.com/profile/nafSadh">Quora</a> / <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...</p>
+
+      <p class="more"><a href="/bio.html">[read more]</a> <a href="/timeline.html">[timeline]</a> <a href="/profile.html">[profile]</a></p>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

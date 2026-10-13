@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<meta name="description" content="Sadh MNM Khan (nafSadh). Software Engineer + aspiring artist, painter, photographer, poet, storyteller.">
+<link rel="icon" href="/img/nafsadh.png">
+<style>
+  :root { --ink:#1b2f6b; --ink-2:#4a5a8f; --ink-3:#9aa6c9; --paper:#fff; --tape:rgba(239,226,176,.8); }
+  html { background: var(--paper); }
+  body { margin:0; color:var(--ink);
+    font-family:"Courier Prime","American Typewriter","Courier New",Courier,monospace;
+    font-size:16px; line-height:1.7; }
+  a { color:var(--ink); }
+  a:hover { background:var(--ink); color:#fff; text-decoration:none; }
+  a:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  h1 { font-size:1.6rem; font-weight:normal; margin:0; line-height:1.2; }
+  h1 small { display:block; font-size:1rem; }
+  p { margin:0 0 1.25rem; }
+  dl { margin:0 0 1.25rem; display:grid; grid-template-columns:max-content 1fr; gap:0 1.5rem; }
+  dt, dd { margin:0; }
+  .elsewhere { font-size:.82rem; }
+  hr { border:0; border-top:1px solid var(--ink); margin:1.5rem 0; }
+  footer { font-size:.85rem; }
+  /* film strip: fixed height, each frame keeps its own ratio */
+  .film { position:relative; display:flex; gap:.35rem; width:max-content; max-width:100%; padding:.55rem .5rem;
+    background:var(--ink); overflow:hidden; box-shadow:0 6px 14px rgba(27,47,107,.22),0 1px 2px rgba(0,0,0,.2); }
+  .film::before, .film::after { content:""; position:absolute; left:0; right:0; height:.42rem; opacity:.92;
+    background:repeating-linear-gradient(90deg,transparent 0 .55rem,#fff .55rem 1.05rem,transparent 1.05rem 1.45rem); }
+  .film::before { top:.07rem; } .film::after { bottom:.07rem; }
+  .film img { display:block; height:11rem; width:auto; border:2px solid #0f1d47; }
+  .film .tape { position:absolute; top:-.5rem; right:1.2rem; width:4.5rem; height:1.3rem; background:var(--tape);
+    transform:rotate(8deg); box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  @media (max-width:560px) { .film img { height:7.2rem; } .film { gap:.25rem; } }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+
+  /* ---- A: letterhead, vertical strip ---- */
+
+  .sheet { position:relative; max-width:52rem; margin:0 auto; padding:2.5rem 1rem 4rem; display:grid; grid-template-columns:1fr 8.6rem; gap:2.5rem; }
+  .head { grid-column:1 / -1; display:flex; align-items:flex-end; gap:1.1rem; border-bottom:1px solid var(--ink); padding-bottom:1rem; margin-bottom:.5rem; }
+  .head .logo { width:58px; height:58px; }
+  .head .right { margin-left:auto; text-align:right; font-size:.82rem; color:var(--ink-2); line-height:1.5; }
+  .film.vert { flex-direction:column; width:8.6rem; padding:.5rem .55rem; transform:rotate(1.2deg); }
+  .film.vert::before, .film.vert::after { top:0; bottom:0; left:.07rem; right:auto; width:.42rem; height:auto;
+    background:repeating-linear-gradient(180deg,transparent 0 .55rem,#fff .55rem 1.05rem,transparent 1.05rem 1.45rem); }
+  .film.vert::after { left:auto; right:.07rem; }
+  .film.vert img { height:auto; width:100%; }
+  .film.vert .tape { top:1.2rem; right:-1.4rem; width:3.4rem; transform:rotate(80deg); }
+  .wash { position:absolute; right:-6rem; bottom:-2.4rem; width:20rem; z-index:-1; opacity:.3; mix-blend-mode:multiply; pointer-events:none; }
+  @media (max-width:720px) { .sheet { grid-template-columns:1fr; } .film.vert { flex-direction:row; width:max-content; transform:none; }
+    .film.vert img { height:7.2rem; width:auto; } .film.vert::before,.film.vert::after { left:0; right:0; top:.07rem; bottom:auto; width:auto; height:.42rem;
+    background:repeating-linear-gradient(90deg,transparent 0 .55rem,#fff .55rem 1.05rem,transparent 1.05rem 1.45rem); } .film.vert::after { top:auto; bottom:.07rem; } }
+
+  /* links: no underline at rest; a thin ink underline appears on hover */
+  a { text-decoration: none; }
+  a:hover { background: transparent; color: #1b2f6b; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="head"><img class="logo" src="/img/nafsadh-logo.svg" alt=""><h1>Sadh MNM Khan <small>nafSadh</small></h1><div class="right">Earth, Sol<br>nafSadh.com</div></div>
+  <main>
+    <p class="tag">Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+    <p>Links:</p>
+<dl>
+  <dt><a href="https://sadh.ink">sadh.ink</a></dt>       <dd>poetry and prose</dd>
+  <dt><a href="https://sadh.studio">sadh.studio</a></dt> <dd>photos etc.</dd>
+  <dt><a href="https://nafsadh.art">nafsadh.art</a></dt> <dd>paintings etc.</dd>
+  <dt><a href="https://sadh.app">sadh.app</a></dt>       <dd>tools</dd>
+</dl>
+    <p class="elsewhere">Elsewhere:<br>
+  <a href="https://linkedin.com/in/nafsadh">LinkedIn</a> /
+  <a href="https://instagram.com/nafsadh">Instagram</a> /
+  <a href="https://github.com/nafSadh">GitHub</a> /
+  <a href="https://www.reddit.com/user/nafsadh">Reddit</a> /
+  <a href="https://www.quora.com/profile/nafSadh">Quora</a> /
+  <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...
+</p>
+    <p>[<a href="/bio.html">read more</a>] [<a href="/timeline.html">timeline</a>] [<a href="/profile.html">profile</a>]</p>
+    <hr>
+<footer>nafSadh.com &middot; 2026</footer>
+  </main>
+  <aside><div class="film vert" aria-label="pictures of Sadh"><span class="tape"></span>
+  <img src="/img/film/f1.jpg" alt="Sadh, Aug 2026">
+  <img src="/img/film/f2.jpg" alt="self-portrait, colored pencil">
+  <img src="/img/film/f3.jpg" alt="Sadh, Dec 2025">
+  <img src="/img/film/f4.jpg" alt="Sadh, in watercolor">
+</div></aside>
+  <img class="wash" src="/img/stones-watercolor.jpg" alt="" aria-hidden="true">
+</div>
+</body>
+</html>

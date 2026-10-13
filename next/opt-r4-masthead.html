@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #111;
+    --blue: #1b2f6b;
+    --paper: #fff;
+    --rule: #111;
+    --serif: "Bodoni Moda", "Bodoni 72", "Didot", "Playfair Display", Georgia, serif;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --gutter: 48px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); }
+  body { font-family: var(--serif); font-size: 17px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 0.14em; text-decoration-thickness: 1px; }
+  .page { max-width: 1280px; margin: 0 auto; padding: 18px var(--gutter) 28px; }
+
+  .folio { display: flex; align-items: center; justify-content: space-between; height: 38px;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    font: 500 10.5px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; }
+  .folio > * { flex: 1; }
+  .folio > :last-child { text-align: right; }
+  .folio .mark { text-align: center; }
+  .folio .mark img { height: 28px; width: auto; display: inline-block; vertical-align: middle; }
+
+  .masthead { margin: 0; padding: 0.035em 0 0.11em; text-align: center; white-space: nowrap;
+    font: italic 500 var(--display)/0.82 var(--serif); font-variation-settings: "opsz" 96; letter-spacing: -0.045em;
+    --display: clamp(3.5rem, 29.3vw - 28px, 21.6rem); }
+  .masthead a { color: var(--ink); }
+  .masthead a:hover { text-decoration: none; color: var(--blue); }
+
+  .dateline { display: flex; align-items: baseline; justify-content: space-between; padding: 8px 0 7px;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .dateline .name { font: 500 19px/1 var(--serif); font-variant-caps: all-small-caps; letter-spacing: 0.22em; }
+  .dateline .site { font: 500 10.5px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; }
+
+  .grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; column-gap: 40px; padding: 28px 0 30px; }
+  .grid > * { min-width: 0; }
+  .grid > * + * { border-left: 1px solid var(--rule); padding-left: 40px; }
+  .deck { margin: 0; font: italic 400 clamp(1.4rem, 1.9vw, 1.7rem)/1.22 var(--serif); font-variation-settings: "opsz" 24;
+    letter-spacing: -0.005em; text-wrap: balance; }
+  .deck strong { font-style: normal; font-weight: 500; }
+
+  .toc { list-style: none; margin: 0; }
+  .toc li + li { margin-top: 10px; }
+  .toc a { display: flex; align-items: baseline; gap: 8px; color: var(--ink); font-size: 17px; line-height: 1.2; }
+  .toc a:hover { text-decoration: none; }
+  .toc a:hover .n { text-decoration: underline; text-underline-offset: 0.14em; }
+  .toc .leader { flex: 1; border-bottom: 1px dotted var(--ink); transform: translateY(-1px); min-width: 24px; }
+  .toc .n { color: var(--blue); font-weight: 500; letter-spacing: 0.01em; }
+
+  .aside { display: flex; flex-direction: column; justify-content: space-between; gap: 22px; }
+  .elsewhere { margin: 0; font: 500 16px/1.75 var(--serif); font-variant-caps: all-small-caps; letter-spacing: 0.1em; }
+  .elsewhere span { color: var(--ink); opacity: 0.45; }
+  .refs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .refs a { font: 500 10.5px/1 var(--sans); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink);
+    border: 1px solid var(--rule); padding: 8px 12px 7px; }
+  .refs a:hover { text-decoration: none; background: var(--ink); color: var(--paper); }
+
+  .sheet { display: flex; gap: 1px; background: var(--rule); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .sheet figure { margin: 0; background: var(--paper); position: relative; min-width: 0; }
+  .sheet img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .sheet figcaption { position: absolute; left: 0; bottom: 0; padding: 6px 10px; background: var(--paper);
+    font: 500 10px/1 var(--sans); letter-spacing: 0.22em; }
+  .sheet .f1 { flex: 480 1 0; } .sheet .f2 { flex: 540 1 0; } .sheet .f3 { flex: 576 1 0; } .sheet .f4 { flex: 720 1 0; }
+
+  .foot { text-align: center; padding-top: 11px; font: 500 10.5px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; }
+  .foot a { color: var(--ink); }
+
+  @media (max-width: 760px) {
+    :root { --gutter: 16px; }
+    .page { padding-top: 12px; }
+    .folio { height: 34px; font-size: 9.5px; letter-spacing: 0.16em; }
+    .folio .mark img { height: 24px; }
+    .masthead { --display: calc(29.3vw - 10px); padding-bottom: 0.26em; }
+    .dateline .name { font-size: 17px; }
+    .dateline .site { font-size: 9.5px; }
+    .grid { grid-template-columns: 1fr; row-gap: 24px; padding: 22px 0 24px; }
+    .grid > * + * { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 22px; }
+    .deck { font-size: 1.5rem; }
+    .aside { gap: 18px; }
+    .sheet { flex-wrap: wrap; }
+    .sheet .f1 { flex-basis: 46.8%; } .sheet .f2 { flex-basis: 52.6%; }
+    .sheet .f3 { flex-basis: 44.2%; } .sheet .f4 { flex-basis: 55.2%; }
+    .sheet figcaption { padding: 5px 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="folio">
+    <span>Earth, Sol</span>
+    <span class="mark"><img src="/img/nafsadh-logo.svg" alt=""></span>
+    <span>2026</span>
+  </div>
+
+  <h1 class="masthead"><a href="/">nafSadh</a></h1>
+
+  <div class="dateline">
+    <span class="name">Sadh MNM Khan</span>
+    <span class="site">nafSadh.com</span>
+  </div>
+
+  <div class="grid">
+    <p class="deck"><strong>Software Engineer +</strong> aspiring artist, painter, photographer, poet, storyteller</p>
+
+    <ul class="toc">
+      <li><a href="https://sadh.ink"><span>poetry and prose</span><span class="leader"></span><span class="n">sadh.ink</span></a></li>
+      <li><a href="https://sadh.studio"><span>photos etc.</span><span class="leader"></span><span class="n">sadh.studio</span></a></li>
+      <li><a href="https://nafsadh.art"><span>paintings etc.</span><span class="leader"></span><span class="n">nafsadh.art</span></a></li>
+      <li><a href="https://sadh.app"><span>tools</span><span class="leader"></span><span class="n">sadh.app</span></a></li>
+    </ul>
+
+    <div class="aside">
+      <p class="elsewhere">
+        <a href="https://www.linkedin.com/in/nafsadh">LinkedIn</a> <span>/</span> <a href="https://www.instagram.com/nafsadh">Instagram</a> <span>/</span> <a href="https://github.com/nafSadh">GitHub</a> <span>/</span> <a href="https://www.reddit.com/user/nafsadh">Reddit</a> <span>/</span> <a href="https://www.quora.com/profile/nafSadh">Quora</a> <span>/</span> <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> <span>...</span>
+      </p>
+      <nav class="refs">
+        <a href="/bio.html">read more</a>
+        <a href="/timeline.html">timeline</a>
+        <a href="/profile.html">profile</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <figure class="f1"><img src="/img/film/f1.jpg" alt="" width="480" height="720"><figcaption>01</figcaption></figure>
+    <figure class="f2"><img src="/img/film/f2.jpg" alt="" width="540" height="720"><figcaption>02</figcaption></figure>
+    <figure class="f3"><img src="/img/film/f3.jpg" alt="" width="576" height="720"><figcaption>03</figcaption></figure>
+    <figure class="f4"><img src="/img/film/f4.jpg" alt="" width="720" height="720"><figcaption>04</figcaption></figure>
+  </div>
+
+  <div class="foot"><a href="/">nafSadh.com</a>&nbsp;·&nbsp;2026</div>
+
+</div>
+</body>
+</html>
