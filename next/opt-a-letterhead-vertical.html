@@ -52,9 +52,9 @@
     .film.vert img { height:7.2rem; width:auto; } .film.vert::before,.film.vert::after { left:0; right:0; top:.07rem; bottom:auto; width:auto; height:.42rem;
     background:repeating-linear-gradient(90deg,transparent 0 .55rem,#fff .55rem 1.05rem,transparent 1.05rem 1.45rem); } .film.vert::after { top:auto; bottom:.07rem; } }
 
-  /* quieter links: thin, pale underline; full ink only on hover */
-  a { text-decoration: underline; text-decoration-color: rgba(27,47,107,.32); text-decoration-thickness: 1px; text-underline-offset: .22em; }
-  a:hover { background: #1b2f6b; color: #fff; text-decoration: none; }
+  /* links: no underline at rest; a thin ink underline appears on hover */
+  a { text-decoration: none; }
+  a:hover { background: transparent; color: #1b2f6b; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
 </style>
 </head>
 <body>

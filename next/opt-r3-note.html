@@ -125,9 +125,9 @@
     main { padding: calc(var(--lh) * 2) 1rem; }
     .strip { padding: var(--band) 6px; gap: 4px; }
   }
-  /* quieter links: thin, pale underline; full ink only on hover */
-  a { text-decoration: underline; text-decoration-color: rgba(27,47,107,.32); text-decoration-thickness: 1px; text-underline-offset: .22em; }
-  a:hover { background: #1b2f6b; color: #fff; text-decoration: none; }
+  /* links: no underline at rest; a thin ink underline appears on hover */
+  a { text-decoration: none; }
+  a:hover { background: transparent; color: #1b2f6b; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
 </style>
 </head>
 <body>

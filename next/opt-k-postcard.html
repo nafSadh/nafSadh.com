@@ -56,9 +56,9 @@
   .back footer { grid-column:1 / -1; font-size:.8rem; color:var(--ink-2); }
   @media (max-width:720px) { .back { grid-template-columns:1fr; } .back .divider { display:none; } .back .addr { padding-top:1rem; } .back .postmark { display:none; } }
 
-  /* quieter links: thin, pale underline; full ink only on hover */
-  a { text-decoration: underline; text-decoration-color: rgba(27,47,107,.32); text-decoration-thickness: 1px; text-underline-offset: .22em; }
-  a:hover { background: #1b2f6b; color: #fff; text-decoration: none; }
+  /* links: no underline at rest; a thin ink underline appears on hover */
+  a { text-decoration: none; }
+  a:hover { background: transparent; color: #1b2f6b; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
 </style>
 </head>
 <body>
