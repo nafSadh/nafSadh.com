@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<link rel="icon" href="/img/nafsadh-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Mr+De+Haviland&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b2f6b;
+  --ink-soft:rgba(27,47,107,.68);
+  --paper:#ffffff;
+  --serif:'Cormorant Garamond','Cormorant',Garamond,'Hoefler Text','Times New Roman',serif;
+  --script:'Mr De Haviland','Snell Roundhand','Apple Chancery','Brush Script MT',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+html{background:var(--paper);-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);color:var(--ink);background:var(--paper);
+  font-size:clamp(1.05rem,1.1vw + .6rem,1.3rem);line-height:1.55;
+  min-height:100vh;position:relative;font-feature-settings:"liga","kern";
+}
+a{color:inherit;text-decoration:none}
+a:hover,a:focus-visible{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;text-decoration-color:var(--ink-soft)}
+a:focus-visible{outline:none}
+
+.wash{
+  position:absolute;right:-14vw;top:-9vw;width:min(52vw,700px);
+  opacity:.24;mix-blend-mode:multiply;pointer-events:none;user-select:none;
+  transform:rotate(10deg);z-index:0;
+  -webkit-mask-image:linear-gradient(to bottom,#000 68%,transparent 88%);
+  mask-image:linear-gradient(to bottom,#000 68%,transparent 88%);
+}
+.wash img{width:100%;height:auto;display:block}
+
+.sheet{
+  position:relative;z-index:1;min-height:100vh;
+  padding:clamp(1.6rem,4.5vw,4rem) clamp(1.25rem,5vw,5rem) clamp(1.2rem,3vw,2rem);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  grid-template-areas:"dateline dateline" "head fan" "body fan" "foot foot";
+  grid-template-rows:auto auto 1fr auto;
+  column-gap:clamp(2rem,5vw,5rem);
+}
+
+.dateline{grid-area:dateline;font-style:italic;color:var(--ink-soft);font-size:.95em;margin-bottom:clamp(1rem,3vh,2.4rem)}
+
+.head{grid-area:head;align-self:end}
+.name{font-weight:500;font-size:clamp(1.55rem,2.3vw,2.15rem);letter-spacing:.015em;line-height:1.15}
+.sig{
+  display:inline-block;font-family:var(--script);font-weight:400;
+  font-size:clamp(3.6rem,13vw,10rem);line-height:1;
+  margin:.09em 0 .04em .3em;
+  transform:rotate(-3deg);transform-origin:center;
+  white-space:nowrap;
+}
+.seal{display:inline-block;width:clamp(36px,4vw,50px);height:auto;vertical-align:-.1em;margin-left:.1em;opacity:.9;transform:rotate(6deg)}
+.tagline{font-style:italic;font-size:1.08em;max-width:34ch;margin-top:.9rem;line-height:1.5;text-wrap:balance}
+
+.body{grid-area:body;align-self:center;padding:clamp(1.2rem,2.5vh,1.8rem) 0 clamp(.4rem,1vh,.8rem)}
+.places{list-style:none;font-size:1.18em;line-height:1.75}
+.places span{font-style:italic;color:var(--ink-soft);font-size:.86em;margin-left:.35em}
+.elsewhere{font-style:italic;font-size:.9em;color:var(--ink-soft);margin-top:clamp(1rem,2vh,1.4rem);line-height:1.7;text-wrap:balance}
+.elsewhere a:hover{color:var(--ink)}
+.more{display:flex;flex-wrap:wrap;gap:.2rem 1.8rem;margin-top:clamp(1.2rem,2.5vh,1.8rem);font-variant:small-caps;letter-spacing:.14em;font-size:.95em}
+
+.fan{grid-area:fan;align-self:center;justify-self:center;position:relative;width:min(100%,560px);aspect-ratio:1/1.05;margin:.5rem 0}
+.print{
+  position:absolute;background:#fff;padding:.42rem;
+  box-shadow:0 1px 2px rgba(27,47,107,.1),0 18px 36px -12px rgba(27,47,107,.38);
+}
+.print img{display:block;width:100%;height:auto}
+.p1{width:44%;right:0;top:0;transform:rotate(5deg);z-index:1}
+.p2{width:50%;left:0;top:10%;transform:rotate(-6deg);z-index:2}
+.p3{width:50%;left:38%;top:40%;transform:rotate(-2deg);z-index:3}
+
+.foot{
+  grid-area:foot;margin-top:clamp(1rem,2.5vh,1.6rem);padding-top:.7rem;
+  border-top:1px solid rgba(27,47,107,.22);font-size:.9em;font-style:italic;color:var(--ink-soft)
+}
+
+@media (max-width:820px){
+  .sheet{grid-template-columns:minmax(0,1fr);grid-template-areas:"dateline" "head" "fan" "body" "foot";grid-template-rows:auto auto auto 1fr auto;padding-top:1.4rem}
+  .dateline{margin-bottom:1.6rem}
+  .head{align-self:start}
+  .sig{font-size:20vw;margin:.1em 0 .06em .15em}
+  .seal{width:9vw}
+  .tagline{margin-top:.6rem}
+  .fan{width:min(100%,420px);margin:1.4rem auto .4rem}
+  .print{padding:.3rem}
+  .body{padding-top:1rem}
+  .wash{right:-36vw;top:13rem;width:96vw;opacity:.2;transform:rotate(6deg)}
+}
+</style>
+</head>
+<body>
+<div class="wash" aria-hidden="true"><img src="/img/stones-watercolor.jpg" alt=""></div>
+
+<main class="sheet">
+  <p class="dateline">Bay Area</p>
+
+  <header class="head">
+    <h1 class="name">Sadh MNM Khan</h1>
+    <div class="sig">nafSadh<img class="seal" src="/img/nafsadh-logo.svg" alt="nafSadh mark"></div>
+    <p class="tagline">Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+  </header>
+
+  <figure class="fan" aria-label="portraits">
+    <div class="print p1"><img src="/img/film/f1.jpg" alt="Sadh, light and shadow" width="480" height="720"></div>
+    <div class="print p2"><img src="/img/film/f2.jpg" alt="Self-portrait, colored pencil" width="540" height="720"></div>
+    <div class="print p3"><img src="/img/film/f3.jpg" alt="Sadh, laughing" width="576" height="720"></div>
+  </figure>
+
+  <section class="body">
+    <ul class="places">
+      <li><a href="https://sadh.ink">sadh.ink</a><span>(poetry and prose)</span></li>
+      <li><a href="https://sadh.studio">sadh.studio</a><span>(photos etc.)</span></li>
+      <li><a href="https://nafsadh.art">nafsadh.art</a><span>(paintings etc.)</span></li>
+      <li><a href="https://sadh.app">sadh.app</a><span>(tools)</span></li>
+    </ul>
+    <p class="elsewhere">
+      <a href="https://www.linkedin.com/in/nafsadh">LinkedIn</a>&nbsp;/
+      <a href="https://www.instagram.com/nafsadh">Instagram</a>&nbsp;/
+      <a href="https://github.com/nafSadh">GitHub</a>&nbsp;/
+      <a href="https://www.reddit.com/user/nafsadh">Reddit</a>&nbsp;/
+      <a href="https://www.quora.com/profile/nafSadh">Quora</a>&nbsp;/
+      <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a>&nbsp;...
+    </p>
+    <nav class="more">
+      <a href="/bio.html">read more</a>
+      <a href="/timeline.html">timeline</a>
+      <a href="/profile.html">profile</a>
+    </nav>
+  </section>
+
+  <footer class="foot">nafSadh.com · 2026</footer>
+</main>
+</body>
+</html>

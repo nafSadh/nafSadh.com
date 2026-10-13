@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1b2f6b;--paper:#f4f1ea;--red:#b5452d;--font:"Jost","Futura","Avenir Next","Century Gothic",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--blue);font-family:var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.2em}
+img{display:block}
+.caps{font-size:11px;font-weight:400;letter-spacing:.3em;text-transform:uppercase}
+
+.stage{position:relative;min-height:100vh;display:grid;
+  grid-template-columns:64px 64px 150px 30px 200px 36px 1fr 180px 64px;
+  grid-template-rows:40px 56px 24px auto minmax(140px,1fr) 24px 200px 64px;
+  grid-template-areas:
+    "side . . . . . . . ."
+    "side . logo . . . . . ."
+    "side . . . . . . . ."
+    "side . disc disc disc . name name ."
+    "side . disc disc disc . info photo ."
+    "side . . . . . info photo ."
+    "side . draw . tri . info photo ."
+    "side base base base base base base base base"}
+.name,.info{min-width:0}
+
+.side{grid-area:side;background:var(--blue);color:var(--paper);display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding-bottom:40px}
+.side span{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap}
+.stage::after{content:"";position:absolute;top:0;right:0;width:230px;height:230px;background:var(--blue);clip-path:polygon(46% 0,70% 0,100% 30%,100% 54%)}
+
+.logo{grid-area:logo;width:56px;height:56px;background:var(--blue);padding:9px}
+.logo img{width:100%;height:100%}
+
+.disc{grid-area:disc;width:380px;height:380px;border-radius:50%;overflow:hidden}
+.disc img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+
+.name{grid-area:name}
+h1{font-size:clamp(72px,11.5vw,148px);font-weight:700;line-height:.86;letter-spacing:-.025em;margin-left:-.05em}
+.tag{font-size:20px;line-height:1.35;max-width:30ch;margin-top:20px}
+
+.info{grid-area:info;display:flex;flex-direction:column;justify-content:space-between;padding-top:32px}
+.links{list-style:none}
+.links li{font-size:24px;font-weight:700;line-height:1.6;display:flex;align-items:center}
+.links li::before{content:"";width:10px;height:10px;background:var(--red);margin-right:16px;flex:none}
+.links small{font-size:16px;font-weight:400;margin-left:.6em}
+.else{font-size:14px;line-height:1.8;word-spacing:.25em;margin-top:40px}
+.else b{display:block;margin-bottom:2px}
+.more{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.more a{border:2px solid var(--blue);padding:7px 14px 6px;white-space:nowrap}
+.more a:hover{background:var(--blue);color:var(--paper);text-decoration:none}
+
+.photo{grid-area:photo;align-self:end;height:372px;width:180px}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.draw{grid-area:draw;align-self:end}
+.draw img{width:150px;height:200px}
+.tri{grid-area:tri;align-self:end;width:200px;height:200px;background:var(--red);clip-path:polygon(50% 0,100% 100%,0 100%)}
+
+.base{grid-area:base;background:var(--blue);color:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:0 64px}
+.base .site{font-size:13px;letter-spacing:.14em}
+
+@media (max-width:1180px){
+  .stage{grid-template-columns:56px 40px 120px 24px 160px 32px 1fr 150px 40px;grid-template-rows:32px 48px 20px auto minmax(120px,1fr) 20px 160px 56px}
+  .logo{width:48px;height:48px;padding:8px}
+  .disc{width:304px;height:304px}
+  .tag{font-size:18px}
+  .links li{font-size:21px}
+  .draw img{width:120px;height:160px}
+  .tri{width:160px;height:160px}
+  .photo{width:150px;height:320px}
+  .base{padding:0 40px}
+}
+@media (max-width:900px){
+  .stage{grid-template-columns:20px 1fr 1fr 20px;
+    grid-template-rows:48px 24px 88px 28px auto 28px auto auto 32px auto 56px;
+    grid-template-areas:
+      "side side side side"
+      ". . . ."
+      ". logo tri ."
+      ". . . ."
+      ". disc disc ."
+      ". . . ."
+      ". name name ."
+      ". info info ."
+      ". . . ."
+      ". draw photo ."
+      "base base base base"}
+  .side{height:48px;padding:0 20px;flex-direction:row;justify-content:flex-start}
+  .side span{writing-mode:horizontal-tb;transform:none}
+  .stage::after{display:none}
+  .logo{width:48px;height:48px;padding:8px;align-self:end}
+  .tri{width:104px;height:88px;justify-self:end}
+  .disc{width:240px;height:240px}
+  .tag{font-size:17px;margin-top:14px}
+  .info{padding-top:24px}
+  .links li{font-size:20px}
+  .links small{font-size:14px}
+  .draw img{width:138px;height:184px}
+  .photo{width:150px;height:228px;justify-self:end}
+  .base{padding:0 20px}
+  .base .site{font-size:12px}
+}
+</style>
+</head>
+<body>
+<main class="stage">
+  <div class="side"><span class="caps">Sadh MNM Khan</span></div>
+  <div class="logo"><img src="/img/nafsadh-logo-white.svg" alt="nafSadh mark"></div>
+  <div class="disc"><img src="/img/film/f3.jpg" alt="Sadh, laughing"></div>
+  <header class="name">
+    <h1>nafsadh</h1>
+    <p class="tag">Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+  </header>
+  <section class="info">
+    <div>
+      <ul class="links">
+        <li><a href="https://sadh.ink">sadh.ink</a><small>(poetry and prose)</small></li>
+        <li><a href="https://sadh.studio">sadh.studio</a><small>(photos etc.)</small></li>
+        <li><a href="https://nafsadh.art">nafsadh.art</a><small>(paintings etc.)</small></li>
+        <li><a href="https://sadh.app">sadh.app</a><small>(tools)</small></li>
+      </ul>
+      <p class="else"><b class="caps">Elsewhere</b>
+        <a href="https://www.linkedin.com/in/nafsadh">LinkedIn</a>&nbsp;/
+        <a href="https://www.instagram.com/nafsadh">Instagram</a>&nbsp;/
+        <a href="https://github.com/nafSadh">GitHub</a>&nbsp;/
+        <a href="https://www.reddit.com/user/nafsadh">Reddit</a>&nbsp;/
+        <a href="https://www.quora.com/profile/nafSadh">Quora</a>&nbsp;/
+        <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a>&nbsp;...
+      </p>
+    </div>
+    <nav class="more caps">
+      <a href="/bio.html">read more</a>
+      <a href="/timeline.html">timeline</a>
+      <a href="/profile.html">profile</a>
+    </nav>
+  </section>
+  <div class="photo"><img src="/img/film/f1.jpg" alt="Sadh, light and shadow"></div>
+  <div class="draw"><img src="/img/film/f2.jpg" alt="Self-portrait, colored pencil"></div>
+  <i class="tri"></i>
+  <footer class="base">
+    <span class="site">nafSadh.com · 2026</span>
+    <span class="caps">Bay Area</span>
+  </footer>
+</main>
+</body>
+</html>

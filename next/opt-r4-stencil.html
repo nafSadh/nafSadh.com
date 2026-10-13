@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14213d; --paper:#ffffff; --muted:rgba(255,255,255,.66); --rule:rgba(255,255,255,.28);
+  --accent:#e8632b;
+  --display:"Anton", Impact, "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --mono:"Space Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --pad:clamp(16px, 3vw, 40px);
+}
+*{box-sizing:border-box; margin:0; padding:0}
+html{background:var(--ink)}
+body{min-height:100vh; display:flex; flex-direction:column; background:var(--ink); color:var(--paper);
+  font:400 13px/1.5 var(--mono); padding:0 var(--pad); -webkit-font-smoothing:antialiased}
+a{color:inherit; text-decoration:none}
+a:hover{color:var(--accent); text-decoration:underline; text-underline-offset:.2em}
+img{display:block}
+.lbl{font-size:12px; letter-spacing:.16em; text-transform:uppercase}
+
+.top{display:flex; align-items:center; justify-content:space-between; height:66px; border-bottom:3px solid var(--paper)}
+.stamp{display:block; width:50px; height:50px; background:var(--paper); padding:4px}
+.stamp:hover{background:var(--accent)}
+.stamp img{width:100%; height:100%}
+
+h1{font-family:var(--display); font-weight:400; text-transform:uppercase;
+  font-size:clamp(3rem, 14.45vw, 13.5rem); line-height:.9; letter-spacing:.01em;
+  padding:.07em 0 .03em; border-bottom:6px solid var(--paper); white-space:nowrap}
+h1 span{display:inline}
+
+.handle{display:flex; align-items:center; gap:24px; padding:16px 0 0}
+.plate{font-family:var(--display); font-size:clamp(28px, 3vw, 40px); line-height:1; letter-spacing:.02em;
+  background:var(--accent); color:var(--ink); padding:.18em .32em .12em; flex:none}
+.plate:hover{background:var(--paper); color:var(--ink); text-decoration:none}
+.tag{font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--paper)}
+
+.work{display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:40px; margin-top:auto; padding-top:28px}
+.links{display:grid; grid-auto-rows:1fr; border-top:3px solid var(--paper); border-bottom:3px solid var(--paper)}
+.links a{display:grid; grid-template-columns:2.6em minmax(0,1fr) auto; align-items:baseline; align-content:center; gap:0 14px; padding:6px 0}
+.links a + a{border-top:1px solid var(--rule)}
+.links .n{font-size:12px; letter-spacing:.1em; color:var(--muted)}
+.links .t{font-family:var(--display); font-size:clamp(30px, 3vw, 40px); line-height:1; text-transform:uppercase; letter-spacing:.02em}
+.links .d{font-size:12px; letter-spacing:.04em; color:var(--muted); white-space:nowrap}
+.links a:hover{text-decoration:none}
+.links a:hover .t, .links a:hover .n{color:var(--accent)}
+
+.sheet{display:grid; grid-template-columns:repeat(4,1fr); gap:4px; align-self:start; border-top:3px solid var(--paper); padding-top:4px}
+.sheet figure{position:relative; aspect-ratio:3/4}
+.sheet img{width:100%; height:100%; object-fit:cover}
+.sheet figcaption{position:absolute; top:0; left:0; background:var(--ink); color:var(--paper);
+  font-size:10px; letter-spacing:.12em; padding:3px 7px}
+
+.meta{display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-top:28px}
+.else{color:var(--muted)}
+.else a{color:var(--paper)}
+.btns{display:flex; gap:8px}
+.btns a{display:inline-block; border:2px solid var(--paper); padding:8px 14px 7px; font-size:12px; letter-spacing:.16em; text-transform:uppercase}
+.btns a:hover{background:var(--paper); color:var(--ink); text-decoration:none}
+
+footer{margin-top:28px; padding:16px 0 22px; border-top:3px solid var(--paper);
+  display:flex; justify-content:space-between; gap:16px}
+
+@media (max-width:960px){
+  .work{grid-template-columns:1fr; gap:28px}
+  .links a{padding:10px 0}
+}
+@media (max-width:720px){
+  h1{white-space:normal; font-size:44vw; line-height:.88; padding:.08em 0 .05em}
+  h1 span{display:block}
+  .handle{flex-wrap:wrap; gap:14px}
+  .links .t{font-size:34px}
+  .links a{grid-template-columns:2.4em minmax(0,1fr); gap:2px 12px}
+  .links .d{grid-column:2; white-space:normal}
+  .meta{flex-direction:column; align-items:flex-start; gap:18px}
+}
+@media (max-width:560px){
+  .sheet{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="stamp" href="/" aria-label="nafSadh"><img src="/img/nafsadh-logo.svg" alt="nafSadh mark"></a>
+  <span class="lbl">Bay Area</span>
+</header>
+
+<h1><span>Sadh</span> <span>MNM</span> <span>Khan</span></h1>
+
+<div class="handle">
+  <a class="plate" href="/">nafSadh</a>
+  <p class="tag">Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+</div>
+
+<section class="work">
+  <nav class="links">
+    <a href="https://sadh.ink"><span class="n">01</span><span class="t">sadh.ink</span><span class="d">(poetry and prose)</span></a>
+    <a href="https://sadh.studio"><span class="n">02</span><span class="t">sadh.studio</span><span class="d">(photos etc.)</span></a>
+    <a href="https://nafsadh.art"><span class="n">03</span><span class="t">nafsadh.art</span><span class="d">(paintings etc.)</span></a>
+    <a href="https://sadh.app"><span class="n">04</span><span class="t">sadh.app</span><span class="d">(tools)</span></a>
+  </nav>
+  <div class="sheet">
+    <figure><img src="/img/film/f1.jpg" alt="Portrait, light and shadow"><figcaption>1/4</figcaption></figure>
+    <figure><img src="/img/film/f2.jpg" alt="Colored-pencil self-portrait"><figcaption>2/4</figcaption></figure>
+    <figure><img src="/img/film/f3.jpg" alt="Laughing portrait"><figcaption>3/4</figcaption></figure>
+    <figure><img src="/img/film/f4.jpg" alt="Watercolor portrait"><figcaption>4/4</figcaption></figure>
+  </div>
+</section>
+
+<div class="meta">
+  <p class="lbl else"><a href="https://www.linkedin.com/in/nafsadh">LinkedIn</a> / <a href="https://www.instagram.com/nafsadh">Instagram</a> / <a href="https://github.com/nafSadh">GitHub</a> / <a href="https://www.reddit.com/user/nafsadh">Reddit</a> / <a href="https://www.quora.com/profile/nafSadh">Quora</a> / <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...</p>
+  <p class="btns"><a href="/bio.html">read more</a><a href="/timeline.html">timeline</a><a href="/profile.html">profile</a></p>
+</div>
+
+<footer>
+  <span class="lbl">nafSadh.com · 2026</span>
+</footer>
+</body>
+</html>
