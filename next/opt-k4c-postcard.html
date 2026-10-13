@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<meta name="description" content="Sadh MNM Khan (nafSadh). Software Engineer + aspiring artist, painter, photographer, poet, storyteller.">
+<link rel="icon" href="/img/nafsadh.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1b2f6b; --ink-2:#4a5a8f; --paper:#fbfaf6; --field:#eef0f9; --room:#eceef4; }
+  html { background:var(--room); }
+  body { margin:0; color:var(--ink);
+    font-family:"Courier Prime","American Typewriter","Courier New",Courier,monospace;
+    font-size:16px; line-height:1.7; }
+  a { color:var(--ink); }
+  a:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  h1 { font-size:clamp(1.4rem,3vw,2rem); font-weight:normal; margin:0; line-height:1.15; }
+  h1 small { display:block; font-size:1.05rem; margin-top:.25rem; }
+  p { margin:0 0 1.25rem; }
+  ul { list-style:none; margin:0; padding:0; }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+
+  .wrap { max-width:54rem; margin:3rem auto 4rem; padding:0 1rem; }
+
+  .front { position:relative; z-index:2; display:flex; margin:0 0 -1.5rem 1.5rem; }
+  .film { position:relative; display:flex; gap:.35rem; padding:.55rem .5rem; background:var(--ink); transform:rotate(-1.3deg);
+    box-shadow:0 8px 16px rgba(27,47,107,.25),0 1px 2px rgba(0,0,0,.25); }
+  .reel { display:flex; gap:.35rem; }
+  .film::before, .film::after, .reel::before, .reel::after { content:""; position:absolute; left:0; right:0; height:.42rem; opacity:.92;
+    background:repeating-linear-gradient(90deg,transparent 0 .55rem,#fff .55rem 1.05rem,transparent 1.05rem 1.45rem); }
+  .film::before { top:.07rem; } .film::after { bottom:.07rem; }
+  .reel::before, .reel::after { display:none; }
+  .film img { display:block; height:10.5rem; width:auto; border:2px solid #0f1d47; }
+
+  .back { position:relative; min-height:29rem; box-sizing:border-box; background:var(--paper); display:grid;
+    grid-template-columns:1fr 1px 1fr; grid-template-rows:1fr auto; column-gap:1.6rem; padding:3rem 1.6rem 1.1rem 9rem; transform:rotate(.4deg); overflow:hidden;
+    box-shadow:0 12px 32px rgba(27,47,107,.16), 0 1px 2px rgba(0,0,0,.14); }
+  .divider { background:var(--ink); opacity:.16; margin:1.2rem 0 1.4rem; }
+  .msg { padding-top:.4rem; }
+  .msg .tag { margin:1.4rem 0 1.2rem; max-width:21rem; }
+  .wash { position:absolute; left:-6.8rem; top:-2rem; height:calc(100% + 3.6rem); width:auto; clip-path:inset(0 0 14% 0); z-index:0; mix-blend-mode:multiply; opacity:.5; pointer-events:none; }
+  .addr { position:relative; z-index:1; align-self:end; padding:8.2rem 0 2.2rem .4rem; }
+  .addr li { padding:.12rem 0; white-space:nowrap; }
+  .addr li span { color:var(--ink-2); }
+  .bottom { position:relative; z-index:1; grid-column:1 / -1; display:flex; justify-content:space-between; gap:.5rem 1.5rem; flex-wrap:wrap; font-size:.76rem; color:var(--ink-2); margin-top:.6rem; }
+  .bottom p { margin:0; }
+  .bottom a { color:var(--ink-2); }
+
+  .stamp { position:absolute; right:2rem; top:1.8rem; width:5rem; height:6rem; filter:drop-shadow(0 .6px .8px rgba(27,47,107,.5)); }
+  .stamp .perf { height:100%; box-sizing:border-box; padding:.42rem; background:#fff; --r:.19rem; --p:.5rem;
+    -webkit-mask:linear-gradient(#000 0 0) content-box, radial-gradient(circle,#0000 var(--r),#000 calc(var(--r) + .5px)) calc(var(--p)/-2) calc(var(--p)/-2)/var(--p) var(--p);
+    mask:linear-gradient(#000 0 0) content-box, radial-gradient(circle,#0000 var(--r),#000 calc(var(--r) + .5px)) calc(var(--p)/-2) calc(var(--p)/-2)/var(--p) var(--p);
+    -webkit-mask-composite:source-over; mask-composite:add; }
+  .stamp .art { height:100%; box-sizing:border-box; border:1px solid rgba(27,47,107,.55); background:var(--field); display:grid; place-items:center; }
+  .stamp .art img { width:3rem; }
+  .cancel { position:absolute; right:7.3rem; top:1.7rem; width:11.4rem; height:6.25rem; color:var(--ink); opacity:.5; transform:rotate(-7deg); pointer-events:none; }
+  .cancel text { font-family:inherit; fill:currentColor; }
+
+  @media (max-width:720px) {
+    .wrap { margin-top:1.6rem; }
+    .front { margin-left:0; }
+    .film { flex-wrap:wrap; justify-content:center; gap:.55rem; padding:0; background:none; box-shadow:none; transform:rotate(-1.2deg); }
+    .film::before, .film::after { display:none; }
+    .reel { position:relative; padding:.5rem .45rem; background:var(--ink); box-shadow:0 8px 16px rgba(27,47,107,.25),0 1px 2px rgba(0,0,0,.25); }
+    .reel::before, .reel::after { display:block; }
+    .reel::before { top:.05rem; } .reel::after { bottom:.05rem; }
+    .film img { height:9rem; }
+    .back { grid-template-columns:1fr; grid-template-rows:auto auto auto; min-height:0; padding:2.4rem 1.3rem 1rem; }
+    .divider { display:none; }
+    .msg { padding-top:7.6rem; }
+    .back { padding-bottom:4.2rem; }
+    .wash { height:9rem; top:auto; left:auto; right:-1.4rem; bottom:-1.8rem; }
+    .addr { padding:.6rem 0 1.4rem; }
+    .stamp { right:1.6rem; top:2.4rem; }
+    .cancel { right:6.9rem; top:2.3rem; }
+    .bottom { flex-direction:column; gap:.2rem; margin-top:0; }
+  }
+
+  a { text-decoration:none; }
+  a:hover { background:transparent; color:#1b2f6b; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.22em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="front"><div class="film" aria-label="pictures of Sadh">
+    <span class="reel"><img src="/img/film/f1.jpg" alt="Sadh, Aug 2026"><img src="/img/film/f2.jpg" alt="self-portrait, colored pencil"></span>
+    <span class="reel"><img src="/img/film/f3.jpg" alt="Sadh, Dec 2025"><img src="/img/film/f4.jpg" alt="Sadh, in watercolor"></span>
+  </div></div>
+  <div class="back">
+    <img class="wash" src="/img/stones-watercolor.jpg" alt="">
+    <div class="msg">
+      <h1>Sadh MNM Khan <small>nafSadh</small></h1>
+      <p class="tag">Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+      <p>[<a href="/bio.html">read more</a>] [<a href="/timeline.html">timeline</a>] [<a href="/profile.html">profile</a>]</p>
+    </div>
+    <div class="divider"></div>
+    <ul class="addr">
+      <li><a href="https://sadh.ink">sadh.ink</a> <span>(poetry and prose)</span></li>
+      <li><a href="https://sadh.studio">sadh.studio</a> <span>(photos etc.)</span></li>
+      <li><a href="https://nafsadh.art">nafsadh.art</a> <span>(paintings etc.)</span></li>
+      <li><a href="https://sadh.app">sadh.app</a> <span>(tools)</span></li>
+    </ul>
+    <div class="stamp"><div class="perf"><div class="art"><img src="/img/nafsadh-logo.svg" alt=""></div></div></div>
+    <svg class="cancel" viewBox="0 0 182 100" aria-hidden="true">
+      <defs>
+        <path id="arc-top" d="M17,50 a29,29 0 1,1 58,0"/>
+        <path id="arc-bot" d="M10,50 a36,36 0 0,0 72,0"/>
+      </defs>
+      <circle cx="46" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="46" cy="50" r="24" fill="none" stroke="currentColor" stroke-width="1"/>
+      <text font-size="12" letter-spacing=".4"><textPath href="#arc-top" startOffset="50%" text-anchor="middle">nafSadh.com</textPath></text>
+      <text font-size="12" letter-spacing=".4"><textPath href="#arc-bot" startOffset="50%" text-anchor="middle">Earth, Sol</textPath></text>
+      <text x="46" y="54.5" text-anchor="middle" font-size="12.5">2026</text>
+      <path d="M92,36 q8,-4.2 16,0 t16,0 t16,0 t16,0 t16,0" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M94,50 q8,-4.2 16,0 t16,0 t16,0 t16,0 t16,0" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M92,64 q8,-4.2 16,0 t16,0 t16,0 t16,0 t16,0" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    </svg>
+    <div class="bottom">
+      <p class="elsewhere">Elsewhere:
+        <a href="https://www.linkedin.com/in/nafsadh">LinkedIn</a> /
+        <a href="https://www.instagram.com/nafsadh">Instagram</a> /
+        <a href="https://github.com/nafSadh">GitHub</a> /
+        <a href="https://www.reddit.com/user/nafsadh">Reddit</a> /
+        <a href="https://www.quora.com/profile/nafSadh">Quora</a> /
+        <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...</p>
+      <footer>nafSadh.com &middot; 2026</footer>
+    </div>
+  </div>
+</div>
+</body>
+</html>
