@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nafSadh</title>
+<meta name="description" content="Sadh MNM Khan (nafSadh). Software Engineer + aspiring artist, painter, photographer, poet, storyteller.">
+<link rel="icon" href="/img/nafsadh.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1b2f6b; --ink-2:#4a5a8f; --paper:#fff; --tape:rgba(239,226,176,.8); }
+  html { background:var(--paper); overflow-x:hidden; }
+  body { margin:0; position:relative; min-height:100vh; color:var(--ink);
+    font-family:"Courier Prime","American Typewriter","Courier New",Courier,monospace;
+    font-size:16px; line-height:1.6; }
+  a { color:var(--ink); text-decoration:none; }
+  a:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  p { margin:0 0 1.1rem; }
+
+  .sheet { position:relative; z-index:1; max-width:62ch; margin:0 auto; padding:3rem 1rem 3rem; }
+
+  .head { display:flex; align-items:center; gap:.9rem; margin-bottom:1.3rem; }
+  .head .logo { width:56px; height:56px; flex:0 0 auto; }
+  h1 { margin:0; font-size:clamp(1.6rem,3.2vw,2.2rem); font-weight:normal; line-height:1.1; }
+  h1 .handle { display:inline-block; margin-left:.5em; font-size:1rem; color:var(--ink-2); }
+
+  .strip { position:relative; margin:0 0 1.5rem; transform:rotate(-1.2deg);
+    box-shadow:0 6px 14px rgba(27,47,107,.22),0 1px 2px rgba(0,0,0,.2); }
+  .strip::before, .strip::after { content:""; position:absolute; left:0; right:0; z-index:1; height:.42rem; opacity:.92;
+    background:repeating-linear-gradient(90deg,transparent 0 .55rem,#fff .55rem 1.05rem,transparent 1.05rem 1.45rem); }
+  .strip::before { top:.07rem; } .strip::after { bottom:.07rem; }
+  .strip .tape { position:absolute; top:-.5rem; right:1.2rem; z-index:2; width:4.5rem; height:1.3rem; background:var(--tape);
+    transform:rotate(8deg); box-shadow:0 1px 2px rgba(0,0,0,.15); }
+  .film { display:flex; justify-content:space-between; gap:.35rem; padding:.55rem .5rem; background:var(--ink);
+    overflow-x:auto; scrollbar-width:none; }
+  .film::-webkit-scrollbar { display:none; }
+  .film img { display:block; flex:0 0 auto; height:10.5rem; width:auto; border:2px solid #0f1d47; }
+
+  .tag { text-wrap:balance; }
+  .links { list-style:none; margin:0 0 1.1rem; padding:0; }
+  .links span { color:var(--ink-2); margin-left:2ch; }
+  .elsewhere { font-size:13px; }
+  footer { margin-top:1.8rem; color:var(--ink-2); font-size:.85rem; }
+
+  .wash { position:absolute; right:7.5rem; bottom:0; width:20.4rem; aspect-ratio:896/1207; overflow:hidden;
+    z-index:0; opacity:.3; mix-blend-mode:multiply; pointer-events:none; }
+  .wash img { display:block; width:100%; }
+
+  @media (max-width:560px) {
+    .sheet { padding-top:1.75rem; }
+    .film img { height:9.5rem; }
+    h1 .handle { display:block; margin:.15rem 0 0; }
+    .wash { width:12rem; height:calc(14rem * 1207 / 896); right:0; }
+    .wash img { width:14rem; }
+  }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+  a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.22em; }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header class="head">
+    <img class="logo" src="/img/nafsadh-logo.svg" alt="">
+    <h1>Sadh MNM Khan <span class="handle">nafSadh</span></h1>
+  </header>
+  <div class="strip"><span class="tape"></span>
+    <div class="film" aria-label="pictures of Sadh">
+      <img src="/img/film/f1.jpg" alt="Sadh, Aug 2026">
+      <img src="/img/film/f2.jpg" alt="self-portrait, colored pencil">
+      <img src="/img/film/f3.jpg" alt="Sadh, Dec 2025">
+      <img src="/img/film/f4.jpg" alt="Sadh, in watercolor">
+    </div>
+  </div>
+  <p class="tag">Software Engineer + aspiring artist, painter, photographer, poet, storyteller</p>
+  <ul class="links">
+    <li><a href="https://sadh.ink">sadh.ink</a><span>poetry and prose</span></li>
+    <li><a href="https://sadh.studio">sadh.studio</a><span>photos etc.</span></li>
+    <li><a href="https://nafsadh.art">nafsadh.art</a><span>paintings etc.</span></li>
+    <li><a href="https://sadh.app">sadh.app</a><span>tools</span></li>
+  </ul>
+  <p class="elsewhere">Elsewhere:<br>
+    <a href="https://www.linkedin.com/in/nafsadh">LinkedIn</a> /
+    <a href="https://www.instagram.com/nafsadh">Instagram</a> /
+    <a href="https://github.com/nafSadh">GitHub</a> /
+    <a href="https://www.reddit.com/user/nafsadh">Reddit</a> /
+    <a href="https://www.quora.com/profile/nafSadh">Quora</a> /
+    <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...
+  </p>
+  <p class="more">[<a href="/bio.html">read more</a>] [<a href="/timeline.html">timeline</a>] [<a href="/profile.html">profile</a>]</p>
+  <footer>nafSadh.com &middot; 2026</footer>
+</main>
+<div class="wash" aria-hidden="true"><img src="/img/stones-watercolor.jpg" alt=""></div>
+</body>
+</html>

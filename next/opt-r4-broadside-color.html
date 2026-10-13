@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sadh MNM Khan</title>
+<meta name="description" content="nafSadh -- software engineer, aspiring artist, painter, photographer, poet, storyteller.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b2f6b;
+  --ink2:#b5452d;
+  --paper:#f6f3ec;
+  --u:min(1px, calc((100vw - 24px) / 760));
+  --fat:"Abril Fatface","Bodoni Moda","Didot","Playfair Display",Georgia,serif;
+  --goth:"Oswald","Roboto Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --press:0 1px 0 rgba(255,255,255,.6);
+}
+*{box-sizing:border-box}
+figure{margin:0}
+html,body{margin:0;background:var(--paper);color:var(--ink)}
+body{font-family:var(--goth);font-weight:400;line-height:1.25;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+
+.sheet{
+  width:calc(760 * var(--u));margin:calc(20 * var(--u)) auto;
+  padding:calc(24 * var(--u)) calc(36 * var(--u)) calc(28 * var(--u));
+  border:1px solid var(--ink);outline:1px solid var(--ink);outline-offset:3px;
+  text-align:center;
+}
+.rule{height:3px;border-top:1px solid var(--ink2);border-bottom:1px solid var(--ink2);margin:calc(12 * var(--u)) 0}
+.rule.heavy{border-top-width:3px;height:5px}
+.rule.hair{height:0;border-bottom:0}
+
+.venue{font-size:clamp(12px, calc(13 * var(--u)), 13px);letter-spacing:.42em;text-transform:uppercase;font-weight:500;margin:0 0 calc(14 * var(--u))}
+.venue::before,.venue::after{content:"\25C6";color:var(--ink2);font-size:.7em;vertical-align:.18em;margin:0 1.2em}
+
+.plate{overflow:hidden;display:block}
+.plate img{display:block;width:100%;height:100%;object-fit:cover}
+.oval{
+  width:calc(176 * var(--u));height:calc(220 * var(--u));margin:0 auto calc(18 * var(--u));
+  border-radius:50%;border:1px solid var(--ink);box-shadow:0 0 0 3px var(--paper),0 0 0 4px var(--ink);
+}
+.oval img{object-position:50% 28%}
+
+.line{display:block;margin:0;white-space:nowrap;text-shadow:var(--press)}
+.l1{font-family:var(--fat);font-weight:400;font-size:calc(80.5 * var(--u));line-height:1;text-transform:uppercase;letter-spacing:.01em}
+.l2{font-weight:600;font-size:calc(64 * var(--u));line-height:1;letter-spacing:.3em;padding:.2em 0 .2em .3em;margin:calc(18 * var(--u)) 0;background:var(--ink2);color:var(--paper);text-shadow:none}
+.l3{font-family:var(--fat);font-weight:400;font-size:calc(62 * var(--u));line-height:1.02;text-transform:uppercase;letter-spacing:.02em}
+.l4{font-weight:500;font-size:calc(47 * var(--u));line-height:1.05;text-transform:uppercase;letter-spacing:.12em}
+.l5{font-family:var(--fat);font-style:italic;font-weight:400;font-size:calc(46 * var(--u));line-height:1.1;letter-spacing:.02em}
+
+.bill{list-style:none;margin:calc(6 * var(--u)) 0;padding:0 calc(6 * var(--u));text-align:left}
+.bill li{margin:0}
+.bill a{display:flex;align-items:baseline;gap:.6em;padding:.38em .4em;font-size:clamp(17px, calc(21 * var(--u)), 21px)}
+.bill a:hover{text-decoration:none;background:var(--ink);color:var(--paper)}
+.bill a:hover .lead{background-image:radial-gradient(circle, var(--paper) 1px, transparent 1.3px)}
+.bill b{font-family:var(--fat);font-weight:400;font-size:1.3em;line-height:1;letter-spacing:.01em}
+.bill .lead{flex:1;height:1em;background-image:radial-gradient(circle, var(--ink) 1px, transparent 1.3px);background-size:7px 7px;background-position:0 100%;background-repeat:repeat-x;transform:translateY(-.15em)}
+.bill i{font-style:normal;text-transform:uppercase;letter-spacing:.14em;font-weight:500;font-size:.8em}
+
+.elsewhere{margin:0;text-wrap:balance;font-size:clamp(13px, calc(14 * var(--u)), 14px);letter-spacing:.2em;text-transform:uppercase;font-weight:500;word-spacing:.1em}
+
+.tickets{display:flex;justify-content:center;gap:calc(12 * var(--u));flex-wrap:wrap;margin:calc(18 * var(--u)) 0 calc(22 * var(--u))}
+.tickets a{
+  display:inline-block;padding:.62em 1.4em;border:1px solid var(--ink);border-radius:7px;
+  box-shadow:inset 0 0 0 3px var(--paper),inset 0 0 0 4px var(--ink);
+  font-size:clamp(13px, calc(14 * var(--u)), 14px);font-weight:600;letter-spacing:.24em;text-transform:uppercase;line-height:1;
+}
+@media (max-width:480px){.tickets a{padding:.62em .9em;letter-spacing:.18em}}
+.tickets a:hover{text-decoration:none;background:var(--ink);color:var(--paper);box-shadow:inset 0 0 0 3px var(--ink),inset 0 0 0 4px var(--paper)}
+
+.cards{display:flex;justify-content:center;gap:calc(16 * var(--u));margin:0 0 calc(20 * var(--u))}
+.card{border:1px solid var(--ink);padding:3px;background:var(--paper)}
+.card .plate{height:max(92px, calc(150 * var(--u)))}
+.card img{width:auto}
+
+.mark{display:block;width:calc(36 * var(--u));min-width:30px;margin:0 auto calc(8 * var(--u))}
+.foot{margin:0;font-size:clamp(13px, calc(14 * var(--u)), 14px);letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+</style>
+</head>
+<body>
+<main class="sheet">
+  <p class="venue">Earth, Sol</p>
+  <figure class="plate oval"><img src="/img/film/f1.jpg" alt="Portrait of Sadh MNM Khan" width="480" height="720"></figure>
+  <h1 class="line l1">Sadh MNM Khan</h1>
+  <div class="rule"></div>
+  <p class="line l2">nafSadh</p>
+  <div class="rule"></div>
+  <p class="line l3">Software Engineer</p>
+  <div class="rule hair"></div>
+  <p class="line l4">+ aspiring artist, painter,</p>
+  <div class="rule hair"></div>
+  <p class="line l5">photographer, poet, storyteller</p>
+  <div class="rule heavy"></div>
+  <ul class="bill">
+    <li><a href="https://sadh.ink"><b>sadh.ink</b><span class="lead"></span><i>poetry and prose</i></a></li>
+    <li><a href="https://sadh.studio"><b>sadh.studio</b><span class="lead"></span><i>photos etc.</i></a></li>
+    <li><a href="https://nafsadh.art"><b>nafsadh.art</b><span class="lead"></span><i>paintings etc.</i></a></li>
+    <li><a href="https://sadh.app"><b>sadh.app</b><span class="lead"></span><i>tools</i></a></li>
+  </ul>
+  <div class="rule"></div>
+  <p class="elsewhere"><a href="https://www.linkedin.com/in/nafsadh">LinkedIn</a>&nbsp;/ <a href="https://www.instagram.com/nafsadh">Instagram</a>&nbsp;/ <a href="https://github.com/nafSadh">GitHub</a>&nbsp;/ <a href="https://www.reddit.com/user/nafsadh">Reddit</a>&nbsp;/ <a href="https://www.quora.com/profile/nafSadh">Quora</a>&nbsp;/ <a href="https://commons.wikimedia.org/wiki/User:Nafsadh">WikiMedia</a> ...</p>
+  <nav class="tickets">
+    <a href="/bio.html">read more</a>
+    <a href="/timeline.html">timeline</a>
+    <a href="/profile.html">profile</a>
+  </nav>
+  <div class="cards">
+    <figure class="card"><div class="plate"><img src="/img/film/f2.jpg" alt="Colored-pencil self-portrait" width="540" height="720"></div></figure>
+    <figure class="card"><div class="plate"><img src="/img/film/f3.jpg" alt="Laughing portrait" width="576" height="720"></div></figure>
+    <figure class="card"><div class="plate"><img src="/img/film/f4.jpg" alt="Watercolor portrait" width="720" height="720"></div></figure>
+  </div>
+  <img class="mark" src="/img/nafsadh-logo.svg" alt="nafSadh mark" width="36" height="36">
+  <p class="foot">nafSadh.com · 2026</p>
+</main>
+</body>
+</html>
