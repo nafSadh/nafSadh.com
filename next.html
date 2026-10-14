@@ -19,6 +19,8 @@
   --serif:'Cormorant Garamond','Cormorant',Garamond,'Hoefler Text','Times New Roman',serif;
   --script:'Mr De Haviland','Snell Roundhand','Apple Chancery','Brush Script MT',cursive;
   --tc:clamp(24rem, 20vw + 4rem, 30rem);
+  --pb:clamp(1rem,min(2.5vw,3vh),1.8rem);
+  --wb:0rem;
   --gap:clamp(2rem,4vw,4.5rem);
   --pad:clamp(1.25rem,5vw,5rem);
   --mw:clamp(26rem, min(100vw - var(--tc) - var(--gap) - 2*var(--pad), (100vh - 8.5rem)*1.075), 60rem);
@@ -39,13 +41,13 @@ a:focus-visible{outline:none}
 .bg{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
 .wash{
   position:absolute;overflow:hidden;mix-blend-mode:multiply;user-select:none;
-  left:calc(var(--gx) - 7.4rem);top:10.4rem;width:30rem;aspect-ratio:896/1140;opacity:.26;
+  left:calc(var(--gx) - 7.4rem);top:auto;bottom:calc(var(--pb) + var(--wb));width:30rem;aspect-ratio:896/1140;opacity:.26;
 }
 .wash img{width:100%;height:auto;display:block}
 
 .sheet{
   position:relative;z-index:1;min-height:100vh;
-  padding:clamp(1.2rem,min(3vw,4vh),2.6rem) var(--gx) clamp(1rem,min(2.5vw,3vh),1.8rem);
+  padding:clamp(1.2rem,min(3vw,4vh),2.6rem) var(--gx) var(--pb);
   display:grid;grid-template-columns:var(--tc) var(--mw);
   grid-template-areas:"head wall" "body wall" "foot foot";
   grid-template-rows:auto 1fr auto;
@@ -92,28 +94,27 @@ a:focus-visible{outline:none}
 }
 .hero{box-shadow:0 10px 26px rgba(27,47,107,.2),0 2px 4px rgba(27,47,107,.1)}
 .print img{display:block;width:100%;height:auto}
-.card{background:none;padding:0}
 .card img{display:block;width:100%;height:auto}
-.p-f5{left:22.82%;top:21.09%;width:30.52%;rotate:-3deg;z-index:20}
-.p-f1{left:2.08%;top:30.31%;width:21.41%;rotate:-5deg;z-index:18}
-.p-f2{left:52.76%;top:21.72%;width:22.38%;rotate:-3deg;z-index:19}
-.p-card-barefoot{left:0.54%;top:0.84%;width:27.99%;rotate:-3deg;z-index:34}
-.p-p7128816{left:28.62%;top:3.52%;width:13.99%;rotate:-5deg;z-index:6}
-.p-p5109495{left:42.63%;top:7.50%;width:15.04%;rotate:-5deg;z-index:7}
-.p-p7128852-2-3{left:56.25%;top:3.28%;width:11.05%;rotate:-4deg;z-index:5}
-.p-art3{left:65.34%;top:2.34%;width:10.31%;rotate:-2deg;z-index:30}
-.p-card-truth2{left:74.03%;top:6.26%;width:25.77%;rotate:1deg;z-index:28}
-.p-p5231005{left:2.41%;top:16.41%;width:16.98%;rotate:4deg;z-index:8}
-.p-minar1{left:76.51%;top:27.03%;width:11.22%;rotate:4deg;z-index:32}
-.p-art1{left:81.87%;top:66.02%;width:15.91%;rotate:4deg;z-index:35}
-.p-card-onubhooti{left:71.40%;top:47.61%;width:28.12%;rotate:2deg;z-index:33}
-.p-card-cage{left:0.41%;top:62.72%;width:32.31%;rotate:2deg;z-index:37}
-.p-card-neelgolap{left:32.54%;top:69.85%;width:40.16%;rotate:-1deg;z-index:10}
-.p-art6{left:2.54%;top:80.47%;width:12.35%;rotate:-5deg;z-index:36}
-.p-art2{left:25.76%;top:82.81%;width:10.69%;rotate:6deg;z-index:26}
-.p-pc200377{left:39.67%;top:81.56%;width:18.92%;rotate:3deg;z-index:11}
-.p-p6064390-2{left:88.37%;top:83.12%;width:9.30%;rotate:-3deg;z-index:8}
-.p-p5231028-3{left:62.35%;top:80.16%;width:11.92%;rotate:-4deg;z-index:12}
+.p-f5{left:23.00%;top:19.00%;width:31.00%;rotate:-2deg;z-index:20}
+.p-f1{left:3.50%;top:9.00%;width:22.00%;rotate:-6deg;z-index:18}
+.p-f2{left:52.50%;top:30.00%;width:23.00%;rotate:5deg;z-index:22}
+.p-card-barefoot{left:26.50%;top:1.00%;width:27.00%;rotate:-3deg;z-index:34}
+.p-p7128816{left:54.00%;top:1.00%;width:12.00%;rotate:4deg;z-index:8}
+.p-p5109495{left:56.00%;top:16.50%;width:16.00%;rotate:-3deg;z-index:9}
+.p-p7128852-2-3{left:88.50%;top:27.50%;width:9.50%;rotate:6deg;z-index:5}
+.p-art3{left:65.00%;top:2.00%;width:10.00%;rotate:-3deg;z-index:30}
+.p-card-truth2{left:74.50%;top:3.50%;width:24.80%;rotate:3deg;z-index:28}
+.p-p5231005{left:1.00%;top:45.00%;width:15.00%;rotate:6deg;z-index:10}
+.p-minar1{left:77.50%;top:28.50%;width:11.00%;rotate:5deg;z-index:32}
+.p-art1{left:83.00%;top:47.00%;width:15.00%;rotate:4deg;z-index:35}
+.p-card-onubhooti{left:70.00%;top:76.00%;width:28.00%;rotate:-3deg;z-index:33}
+.p-card-cage{left:0.50%;top:58.00%;width:31.50%;rotate:3deg;z-index:37}
+.p-card-neelgolap{left:31.50%;top:73.00%;width:38.00%;rotate:-2deg;z-index:24}
+.p-art6{left:2.00%;top:77.00%;width:12.00%;rotate:-5deg;z-index:36}
+.p-art2{left:15.00%;top:74.50%;width:15.50%;rotate:4deg;z-index:38}
+.p-pc200377{left:36.00%;top:84.00%;width:18.00%;rotate:3deg;z-index:12}
+.p-p6064390-2{left:74.00%;top:58.00%;width:9.00%;rotate:-3deg;z-index:13}
+.p-p5231028-3{left:55.00%;top:82.50%;width:10.50%;rotate:-4deg;z-index:14}
 
 .foot{
   grid-area:foot;margin-top:clamp(.9rem,2vh,1.2rem);padding-top:.5rem;
@@ -126,7 +127,7 @@ a:focus-visible{outline:none}
   .sheet{grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "body" "wall" "foot";grid-template-rows:auto auto auto 1fr}
   .body{max-width:30rem}
   .wall{margin:2.4rem 0 .6rem}
-  .wash{left:-4rem;top:12rem}
+  .wash{left:-4rem;top:12rem;bottom:auto}
 }
 @media (max-width:600px){
   .sheet{grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "body" "wall" "foot";grid-template-rows:auto auto auto 1fr;padding:1.6rem 1.25rem 1.6rem}
@@ -147,9 +148,9 @@ a:focus-visible{outline:none}
   .p-f2{left:3cqw;width:calc(37cqw - 8px);top:12cqw;z-index:2;rotate:-7deg}
   .p-f1{left:60cqw;width:calc(37cqw - 8px);top:10cqw;z-index:1;rotate:6deg}
   .cards{display:flex;flex-wrap:wrap;gap:.5rem;align-items:flex-start;margin:.3rem 0 .4rem}
-  .card{position:static;rotate:none;left:auto;top:auto;z-index:auto;width:auto !important;flex:1 1 40%;min-width:0;padding:0}
+  .card{position:static;rotate:none;left:auto;top:auto;z-index:auto;width:auto !important;flex:1 1 40%;min-width:0}
   .foot{align-self:end}
-  .wash{left:-4rem;top:16rem;width:19rem;opacity:.26}
+  .wash{left:-4rem;top:16rem;bottom:auto;width:19rem;opacity:.26}
 }
 </style>
 </head>
@@ -168,11 +169,11 @@ a:focus-visible{outline:none}
     <div class="print p-f1 hero"><img src="/img/home/f1.jpg" alt="Sadh, light and shadow" width="480" height="720"></div>
     <div class="print p-f2 hero"><img src="/img/home/f2.jpg" alt="Self-portrait, colored pencil" width="540" height="720"></div>
     <div class="cards">
-      <a class="print card p-card-barefoot" href="https://sadh.ink/second-seconds/barefoot/"><img src="/img/home/barefoot.png" alt="Barefoot" width="214" height="108"></a>
-      <a class="print card p-card-truth2" href="https://sadh.ink/second-seconds/truth-and-perspective-2/"><img src="/img/home/truth2.png" alt="truth and perspective (2)" width="197" height="151"></a>
-      <a class="print card p-card-onubhooti" href="https://sadh.ink/sulol-songroho/onubhooti-jale-hooya/"><img src="/img/home/onubhooti.png" alt="অনুভূতি জালে হওয়া" width="215" height="134"></a>
-      <a class="print card p-card-cage" href="https://sadh.ink/second-seconds/disappearing-cage/"><img src="/img/home/cage.png" alt="The Disappearing Cage" width="247" height="108"></a>
-      <a class="print card p-card-neelgolap" href="https://sadh.ink/sulol-songroho/neel-golap/"><img src="/img/home/neelgolap.png" alt="নীল গোলাপ" width="307" height="111"></a>
+      <a class="print card p-card-barefoot" href="https://sadh.ink/second-seconds/barefoot/"><img src="/img/home/barefoot.jpg?v=12" alt="Barefoot" width="218" height="108"></a>
+      <a class="print card p-card-truth2" href="https://sadh.ink/second-seconds/truth-and-perspective-2/"><img src="/img/home/truth2.jpg?v=12" alt="truth and perspective (2)" width="199" height="151"></a>
+      <a class="print card p-card-onubhooti" href="https://sadh.ink/sulol-songroho/onubhooti-jale-hooya/"><img src="/img/home/onubhooti.jpg?v=12" alt="অনুভূতি জালে হওয়া" width="217" height="134"></a>
+      <a class="print card p-card-cage" href="https://sadh.ink/second-seconds/disappearing-cage/"><img src="/img/home/cage.jpg?v=12" alt="The Disappearing Cage" width="251" height="108"></a>
+      <a class="print card p-card-neelgolap" href="https://sadh.ink/sulol-songroho/neel-golap/"><img src="/img/home/neelgolap.jpg?v=12" alt="নীল গোলাপ" width="309" height="111"></a>
     </div>
     <div class="pair">
       <div style="--a:0.7500" class="print p-p7128816"><img src="/img/home/P7128816.jpg" alt="Golden Gate at golden hour" width="675" height="900"></div>
