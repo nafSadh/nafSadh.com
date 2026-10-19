@@ -90,31 +90,62 @@ a:focus-visible{outline:none}
 .pair,.cards{display:contents}
 .print{
   position:absolute;background:#fff;padding:5px;
-  box-shadow:0 6px 18px rgba(27,47,107,.15),0 1px 2px rgba(27,47,107,.09);
+  box-shadow:0 7px 20px rgba(27,47,107,.16),0 1px 3px rgba(27,47,107,.09);
+  transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s ease,rotate .38s cubic-bezier(.22,1,.36,1);
+  cursor:pointer;
 }
-.hero{box-shadow:0 10px 26px rgba(27,47,107,.2),0 2px 4px rgba(27,47,107,.1)}
+.hero{box-shadow:0 11px 28px rgba(27,47,107,.22),0 2px 5px rgba(27,47,107,.11)}
+.print:hover,.print:focus-visible{
+  z-index:80 !important;
+  transform:translateY(-4px) scale(1.04);
+  box-shadow:0 16px 36px rgba(27,47,107,.26),0 3px 8px rgba(27,47,107,.14);
+}
 .print img{display:block;width:100%;height:auto}
 .card img{display:block;width:100%;height:auto}
-.p-f5{left:23.00%;top:19.00%;width:31.00%;rotate:-2deg;z-index:20}
-.p-f1{left:3.50%;top:9.00%;width:22.00%;rotate:-6deg;z-index:18}
-.p-f2{left:52.50%;top:30.00%;width:23.00%;rotate:5deg;z-index:22}
-.p-card-barefoot{left:26.50%;top:1.00%;width:27.00%;rotate:-3deg;z-index:34}
-.p-p7128816{left:54.00%;top:1.00%;width:12.00%;rotate:4deg;z-index:8}
-.p-p5109495{left:56.00%;top:16.50%;width:16.00%;rotate:-3deg;z-index:9}
-.p-p7128852-2-3{left:88.50%;top:27.50%;width:9.50%;rotate:6deg;z-index:5}
-.p-art3{left:65.00%;top:2.00%;width:10.00%;rotate:-3deg;z-index:30}
-.p-card-truth2{left:74.50%;top:3.50%;width:24.80%;rotate:3deg;z-index:28}
-.p-p5231005{left:1.00%;top:45.00%;width:15.00%;rotate:6deg;z-index:10}
-.p-minar1{left:77.50%;top:28.50%;width:11.00%;rotate:5deg;z-index:32}
-.p-art1{left:83.00%;top:47.00%;width:15.00%;rotate:4deg;z-index:35}
-.p-card-onubhooti{left:70.00%;top:76.00%;width:28.00%;rotate:-3deg;z-index:33}
-.p-card-cage{left:0.50%;top:58.00%;width:31.50%;rotate:3deg;z-index:37}
-.p-card-neelgolap{left:31.50%;top:73.00%;width:38.00%;rotate:-2deg;z-index:24}
-.p-art6{left:2.00%;top:77.00%;width:12.00%;rotate:-5deg;z-index:36}
-.p-art2{left:15.00%;top:74.50%;width:15.50%;rotate:4deg;z-index:38}
-.p-pc200377{left:36.00%;top:84.00%;width:18.00%;rotate:3deg;z-index:12}
-.p-p6064390-2{left:74.00%;top:58.00%;width:9.00%;rotate:-3deg;z-index:13}
-.p-p5231028-3{left:55.00%;top:82.50%;width:10.50%;rotate:-4deg;z-index:14}
+
+/* s2e: Central Portrait Heart + 3 Outer Medium Neighborhoods
+   - Portraits form the center-left heart of the table, with f2 overlapping the lower-right armchair corner of f5
+   - Photos sweep across the top & upper-right with the Staircase (.p-p6064390-2) standing tall at center
+   - Paintings anchor the lower-left and Poems anchor the lower-right */
+
+/* 1) Portrait cluster (center-left heart) */
+.p-f1{left:1.0%;top:16.0%;width:18.0%;rotate:-4.8deg;z-index:18}
+.p-f5{left:15.5%;top:18.0%;width:26.0%;rotate:-1.5deg;z-index:24}
+.p-f2{left:34.0%;top:33.5%;width:17.8%;rotate:3.8deg;z-index:27}
+
+/* 2) Photo cluster (top & upper-right) — Staircase prominent vertical */
+.p-p5231005{left:18.0%;top:0.5%;width:18.5%;rotate:-2.5deg;z-index:21}
+.p-p5109495{left:38.5%;top:1.0%;width:24.0%;rotate:-1.2deg;z-index:22}
+.p-pc200377{left:63.0%;top:2.0%;width:19.0%;rotate:2.0deg;z-index:23}
+.p-p7128816{left:82.0%;top:0.5%;width:16.5%;rotate:3.5deg;z-index:21}
+
+.p-p6064390-2{left:52.0%;top:19.0%;width:15.0%;rotate:-1.8deg;z-index:30}
+.p-p7128852-2-3{left:68.0%;top:19.0%;width:13.5%;rotate:2.4deg;z-index:28}
+.p-p5231028-3{left:83.0%;top:23.0%;width:15.2%;rotate:-2.4deg;z-index:29}
+
+/* 3) Painting cluster (bottom-left) */
+.p-art6{left:0.5%;top:47.5%;width:13.8%;rotate:2.8deg;z-index:25}
+.p-art2{left:0.5%;top:69.0%;width:15.5%;rotate:-3.4deg;z-index:26}
+.p-art1{left:16.0%;top:62.0%;width:18.5%;rotate:-1.8deg;z-index:28}
+.p-minar1{left:34.5%;top:60.5%;width:13.2%;rotate:3.0deg;z-index:29}
+.p-art3{left:34.0%;top:79.0%;width:12.2%;rotate:-2.0deg;z-index:30}
+
+/* 4) Poem cluster (bottom-right) */
+.p-card-barefoot{left:50.0%;top:50.5%;width:24.0%;rotate:-2.0deg;z-index:32}
+.p-card-truth2{left:75.0%;top:47.5%;width:23.5%;rotate:2.2deg;z-index:31}
+.p-card-neelgolap{left:45.5%;top:64.5%;width:28.5%;rotate:-1.2deg;z-index:35}
+.p-card-cage{left:47.0%;top:80.0%;width:26.5%;rotate:1.6deg;z-index:34}
+.p-card-onubhooti{left:75.0%;top:72.0%;width:24.5%;rotate:-1.6deg;z-index:36}
+
+.clbl{
+  position:absolute;margin:0;font-size:.94em;font-style:italic;line-height:1.2;
+  color:var(--ink-soft);white-space:nowrap;z-index:45;
+}
+.clbl a{font-style:normal;color:var(--ink)}
+.clbl a::after{content:" \2192";color:var(--ink-soft)}
+.c-ph{left:69.5%;top:41.5%}
+.c-pa{left:16.5%;top:91.0%}
+.c-po{left:80.5%;top:92.5%}
 
 .foot{
   grid-area:foot;margin-top:clamp(.9rem,2vh,1.2rem);padding-top:.5rem;
@@ -149,6 +180,7 @@ a:focus-visible{outline:none}
   .p-f1{left:60cqw;width:calc(37cqw - 8px);top:10cqw;z-index:1;rotate:6deg}
   .cards{display:flex;flex-wrap:wrap;gap:.5rem;align-items:flex-start;margin:.3rem 0 .4rem}
   .card{position:static;rotate:none;left:auto;top:auto;z-index:auto;width:auto !important;flex:1 1 40%;min-width:0}
+  .clbl{display:none}
   .foot{align-self:end}
   .wash{left:-4rem;top:16rem;bottom:auto;width:19rem;opacity:.26}
 }
@@ -165,9 +197,9 @@ a:focus-visible{outline:none}
   </header>
 
   <figure class="wall" aria-label="prints">
-    <div class="print p-f5 hero"><img src="/img/home/f5.jpg" alt="Sadh, in an armchair" width="480" height="720"></div>
-    <div class="print p-f1 hero"><img src="/img/home/f1.jpg" alt="Sadh, light and shadow" width="480" height="720"></div>
-    <div class="print p-f2 hero"><img src="/img/home/f2.jpg" alt="Self-portrait, colored pencil" width="540" height="720"></div>
+    <a class="print p-f5 hero" href="/profile.html" title="Profile"><img src="/img/home/f5.jpg" alt="Sadh, in an armchair" width="480" height="720"></a>
+    <a class="print p-f1 hero" href="/timeline.html" title="Timeline"><img src="/img/home/f1.jpg" alt="Sadh, light and shadow" width="480" height="720"></a>
+    <a class="print p-f2 hero" href="https://nafsadh.art" title="nafsadh.art — Self-portrait, colored pencil"><img src="/img/home/f2.jpg" alt="Self-portrait, colored pencil" width="540" height="720"></a>
     <div class="cards">
       <a class="print card p-card-barefoot" href="https://sadh.ink/second-seconds/barefoot/"><img src="/img/home/barefoot.jpg?v=12" alt="Barefoot" width="218" height="108"></a>
       <a class="print card p-card-truth2" href="https://sadh.ink/second-seconds/truth-and-perspective-2/"><img src="/img/home/truth2.jpg?v=12" alt="truth and perspective (2)" width="199" height="151"></a>
@@ -176,29 +208,32 @@ a:focus-visible{outline:none}
       <a class="print card p-card-neelgolap" href="https://sadh.ink/sulol-songroho/neel-golap/"><img src="/img/home/neelgolap.jpg?v=12" alt="নীল গোলাপ" width="309" height="111"></a>
     </div>
     <div class="pair">
-      <div style="--a:0.7500" class="print p-p7128816"><img src="/img/home/P7128816.jpg" alt="Golden Gate at golden hour" width="675" height="900"></div>
-      <div style="--a:0.7956" class="print p-art1"><img src="/img/home/art1.jpg" alt="Night sky, acrylic" width="716" height="900"></div>
+      <a style="--a:0.7500" class="print p-p7128816" href="https://sadh.studio"><img src="/img/home/P7128816.jpg" alt="Golden Gate at golden hour" width="675" height="900"></a>
+      <a style="--a:0.7956" class="print p-art1" href="https://nafsadh.art"><img src="/img/home/art1.jpg" alt="Night sky, acrylic" width="716" height="900"></a>
     </div>
     <div class="pair">
-      <div style="--a:1.3353" class="print p-p5109495"><img src="/img/home/P5109495.jpg" alt="Mount Shasta" width="900" height="674"></div>
-      <div style="--a:0.5622" class="print p-p6064390-2"><img src="/img/home/P6064390-2.jpg" alt="Fire escape" width="506" height="900"></div>
+      <a style="--a:1.3353" class="print p-p5109495" href="https://sadh.studio"><img src="/img/home/P5109495.jpg" alt="Mount Shasta" width="900" height="674"></a>
+      <a style="--a:0.5622" class="print p-p6064390-2" href="https://sadh.studio"><img src="/img/home/P6064390-2.jpg" alt="Fire escape" width="506" height="900"></a>
     </div>
     <div class="pair">
-      <div style="--a:0.8000" class="print p-minar1"><img src="/img/home/minar1.jpg" alt="Red sun, white pillars" width="720" height="900"></div>
-      <div style="--a:0.7500" class="print p-p5231028-3"><img src="/img/home/P5231028-3.jpg" alt="Half Dome" width="675" height="900"></div>
+      <a style="--a:0.8000" class="print p-minar1" href="https://nafsadh.art"><img src="/img/home/minar1.jpg" alt="Red sun, white pillars" width="720" height="900"></a>
+      <a style="--a:0.7500" class="print p-p5231028-3" href="https://sadh.studio"><img src="/img/home/P5231028-3.jpg" alt="Half Dome" width="675" height="900"></a>
     </div>
     <div class="pair">
-      <div style="--a:1.3353" class="print p-p5231005"><img src="/img/home/P5231005.jpg" alt="Moon and pine" width="900" height="674"></div>
-      <div style="--a:0.7944" class="print p-art2"><img src="/img/home/art2.jpg" alt="Purple flower, acrylic" width="715" height="900"></div>
+      <a style="--a:1.3353" class="print p-p5231005" href="https://sadh.studio"><img src="/img/home/P5231005.jpg" alt="Moon and pine" width="900" height="674"></a>
+      <a style="--a:0.7944" class="print p-art2" href="https://nafsadh.art"><img src="/img/home/art2.jpg" alt="Purple flower, acrylic" width="715" height="900"></a>
     </div>
     <div class="pair">
-      <div style="--a:0.7500" class="print p-art6"><img src="/img/home/art6.jpg" alt="Oil pastel abstract" width="675" height="900"></div>
-      <div style="--a:1.3353" class="print p-pc200377"><img src="/img/home/PC200377.jpg" alt="Turquoise sea, two boats" width="900" height="674"></div>
+      <a style="--a:0.7500" class="print p-art6" href="https://nafsadh.art"><img src="/img/home/art6.jpg" alt="Oil pastel abstract" width="675" height="900"></a>
+      <a style="--a:1.3353" class="print p-pc200377" href="https://sadh.studio"><img src="/img/home/PC200377.jpg" alt="Turquoise sea, two boats" width="900" height="674"></a>
     </div>
     <div class="pair">
-      <div style="--a:0.7500" class="print p-p7128852-2-3"><img src="/img/home/P7128852_2-3.jpg" alt="Birds in pink cloud" width="675" height="900"></div>
-      <div style="--a:0.7256" class="print p-art3"><img src="/img/home/art3.jpg" alt="Alien Planet I, pen and paper, 2004" width="653" height="900"></div>
+      <a style="--a:0.7500" class="print p-p7128852-2-3" href="https://sadh.studio"><img src="/img/home/P7128852_2-3.jpg" alt="Birds in pink cloud" width="675" height="900"></a>
+      <a style="--a:0.7256" class="print p-art3" href="https://nafsadh.art"><img src="/img/home/art3.jpg" alt="Alien Planet I, pen and paper, 2004" width="653" height="900"></a>
     </div>
+    <p class="clbl c-ph"><a href="https://sadh.studio">sadh.studio</a></p>
+    <p class="clbl c-pa"><a href="https://nafsadh.art">nafsadh.art</a></p>
+    <p class="clbl c-po"><a href="https://sadh.ink">sadh.ink</a></p>
   </figure>
 
   <section class="body">
